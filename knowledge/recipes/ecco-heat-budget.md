@@ -16,7 +16,7 @@ expected:
     statement: "the archive stores float32; the measured residual is storage quantization (median 0.15x the snapshot quantization floor, 99.6% of cells within 3x it). Relative-to-dominant-term ratios are meaningful only where terms exceed that floor; in quiescent deep cells the ratio measures quantization, not formulation error (ratios up to 9e-2 observed on a correct formulation)"
 expected_uncertainty:
   - quantity: "numerical tolerance"
-    statement: "the residual expectation IS the uncertainty statement for this identity: pass at relative 1e-6, investigate above it using the formulation traps table (residual signatures map to specific omissions); closure failure is a formulation error, never data noise"
+    statement: "the residual expectation IS the uncertainty statement for this identity: pass at absolute 1e-10 degC/s pointwise (p99.9 at or below 1e-11), investigate above it using the formulation traps table (residual signatures map to specific omissions); closure failure is a formulation error, never data noise"
   - quantity: "domain caveat"
     statement: "pointwise closure holds on any spatial subset; domain-integrated closure holds only on closed domains with boundary transports accounted (SPEC §6 encodes this for fixtures)"
 evidence:

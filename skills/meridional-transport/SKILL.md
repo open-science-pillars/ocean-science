@@ -75,8 +75,10 @@ sections. The comparison discipline: compute the model section at
 26.5N, compare the mean and variability against the recipe concept
 `knowledge/recipes/ecco-mht-26n.md`, which carries the expected range,
 the expected-uncertainty (the RAPID-comparison spread), and validation
-provenance. The recipe is the authority; this skill deliberately
-carries no numbers. Time-sampling matters in the comparison: a single
+provenance. The recipe is the authority; this skill carries no
+expected ranges or spreads of its own (the basin values quoted under
+Scope are the recipe's anchors, cited for the sum identity).
+Time-sampling matters in the comparison: a single
 year's mean sits inside a wider envelope than a multi-year mean, and
 ECCO's 1992-2017 window overlaps RAPID only from 2004.
 

@@ -125,5 +125,7 @@ volume uses `UVELMASS/VVELMASS/WVELMASS` convergence against the
 z*-corrected layer thickness tendency (ETAN snapshots). The tutorial
 repository carries dedicated notebooks for both
 (`ECCO_v4_Salt_and_salinity_budget.ipynb`,
-`ECCO_v4_Volume_budget_closure.ipynb`); Session 7's recipes pin their
-expected residuals.
+`ECCO_v4_Volume_budget_closure.ipynb`). No salt or volume budget recipe
+exists in the bundle yet (parked for the next bundle revision); their
+residual character is the same absolute round-off expectation the heat
+recipe pins, but the numbers are unmeasured here until recipes exist.

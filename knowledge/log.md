@@ -2,6 +2,13 @@
 
 Newest first. One line per change: date, concept path, what changed, who.
 
+- 2026-07-04 · Session 9 close lint: zero 🔴, four 🟡. Applied (implementing
+  already-approved decisions): the relative-1e-6 remnant in
+  ecco-heat-budget expected_uncertainty replaced with the approved
+  absolute criterion (T1); meridional-transport's carries-no-numbers
+  claim reworded after the scope-trap addition (T3); budget-formulation's
+  claim of nonexistent salt/volume recipes corrected, recipes parked
+  (T4, PARKING #12). AMS DOI 403-to-fetchers stands as accepted context · Session 9
 - 2026-07-04 · recipes/ecco-mht-26n.md SCOPE-CORRECTED (steward-approved):
   the Session 7 anchor 1.098 PW was the GLOBAL latitude circle (bare
   calc_meridional_heat_trsp), not the RAPID-comparable Atlantic section.
