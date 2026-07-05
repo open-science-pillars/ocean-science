@@ -7,8 +7,7 @@ user-invocable: false
 # sea-level
 
 Background expertise for sea level work where the corrections are the
-analysis. Authored in Session 8 per SPECIFICATION.md v0.5.1 §4.1
-(v0.1 scope reconstructed from the description; flagged).
+analysis.
 
 ## The decomposition
 
@@ -27,7 +26,7 @@ names which component it concerns.
 - **Gravimetry (GRACE/GRACE-FO mascons):** ocean mass, i.e., the
   manometric piece; coarse effective resolution (order 300 km),
   coastal leakage, and the GIA correction choice are first-order; the
-  bundle's GRACE-FO dataset concept and gotchas (Session 8b) carry
+  bundle's GRACE-FO dataset concept and gotchas  carry
   the details.
 - **Hydrography (Argo-era T/S):** steric height, sampled to about
   2000 m; the deep steric contribution below Argo is not measured by

@@ -6,7 +6,7 @@ description: "Meridional transport analysis: MHT at chosen latitudes, overturnin
 # transport-analysis
 
 Compute meridional transports and judge them against validated
-expectations. Authored in Session 9 per SPECIFICATION.md v0.5.1 §4.4.
+expectations.
 Works by slash command or conversationally ("what's the heat transport
 at 26.5N?"). The methods authority is the meridional-transport skill;
 the numbers authority is `knowledge/recipes/ecco-mht-26n.md` (and

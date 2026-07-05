@@ -28,10 +28,10 @@ expected_uncertainty:
 evidence:
   - https://rapid.ac.uk/rapidmoc/
   - https://doi.org/10.1175/2010JCLI3997.1
-  - ../../skills/ecco/references/variable-catalog.md
+  - https://github.com/open-science-pillars/ocean-science/blob/main/skills/ecco/references/variable-catalog.md
 status: verified
 verified: 2026-07-04
-verified_by: Paul Ramirez (steward pro tem)
+verified_by: OSP steward review
 ---
 
 # Meridional heat transport at 26.5N from ECCO v4r4
@@ -65,5 +65,5 @@ asserts both anchors and the basin-sum identity.
 
 **Range provenance.** The 0.8 to 1.4 PW multi-year band is the build
 specification's pinned expectation (IMPLEMENTATION-GUIDE v2.3.3,
-Session 7) bracketing published ECCO v4 means near 1.0 to 1.1 PW and
+bracketing published ECCO v4 means near 1.0 to 1.1 PW and
 the RAPID-observed mean near 1.3 PW (evidence links above).

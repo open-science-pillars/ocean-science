@@ -21,10 +21,10 @@ expected_uncertainty:
     statement: "pointwise closure holds on any spatial subset; domain-integrated closure holds only on closed domains with boundary transports accounted (SPEC §6 encodes this for fixtures)"
 evidence:
   - https://ecco-v4-python-tutorial.readthedocs.io/ECCO_v4_Heat_budget_closure.html
-  - ../../skills/ecco/references/budget-formulation.md
+  - https://github.com/open-science-pillars/ocean-science/blob/main/skills/ecco/references/budget-formulation.md
 status: verified
 verified: 2026-07-04
-verified_by: Paul Ramirez (steward pro tem)
+verified_by: OSP steward review
 ---
 
 # Closed heat budget on the ECCO v4r4 native grid
@@ -41,7 +41,7 @@ rA * drF * hFacC; constants rhoconst 1029, c_p 3994.
 notebook demonstrates the residual at machine precision globally (the
 evidence link); this org's line-by-line verification of the formulation
 against that notebook is recorded in the budget-formulation reference.
-The durable executable validation is the Session 9 golden notebook
+The durable executable validation is the golden notebook
 `verification/ocean_budget.py`, which asserts pointwise closure on
 fixture cells against this recipe's tolerance.
 

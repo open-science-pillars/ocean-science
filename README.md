@@ -4,10 +4,9 @@ Physical oceanography for Open Science Pillars: the ECCO v4r4 state
 estimate, SWOT KaRIn SSH, meridional transport, budget closure, water
 masses, sea level, and the PO.DAAC knowledge arc.
 
-**Install core first.** This plugin assumes the core plugin is installed
-as a peer (its start, discover-data, and report workflows, and its
-foundation skills). There is no file dependency between them; core is a
-separate install by design (SPECIFICATION.md §0.5).
+**Install core first.** This plugin builds on core's foundation skills and
+its start / discover-data / report workflows. They install as peers (no
+shared files), so you add core alongside this one.
 
 ## Install
 
@@ -19,22 +18,32 @@ claude plugin install ocean-science@open-science-pillars
 
 Cowork and Claude Science: add the marketplace and install from it.
 
+## Your first run
+
+Do the 20-minute [ECCO Heat Transport tutorial](https://github.com/open-science-pillars/tutorials/blob/main/tutorial-2-ecco-mht.qmd):
+it plans the data, loads ECCO through a size gate, computes the Atlantic
+meridional heat transport at 26.5N, and compares it against the RAPID
+observations, with every number carrying its uncertainty. New terms are in
+the [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLOSSARY.md).
+
 ## What's inside
 
-- `skills/`: ECCO and SWOT reference skills, six ocean knowledge skills,
-  and eight workflow skills (gated loaders, ocean-budget with the
-  native-grid-or-refuse rule, transport-analysis reading validated recipes,
-  compare-obs, three analysis workflows).
-- `agents/`: ecco-scout (recommends datasets, cites concepts, never
-  downloads without approval) and budget-auditor (verifies closure,
-  proposes fixes, checks the geothermal gotcha first).
-- `knowledge/`: the podaac-arc bundle: four dataset concepts with
-  Uncertainty sections, five gotchas with evidence, two validated recipes.
-- `verification/`: four marimo golden notebooks on small fixtures.
-- `evals/`: gotcha-avoidance and rejection seed cases.
-- `ocean-science.local.md.template`: copy into your project and fill in
-  data paths, the SWOT block, and the Knowledge block.
+- **Skills** for ECCO and SWOT, ocean methods (grids, budgets, transports,
+  water masses, sea level), and workflows: data loaders that show you the
+  download size and ask before fetching, an ocean-budget workflow that
+  refuses to compute on regridded data (it never closes), and transport and
+  comparison workflows that read validated recipes.
+- **Agents**: a scout that recommends datasets and cites the knowledge it
+  relied on (never downloading on its own), and a budget auditor that checks
+  a computed budget closed and diagnoses it if not.
+- **A knowledge bundle** for the PO.DAAC datasets: dataset concepts with
+  uncertainty structure, documented gotchas with evidence, and validated
+  recipes with expected numbers.
+- **Verification**: automated notebooks that re-check each workflow on small
+  cached data.
+- **A project config template** (`ocean-science.local.md.template`): copy it
+  into your project and fill in your data paths, region, and download limit.
 
-Earthdata Login goes in `~/.netrc`, never in a repo. Build status per
-surface: marketplace repo, docs/PROGRESS.md. Spec: SPECIFICATION.md §4.
-License: Apache-2.0. Cite via CITATION.cff.
+For NASA data you need an Earthdata Login in `~/.netrc` (never in a repo);
+the [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLOSSARY.md)
+has the one-line format. License: Apache-2.0. Cite via CITATION.cff.

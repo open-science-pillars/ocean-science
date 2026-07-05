@@ -6,8 +6,7 @@ description: "Load SWOT KaRIn SSH regionally: parse region, cycles, tier; volume
 # load-swot
 
 Bring SWOT KaRIn SSH into the session safely: gated on volume, flags
-decoded, swath structure intact. Authored in Session 8b per
-SPECIFICATION.md v0.5.1 §4.4. Works by slash command or conversationally
+decoded, swath structure intact. Works by slash command or conversationally
 ("load SWOT SSH for the Gulf Stream, March 2024").
 
 ## Behavior, in order

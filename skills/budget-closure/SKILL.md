@@ -6,9 +6,7 @@ user-invocable: false
 
 # budget-closure
 
-Background expertise for property budgets that actually close. Authored
-in Session 7 per SPECIFICATION.md v0.5.1 §4.1 (v0.1 scope reconstructed
-from the description and the ecco references; flagged). The ECCO heat
+Background expertise for property budgets that actually close. The ECCO heat
 budget's exact terms live in `skills/ecco/references/budget-formulation.md`;
 expected residuals live in recipe concepts; this skill carries the
 architecture and the diagnosis discipline.

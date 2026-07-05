@@ -7,8 +7,7 @@ user-invocable: false
 # ocean-indices
 
 Background expertise for climate indices, which are defined procedures,
-not natural quantities. Authored in Session 8 per SPECIFICATION.md
-v0.5.1 §4.1 (v0.1 scope reconstructed from the description; flagged).
+not natural quantities.
 
 ## An index is its procedure
 

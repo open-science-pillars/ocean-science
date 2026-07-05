@@ -6,7 +6,7 @@ description: "Compare model or state-estimate output against observations: RAPID
 # compare-obs
 
 Model-versus-observations comparisons that measure the ocean, not the
-bookkeeping. Authored in Session 9 per SPECIFICATION.md v0.5.1 §4.4.
+bookkeeping.
 Works by slash command or conversationally ("how does ECCO SSH compare
 to altimetry?").
 

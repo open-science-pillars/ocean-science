@@ -7,9 +7,7 @@ user-invocable: false
 # meridional-transport
 
 Background expertise for meridional transports that are computed
-natively and framed honestly. Authored in Session 7 per SPECIFICATION.md
-v0.5.1 §4.1 (v0.1 scope reconstructed from the description and the ecco
-references; flagged). Expected values and spreads live in recipe
+natively and framed honestly. Expected values and spreads live in recipe
 concepts; grid mechanics live in ocean-grids and the llc90 reference.
 
 ## Scope: a latitude line without a basin mask is the full circle

@@ -8,7 +8,7 @@ resource: https://podaac.jpl.nasa.gov/dataset/ECCO_L4_TEMP_SALINITY_LLC0090GRID_
 version: "V4r4, 1992-2017 (ShortNames CMR-verified and native granules live-loaded 2026-07-04)"
 status: verified
 verified: 2026-07-04
-verified_by: Paul Ramirez (steward pro tem)
+verified_by: OSP steward review
 trainings:
   - https://ecco-v4-python-tutorial.readthedocs.io/
 ---

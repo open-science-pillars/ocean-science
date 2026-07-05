@@ -1,6 +1,6 @@
 # The LLC90 native grid
 
-Reference for the ecco skill, per SPECIFICATION.md v0.5.1 §4.2. Field
+Reference for the ecco skill, per SPEC §4.2. Field
 names marked "pending" are granule-verified during this session's access
 test and the marks removed then; everything else follows the ECCO v4
 release documentation and the ecco_v4_py tutorial conventions.

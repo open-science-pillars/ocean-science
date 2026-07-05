@@ -1,6 +1,6 @@
 # ECCO v4r4 heat budget formulation (native grid)
 
-Reference for the ecco skill, per SPECIFICATION.md v0.5.1 §4.2.
+Reference for the ecco skill, per SPEC §4.2.
 **Verified term by term against the ECCO v4 Python tutorial's
 `ECCO_v4_Heat_budget_closure.ipynb`** (github.com/ECCO-GROUP/
 ECCO-v4-Python-Tutorial, master branch, source fetched and code cells

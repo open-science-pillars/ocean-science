@@ -1,6 +1,6 @@
 # SWOT KaRIn L2 SSH products
 
-Reference for the swot skill, per SPECIFICATION.md v0.5.1 §4.3.
+Reference for the swot skill, per SPEC §4.3.
 **ShortNames and version families verified against live CMR 2026-07-04**
 (earthaccess, netrc auth); granule-level evidence quoted below comes
 from the same session's probes. The current processing baseline is

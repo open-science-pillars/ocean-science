@@ -1,6 +1,6 @@
 # ECCO v4r4 variable catalog (llc90 native grid)
 
-Reference for the ecco skill, per SPECIFICATION.md v0.5.1 §4.2.
+Reference for the ecco skill, per SPEC §4.2.
 
 **ShortName verification: 2026-07-04**, against live CMR via earthaccess
 (netrc-authenticated `search_datasets`, one collection returned per name

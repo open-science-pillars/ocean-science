@@ -1,6 +1,6 @@
 # Fixture provenance (ocean-science)
 
-Required by SPECIFICATION.md v0.5.1 §6. Two fixture kinds serve the four
+Required by SPEC §6. Two fixture kinds serve the four
 golden notebooks:
 
 | Fixture | Kind | Source | License |

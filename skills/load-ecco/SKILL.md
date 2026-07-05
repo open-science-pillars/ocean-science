@@ -6,8 +6,7 @@ description: Load ECCO v4r4 data from PO.DAAC with grid auto-merge and Dask; vol
 # load-ecco
 
 Bring ECCO v4r4 into the session safely: exact ShortNames, geometry
-merged, gated on volume, gotchas restated. Authored in Session 9 per
-SPECIFICATION.md v0.5.1 §4.4. Works by slash command or conversationally
+merged, gated on volume, gotchas restated. Works by slash command or conversationally
 ("load ECCO temperature for 2010").
 
 ## Behavior, in order

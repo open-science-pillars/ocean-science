@@ -7,15 +7,15 @@ timestamp: 2026-07-04
 severity: high
 dataset: ../datasets/ecco-v4r4.md
 eval_case: native-grid-refusal
-# eval case authored in Session 8b per SPEC §4.1; id fixed here so the
+# eval case authored per SPEC §4.1; id fixed here so the
 # linter's dangling check closes when the case lands.
 evidence:
   - https://ecco-v4-python-tutorial.readthedocs.io/ECCO_v4_Heat_budget_closure.html
   - https://podaac.jpl.nasa.gov/dataset/ECCO_L4_TEMP_SALINITY_05DEG_MONTHLY_V4R4
-  - ../../skills/ecco/references/budget-formulation.md
+  - https://github.com/open-science-pillars/ocean-science/blob/main/skills/ecco/references/budget-formulation.md
 status: verified
 verified: 2026-07-04
-verified_by: Paul Ramirez (steward pro tem)
+verified_by: OSP steward review
 ---
 
 # ECCO budgets and transports close only on the native llc90 grid

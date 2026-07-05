@@ -8,7 +8,7 @@ resource: https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1
 version: "MUR v4.1 (MUR-JPL-L4-GLOB-v4.1) and MUR25 v04.2 (MUR25-JPL-L4-GLOB-v04.2), both CMR-verified 2026-07-04"
 status: verified
 verified: 2026-07-04
-verified_by: Paul Ramirez (steward pro tem)
+verified_by: OSP steward review
 ---
 
 # GHRSST MUR Level 4 SST

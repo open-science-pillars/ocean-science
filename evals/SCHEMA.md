@@ -1,6 +1,6 @@
 # Eval case schema (ocean-science)
 
-Case format per SPECIFICATION.md v0.5.1 §8, authored Session 8b. Cases
+Case format per SPEC §8, authored Session 8b. Cases
 live here beside verification/, versioned with the skills and knowledge
 they test. Evals test AGENT SCIENTIFIC JUDGMENT with the plugin
 installed (golden notebooks test code; the surface harness tests

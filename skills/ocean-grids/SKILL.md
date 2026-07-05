@@ -7,9 +7,7 @@ user-invocable: false
 # ocean-grids
 
 Background expertise for working on ocean model grids without silent
-geometry errors. Authored in Session 7 per SPECIFICATION.md v0.5.1 §4.1
-(v0.1 scope reference reconstructed from the §4.1 description and the
-ecco references; flagged, not silently improvised). ECCO llc90 specifics
+geometry errors. ECCO llc90 specifics
 live in `skills/ecco/references/llc90-grid.md`; this skill carries what
 generalizes across ocean models.
 

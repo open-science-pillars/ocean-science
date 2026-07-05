@@ -6,8 +6,7 @@ user-invocable: false
 
 # ecco
 
-Background expertise for the ECCO v4r4 ocean state estimate. Authored in
-Session 6 per SPECIFICATION.md v0.5.1 §4.2. This skill is deliberately
+Background expertise for the ECCO v4r4 ocean state estimate. This skill is deliberately
 reference-heavy: the details live in three reference documents beside it,
 and in the knowledge bundle's concepts; this file says when to reach for
 which.

@@ -10,10 +10,10 @@ eval_case: swot-calval-window
 evidence:
   - https://podaac.jpl.nasa.gov/dataset/SWOT_L2_LR_SSH_D
   - https://podaac.jpl.nasa.gov/dataset/SWOT_L2_LR_SSH_2.0
-  - ../../skills/swot/references/swot-products.md
+  - https://github.com/open-science-pillars/ocean-science/blob/main/skills/swot/references/swot-products.md
 status: verified
 verified: 2026-07-04
-verified_by: Paul Ramirez (steward pro tem)
+verified_by: OSP steward review
 ---
 
 # SWOT orbit phases: cal/val and science data are not one record

@@ -7,8 +7,7 @@ user-invocable: false
 # mixed-layer
 
 Background expertise for mixed layer depth (MLD) work where the answer
-depends on the definition. Authored in Session 8 per SPECIFICATION.md
-v0.5.1 §4.1 (v0.1 scope reconstructed from the description; flagged).
+depends on the definition.
 
 ## MLD is a criterion, not an observable
 

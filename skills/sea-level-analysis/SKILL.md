@@ -6,8 +6,7 @@ description: "Sea level analysis workflow: regional trends, steric vs manometric
 # sea-level-analysis
 
 Run a sea level analysis where every rate carries its uncertainty and
-every component is named. Authored in Session 9 per SPECIFICATION.md
-v0.5.1 §4.4. Works by slash command or conversationally ("sea level
+every component is named. Works by slash command or conversationally ("sea level
 trends in the North Atlantic from ECCO"). The discipline authority is
 the sea-level knowledge skill.
 

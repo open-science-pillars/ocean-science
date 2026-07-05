@@ -8,7 +8,7 @@ resource: https://doi.org/10.17604/3nfq-va20
 version: "MOCHA MHT v.2020 via dataset DOI 10.17604/3nfq-va20; RAPID AMOC series via rapid.ac.uk (access verified 2026-07-04)"
 status: verified
 verified: 2026-07-04
-verified_by: Paul Ramirez (steward pro tem)
+verified_by: OSP steward review
 ---
 
 # RAPID-MOCHA transports at 26.5N (observational reference)
@@ -19,7 +19,7 @@ transport (PW) observations since April 2004; the standard ground truth
 for Atlantic transport comparisons (the ecco-mht-26n recipe's
 expected-uncertainty is defined against it).
 
-**Access peculiarity (discovered during the Session 10 end-to-end,
+**Access peculiarity (discovered during the end-to-end test,
 2026-07-04).** The MOCHA heat-transport product's official project page
 links a SharePoint share that scripted workflows cannot fetch. The
 canonical scriptable path is the dataset DOI

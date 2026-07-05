@@ -12,7 +12,7 @@ evidence:
   - https://grace.jpl.nasa.gov/
 status: verified
 verified: 2026-07-04
-verified_by: Paul Ramirez (steward pro tem)
+verified_by: OSP steward review
 ---
 
 # GRACE mascon coastal leakage: land signal bleeds into ocean mascons

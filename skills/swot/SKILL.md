@@ -6,8 +6,7 @@ user-invocable: false
 
 # swot
 
-Background expertise for SWOT KaRIn sea surface height work. Authored
-in Session 8b per SPECIFICATION.md v0.5.1 §4.3. Product inventory,
+Background expertise for SWOT KaRIn sea surface height work. Product inventory,
 granule anatomy, and orbit-phase details live in
 `references/swot-products.md` (CMR-verified 2026-07-04); the current
 processing baseline and the uncertainty variables live in

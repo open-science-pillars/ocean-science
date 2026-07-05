@@ -8,7 +8,7 @@ resource: https://podaac.jpl.nasa.gov/dataset/TELLUS_GRAC-GRFO_MASCON_CRI_GRID_R
 version: "JPL RL06.3 version 4, CMR-verified 2026-07-04; CRI-filtered grid (TELLUS_GRAC-GRFO_MASCON_CRI_GRID_RL06.3_V4) and unfiltered grid (TELLUS_GRAC-GRFO_MASCON_GRID_RL06.3_V4) both live"
 status: verified
 verified: 2026-07-04
-verified_by: Paul Ramirez (steward pro tem)
+verified_by: OSP steward review
 ---
 
 # GRACE/GRACE-FO JPL mascon solutions

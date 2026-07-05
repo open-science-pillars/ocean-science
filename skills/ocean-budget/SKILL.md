@@ -5,8 +5,7 @@ description: Ocean property budgets on the native ECCO grid only; refuses regrid
 
 # ocean-budget
 
-Compute closed property budgets, or refuse. Authored in Session 9 per
-SPECIFICATION.md v0.5.1 §4.4. Works by slash command or conversationally
+Compute closed property budgets, or refuse. Works by slash command or conversationally
 ("heat budget for the subpolar gyre"). The formulation authority is
 `skills/ecco/references/budget-formulation.md`; the tolerance authority
 is `knowledge/recipes/ecco-heat-budget.md`; the diagnosis discipline is

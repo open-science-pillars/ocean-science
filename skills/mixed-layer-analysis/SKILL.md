@@ -5,8 +5,7 @@ description: "Mixed layer depth analysis workflow: criterion choice, seasonal cl
 
 # mixed-layer-analysis
 
-Run a mixed layer analysis with the criterion owned explicitly.
-Authored in Session 9 per SPECIFICATION.md v0.5.1 §4.4. Works by slash
+Run a mixed layer analysis with the criterion owned explicitly. Works by slash
 command or conversationally ("how deep does the Labrador Sea mix?").
 The discipline authority is the mixed-layer knowledge skill.
 

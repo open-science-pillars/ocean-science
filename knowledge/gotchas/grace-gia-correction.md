@@ -14,7 +14,7 @@ evidence:
   - https://grace.jpl.nasa.gov/
 status: verified
 verified: 2026-07-04
-verified_by: Paul Ramirez (steward pro tem)
+verified_by: OSP steward review
 ---
 
 # GRACE GIA correction: a model choice already baked into the product

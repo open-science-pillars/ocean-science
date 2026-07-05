@@ -1,9 +1,11 @@
-# Phase-1 eval seed results (ocean-science)
+# Eval seed results (ocean-science)
 
-One manual run per case on Claude Code, rubric-graded by hand
-(grader: Paul Ramirez, steward pro tem). Model: claude-fable-5 for all
-runs. Convention per SCHEMA.md; transcripts referenced live in
-marketplace/docs/prompts/behavior/ or the Session 10 seed-run set.
+The "seed" set is the hand-graded baseline: one manual run per case on
+Claude Code, N=1, rubric-graded by hand, distinct from the automated
+N=20 runner (with binomial confidence intervals) that supersedes it.
+Grader: OSP steward review. Model: claude-fable-5 for all runs.
+Convention per SCHEMA.md; transcripts referenced live in
+marketplace/docs/prompts/behavior/.
 
 | Case | Date | Model | Grade | Evidence line |
 |---|---|---|---|---|

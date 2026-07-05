@@ -5,8 +5,7 @@ description: "Water mass analysis workflow: T-S census, density-space transforma
 
 # water-mass-analysis
 
-Run a water mass analysis end to end with the conventions stated.
-Authored in Session 9 per SPECIFICATION.md v0.5.1 §4.4. Works by slash
+Run a water mass analysis end to end with the conventions stated. Works by slash
 command or conversationally ("what water masses fill the Irminger
 Sea?"). The discipline authority is the water-masses knowledge skill;
 this workflow executes it.
