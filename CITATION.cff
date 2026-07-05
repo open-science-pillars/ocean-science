@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it using these metadata. Tagged releases are archived to Zenodo; this file gains the repo's concept DOI at the first release (SPEC v0.5.1 §2.3).
+title: "Open Science Pillars: ocean-science"
+type: software
+authors:
+  - name: Open Science Pillars Community
+repository-code: https://github.com/open-science-pillars/ocean-science
+license: Apache-2.0

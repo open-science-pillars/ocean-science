@@ -1,0 +1,38 @@
+# ocean-science local configuration
+
+Copy this file to your project as `ocean-science.local.md` and fill it in.
+Skills read it at the start of ocean work; it never enters version control
+if it contains paths you consider private. Filled with working defaults in
+Session 10; template authored in Session 1 per SPECIFICATION.md v0.5.1 §4.1.
+
+## Data locations
+
+- ECCO release: v4r4
+- ECCO local data directory: /path/to/ECCO_V4r4
+- Download scratch directory (volume-gated loads land here): /path/to/scratch
+- Maximum ungated download size: 2 GB (loaders ask before exceeding this)
+
+## Compute
+
+- Default compute label: small (laptop) | medium (Dask cluster) | large (HPC/burst)
+- Dask: local cluster, n_workers = 4
+
+## SWOT block
+
+- Region of interest: lon [min, max], lat [min, max]
+- Orbit phase default: 21-day science (set 1-day cal/val explicitly when intended;
+  the swot-calval-orbit-phases gotcha applies to ranges spanning the switch)
+- Product tier default: Expert
+- Processing baseline: consult knowledge/datasets/swot-karin.md, do not hardcode here
+
+## Knowledge block
+
+- Installed standalone bundles consulted alongside this plugin's snapshot
+  (SPEC §5.7), one path per line:
+  - (none)
+- Precedence reminder: provider-bundle concepts win on conflict.
+
+## Earthdata Login
+
+Credentials live in ~/.netrc (machine urs.earthdata.nasa.gov, chmod 600),
+never in this file and never in any repo (SPEC §5.8).
