@@ -2,6 +2,12 @@
 
 Newest first. One line per change: date, concept path, what changed, who.
 
+- 2026-07-04 · datasets/rapid-mocha.md LIVE-INGESTED via the operational
+  loop: the Session 10 end-to-end discovered the MOCHA official page
+  links a non-scriptable SharePoint share and the canonical scriptable
+  path is the dataset DOI (10.17604/3nfq-va20, AMOCatlas-indexed);
+  drafted immediately, steward review passed same session (verified_by
+  Paul Ramirez). First ingest-loop concept of the build · Session 10
 - 2026-07-04 · Session 9 close lint: zero 🔴, four 🟡. Applied (implementing
   already-approved decisions): the relative-1e-6 remnant in
   ecco-heat-budget expected_uncertainty replaced with the approved

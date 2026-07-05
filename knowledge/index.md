@@ -15,6 +15,7 @@ canonical-home handoff (SPEC §5.7):
 - [SWOT KaRIn Level 2 Low Rate SSH](datasets/swot-karin.md), status: verified
 - [GRACE/GRACE-FO JPL mascon solutions](datasets/grace-fo-mascons.md), status: verified
 - [GHRSST MUR Level 4 SST](datasets/ghrsst-mur.md), status: verified
+- [RAPID-MOCHA transports at 26.5N (observational reference)](datasets/rapid-mocha.md), status: verified (live-ingested Session 10)
 
 ## gotchas
 
