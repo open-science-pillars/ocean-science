@@ -2,6 +2,11 @@
 
 Newest first. One line per change: date, concept path, what changed, who.
 
+- 2026-07-05 · This bundle is now a PINNED SNAPSHOT: canonical home
+  established at open-science-pillars/nasa-daac-knowledge@a0c84fff959f
+  (§5.7); files unchanged and byte-identical (sync_check green);
+  concept edits happen in the canonical repo first from here on ·
+  Session 17
 - 2026-07-05 · Session 11 close lint: zero 🔴, three 🟡 applied on steward
   decision: swot-karin verification stamp bumped to cover the ingested
   items; load-swot and swot skills updated to ACCOMMODATE the crossover

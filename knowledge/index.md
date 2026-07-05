@@ -1,4 +1,13 @@
-# podaac-arc bundle
+# podaac-arc bundle (PINNED SNAPSHOT per SPEC v0.6 §5.7)
+
+- Canonical home: github.com/open-science-pillars/nasa-daac-knowledge (podaac/)
+- Snapshot source commit: a0c84fff959f
+- Snapshot date: 2026-07-05
+- Precedence: the canonical concept wins on conflict; this snapshot
+  refreshes at plugin releases (tools/sync_check.py in the canonical
+  repo verifies byte-identity; run green 2026-07-05).
+- Eval coverage for high gotchas ships HERE (evals/), per the rule-9
+  ruling of 2026-07-05.
 
 The PO.DAAC arc knowledge bundle: ECCO, SWOT, GRACE-FO, GHRSST MUR.
 OKF v0.1 conformant per SPECIFICATION.md v0.5.1 §5. Snapshot
