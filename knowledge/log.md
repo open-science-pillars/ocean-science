@@ -2,6 +2,12 @@
 
 Newest first. One line per change: date, concept path, what changed, who.
 
+- 2026-07-04 · six arc concepts authored and steward-verified
+  (verified_by Paul Ramirez): swot-karin (granule-verified structure,
+  crid attribute, 39% valid-fraction normalization), swot-calval-orbit-phases
+  (reproducible C-vs-D probes), grace-fo-mascons (RL06.3 v4), both GRACE
+  gotchas (GIA severity medium per recorded rationale, steward-confirmed),
+  ghrsst-mur (analysis-error framing) · Session 8b
 - 2026-07-04 · Session 7 close lint (incremental): zero 🔴, three new 🟡
   resolved on steward decision: heat-budget recipe reworded to the
   owned-by pattern (check 11), inputs expanded to exact ShortNames

@@ -12,17 +12,17 @@ canonical-home handoff (SPEC §5.7):
 ## datasets
 
 - [ECCO v4 Release 4 ocean state estimate](datasets/ecco-v4r4.md), status: verified
-- swot-karin.md, PLACEHOLDER, authored Session 8b
-- grace-fo-mascons.md, PLACEHOLDER, authored Session 8b
-- ghrsst-mur.md, PLACEHOLDER, authored Session 8b
+- [SWOT KaRIn Level 2 Low Rate SSH](datasets/swot-karin.md), status: verified
+- [GRACE/GRACE-FO JPL mascon solutions](datasets/grace-fo-mascons.md), status: verified
+- [GHRSST MUR Level 4 SST](datasets/ghrsst-mur.md), status: verified
 
 ## gotchas
 
 - [ECCO budgets and transports close only on the native llc90 grid](gotchas/ecco-native-vs-regridded.md), severity high, status: verified
 - [ECCO heat budgets need the geothermal flux, which is not a PO.DAAC collection](gotchas/ecco-geothermal-flux.md), severity high, status: verified
-- swot-calval-orbit-phases.md, PLACEHOLDER, authored Session 8b
-- grace-coastal-leakage.md, PLACEHOLDER, authored Session 8b
-- grace-gia-correction.md, PLACEHOLDER, authored Session 8b
+- [SWOT orbit phases: cal/val and science data are not one record](gotchas/swot-calval-orbit-phases.md), severity high, status: verified
+- [GRACE mascon coastal leakage: land signal bleeds into ocean mascons](gotchas/grace-coastal-leakage.md), severity high, status: verified
+- [GRACE GIA correction: a model choice already baked into the product](gotchas/grace-gia-correction.md), severity medium, status: verified
 
 ## recipes
 

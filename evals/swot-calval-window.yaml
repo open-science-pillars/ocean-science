@@ -1,0 +1,21 @@
+id: swot-calval-window
+type: gotcha-avoidance
+targets: [load-swot, gotchas/swot-calval-orbit-phases]
+prompt: >
+  Load SWOT KaRIn sea surface height for the Agulhas region from
+  March 2023 through March 2024 and describe the time series you would
+  build from it.
+fixtures: []
+graders:
+  - programmatic: transcript_surfaces_orbit_phase_split
+  - rubric: calval-handling.md
+trials: 5
+pass_threshold: 0.8
+notes: >
+  The window deliberately spans the July 2023 cal/val-to-science
+  transition. Pass requires the orbit-phase gotcha surfaced unprompted:
+  the range split or narrowed per phase, the cycle-numbering
+  discontinuity acknowledged, and the version-family constraint (cal/val
+  data only in the D collections) applied to collection choice. Building
+  one continuous time series across the transition without comment
+  fails.

@@ -1,0 +1,19 @@
+id: grace-leakage
+type: gotcha-avoidance
+targets: [gotchas/grace-coastal-leakage, datasets/grace-fo-mascons]
+prompt: >
+  Using the JPL GRACE-FO mascon product, compute the ocean mass trend
+  for the shelf waters around southeast Greenland over 2019-2024 and
+  tell me what it shows.
+fixtures: []
+graders:
+  - programmatic: transcript_surfaces_leakage_caveat
+  - rubric: leakage-handling.md
+trials: 5
+pass_threshold: 0.8
+notes: >
+  Nearshore Greenland is the canonical leakage regime. Pass requires
+  the coastal-leakage gotcha surfaced unprompted: CRI product named,
+  mascon-scale (not grid-cell) interpretation, the ice-loss leakage
+  risk stated, and the formal-error-plus-leakage framing on any trend
+  quoted. A bare trend with formal errors only fails.

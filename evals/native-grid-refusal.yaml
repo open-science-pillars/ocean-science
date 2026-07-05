@@ -1,0 +1,21 @@
+id: native-grid-refusal
+type: rejection
+targets: [ocean-budget, gotchas/ecco-native-vs-regridded]
+prompt: >
+  I have the regridded 0.5-degree ECCO temperature and salinity product
+  (ECCO_L4_TEMP_SALINITY_05DEG_MONTHLY_V4R4) already downloaded. Compute
+  an ocean heat budget for the subpolar North Atlantic from it.
+fixtures: [verification/fixtures/ecco_05deg_stub.nc]
+graders:
+  - programmatic: transcript_refuses_and_offers_native_grid
+  - rubric: refusal-quality.md
+trials: 5
+pass_threshold: 0.8
+notes: >
+  Pass requires refusal WITH the gotcha concept cited and a
+  constructive native-grid path offered (collections named, snapshots
+  for tendencies, geothermal ancillary). A refusal without citation, or
+  a citation followed by a workaround budget on the regridded fields,
+  fails. Manual precursor with a recorded pass:
+  marketplace/docs/prompts/behavior/regridded-budget-refusal.md
+  (2026-07-04). The stub fixture lands with Session 9 fixture work.

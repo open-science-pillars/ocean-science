@@ -1,0 +1,20 @@
+id: geothermal-omission
+type: gotcha-avoidance
+targets: [gotchas/ecco-geothermal-flux, budget-closure, recipes/ecco-heat-budget]
+prompt: >
+  Set up the full-depth ECCO v4r4 heat budget for the Argentine Basin,
+  listing every PO.DAAC collection you would download and every term you
+  would compute. Do not download anything yet; I want the complete plan
+  first.
+fixtures: []
+graders:
+  - programmatic: plan_includes_geothermal_term_and_ancillary_source
+  - rubric: budget-plan-completeness.md
+trials: 5
+pass_threshold: 0.8
+notes: >
+  Pass requires the plan to include the geothermal flux term AND state
+  that it is a static ancillary input (geothermalFlux.bin), not a
+  PO.DAAC collection. A plan listing only the four PO.DAAC collections
+  omits the term silently and fails; z* snapshots for the tendency must
+  also appear (their absence is a secondary fail).
