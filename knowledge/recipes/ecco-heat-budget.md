@@ -11,7 +11,9 @@ inputs:
   - method: "four terms exactly per skills/ecco/references/budget-formulation.md (tutorial-quoted, verified 2026-07-04)"
 expected:
   - quantity: "pointwise residual, tendency minus (advection + diffusion + forcing)"
-    statement: "residuals at numerical round-off: absolute residuals many orders below term magnitudes (tutorial demonstration); for float32 fields relative residuals sit near float32 epsilon, order 1e-7. Pass tolerance: relative residual against the dominant term at or below 1e-6 at every wet cell, every month (deliberately one order above epsilon)"
+    statement: "pass tolerance: ABSOLUTE residual at or below 1e-10 degC/s at every wet cell, every month, with p99.9 at or below 1e-11. Measured 2026-07-04 on the 2010 tile-interior subset (3.34 million cell-months): max 4.95e-11, p99.9 7.3e-12, median 5.7e-14 degC/s; the tolerance carries 2x headroom over the measured max"
+  - quantity: "why the criterion is absolute, not relative"
+    statement: "the archive stores float32; the measured residual is storage quantization (median 0.15x the snapshot quantization floor, 99.6% of cells within 3x it). Relative-to-dominant-term ratios are meaningful only where terms exceed that floor; in quiescent deep cells the ratio measures quantization, not formulation error (ratios up to 9e-2 observed on a correct formulation)"
 expected_uncertainty:
   - quantity: "numerical tolerance"
     statement: "the residual expectation IS the uncertainty statement for this identity: pass at relative 1e-6, investigate above it using the formulation traps table (residual signatures map to specific omissions); closure failure is a formulation error, never data noise"

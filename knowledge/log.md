@@ -2,6 +2,13 @@
 
 Newest first. One line per change: date, concept path, what changed, who.
 
+- 2026-07-04 · recipes/ecco-heat-budget.md tolerance RE-GROUNDED on
+  measurement (steward-approved): the relative-1e-6 criterion replaced by
+  absolute max 1e-10 degC/s pointwise (p99.9 1e-11). The ocean_budget
+  golden's first run showed relative ratios up to 9e-2 on a CORRECT
+  formulation because float32 storage quantization exceeds quiescent-cell
+  term magnitudes; measured residuals: max 4.95e-11, median 5.7e-14
+  degC/s over 3.34M cell-months. budget-formulation.md aligned · Session 9
 - 2026-07-04 · Session 8b full-bundle lint: zero 🔴; the Session-6
   standing check-8 pair CLOSED (all four high gotchas now match real
   eval cases); three check-11 rewordings applied on steward decision

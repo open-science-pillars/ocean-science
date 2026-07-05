@@ -18,10 +18,13 @@ G_total = G_advection + G_diffusion + G_forcing
 ```
 
 Residual expectation: numerical round-off pointwise, at every cell,
-every month: absolute residuals many orders below the term magnitudes,
-and for float32 fields relative residuals near float32 epsilon (order
-1e-7). The recipe concept pins the pass tolerance (relative 1e-6, one
-order above epsilon); a residual above it is a formulation error, not
+every month, measured in ABSOLUTE terms (2026-07-04, 2010 tile-interior
+subset: max 4.95e-11, median 5.7e-14 degC/s). The recipe concept pins
+the pass tolerance (absolute 1e-10 degC/s, 2x the measured max).
+Relative-to-dominant-term ratios are not a closure criterion on float32
+archives: quiescent deep cells have terms below the storage quantization
+floor, where ratios measure quantization, not formulation error. A
+residual above the absolute tolerance is a formulation error, not
 noise; check the traps table before blaming the data.
 
 ## Constants and the volume element (tutorial values)
