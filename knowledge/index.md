@@ -26,5 +26,5 @@ canonical-home handoff (SPEC §5.7):
 
 ## recipes
 
-- ecco-heat-budget.md, PLACEHOLDER, authored Session 7
-- ecco-mht-26n.md, PLACEHOLDER, authored Session 7
+- [Closed heat budget on the ECCO v4r4 native grid](recipes/ecco-heat-budget.md), status: verified
+- [Meridional heat transport at 26.5N from ECCO v4r4](recipes/ecco-mht-26n.md), status: verified
