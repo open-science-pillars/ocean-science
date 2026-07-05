@@ -2,6 +2,12 @@
 
 Newest first. One line per change: date, concept path, what changed, who.
 
+- 2026-07-05 · Session 11 close lint: zero 🔴, three 🟡 applied on steward
+  decision: swot-karin verification stamp bumped to cover the ingested
+  items; load-swot and swot skills updated to ACCOMMODATE the crossover
+  fact (restate lists route through Known issues; loader summary applies
+  height_cor_xover and says so; flags-not-sufficient rule; new Must
+  NOT). Promotion to a high gotcha parked (PARKING #13) · Session 11
 - 2026-07-05 · datasets/swot-karin.md Known issues extended via the
   operational ingest loop (Tutorial 2 fresh walkthrough): crossover
   calibration arrives unapplied in ssha_karin (spurious +/-2.9 m

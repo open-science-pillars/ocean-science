@@ -19,8 +19,10 @@ hardcoded.
 Before any SWOT analysis, consult and restate what applies:
 
 1. `knowledge/datasets/swot-karin.md`: version families, current
-   baseline state, and the Uncertainty section (which ssha uncertainty
-   variables exist and what they do not cover).
+   baseline state, the Uncertainty section (which ssha uncertainty
+   variables exist and what they do not cover), and the Known issues
+   list (crossover calibration arrives unapplied in ssha_karin;
+   CRIDs drift within collections).
 2. `knowledge/gotchas/swot-calval-orbit-phases.md`: any date range
    touching 2023 gets the orbit-phase check FIRST; ranges spanning the
    July 2023 transition mix incompatible sampling regimes, and
@@ -47,7 +49,9 @@ per the dataset concept's current-baseline note.
 
 - **Flags gate pixels:** decode the bit-packed quality flags before
   statistics (quality-control's decoding rules apply); report the
-  fraction masked and why.
+  fraction masked and why. Flag gating alone does not make ssha
+  statistics safe: crossover calibration (height_cor_xover) arrives
+  unapplied, per the dataset concept's known issue.
 - **Respect the swath structure:** summaries and grids are per-swath
   with the nadir gap intact; never interpolate across the gap; treat
   left and right swaths as having distinct error profiles.
@@ -76,3 +80,5 @@ plugin's SWOT scope is KaRIn L2 SSH and the nadir altimeter products.
 - Never interpolate across the nadir gap.
 - Never hardcode a processing baseline; read the dataset concept and
   record what the granules actually carry.
+- Never quote swath or regional ssha statistics without stating
+  whether height_cor_xover was applied.

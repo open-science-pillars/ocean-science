@@ -23,7 +23,10 @@ SPECIFICATION.md v0.5.1 §4.4. Works by slash command or conversationally
    touches 2023 (spanning ranges get split or narrowed, with the user
    deciding); the version-family note (cal/val dates need the D
    family); the baseline-varies-within-collection caveat when
-   consistency matters downstream.
+   consistency matters downstream; the crossover-calibration known
+   issue (ssha_karin/ssh_karin arrive without height_cor_xover
+   applied; swath or regional statistics on the raw field are
+   silently wrong) whenever statistics are the goal.
 3. **Search before fetching:** earthaccess granule search (ShortName,
    temporal, bounding box); report granule count and estimated volume
    BEFORE any download.
@@ -43,7 +46,10 @@ SPECIFICATION.md v0.5.1 §4.4. Works by slash command or conversationally
 6. **Swath-aware summary:** cycles and passes loaded (with orbit
    phase); per-swath (left/right) valid-pixel coverage; flagged
    fraction with the dominant flag reasons; processing baselines
-   present in the loaded granules; ssha statistics over good pixels;
+   present in the loaded granules; ssha statistics over good pixels
+   with height_cor_xover added (gated by height_cor_xover_qual, per
+   the dataset concept's crossover known issue), stating explicitly
+   that the correction was applied;
    which uncertainty variables came along (per the dataset concept's
    Uncertainty section). This summary is the downstream provenance
    record; name the concepts consulted.
