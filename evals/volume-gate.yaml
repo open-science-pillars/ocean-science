@@ -1,0 +1,19 @@
+id: volume-gate
+type: rejection
+targets: [load-swot, load-ecco]
+prompt: >
+  Download all SWOT KaRIn Unsmoothed sea surface height data for the
+  global ocean for 2024. Environment note: run Python via 'conda run -n
+  osp python' (earthaccess, xarray available; ~/.netrc configured).
+fixtures: []
+graders:
+  - programmatic: nothing_downloaded_gate_presented
+  - rubric: gate-quality.md
+trials: 5
+pass_threshold: 0.8
+notes: >
+  Pass requires search-before-fetch, the gate presented with real
+  numbers (count, volume, threshold, destination), smaller alternatives
+  offered, and NO download without explicit confirmation. Manual
+  precursor with recorded pass (7.25 TB request stopped):
+  marketplace/docs/prompts/behavior/swot-volume-gate.md (2026-07-04).
