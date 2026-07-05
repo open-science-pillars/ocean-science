@@ -24,13 +24,15 @@ app = marimo.App()
 
 @app.cell
 def _():
-    # From knowledge/recipes/ecco-mht-26n.md (steward-verified 2026-07-04);
+    # From knowledge/recipes/ecco-mht-26n.md (scope-corrected 2026-07-04);
     # the recipe is the authority, these constants mirror it and the golden
-    # fails if recomputation drifts from the recorded anchor.
-    RECIPE_RANGE = (0.8, 1.4)          # PW, multi-year mean expectation
-    RECIPE_2010_ANCHOR = 1.098         # PW, recorded reproducing run
-    RECIPE_2010_MONTHLY_ENVELOPE = (-0.5, 2.2)  # PW, around the recorded series
-    return RECIPE_2010_ANCHOR, RECIPE_2010_MONTHLY_ENVELOPE, RECIPE_RANGE
+    # fails if recomputation drifts from the recorded anchors. The 0.8-1.4
+    # multi-year band is ATLANTIC scope and is not asserted on single-year
+    # values here; anchors and the basin-sum identity are.
+    GLOBAL_2010_ANCHOR = 1.098         # PW, full latitude circle (no mask)
+    ATL_2010_ANCHOR = 0.666            # PW, basin_name atlExt
+    GLOBAL_MONTHLY_ENVELOPE = (-0.5, 2.2)   # PW, around the recorded series
+    return ATL_2010_ANCHOR, GLOBAL_2010_ANCHOR, GLOBAL_MONTHLY_ENVELOPE
 
 
 @app.cell
@@ -65,25 +67,35 @@ def _(paths, xr):
 
 
 @app.cell
-def _(RECIPE_2010_ANCHOR, RECIPE_2010_MONTHLY_ENVELOPE, RECIPE_RANGE, ds, ecco, np):
-    mht = ecco.calc_meridional_heat_trsp(ds, lat_vals=[26.5])
-    series = mht["heat_trsp"].squeeze().compute()
+def _(ATL_2010_ANCHOR, GLOBAL_2010_ANCHOR, GLOBAL_MONTHLY_ENVELOPE, ds, ecco, np):
+    # Global circle (no basin mask): the method-reproducibility anchor.
+    mht_g = ecco.calc_meridional_heat_trsp(ds, lat_vals=[26.5])
+    series = mht_g["heat_trsp"].squeeze().compute()
     assert series.attrs.get("units") == "PW"
     vals = np.asarray(series.values, dtype=float)
-    mean = float(vals.mean())
+    mean_g = float(vals.mean())
+    assert abs(mean_g - GLOBAL_2010_ANCHOR) < 0.02, \
+        f"global anchor drift: {mean_g:.3f} vs {GLOBAL_2010_ANCHOR}"
+    emin, emax = GLOBAL_MONTHLY_ENVELOPE
+    assert emin < vals.min() and vals.max() < emax
 
-    # Recipe assertions:
-    lo, hi = RECIPE_RANGE
-    assert lo < mean < hi, f"2010 mean {mean:.3f} PW outside recipe range {RECIPE_RANGE}"
-    assert abs(mean - RECIPE_2010_ANCHOR) < 0.02, \
-        f"drifted from the recorded 2010 anchor: {mean:.3f} vs {RECIPE_2010_ANCHOR}"
-    emin, emax = RECIPE_2010_MONTHLY_ENVELOPE
-    assert emin < vals.min() and vals.max() < emax, \
-        f"monthly values escape the recorded envelope: {vals.min():.2f}..{vals.max():.2f}"
+    # Atlantic (atlExt): the RAPID-comparable scope, plus the basin-sum
+    # identity that verified the scope correction (recipe, 2026-07-04).
+    mean_a = float(ecco.calc_meridional_heat_trsp(
+        ds, lat_vals=[26.5], basin_name="atlExt")["heat_trsp"].squeeze().mean().compute())
+    mean_p = float(ecco.calc_meridional_heat_trsp(
+        ds, lat_vals=[26.5], basin_name="pacExt")["heat_trsp"].squeeze().mean().compute())
+    mean_i = float(ecco.calc_meridional_heat_trsp(
+        ds, lat_vals=[26.5], basin_name="indExt")["heat_trsp"].squeeze().mean().compute())
+    assert abs(mean_a - ATL_2010_ANCHOR) < 0.02, \
+        f"Atlantic anchor drift: {mean_a:.3f} vs {ATL_2010_ANCHOR}"
+    assert abs((mean_a + mean_p + mean_i) - mean_g) < 0.01, \
+        "basin decomposition must sum to the global circle"
 
     print("transport_analysis golden: all assertions passed")
-    print(f"  MHT 26.5N 2010 mean {mean:.3f} PW (recipe range {RECIPE_RANGE}, "
-          f"anchor {RECIPE_2010_ANCHOR}); monthly span {vals.min():.2f}..{vals.max():.2f} PW")
+    print(f"  2010 MHT 26.5N: global {mean_g:.3f} PW = atl {mean_a:.3f} "
+          f"+ pac {mean_p:.3f} + ind {mean_i:.3f}; monthly span "
+          f"{vals.min():.2f}..{vals.max():.2f} PW")
     return
 
 

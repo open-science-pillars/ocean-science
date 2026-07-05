@@ -2,6 +2,15 @@
 
 Newest first. One line per change: date, concept path, what changed, who.
 
+- 2026-07-04 · recipes/ecco-mht-26n.md SCOPE-CORRECTED (steward-approved):
+  the Session 7 anchor 1.098 PW was the GLOBAL latitude circle (bare
+  calc_meridional_heat_trsp), not the RAPID-comparable Atlantic section.
+  Discovered by a skill-following test agent during the Session 9 spot
+  test, independently verified by basin decomposition (atl 0.666 + pac
+  0.430 + ind 0.002 = 1.098). Recipe now carries both anchors with
+  scopes; the 0.8-1.4 band is Atlantic multi-year; transport golden
+  asserts both anchors and the basin-sum identity;
+  meridional-transport skill gained the scope trap · Session 9
 - 2026-07-04 · recipes/ecco-heat-budget.md tolerance RE-GROUNDED on
   measurement (steward-approved): the relative-1e-6 criterion replaced by
   absolute max 1e-10 degC/s pointwise (p99.9 1e-11). The ocean_budget

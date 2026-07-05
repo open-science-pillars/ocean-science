@@ -12,6 +12,16 @@ v0.5.1 §4.1 (v0.1 scope reconstructed from the description and the ecco
 references; flagged). Expected values and spreads live in recipe
 concepts; grid mechanics live in ocean-grids and the llc90 reference.
 
+## Scope: a latitude line without a basin mask is the full circle
+
+Section machinery given only a latitude computes the ENTIRE latitude
+circle, all basins. Basin-scoped transports (the Atlantic for any RAPID
+comparison) require the basin mask explicitly, and per-basin values sum
+to the circle total (verified on ECCO 2010: Atlantic 0.666 + Pacific
+0.430 + Indian 0.002 = 1.098 PW at 26.5N). Quoting a full-circle number
+against a single-basin observation is a scope error that looks
+plausible; the recipe concept records both scopes with anchors.
+
 ## Sections are masks, not index rows
 
 On any curvilinear grid, a latitude circle crosses cells irregularly; a
