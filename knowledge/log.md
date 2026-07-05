@@ -4,6 +4,26 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-07-05 · steward review PASSED: the five Session-18 concepts
+  (recipes/ecco-salt-budget.md, recipes/ecco-volume-budget.md, and gotchas/
+  ecco-release-mixing.md, ecco-mht-basin-scope.md, swot-crossover-unapplied.md)
+  promoted draft to status: verified (verified_by OSP steward review); datasets
+  ecco-v4r4.md and swot-karin.md cross-linked to the new gotchas.
+
+- 2026-07-05 · SPEC §10.5 completion: authored recipes/ecco-salt-budget.md
+  and ecco-volume-budget.md with MEASURED round-off tolerances (salt max
+  7.2e-11 g/kg/s, volume max 4.6e-12 1/s; 2010 tile-1 interior) and green
+  goldens. Volume budget: discovered WVELMASS already carries the surface
+  freshwater flux, so a separate oceFWflx forcing term double-counts
+  (surface residual jumps to ~1e-8); recorded in the recipe and the
+  budget-formulation reference. Drafted for steward review.
+
+- 2026-07-05 · SPEC §10.5 completion: promoted three embedded facts to
+  standalone high-severity gotchas with matching eval cases in the
+  ocean-science plugin: ecco-release-mixing (V4R4 vs V4R4B), ecco-mht-basin-scope
+  (no basin mask = full circle), swot-crossover-unapplied (height_cor_xover
+  not pre-applied). Drafted for steward review.
+
 - 2026-07-05 · This bundle is now a PINNED SNAPSHOT: canonical home
   established at open-science-pillars/nasa-daac-knowledge@a0c84fff959f
   (§5.7); files unchanged and byte-identical (sync_check green);

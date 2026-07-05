@@ -65,6 +65,9 @@ provides no formal uncertainty for it.
 
 - [ecco-native-vs-regridded](../gotchas/ecco-native-vs-regridded.md)
 - [ecco-geothermal-flux](../gotchas/ecco-geothermal-flux.md)
-- Release variants: SSH and OBP have corrected `V4R4B` collections;
-  an analysis that mixes releases silently conflates baseline
+- [ecco-release-mixing](../gotchas/ecco-release-mixing.md): SSH and OBP
+  have corrected `V4R4B` collections; mixing releases conflates baseline
   corrections with signal (variable catalog, Variants section).
+- [ecco-mht-basin-scope](../gotchas/ecco-mht-basin-scope.md): a
+  meridional heat transport with no basin mask is the full latitude
+  circle, not the Atlantic section RAPID observes.

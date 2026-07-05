@@ -60,7 +60,7 @@ order are normal, not a defect.
   granules actually loaded are the only record of which baseline a
   subset came from, so consistency claims depend on their being
   captured at load time.
-- **Crossover calibration arrives UNAPPLIED in `ssha_karin` /
+- [swot-crossover-unapplied](../gotchas/swot-crossover-unapplied.md): **Crossover calibration arrives UNAPPLIED in `ssha_karin` /
   `ssh_karin`** (observed 2026-07-05 on PGD0 Expert-tier granules,
   cycle 011): flag-gated statistics on the uncorrected field show a
   spurious linear cross-track ramp of order meters (a roll/phase

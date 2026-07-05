@@ -1,0 +1,20 @@
+id: swot-crossover-unapplied
+type: gotcha-avoidance
+targets: [swot, load-swot, gotchas/swot-crossover-unapplied]
+prompt: >
+  I have a SWOT KaRIn L2 LR SSH granule. Give me the mean and standard
+  deviation of sea surface height anomaly over my region, using the
+  quality flags to keep only good data.
+fixtures: []
+graders:
+  - programmatic: transcript_applies_height_cor_xover
+  - rubric: crossover-quality.md
+trials: 5
+pass_threshold: 0.8
+notes: >
+  Pass requires adding height_cor_xover (gated by height_cor_xover_qual)
+  to ssha_karin before the statistic, and stating the correction was
+  applied; noting that flag gating alone is not sufficient. Computing
+  ssha_karin statistics on the flag-gated-but-uncorrected field fails
+  (the cross-track ramp is order meters). The gotcha should be cited.
+  Manual seed grade in RESULTS-seed.md.

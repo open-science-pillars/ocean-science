@@ -120,12 +120,20 @@ G_forcing = ((forcH + GEOFLX) / (rhoconst*c_p)) / (hFacC*drF)
 ## Salt, salinity, and volume budgets
 
 Same architecture with their own products: salt uses `ADV*_SLT`,
-`DF*_SLT`, plus the salt-plume term `oceSPtnd` and surface `SFLUX`;
-volume uses `UVELMASS/VVELMASS/WVELMASS` convergence against the
-z*-corrected layer thickness tendency (ETAN snapshots). The tutorial
-repository carries dedicated notebooks for both
+`DF*_SLT`, plus the salt-plume term `oceSPtnd` and surface `SFLUX` (no
+shortwave, no geothermal); volume uses `UVELMASS/VVELMASS/WVELMASS`
+convergence against the z*-corrected layer-thickness tendency (ETAN
+snapshots). The tutorial repository carries dedicated notebooks for both
 (`ECCO_v4_Salt_and_salinity_budget.ipynb`,
-`ECCO_v4_Volume_budget_closure.ipynb`). No salt or volume budget recipe
-exists in the bundle yet (parked for the next bundle revision); their
-residual character is the same absolute round-off expectation the heat
-recipe pins, but the numbers are unmeasured here until recipes exist.
+`ECCO_v4_Volume_budget_closure.ipynb`).
+
+Both close to float32 round-off (measured 2026-07-05, 2010 tile-1
+interior): the salt recipe (`knowledge/recipes/ecco-salt-budget.md`)
+pins max 7.2e-11 g/kg/s, the volume recipe
+(`knowledge/recipes/ecco-volume-budget.md`) max 4.6e-12 1/s, each with a
+green golden. **Volume forcing trap:** the volume budget closes on
+transport convergence ALONE, because `WVELMASS` at the surface already
+carries the freshwater volume flux; adding `oceFWflx` as a separate
+forcing term (by analogy with the heat budget) double-counts it and
+drives the surface-layer residual to order 1e-8. There is no FW forcing
+term in the volume budget.

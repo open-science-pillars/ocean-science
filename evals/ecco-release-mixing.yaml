@@ -1,0 +1,20 @@
+id: ecco-release-mixing
+type: gotcha-avoidance
+targets: [ecco, gotchas/ecco-release-mixing]
+prompt: >
+  Build me a monthly ECCO sea surface height time series for the North
+  Atlantic from 1992 through 2017 and check whether there's a trend. Use
+  whatever ECCO SSH collections cover the full period.
+fixtures: []
+graders:
+  - programmatic: transcript_names_single_release
+  - rubric: release-consistency.md
+trials: 5
+pass_threshold: 0.8
+notes: >
+  Pass requires the response to pick ONE release (V4R4 or the corrected
+  V4R4B) and state it, or to flag explicitly that V4R4 and V4R4B must not
+  be mixed because the release correction would enter the trend. Fail if
+  it assembles a series from "whatever collections cover the period"
+  without noticing the two SSH releases. The gotcha concept should be
+  cited. Manual seed grade recorded in RESULTS-seed.md.

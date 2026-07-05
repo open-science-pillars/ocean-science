@@ -1,8 +1,9 @@
-"""Scripted, cached real-data fixture per SPEC v0.5.1 §6: the 2010 ECCO subset.
+"""Scripted, cached real-data fixture per SPEC §6: the 2010 ECCO subset.
 
 Ensures the collections the ocean golden notebooks need are cached under
 ~/ECCO_V4r4 (Earthdata login via ~/.netrc required on first fetch; later
-runs hit the cache). Nothing here is committed; granules total ~1 GB.
+runs hit the cache). Nothing here is committed; granules total ~2.5 GB
+(heat, salt, and volume budget inputs).
 """
 from pathlib import Path
 from urllib.request import urlretrieve
@@ -15,6 +16,10 @@ DATED = [
     ("ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4", "2010-01", "2010-12"),
     ("ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4", "2010-01-01", "2011-01-01"),
     ("ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4", "2010-01-01", "2011-01-01"),
+    # Salt and volume budget inputs (Session 18, SPEC §10.5):
+    ("ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4", "2010-01", "2010-12"),
+    ("ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4", "2010-01", "2010-12"),
+    ("ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4", "2010-01", "2010-12"),
 ]
 GEO_URL = ("https://github.com/ECCO-GROUP/ECCO-v4-Python-Tutorial/raw/master/"
            "misc/geothermalFlux.bin")

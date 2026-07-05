@@ -27,8 +27,13 @@ OKF v0.1 conformant per SPEC §5.
 - [SWOT orbit phases: cal/val and science data are not one record](gotchas/swot-calval-orbit-phases.md), severity high, status: verified
 - [GRACE mascon coastal leakage: land signal bleeds into ocean mascons](gotchas/grace-coastal-leakage.md), severity high, status: verified
 - [GRACE GIA correction: a model choice already baked into the product](gotchas/grace-gia-correction.md), severity medium, status: verified
+- [ECCO V4R4 vs V4R4B: mixing releases conflates corrections with signal](gotchas/ecco-release-mixing.md), severity high, status: verified
+- [ECCO meridional heat transport: no basin mask means the full latitude circle](gotchas/ecco-mht-basin-scope.md), severity high, status: verified
+- [SWOT KaRIn ssha_karin: crossover calibration arrives UNAPPLIED](gotchas/swot-crossover-unapplied.md), severity high, status: verified
 
 ## recipes
 
 - [Closed heat budget on the ECCO v4r4 native grid](recipes/ecco-heat-budget.md), status: verified
 - [Meridional heat transport at 26.5N from ECCO v4r4](recipes/ecco-mht-26n.md), status: verified
+- [Closed salt budget on the ECCO v4r4 native grid](recipes/ecco-salt-budget.md), status: verified
+- [Closed volume budget on the ECCO v4r4 native grid](recipes/ecco-volume-budget.md), status: verified
