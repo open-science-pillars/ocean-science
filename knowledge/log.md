@@ -2,6 +2,13 @@
 
 Newest first. One line per change: date, concept path, what changed, who.
 
+- 2026-07-04 · Session 7 close lint (incremental): zero 🔴, three new 🟡
+  resolved on steward decision: heat-budget recipe reworded to the
+  owned-by pattern (check 11), inputs expanded to exact ShortNames
+  (check 12), and the residual-threshold contradiction reconciled
+  (budget-formulation's unsupported 1e-9-relative claim corrected to
+  round-off/epsilon framing; recipe's 1e-6 relabeled as conservative
+  pass tolerance). Standing check-8 pair unchanged (Session 8b) · Session 7
 - 2026-07-04 · recipes/ecco-mht-26n.md, recipes/ecco-heat-budget.md
   authored with the live 2010 reproducing run (MHT 26.5N mean 1.098 PW,
   monthly series recorded) and tutorial provenance; steward review

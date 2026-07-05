@@ -6,12 +6,12 @@ tags: [ecco, heat-budget, closure, native-grid]
 timestamp: 2026-07-04
 inputs:
   - dataset: ../datasets/ecco-v4r4.md
-  - collections: "ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX (monthly), ECCO_L4_HEAT_FLUX (monthly), ECCO_L4_TEMP_SALINITY (snapshots), ECCO_L4_SSH (snapshots, ETAN), geometry granule"
+  - collections: "ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX_LLC0090GRID_MONTHLY_V4R4, ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4, ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4, ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4 (ETAN), ECCO_L4_GEOMETRY_LLC0090GRID_V4R4"
   - ancillary: "geothermalFlux.bin from the ECCO tutorial misc directory (not a PO.DAAC collection)"
   - method: "four terms exactly per skills/ecco/references/budget-formulation.md (tutorial-quoted, verified 2026-07-04)"
 expected:
   - quantity: "pointwise residual, tendency minus (advection + diffusion + forcing)"
-    statement: "machine precision for float32 fields: relative residual against the dominant term at or below 1e-6 at every wet cell, every month; the tutorial's closure demonstration shows order 1e-9"
+    statement: "residuals at numerical round-off: absolute residuals many orders below term magnitudes (tutorial demonstration); for float32 fields relative residuals sit near float32 epsilon, order 1e-7. Pass tolerance: relative residual against the dominant term at or below 1e-6 at every wet cell, every month (deliberately one order above epsilon)"
 expected_uncertainty:
   - quantity: "numerical tolerance"
     statement: "the residual expectation IS the uncertainty statement for this identity: pass at relative 1e-6, investigate above it using the formulation traps table (residual signatures map to specific omissions); closure failure is a formulation error, never data noise"
@@ -46,5 +46,6 @@ fixture cells against this recipe's tolerance.
 **Diagnosis on failure.** The budget-formulation traps table maps
 residual signatures to omissions (geothermal, z*, implicit diffusion,
 double hFac, monthly-mean bookends, seam differencing, regridded
-fields); the budget-closure skill carries the diagnosis discipline and
-the budget-auditor agent reviews every budget after computation.
+fields). (Diagnosis discipline and post-computation review are
+workflow behavior owned by the budget-closure skill and the
+budget-auditor agent, not by this concept.)

@@ -17,10 +17,12 @@ Per grid cell, in degC/s:
 G_total = G_advection + G_diffusion + G_forcing
 ```
 
-Residual expectation: machine precision pointwise (float32 fields;
-relative residuals around 1e-9 of term magnitude), at every cell, every
-month. A residual above that is a formulation error, not noise; check
-the traps table before blaming the data.
+Residual expectation: numerical round-off pointwise, at every cell,
+every month: absolute residuals many orders below the term magnitudes,
+and for float32 fields relative residuals near float32 epsilon (order
+1e-7). The recipe concept pins the pass tolerance (relative 1e-6, one
+order above epsilon); a residual above it is a formulation error, not
+noise; check the traps table before blaming the data.
 
 ## Constants and the volume element (tutorial values)
 
