@@ -2,6 +2,10 @@
 
 Newest first. One line per change: date, concept path, what changed, who.
 
+- 2026-07-04 · Session 10 close lint: zero 🔴, one 🟡 (two imperative
+  phrases in rapid-mocha.md), reworded to the declarative pattern per
+  standing steward precedent; cross-checks vs the MHT recipe and
+  compare-obs confirmed complementary, no contradictions · Session 10
 - 2026-07-04 · datasets/rapid-mocha.md LIVE-INGESTED via the operational
   loop: the Session 10 end-to-end discovered the MOCHA official page
   links a non-scriptable SharePoint share and the canonical scriptable

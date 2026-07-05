@@ -37,14 +37,14 @@ The published MHT uncertainty is about +/-0.2 PW on 10-day values
 0.3 to 0.4 PW) dominating comparison spreads; the recipe concept
 records the ECCO-comparison framing. Array-based transports carry
 structural terms (boundary-wedge and mid-ocean interpolation choices)
-that do not appear in the formal error; treat sub-0.1 PW distinctions
-against any model as beyond the method's resolution.
+that do not appear in the formal error; sub-0.1 PW distinctions
+against any model are beyond the method's resolution.
 
 ## Known issues
 
 - Product versions update the record end-date and can revise earlier
-  values; cite the version and DOI actually used (v.2020 verified
-  2026-07-04).
+  values; comparisons cite the version and DOI actually used (v.2020
+  verified 2026-07-04).
 - The 10-day-averaged native cadence requires explicit averaging-chain
   statements when compared against monthly model output (per the
   compare-obs alignment discipline).
