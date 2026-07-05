@@ -60,3 +60,17 @@ order are normal, not a defect.
   granules actually loaded are the only record of which baseline a
   subset came from, so consistency claims depend on their being
   captured at load time.
+- **Crossover calibration arrives UNAPPLIED in `ssha_karin` /
+  `ssh_karin`** (observed 2026-07-05 on PGD0 Expert-tier granules,
+  cycle 011): flag-gated statistics on the uncorrected field show a
+  spurious linear cross-track ramp of order meters (a roll/phase
+  systematic), and the granule metadata itself instructs adding
+  `height_cor_xover` (gated by `height_cor_xover_qual`). Swath or
+  regional statistics computed without that correction are silently
+  wrong; the corrected field on the same scene showed physically
+  sensible mesoscale structure (std 0.17 m vs the raw ramp's +/-2.9 m
+  span). Ingested from the Tutorial 2 fresh walkthrough.
+- CMR spatial search matches whole pole-to-pole passes; a matched pass
+  can carry zero in-box pixels, so regional statistics subset to the
+  region before any aggregation (observed on pass 011/424, same
+  walkthrough).

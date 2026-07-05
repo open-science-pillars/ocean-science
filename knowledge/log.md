@@ -2,6 +2,12 @@
 
 Newest first. One line per change: date, concept path, what changed, who.
 
+- 2026-07-05 · datasets/swot-karin.md Known issues extended via the
+  operational ingest loop (Tutorial 2 fresh walkthrough): crossover
+  calibration arrives unapplied in ssha_karin (spurious +/-2.9 m
+  cross-track ramp until height_cor_xover is added, observed PGD0
+  Expert cycle 011), and CMR spatial matches can be whole passes with
+  zero in-box pixels. Steward review passed (Paul Ramirez) · Session 11
 - 2026-07-04 · Session 10 close lint: zero 🔴, one 🟡 (two imperative
   phrases in rapid-mocha.md), reworded to the declarative pattern per
   standing steward precedent; cross-checks vs the MHT recipe and
