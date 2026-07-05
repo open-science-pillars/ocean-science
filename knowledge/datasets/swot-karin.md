@@ -56,5 +56,7 @@ order are normal, not a defect.
 - [swot-calval-orbit-phases](../gotchas/swot-calval-orbit-phases.md):
   orbit phases and the version-family trap.
 - Baseline drift within collections: CRIDs change as forward
-  processing and reprocessing interleave; record the crid values
-  actually loaded when consistency matters.
+  processing and reprocessing interleave; the `crid` attributes of the
+  granules actually loaded are the only record of which baseline a
+  subset came from, so consistency claims depend on their being
+  captured at load time.

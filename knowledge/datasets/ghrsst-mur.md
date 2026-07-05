@@ -31,8 +31,10 @@ apply).
 ## Uncertainty
 
 - **`analysis_error` is the product's own uncertainty estimate** (a
-  1-sigma standard deviation of the analyzed SST): quote it with any
-  MUR-derived result per the house rule.
+  1-sigma standard deviation of the analyzed SST); it is the native
+  uncertainty field that accompanies any MUR-derived result (reporting
+  it alongside results is workflow behavior owned by the core
+  uncertainty-quantification rules, not by this concept).
 - It is an ANALYSIS error: largest where observations were sparse
   (persistent cloud, high latitudes, ice edge) and it does not
   capture systematic retrieval biases or the smoothing itself.

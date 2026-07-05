@@ -2,6 +2,11 @@
 
 Newest first. One line per change: date, concept path, what changed, who.
 
+- 2026-07-04 · Session 8b full-bundle lint: zero 🔴; the Session-6
+  standing check-8 pair CLOSED (all four high gotchas now match real
+  eval cases); three check-11 rewordings applied on steward decision
+  (ghrsst-mur house-rule phrasing, ecco-v4r4 never-mix imperative,
+  swot-karin crid imperative). All 14 external URLs 200 this run · Session 8b
 - 2026-07-04 · six arc concepts authored and steward-verified
   (verified_by Paul Ramirez): swot-karin (granule-verified structure,
   crid attribute, 39% valid-fraction normalization), swot-calval-orbit-phases

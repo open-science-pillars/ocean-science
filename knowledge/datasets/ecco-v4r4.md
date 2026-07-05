@@ -66,4 +66,5 @@ provides no formal uncertainty for it.
 - [ecco-native-vs-regridded](../gotchas/ecco-native-vs-regridded.md)
 - [ecco-geothermal-flux](../gotchas/ecco-geothermal-flux.md)
 - Release variants: SSH and OBP have corrected `V4R4B` collections;
-  never mix releases silently (variable catalog, Variants section).
+  an analysis that mixes releases silently conflates baseline
+  corrections with signal (variable catalog, Variants section).
