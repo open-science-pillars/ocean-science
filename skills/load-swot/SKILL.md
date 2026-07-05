@@ -1,6 +1,6 @@
 ---
 name: load-swot
-description: Load SWOT KaRIn SSH regionally: parse region, cycles, tier; volume gate; flag decoding; swath-aware summary.
+description: "Load SWOT KaRIn SSH regionally: parse region, cycles, tier; volume gate; flag decoding; swath-aware summary."
 ---
 
 # load-swot

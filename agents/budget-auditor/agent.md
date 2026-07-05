@@ -1,6 +1,6 @@
 ---
 name: budget-auditor
-description: Audit an ocean property budget after computation: residuals against the recipe tolerance, geothermal gotcha first on heat-budget failures, formulation traps table. Proposes fixes; never modifies.
+description: "Audit an ocean property budget after computation: residuals against the recipe tolerance, geothermal gotcha first on heat-budget failures, formulation traps table. Proposes fixes; never modifies."
 tools: Read, Glob, Grep, Bash
 ---
 

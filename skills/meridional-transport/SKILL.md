@@ -1,6 +1,6 @@
 ---
 name: meridional-transport
-description: Meridional heat, volume, freshwater transport: section masks, overturning and gyre decomposition, RAPID comparison at 26.5N.
+description: "Meridional heat, volume, freshwater transport: section masks, overturning and gyre decomposition, RAPID comparison at 26.5N."
 user-invocable: false
 ---
 

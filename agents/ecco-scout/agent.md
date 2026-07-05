@@ -1,6 +1,6 @@
 ---
 name: ecco-scout
-description: Plan the data for an ocean research question: recommend ECCO/SWOT/GRACE/MUR collections, cite the knowledge concepts that bind the plan, estimate volumes. Never downloads; proposes only.
+description: "Plan the data for an ocean research question: recommend ECCO/SWOT/GRACE/MUR collections, cite the knowledge concepts that bind the plan, estimate volumes. Never downloads; proposes only."
 tools: Read, Glob, Grep, WebFetch
 ---
 

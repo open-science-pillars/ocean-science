@@ -1,6 +1,6 @@
 ---
 name: transport-analysis
-description: Meridional transport analysis: MHT at chosen latitudes, overturning streamfunction, expected range and spread from the recipe concept.
+description: "Meridional transport analysis: MHT at chosen latitudes, overturning streamfunction, expected range and spread from the recipe concept."
 ---
 
 # transport-analysis

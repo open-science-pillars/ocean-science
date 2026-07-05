@@ -1,6 +1,6 @@
 ---
 name: budget-closure
-description: Closed property budgets on native model grids: tendency, advection, diffusion, forcing terms; machine-precision residual expectations.
+description: "Closed property budgets on native model grids: tendency, advection, diffusion, forcing terms; machine-precision residual expectations."
 user-invocable: false
 ---
 

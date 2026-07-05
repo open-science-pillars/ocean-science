@@ -1,6 +1,6 @@
 ---
 name: ocean-indices
-description: Climate ocean indices: ENSO Nino regions, NAO, PDO, AMO definitions, computation and baseline conventions.
+description: "Climate ocean indices: ENSO Nino regions, NAO, PDO, AMO definitions, computation and baseline conventions."
 user-invocable: false
 ---
 

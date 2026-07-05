@@ -1,6 +1,6 @@
 ---
 name: compare-obs
-description: Compare model or state-estimate output against observations: RAPID, Argo climatologies, altimetry; consistent masking and uncertainty framing.
+description: "Compare model or state-estimate output against observations: RAPID, Argo climatologies, altimetry; consistent masking and uncertainty framing."
 ---
 
 # compare-obs

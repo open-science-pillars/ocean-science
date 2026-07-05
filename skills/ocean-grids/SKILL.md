@@ -1,6 +1,6 @@
 ---
 name: ocean-grids
-description: Ocean model grids: Arakawa C-grid, LLC tiles, cell geometry, xgcm, scalar vs vector regridding rules.
+description: "Ocean model grids: Arakawa C-grid, LLC tiles, cell geometry, xgcm, scalar vs vector regridding rules."
 user-invocable: false
 ---
 

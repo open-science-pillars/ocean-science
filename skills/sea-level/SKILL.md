@@ -1,6 +1,6 @@
 ---
 name: sea-level
-description: Sea level components: steric, manometric, GRACE ocean bottom pressure, altimetry SSH, budget closure caveats.
+description: "Sea level components: steric, manometric, GRACE ocean bottom pressure, altimetry SSH, budget closure caveats."
 user-invocable: false
 ---
 

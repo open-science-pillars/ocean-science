@@ -1,6 +1,6 @@
 ---
 name: water-masses
-description: Water mass identification: T-S diagrams, potential density surfaces, mode and deep waters, ventilation.
+description: "Water mass identification: T-S diagrams, potential density surfaces, mode and deep waters, ventilation."
 user-invocable: false
 ---
 

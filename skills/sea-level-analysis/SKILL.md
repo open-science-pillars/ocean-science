@@ -1,6 +1,6 @@
 ---
 name: sea-level-analysis
-description: Sea level analysis workflow: regional trends, steric vs manometric attribution, uncertainty on all headline rates.
+description: "Sea level analysis workflow: regional trends, steric vs manometric attribution, uncertainty on all headline rates."
 ---
 
 # sea-level-analysis

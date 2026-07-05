@@ -1,6 +1,6 @@
 ---
 name: ecco
-description: ECCO v4r4 ocean state estimate: LLC90 native grid, variable catalog and PO.DAAC ShortNames, budget formulation, dynamical consistency. Knowledge first.
+description: "ECCO v4r4 ocean state estimate: LLC90 native grid, variable catalog and PO.DAAC ShortNames, budget formulation, dynamical consistency. Knowledge first."
 user-invocable: false
 ---
 

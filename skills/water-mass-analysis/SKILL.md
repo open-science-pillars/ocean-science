@@ -1,6 +1,6 @@
 ---
 name: water-mass-analysis
-description: Water mass analysis workflow: T-S census, density-space transformation, volumetric inventories with uncertainty framing.
+description: "Water mass analysis workflow: T-S census, density-space transformation, volumetric inventories with uncertainty framing."
 ---
 
 # water-mass-analysis

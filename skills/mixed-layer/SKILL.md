@@ -1,6 +1,6 @@
 ---
 name: mixed-layer
-description: Mixed layer depth: density and temperature criteria, seasonal cycle, sensitivity to threshold choice.
+description: "Mixed layer depth: density and temperature criteria, seasonal cycle, sensitivity to threshold choice."
 user-invocable: false
 ---
 

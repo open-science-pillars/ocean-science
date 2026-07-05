@@ -1,6 +1,6 @@
 ---
 name: mixed-layer-analysis
-description: Mixed layer depth analysis workflow: criterion choice, seasonal climatology, trend with uncertainty.
+description: "Mixed layer depth analysis workflow: criterion choice, seasonal climatology, trend with uncertainty."
 ---
 
 # mixed-layer-analysis
