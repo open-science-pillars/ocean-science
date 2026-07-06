@@ -22,25 +22,29 @@ framing of the request.
 ## Behavior, in order
 
 1. **Parse and show back:** property (heat, salt, volume), domain,
-   period, depth range (full-depth vs upper-ocean changes the
-   geothermal and shortwave handling).
-2. **Knowledge first, restated:** the heat-budget recipe (inputs,
-   tolerance), the geothermal gotcha for heat budgets (the term is a
-   static ancillary, not a PO.DAAC collection), snapshots for
-   tendencies, and the native-grid rule above.
+   period, depth range.
+2. **Consult the bundle for THIS budget first.** Discover and read the
+   concepts that apply, do not restate them from memory: search
+   `knowledge/recipes/` for the property's budget recipe (its inputs
+   and its measured tolerance), and `knowledge/gotchas/` for the
+   gotchas that constrain it (for a heat budget, the geothermal term;
+   for any budget, the native-grid rule). Restate what applies and cite
+   each by path. If the property has no recipe in the bundle, its
+   tolerance is unvalidated and the budget says so.
 3. **Inputs check:** the recipe's exact collections present (via
-   load-ecco, gate and all), snapshot bookends covering the period,
-   the geothermal file for heat. Missing inputs stop the budget with
-   the list of what to fetch; no term gets approximated silently.
-4. **Compute the four terms** exactly per the budget-formulation
-   reference: z*-corrected tendency from snapshots; tile-aware
-   advective and diffusive convergences (explicit plus implicit
-   vertical); forcing with shortwave penetration and geothermal at the
-   bottom wet cell. Volume element rA * drF * hFacC.
-5. **Closure check against the recipe tolerance** (relative residual
-   at or below 1e-6 pointwise on wet cells). Domain-integrated closure
-   is asserted only on closed domains; open-domain integrals carry
-   boundary transports explicitly (SPEC §6 distinction).
+   load-ecco, gate and all), the snapshot bookends the recipe requires,
+   and every ancillary the applicable gotchas name. Missing inputs stop
+   the budget with the list of what to fetch; no term is approximated
+   silently.
+4. **Compute the terms** exactly per the budget-formulation reference
+   (`skills/ecco/references/budget-formulation.md`); that reference is
+   the authority for the term set and the corrections, not this skill.
+   Volume element rA * drF * hFacC.
+5. **Closure check against the recipe's tolerance,** read from the
+   recipe concept (it is an absolute, measured tolerance; never a
+   hardcoded relative ratio). Domain-integrated closure is asserted
+   only on closed domains; open-domain integrals carry boundary
+   transports explicitly (SPEC §6 distinction).
 6. **budget-auditor auto-runs on the result**: every budget, not just
    failing ones; on residual failure it checks the geothermal gotcha
    first, then the formulation traps table, and proposes fixes without
@@ -54,8 +58,15 @@ framing of the request.
 ## Must NOT
 
 - Never compute any budget on regridded fields, under any framing.
-- Never substitute monthly means for snapshot bookends.
-- Never omit geothermal from full-depth or deep heat budgets.
+  (Hard refusal: invariant, universal; the one rule that fires without
+  consulting anything.)
 - Never absorb a residual into a physical term or average it away.
-- Never hardcode the tolerance; read the recipe.
+- Never hardcode the tolerance or restate a gotcha's rule; read them
+  from the recipe and the gotcha concepts.
 - Never skip the auditor, even on green residuals.
+
+Dataset-specific rules (geothermal for deep heat budgets, snapshots for
+tendencies, the term formulation) are NOT restated here: they live in
+the recipe, the gotcha concepts, and the budget-formulation reference,
+and are consulted per step 2. That is what lets a corrected tolerance or
+a new budget gotcha change this skill's behavior without editing it.
