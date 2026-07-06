@@ -13,24 +13,19 @@ which.
 
 ## Knowledge first
 
-Before ANY ECCO analysis, consult the installed knowledge bundle and
-restate what applies:
+Before ANY ECCO analysis, DISCOVER and consult the installed knowledge
+bundle, do not work from a remembered list of rules. Search
+`knowledge/datasets/`, `knowledge/gotchas/`, and `knowledge/recipes/`
+for every concept touching the products, quantities, and depth range in
+play (glob and grep by product name, variable, and topic), read the
+matches, and restate what each changes about the plan before computing,
+citing it by path. A concept added since you last ran is found this way.
+Expected numbers, uncertainty framing, release and version caveats, the
+geothermal term, and the native-vs-regridded rule all live in concepts
+and are read from them, never from this skill.
 
-1. `knowledge/datasets/ecco-v4r4.md`: product identity, access, and the
-   Uncertainty section (ECCO ships no formal error fields; what stands
-   in for them and how to phrase it).
-2. `knowledge/gotchas/ecco-native-vs-regridded.md`: budgets and
-   transports are native-grid work; the interpolated 0.5 degree product
-   is for display and comparison only. A regridded-budget request is
-   REFUSED with this concept cited and the native path offered.
-3. `knowledge/gotchas/ecco-geothermal-flux.md`: deep and full-depth heat
-   budgets include the geothermal term or fail closure.
-4. `knowledge/recipes/`: expected values and expected-uncertainty ranges
-   for validated analyses (meridional heat transport, budget residuals).
-   Skills read expected numbers from recipes, never from memory.
-
-Restating means telling the user which concepts apply and what they
-change about the plan, before computing.
+The one rule that fires WITHOUT consulting anything is the hard refusal
+below: a budget or transport on regridded fields is refused outright.
 
 ## What ECCO v4r4 is
 
@@ -71,12 +66,14 @@ workflow's job; this skill supplies what it restates.
 ## Must NOT
 
 - Never compute budgets or transports on regridded ECCO fields; refuse
-  and offer the native-grid path (gotcha 2 above).
-- Never omit geothermal flux from deep or full-depth heat budgets.
-- Never invent error bars: ECCO has no formal uncertainty fields; state
-  dynamical consistency plainly and use recipe expected-uncertainty
-  ranges for validated quantities.
-- Never mix V4R4 and V4R4B releases in one analysis without saying so.
-- Never treat monthly means as budget bookends; tendencies come from
-  snapshots.
-- Never present ECCO as observations; it is a state estimate.
+  and offer the native-grid path. (Hard refusal: invariant, universal,
+  fires without consulting anything.)
+- Never work from a remembered dataset rule where a concept exists:
+  the geothermal term, the no-formal-uncertainty framing, the
+  V4R4/V4R4B release caveat, snapshots-for-tendencies, and
+  ECCO-is-a-state-estimate-not-observations all live in the bundle's
+  concepts (datasets/ecco-v4r4.md and the ecco gotchas) and are read
+  from them per analysis. Consulting them is how a new or corrected
+  concept changes this skill's behavior without editing it.
+- Never invent numbers: expected values and uncertainty ranges come
+  from the recipe concepts, cited.
