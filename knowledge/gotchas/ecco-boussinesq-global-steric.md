@@ -11,8 +11,10 @@ severity: medium
 # then requires the matching eval case (harness rule 9).
 dataset: ../datasets/ecco-v4r4.md
 evidence:
-  - "internal: relocated from ocean-science/skills/sea-level/SKILL.md during the knowledge-coupling migration, needs a steward evidence link"
-status: draft
+  - https://doi.org/10.1029/94JC00847
+status: verified
+verified: 2026-07-06
+verified_by: OSP steward review
 ---
 
 # ECCO is Boussinesq: global-mean steric sea level needs the mass-conservation correction

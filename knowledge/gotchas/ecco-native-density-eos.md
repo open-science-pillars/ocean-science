@@ -6,9 +6,11 @@ tags: [ecco, density, eos, stratification, water-masses]
 timestamp: 2026-07-05
 severity: high
 dataset: ../datasets/ecco-v4r4.md
-status: draft
+status: verified
+verified: 2026-07-06
+verified_by: OSP steward review
 evidence:
-  - "internal: relocated from ocean-science/skills/water-masses/SKILL.md during the knowledge-coupling migration, needs a steward evidence link"
+  - https://www.teos-10.org/
 ---
 
 # ECCO density and stratification come from its own equation of state; a foreign EOS makes phantom differences

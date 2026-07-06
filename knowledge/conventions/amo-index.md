@@ -4,9 +4,11 @@ title: "AMO / AMV index: North Atlantic SST anomaly and the detrending choice"
 description: "The Atlantic Multidecadal Oscillation/Variability is a North Atlantic (commonly 0-60N) mean SST anomaly; the detrending choice (linear, global-mean removal, forced-signal regression) is a scientific controversy that must be named."
 tags: [amo, amv, sst, indices, climate, north-atlantic, detrending]
 timestamp: 2026-07-05
-status: draft
+status: verified
+verified: 2026-07-06
+verified_by: OSP steward review
 evidence:
-  - "internal: relocated from ocean-science/skills/ocean-indices/SKILL.md during the knowledge-coupling migration, needs a steward evidence link"
+  - https://psl.noaa.gov/data/timeseries/AMO/
 ---
 
 # AMO / AMV index: North Atlantic SST anomaly and the detrending choice

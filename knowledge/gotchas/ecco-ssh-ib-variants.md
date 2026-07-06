@@ -11,8 +11,10 @@ severity: medium
 # Phase-1 eval case is specified yet, and steward review sets it if elevated.
 dataset: ../datasets/ecco-v4r4.md
 evidence:
-  - "internal: relocated from ocean-science/skills/sea-level-analysis/SKILL.md during the knowledge-coupling migration, needs a steward evidence link"
-status: draft
+  - https://github.com/open-science-pillars/ocean-science/blob/main/skills/ecco/references/variable-catalog.md
+status: verified
+verified: 2026-07-06
+verified_by: OSP steward review
 ---
 
 # ECCO SSH inverse-barometer variants: pick the convention and never mix them
@@ -38,8 +40,7 @@ so); the chosen variant is named in the methods convention block. The
 concrete variant list is read from the variable catalog at analysis
 time, since which variants exist is product state, not a fixed rule.
 
-**Verification.** The variable catalog's Variants section enumerates the
-SSH family and its conventions; this concept was relocated from the
-sea-level-analysis skill during the knowledge-coupling migration and
-needs a steward evidence link (PO.DAAC SSH collection pages and the ECCO
-v4 variable documentation).
+**Verification.** The variable catalog's Variants section (evidence)
+enumerates the SSH family and its conventions; the convention offset
+between `SSH` and `SSHNOIBC` is visible directly by differencing the two
+collections for any month.
