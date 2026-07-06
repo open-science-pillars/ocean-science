@@ -30,6 +30,19 @@ OKF v0.1 conformant per SPEC §5.
 - [ECCO V4R4 vs V4R4B: mixing releases conflates corrections with signal](gotchas/ecco-release-mixing.md), severity high, status: verified
 - [ECCO meridional heat transport: no basin mask means the full latitude circle](gotchas/ecco-mht-basin-scope.md), severity high, status: verified
 - [SWOT KaRIn ssha_karin: crossover calibration arrives UNAPPLIED](gotchas/swot-crossover-unapplied.md), severity high, status: verified
+- [ECCO SSH inverse-barometer variants: pick the convention and never mix them](gotchas/ecco-ssh-ib-variants.md), severity medium, status: draft
+- [ECCO Boussinesq global-mean steric correction](gotchas/ecco-boussinesq-global-steric.md), severity medium, status: draft
+- [ECCO MXLDEPTH uses the model's own MLD criterion](gotchas/ecco-mxldepth-criterion.md), severity medium, status: draft
+- [ECCO native-grid density and equation of state](gotchas/ecco-native-density-eos.md), severity medium, status: draft
+
+## conventions
+
+- [Mixed layer depth criteria](conventions/mld-criteria.md), status: draft
+- [Sea level budget closure](conventions/sea-level-budget-closure.md), status: draft
+- [ENSO SST indices (Nino regions, ONI)](conventions/enso-sst-indices.md), status: draft
+- [NAO index](conventions/nao-index.md), status: draft
+- [PDO index](conventions/pdo-index.md), status: draft
+- [AMO index](conventions/amo-index.md), status: draft
 
 ## recipes
 

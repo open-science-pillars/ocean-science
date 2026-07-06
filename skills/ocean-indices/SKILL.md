@@ -15,48 +15,23 @@ Region, variable, baseline, filtering, and detrending together ARE the
 index; change any one and it is a different time series that happens to
 share the name. Computing an index means implementing a specific
 published definition and citing it; comparing indices means confirming
-the definitions match.
+the definitions match. (Invariant method, not a dataset fact: it stays
+here as procedure.)
 
-## ENSO
+## Consult the bundle for this index
 
-- **Nino regions:** Nino3.4 (5S-5N, 170W-120W) is the default SST
-  index region; Nino3 (150W-90W), Nino4 (160E-150W), Nino1+2
-  (0-10S, 90W-80W) emphasize different flavors of events.
-- **ONI** (the operational El Nino definition) is the 3-month running
-  mean of Nino3.4 SST anomalies with a distinctive convention: the
-  base period is a set of centered 30-year climatologies UPDATED every
-  five years, so ONI values are not anomalies against one fixed
-  baseline. Reproducing ONI requires reproducing that updating scheme.
-- **Relative SST indices** (region anomaly minus tropical-mean
-  anomaly) exist because a warming mean state inflates fixed-baseline
-  indices; when classifying events across decades, name which family
-  is in use.
-
-## NAO
-
-Two inequivalent families: station-based (Azores or Lisbon minus
-Iceland sea level pressure; long records, fixed points, noisier) and
-EOF-based (leading EOF of North Atlantic SLP; pattern adapts to the
-data and era). They diverge in trend and variance behavior; sign
-convention (positive = strengthened gradient) must be stated because
-EOF signs are arbitrary until fixed.
-
-## PDO
-
-The leading EOF of North Pacific (poleward of 20N) monthly SST
-anomalies WITH the global-mean SST anomaly removed first; skipping the
-global-mean removal folds the warming trend into the "PDO" and is the
-most common reproduction error. The projection index is standardized;
-state the EOF training period.
-
-## AMO / AMV
-
-North Atlantic (commonly 0-60N) mean SST anomaly, where the detrending
-choice is the scientific controversy: linear detrending, global-mean
-removal, or forced-signal regression yield visibly different decadal
-narratives. There is no neutral choice; name it and, for conclusions
-that depend on it, show at least one alternative (the sensitivity
-discipline mirrors mixed-layer's).
+Before computing ANY index, DISCOVER and consult the installed
+knowledge bundle; do not work from a remembered definition, region box,
+baseline rule, or reproduction caveat. Glob and grep
+`knowledge/conventions/` (and the rest of `knowledge/`) by index name
+(enso, nino, oni, nao, pdo, amo, amv) and by topic (region, baseline,
+detrending, eof), read every concept that applies, and restate what
+each fixes about the plan before computing, citing it by path. The
+region coordinates, the ONI updating-baseline convention, the two NAO
+families, the PDO global-mean-removal requirement, and the AMO
+detrending controversy all live in concepts and are read from them, not
+carried here. A concept added or corrected since you last ran is found
+this way and changes this skill's behavior without editing it.
 
 ## Computation and baseline conventions
 
@@ -67,13 +42,24 @@ calendars convention concept (conceptual reference; the core plugin is
 a peer install). Running means lose endpoints and correlate adjacent
 values; filtering is stated with window and type, and filtered series
 inherit the autocorrelation caveats of basic-statistics' trend rules.
+(Invariant method referencing peer conventions; no index-specific
+numbers live here.)
 
-## Must NOT
+## Must NOT (hard refusals)
+
+These fire without consulting anything: each is invariant across
+indices and eras, refusal-shaped, and wrong regardless of which product
+supplied the SST or SLP field.
 
 - Never call a nonstandard region, baseline, or filtering by a
   standard index name.
 - Never compare index series computed against different baselines or
   detrending choices as if interchangeable.
-- Never compute PDO without removing the global-mean SST signal.
-- Never present AMO conclusions without naming the detrending choice.
 - Never smooth without stating window and type.
+
+Index-specific rules (the Nino region boxes and ONI baseline scheme,
+the NAO family split and sign convention, the PDO global-mean-removal
+requirement, the AMO detrending-naming discipline) are NOT restated
+here: they live in `knowledge/conventions/` and are consulted per the
+step above. That is what lets a corrected definition or a new index
+concept change this skill's behavior without editing it.

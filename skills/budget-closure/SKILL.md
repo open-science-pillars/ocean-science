@@ -6,10 +6,28 @@ user-invocable: false
 
 # budget-closure
 
-Background expertise for property budgets that actually close. The ECCO heat
-budget's exact terms live in `skills/ecco/references/budget-formulation.md`;
-expected residuals live in recipe concepts; this skill carries the
-architecture and the diagnosis discipline.
+Background expertise for property budgets that actually close. This skill
+carries the architecture and the diagnosis discipline; the exact terms,
+constants, and expected residuals are dataset knowledge and live in the
+bundle's recipe and gotcha concepts and in the ECCO budget-formulation
+reference, consulted per the step below, never carried here.
+
+## Consult the bundle for this budget
+
+Before diagnosing or blessing any budget, DISCOVER and read the applicable
+concepts; do not work from a remembered list or carry a number here. Glob and
+grep `knowledge/recipes/` for the property's budget recipe (heat, salt, or
+volume) and take the expected residual, its tolerance, and its provenance from
+there, restating and citing by path. Glob and grep `knowledge/gotchas/` for
+the gotchas that constrain the property (for heat, the geothermal term; for any
+budget, the native-vs-regridded rule) and restate what each changes about the
+plan. The exact term formulation, the z* correction, shortwave penetration, and
+the traps table are quoted in `skills/ecco/references/budget-formulation.md`;
+consult it for the terms. A concept or tolerance added or corrected since you
+last ran is found this way, which is what lets it change this skill's behavior
+without editing this file. A residual above the recipe's stated expectation is
+a formulation error to diagnose, never noise to average away, and "small
+compared to the terms" is not a closure criterion.
 
 ## What closure means
 
@@ -40,36 +58,28 @@ hand before promising closure.
    most models.
 4. **Forcing** enters where physics put it: penetrating shortwave
    distributed over depth, other surface fluxes in the top layer,
-   geothermal at the bottom wet cell (heat budgets only).
-
-## Residual expectations come from recipes
-
-The expected residual for a validated budget is stated in its recipe
-concept (for ECCO heat: `knowledge/recipes/ecco-heat-budget.md`), with
-provenance. Consult the recipe and compare against its stated
-expectation; a residual above it is a formulation error to diagnose,
-never noise to average away, and "small compared to the terms" is not a
-closure criterion.
+   geothermal at the bottom wet cell (heat budgets only). The dataset
+   specifics of each term are read from the concepts per the step above.
 
 ## Diagnosing non-closure by signature
 
-Work the signature, not guesswork (the ECCO-specific traps table in
-budget-formulation.md maps these):
+Work the signature, not guesswork; the property's recipe and the traps
+table in the budget-formulation reference map these in dataset-specific
+detail, consulted per the step above:
 
 - Residual grows with depth, concentrates at the seafloor: missing
-  bottom forcing (geothermal, for heat).
+  bottom forcing (for heat, the geothermal term; consult its gotcha).
 - Residual surface-intensified and tracking sea level variability:
   missing free-surface (z*) correction in the tendency.
 - Residual only along tile or fold seams: index-space differencing
-  where topology-aware operators were needed.
+  where topology-aware operators were needed (see ocean-grids).
 - Residual proportional to a term near topography: partial cells
   (hFac) applied twice or not at all.
 - Residual roughly the within-month evolution: monthly means used as
   tendency bookends instead of snapshots.
-- Residual everywhere, same order as the terms: computed on regridded
-  fields; no correct formulation exists there (the
-  ecco-native-vs-regridded gotcha; refusal is the ocean-budget
-  workflow's job).
+- Residual everywhere, same order as the terms: fields were regridded;
+  consult the native-vs-regridded gotcha (refusing regridded budgets is
+  the ocean-budget workflow's job).
 
 ## Pointwise vs domain-integrated
 
@@ -82,17 +92,32 @@ test. SPEC §6 encodes this for verification.
 
 ## Discipline
 
-Budget results report all terms plus the residual against the recipe
-expectation, and the budget-auditor agent reviews any budget after
-computation (checking the geothermal gotcha first on heat-budget
-failures); it proposes fixes, never applies them.
+Budget results report all terms plus the residual against the recipe's
+stated expectation, and the budget-auditor agent reviews any budget
+after computation (consulting the applicable gotchas first, the
+geothermal term first on heat-budget failures); it proposes fixes,
+never applies them.
 
-## Must NOT
+## Hard refusals
 
-- Never hardcode an expected residual; read the recipe concept.
-- Never accept "residual is small relative to terms" as closure.
-- Never compute tendencies from monthly means.
+These fire regardless of dataset; they are invariant, refusal-shaped,
+and universal, not dataset facts:
+
+- Never bless a budget computed on regridded fields; no correct
+  formulation exists there. (Consult the native-vs-regridded gotcha for
+  the mechanism; the outright refusal of such a request is the
+  ocean-budget workflow's.)
+- Never accept "residual is small relative to the terms" as closure.
+- Never compute tendencies from consecutive monthly means; tendency
+  comes from state snapshots at the interval boundaries.
 - Never omit the implicit vertical diffusion term.
-- Never assert domain-integrated closure on an open domain without
-  boundary fluxes.
-- Never attempt a budget on regridded fields.
+- Never assert domain-integrated closure on an open domain without the
+  boundary transport term.
+- Never hardcode an expected residual; read it from the recipe concept.
+
+Dataset-specific rules (the geothermal term, the exact term formulation
+and constants, the z* and shortwave corrections, the measured residual
+tolerances) are NOT restated here: they live in the recipe concepts, the
+ECCO gotchas, and `skills/ecco/references/budget-formulation.md`,
+consulted per the step above. That is what lets a corrected tolerance or
+a new budget gotcha change this skill's behavior without editing it.

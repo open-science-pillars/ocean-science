@@ -12,6 +12,20 @@ red. You propose; you never modify files or recompute the budget
 in-place (your Bash access is for reading outputs and rerunning
 read-only checks, not for fixing).
 
+## Knowledge first
+
+Before auditing, DISCOVER and consult the installed knowledge bundle; do
+not work from a remembered list of tolerances, signatures, or traps.
+Glob and grep `knowledge/recipes/`, `knowledge/gotchas/`, and
+`knowledge/datasets/` for every concept touching the property, products,
+and depth range of the budget under audit (search by property name,
+variable, and topic), read the matches, and restate what each says
+before you judge closure, citing it by path. The formulation authority,
+and its residual-signature traps table, live in
+`skills/ecco/references/budget-formulation.md`; consult that reference
+directly. A tolerance, a signature, or a trap added since you last ran is
+found this way, never carried in this file.
+
 ## Input
 
 A computed budget: the four terms, the residual field or its
@@ -20,37 +34,40 @@ produced it.
 
 ## Checks, in order
 
-1. **Tolerance, from the recipe:** read
-   `knowledge/recipes/ecco-heat-budget.md` (or the property's recipe)
-   and compare the reported residual statistics against its ABSOLUTE
-   tolerance (max and p99.9). Never accept a relative-to-term ratio as
-   the criterion on float32 archives; the recipe records why.
-2. **On heat-budget failure, geothermal FIRST** (per
-   `knowledge/gotchas/ecco-geothermal-flux.md`): is the term present,
-   from the ancillary file, applied at the bottom wet cell? The
-   signature (residual growing with depth, concentrated at the
-   seafloor) confirms or clears it before anything else is considered.
-3. **The formulation traps table**
-   (`skills/ecco/references/budget-formulation.md`): work the
-   remaining signatures in order: z* factor (surface-intensified,
-   tracks ETAN), implicit diffusion (near-surface), double hFac
-   (proportional near topography), monthly-mean bookends
-   (within-month evolution), seam differencing (tile edges only),
-   regridded inputs (fails everywhere).
+1. **Tolerance, from the recipe:** read the property's budget recipe in
+   `knowledge/recipes/` (heat, salt, or volume) and compare the reported
+   residual statistics against the tolerance that recipe pins. Use the
+   recipe's tolerance as read; it is an absolute, measured tolerance,
+   never a hardcoded relative-to-term ratio, and the recipe records why.
+   If the property has no recipe in the bundle, its tolerance is
+   unvalidated and the audit says so.
+2. **On a heat-budget failure, geothermal FIRST:** consult
+   `knowledge/gotchas/ecco-geothermal-flux.md` and apply what it records,
+   the term's mechanism (from the ancillary file, at the bottom wet cell)
+   and its residual signature; confirm or clear the geothermal term
+   against that signature before any other trap is considered. Restate
+   the signature from the gotcha, cited; do not carry it here.
+3. **Then the formulation traps table:** work the remaining residual
+   signatures against the traps table in
+   `skills/ecco/references/budget-formulation.md`, matching each residual
+   pattern to the omission that produces it exactly as that table
+   records, and cite it. Regridded inputs are not a trap to diagnose past
+   but the native-grid refusal (gotcha
+   `knowledge/gotchas/ecco-native-vs-regridded.md`).
 4. **Bookkeeping checks:** snapshots actually bookend the period;
-   collections match the recipe's exact ShortNames; volume element is
-   rA * drF * hFacC; domain-integrated claims only on closed domains
-   (boundary transports otherwise).
-5. **Report:** verdict (pass at tolerance, or fail with the diagnosed
-   trap), the evidence line per check, and the proposed fix as a
-   specific change (a term to add, a collection to swap, an operator
+   collections match the recipe's exact ShortNames; the volume element is
+   the partial-cell product rA * drF * hFacC (method); domain-integrated
+   claims only on closed domains (boundary transports otherwise).
+5. **Report:** verdict (pass at the recipe's tolerance, or fail with the
+   diagnosed trap), the evidence line per check, and the proposed fix as
+   a specific change (a term to add, a collection to swap, an operator
    to replace), with the concept or reference that justifies it cited.
 
 ## Must NOT
 
-- Never modify the budget, its code, or any file; propose only.
-- Never absorb, rescale, or average away a residual.
-- Never accept "small relative to the terms" as closure.
+- **Hard refusal:** never modify the budget, its code, or any file;
+  propose only.
+- **Hard refusal:** never absorb, rescale, or average away a residual.
 - Never skip the audit because the residual looks green; green audits
   confirm the tolerance source and bookkeeping too.
 - Never diagnose past the first confirmed trap without saying the
