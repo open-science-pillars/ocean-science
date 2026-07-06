@@ -4,6 +4,8 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-07-06 · steward addition: re-synced grace-fo-mascons and ecco-v4r4 snapshots from canonical (mascon-resolution caveat; THETA/SALT flavor; double-hFac trap). Byte-identical.
+
 - 2026-07-06 · steward review PASSED: the 10 migration-draft concepts (mld-criteria, sea-level-budget-closure, enso/nao/pdo/amo indices, ecco-ssh-ib-variants, ecco-boussinesq-global-steric, ecco-mxldepth-criterion, ecco-native-density-eos) promoted draft to status: verified (verified_by OSP steward review); placeholder evidence replaced with resolving sources (NOAA CPC/NCEI/PSL for indices, published DOIs, TEOS-10, USGS, DataCite, pymannkendall, GRACE JPL, the ECCO variable catalog).
 
 - 2026-07-05 · knowledge-coupling migration (PARKING #14): the ocean skills

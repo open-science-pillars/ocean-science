@@ -27,6 +27,10 @@ variable catalog (51 llc90 collections verified against CMR
 
 **Structure.** Native output dims `(time, tile, k, j, i)` with 2D
 curvilinear coordinates; C-grid staggering; partial cells (hFac).
+Tracer flavors: `THETA` is potential temperature, `SALT` is practical
+salinity (PSS-78). Flux variables with a MASS suffix (or documented as
+cell-integrated) already carry hFac; applying the partial-cell factor a
+second time double-counts it, a standard budget bug.
 Convenience 0.5 degree interpolated collections exist (`05DEG` in the
 ShortName) for display and comparison; conservation properties live
 only on the native grid (see

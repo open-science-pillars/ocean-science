@@ -43,6 +43,10 @@ GRACE-to-GRACE-FO gap).
 - Averaging mascons reduces noise slower than white-noise intuition
   suggests (mascon errors are spatially correlated); basin averages
   quote the product's guidance, not sqrt(N).
+- **Native resolution is the mascon, not the grid cell** (order 300 km
+  spherical caps): a basin whose area approaches or falls below the
+  mascon scale is resolution- and leakage-dominated, so state the
+  resolution and leakage caveats before delivering its TWS series.
 
 ## Known issues
 
