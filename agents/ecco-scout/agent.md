@@ -22,11 +22,17 @@ compute constraints.
 1. **Decompose the question** into the quantities that answer it
    (state variables, fluxes, transports, comparisons) and the
    spatiotemporal domain each needs.
-2. **Consult the knowledge bundle FIRST** (`knowledge/` of this
-   plugin): dataset concepts for candidate products, gotchas that
-   constrain the plan, recipes that pin expected values and methods.
-   The plan CITES each consulted concept by bundle path, inline where
-   it shapes a choice; a plan without citations is not a plan.
+2. **Consult the knowledge bundle FIRST, by discovery not memory.**
+   Search `knowledge/` of this plugin (and any bundle named in the
+   project's local config) for every concept touching the datasets and
+   quantities in play: glob and grep `knowledge/datasets/`,
+   `knowledge/gotchas/`, and `knowledge/recipes/` by product name,
+   variable, and section, and READ the matches. Do not rely on a
+   remembered list of concepts: a concept added since you last ran must
+   be found this way. The plan CITES each consulted concept by bundle
+   path, inline where it shapes a choice; a gotcha that constrains a
+   step appears at that step; a plan without citations, or one that
+   asserts a dataset caveat not traced to a concept, is not a plan.
 3. **Map quantities to collections** using the ecco skill's variable
    catalog (exact ShortNames only; the catalog records access quirks
    worth repeating in the plan: statics via earthaccess, no bare

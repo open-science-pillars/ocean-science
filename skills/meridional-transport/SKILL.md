@@ -6,19 +6,14 @@ user-invocable: false
 
 # meridional-transport
 
-Background expertise for meridional transports that are computed
-natively and framed honestly. Expected values and spreads live in recipe
-concepts; grid mechanics live in ocean-grids and the llc90 reference.
-
-## Scope: a latitude line without a basin mask is the full circle
-
-Section machinery given only a latitude computes the ENTIRE latitude
-circle, all basins. Basin-scoped transports (the Atlantic for any RAPID
-comparison) require the basin mask explicitly, and per-basin values sum
-to the circle total (verified on ECCO 2010: Atlantic 0.666 + Pacific
-0.430 + Indian 0.002 = 1.098 PW at 26.5N). Quoting a full-circle number
-against a single-basin observation is a scope error that looks
-plausible; the recipe concept records both scopes with anchors.
+Background expertise for the METHOD of computing meridional transports
+natively and framing them honestly. Dataset-specific facts (basin scope
+of a given product, expected values, the RAPID-comparison discipline)
+are not restated here: they live in the knowledge bundle
+(`knowledge/gotchas/` and `knowledge/recipes/`) and are consulted per
+analysis by the transport-analysis workflow and the ecco-scout agent.
+Grid mechanics live in ocean-grids and the llc90 reference; expected
+values and spreads live in recipe concepts.
 
 ## Sections are masks, not index rows
 
@@ -67,18 +62,15 @@ convention used.
 
 ## The RAPID comparison at 26.5N
 
-The RAPID-MOCHA array at 26.5N observes AMOC transport and MHT
-continuously since April 2004: the standard ground truth for Atlantic
-sections. The comparison discipline: compute the model section at
-26.5N, compare the mean and variability against the recipe concept
-`knowledge/recipes/ecco-mht-26n.md`, which carries the expected range,
-the expected-uncertainty (the RAPID-comparison spread), and validation
-provenance. The recipe is the authority; this skill carries no
-expected ranges or spreads of its own (the basin values quoted under
-Scope are the recipe's anchors, cited for the sum identity).
-Time-sampling matters in the comparison: a single
-year's mean sits inside a wider envelope than a multi-year mean, and
-ECCO's 1992-2017 window overlaps RAPID only from 2004.
+The RAPID-MOCHA array at 26.5N is the standard ground truth for
+Atlantic sections. The METHOD discipline: compute the model section,
+then consult the section's recipe and gotcha concepts in the knowledge
+bundle for what to compare against (expected range, spread, the basin
+scope the observation uses, validation provenance) and cite them; this
+skill carries no expected ranges, spreads, or product-specific scope
+rules of its own. Time-sampling matters generally: a single year's mean
+sits inside a wider envelope than a multi-year mean, and a model window
+overlaps an observational array only where their periods intersect.
 
 ## Must NOT
 

@@ -8,22 +8,26 @@ description: "Meridional transport analysis: MHT at chosen latitudes, overturnin
 Compute meridional transports and judge them against validated
 expectations.
 Works by slash command or conversationally ("what's the heat transport
-at 26.5N?"). The methods authority is the meridional-transport skill;
-the numbers authority is `knowledge/recipes/ecco-mht-26n.md` (and
-future recipe concepts for other sections); this skill carries no
-expected values of its own.
+at 26.5N?"). The method authority is the meridional-transport skill;
+the dataset knowledge (expected values, scope, caveats) is the knowledge
+bundle, discovered per analysis. This skill carries no dataset facts of
+its own.
 
 ## Behavior, in order
 
 1. **Parse and show back:** quantity (heat, volume, freshwater,
    overturning streamfunction), latitude or named section, period,
    basin scope.
-2. **Knowledge first, restated:** the recipe concept for the section
-   when one exists (expected range AND expected-uncertainty, quoted
-   with citation); meridional-transport's rules that bind the request
-   (flux diagnostics over reconstructed v-times-theta, mass-balance
-   caveat for heat, Eulerian-plus-bolus for totals); the ecco-v4r4
-   concept's no-formal-errors framing.
+2. **Consult the knowledge bundle for this section and dataset FIRST.**
+   Do not rely on memorized rules: discover the applicable concepts by
+   searching `knowledge/` (gotchas that constrain this section, the
+   recipe that pins its expected values and spread, the dataset
+   concept's uncertainty framing), read them, restate what applies to
+   the request, and cite each by bundle path. If the ecco-scout agent
+   is available, its plan already carries these citations; otherwise do
+   the discovery here. A section whose scope, expected range, or
+   comparison discipline is not found in the bundle is flagged as
+   unvalidated, not guessed.
 3. **Inputs via load-ecco** (gated): 3D temperature fluxes for heat,
    volume fluxes for volume and streamfunction, geometry merged.
 4. **Compute natively:** section masks over faces (ecco_v4_py section
