@@ -4,6 +4,17 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-07-05 · knowledge-coupling migration (PARKING #14): the ocean skills
+  were slimmed to procedure + hard refusals and their dataset knowledge moved
+  to concepts. 10 new DRAFT concepts authored by the migration workflow (6
+  conventions: mld-criteria, sea-level-budget-closure, enso/nao/pdo/amo indices;
+  4 ECCO gotchas: ssh-ib-variants, boussinesq-global-steric, mxldepth-criterion,
+  native-density-eos), reconciled from workflow duplicates. Drafts need steward
+  review: real evidence links (some carry a relocated-from-skill placeholder),
+  severity calibration + eval cases for any promoted to high, and four facts to
+  add to protected concepts (GRACE ~300km resolution, THETA/SALT flavor gloss,
+  double-hFac). Byte-identity of the podaac mirror preserved.
+
 - 2026-07-05 · steward review PASSED: the five Session-18 concepts
   (recipes/ecco-salt-budget.md, recipes/ecco-volume-budget.md, and gotchas/
   ecco-release-mixing.md, ecco-mht-basin-scope.md, swot-crossover-unapplied.md)

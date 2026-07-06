@@ -16,15 +16,16 @@ merged, gated on volume, gotchas restated. Works by slash command or conversatio
    an interactive picker that hangs scripted use), time range,
    time resolution (monthly, daily, snapshot), release (V4R4; the
    V4R4B rows for SSH and OBP per the catalog's Variants section).
-2. **Knowledge first, restated:** the ecco-v4r4 dataset concept (no
-   formal error fields; what stands in); native-vs-regridded when the
-   request or downstream intent touches budgets or transports; the
-   release note when SSH or OBP is involved; snapshots-not-monthly-means
-   when the intent is a budget tendency.
+2. **Consult the bundle for this load first.** Discover and read the
+   ECCO concepts that apply (glob `knowledge/`): the dataset concept for
+   the products, the gotchas the request or downstream intent triggers
+   (native-vs-regridded for budgets/transports, the release caveat for
+   SSH or OBP, snapshots-for-tendencies for budgets), and the variable
+   catalog's access quirks. Restate what applies and cite; do not carry
+   these facts in this skill.
 3. **Search before fetching:** granule count and estimated volume
-   BEFORE any download, via the time-ranged ecco_access path for dated
-   collections and earthaccess directly for statics (geometry, mixing
-   coefficients), per the catalog's access-pattern quirks.
+   BEFORE any download, using the access path the variable catalog
+   records for dated vs static collections.
 4. **The volume gate.** Threshold from the project local config
    (template default 2 GB). At or below: state count, size,
    destination, proceed. Above: STOP, present count, total size,
@@ -46,9 +47,11 @@ merged, gated on volume, gotchas restated. Works by slash command or conversatio
 ## Must NOT
 
 - Never download above the gate threshold without explicit
-  confirmation, on any surface.
-- Never query ecco_access with bare variable names or fetch statics
-  through it (catalog access-pattern quirks, observed 2026-07-04).
-- Never deliver native-grid data without the geometry merged.
-- Never mix V4R4 and V4R4B collections in one load without saying so.
-- Never load monthly means when the stated purpose needs snapshots.
+  confirmation, on any surface. (Hard gate: fires without consulting
+  anything.)
+- Never deliver native-grid data without the geometry merged. (Load
+  procedure.)
+- Never restate a dataset rule this skill could consult: the access
+  quirks (bare-name queries, statics path), the V4R4/V4R4B release
+  caveat, and the snapshots-vs-monthly-means rule live in the variable
+  catalog and the ecco concepts, and are read from them per load.
