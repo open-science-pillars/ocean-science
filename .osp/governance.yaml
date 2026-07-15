@@ -1,0 +1,13 @@
+schema_version: 1
+repository: ocean-science
+maintainers:
+  users: [PaulMRamirez]
+  teams: []
+  status: interim
+roadmap:
+  proposals: enabled
+  authority: repository-maintainers
+reviews:
+  ordinary: 1
+  cross_repository: org-policy
+  knowledge: org-knowledge-policy
