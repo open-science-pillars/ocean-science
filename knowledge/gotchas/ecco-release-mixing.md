@@ -3,17 +3,24 @@ type: dataset-gotcha
 title: "ECCO V4R4 vs V4R4B: mixing releases conflates corrections with signal"
 description: "SSH and OBP ship corrected V4R4B collections alongside V4R4; a time series or comparison spanning both silently mixes a baseline correction into the signal."
 tags: [ecco, v4r4, v4r4b, release, ssh, obp]
-timestamp: 2026-07-05
+generated: { by: knowledge-seeder/claude, at: 2026-07-05T00:00:00Z }
 severity: high
 dataset: ../datasets/ecco-v4r4.md
 eval_case: ecco-release-mixing
-evidence:
-  - https://podaac.jpl.nasa.gov/dataset/ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4
-  - https://podaac.jpl.nasa.gov/dataset/ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4B
-  - https://github.com/open-science-pillars/ocean-science/blob/main/skills/ecco/references/variable-catalog.md
-status: verified
-verified: 2026-07-05
-verified_by: OSP steward review
+sources:
+  - id: nasa-ecco-l4-ssh-llc0090grid-monthly-v4r4
+    resource: https://podaac.jpl.nasa.gov/dataset/ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4
+    title: "PO.DAAC collection page: ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4"
+  - id: nasa-ecco-l4-ssh-llc0090grid-monthly-v4r4b
+    resource: https://podaac.jpl.nasa.gov/dataset/ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4B
+    title: "PO.DAAC collection page: ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4B"
+  - id: github-variable-catalog
+    resource: https://github.com/open-science-pillars/ocean-science/blob/main/skills/ecco/references/variable-catalog.md
+    title: "OSP ocean-science reference: ECCO v4r4 variable catalog (llc90 native grid)"
+    author: human:PaulMRamirez
+status: stable
+verified: { by: human:PaulMRamirez, at: 2026-07-05T00:00:00Z }
+stale_after: 2027-01-04
 ---
 
 # ECCO V4R4 vs V4R4B: mixing releases conflates corrections with signal
@@ -21,7 +28,7 @@ verified_by: OSP steward review
 **Mechanism.** For sea surface height and ocean bottom pressure, PO.DAAC
 publishes a corrected `V4R4B` collection alongside the original `V4R4`
 (both live in CMR; the V4R4B SSH collection page resolves, evidence
-above). V4R4B carries a baseline correction to those fields. The two
+above).[^nasa-ecco-l4-ssh-llc0090grid-monthly-v4r4][^nasa-ecco-l4-ssh-llc0090grid-monthly-v4r4b] V4R4B carries a baseline correction to those fields. The two
 collections are separate ShortNames, not a silent in-place update.
 
 **Wrong-result mode.** An SSH or OBP series, trend, or comparison
@@ -37,5 +44,9 @@ fields have no B variant, so V4R4 is their release, and any cross-field
 mix is stated. Each field's release is named.
 
 **Verification.** Both collection pages resolve as distinct ShortNames
-(evidence); the variable catalog's Variants section records which
-fields have a B release.
+(evidence)[^nasa-ecco-l4-ssh-llc0090grid-monthly-v4r4][^nasa-ecco-l4-ssh-llc0090grid-monthly-v4r4b]; the variable catalog's Variants section records which
+fields have a B release.[^github-variable-catalog]
+
+[^nasa-ecco-l4-ssh-llc0090grid-monthly-v4r4]: PO.DAAC collection page: ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4
+[^nasa-ecco-l4-ssh-llc0090grid-monthly-v4r4b]: PO.DAAC collection page: ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4B
+[^github-variable-catalog]: OSP ocean-science reference: ECCO v4r4 variable catalog (llc90 native grid)

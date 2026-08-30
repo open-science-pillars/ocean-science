@@ -3,7 +3,7 @@ type: recipe
 title: "Meridional heat transport at 26.5N from ECCO v4r4"
 description: "Validated pattern for Atlantic MHT at 26.5N on the native grid, with the expected mean range and the RAPID-comparison spread."
 tags: [ecco, mht, amoc, rapid, transport]
-timestamp: 2026-07-04
+generated: { by: knowledge-seeder/claude, at: 2026-07-04T00:00:00Z }
 inputs:
   - dataset: ../datasets/ecco-v4r4.md
   - collections: "ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX_LLC0090GRID_MONTHLY_V4R4 (ADVx_TH, ADVy_TH) plus the geometry granule"
@@ -25,19 +25,26 @@ expected_uncertainty:
     statement: "RAPID/MOCHA observes mean MHT near 1.3 PW with temporal standard deviation about 0.4 PW (Johns et al. 2011, 2004-2007 period: 1.33 +/- 0.40 PW); ECCO v4 Atlantic means sit low of the observed mean, so model-minus-RAPID offsets are expected, not anomalous. RAPID comparisons use the atlExt-masked value; comparing the global-circle number against RAPID is a scope error. Monthly values swing hard: global-circle 2010 spans -0.31 to +1.92 PW; Atlantic 2010 spans +0.09 to +1.14 PW."
   - quantity: "comparison discipline"
     statement: "compare like periods (RAPID begins April 2004; ECCO ends 2017) and state the averaging window; a single-year mean carries a wider envelope than the multi-year range above."
-evidence:
-  - https://rapid.ac.uk/rapidmoc/
-  - https://doi.org/10.1175/2010JCLI3997.1
-  - https://github.com/open-science-pillars/ocean-science/blob/main/skills/ecco/references/variable-catalog.md
-status: verified
-verified: 2026-07-04
-verified_by: OSP steward review
+sources:
+  - id: ac-rapidmoc
+    resource: https://rapid.ac.uk/rapidmoc/
+    title: "RAPID-MOC project page (rapid.ac.uk)"
+  - id: doi-2010jcli3997
+    resource: https://doi.org/10.1175/2010JCLI3997.1
+    title: "Johns et al. 2011, J. Climate, doi:10.1175/2010JCLI3997.1"
+  - id: github-variable-catalog
+    resource: https://github.com/open-science-pillars/ocean-science/blob/main/skills/ecco/references/variable-catalog.md
+    title: "OSP ocean-science reference: ECCO v4r4 variable catalog (llc90 native grid)"
+    author: human:PaulMRamirez
+status: stable
+verified: { by: human:PaulMRamirez, at: 2026-07-04T00:00:00Z }
+stale_after: 2027-01-04
 ---
 
 # Meridional heat transport at 26.5N from ECCO v4r4
 
 The validated pattern: load the monthly 3D temperature-flux collection
-and the geometry granule, merge, and compute the section heat transport
+and the geometry granule[^github-variable-catalog], merge, and compute the section heat transport
 at 26.5N with ecco_v4_py's section machinery (masks over native faces;
 the flux diagnostics include bolus and sub-monthly covariance by
 construction, per the meridional-transport skill's framing). Output
@@ -66,4 +73,8 @@ asserts both anchors and the basin-sum identity.
 **Range provenance.** The 0.8 to 1.4 PW multi-year band is the build
 specification's pinned expectation (IMPLEMENTATION-GUIDE v2.3.3,
 bracketing published ECCO v4 means near 1.0 to 1.1 PW and
-the RAPID-observed mean near 1.3 PW (evidence links above).
+the RAPID-observed mean near 1.3 PW (evidence links above).[^ac-rapidmoc][^doi-2010jcli3997]
+
+[^ac-rapidmoc]: RAPID-MOC project page (rapid.ac.uk)
+[^doi-2010jcli3997]: Johns et al. 2011, J. Climate, doi:10.1175/2010JCLI3997.1
+[^github-variable-catalog]: OSP ocean-science reference: ECCO v4r4 variable catalog (llc90 native grid)

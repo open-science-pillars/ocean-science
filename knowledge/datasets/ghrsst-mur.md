@@ -3,12 +3,12 @@ type: dataset
 title: GHRSST MUR Level 4 SST
 description: "Gap-free daily 0.01-degree foundation SST analysis (v4.1, with a 0.25-degree companion); the analysis_error field is the product's own uncertainty estimate."
 tags: [ghrsst, mur, sst, level4, podaac]
-timestamp: 2026-07-04
+generated: { by: knowledge-seeder/claude, at: 2026-07-04T00:00:00Z }
 resource: https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1
 version: "MUR v4.1 (MUR-JPL-L4-GLOB-v4.1) and MUR25 v04.2 (MUR25-JPL-L4-GLOB-v04.2), both CMR-verified 2026-07-04"
-status: verified
-verified: 2026-07-04
-verified_by: OSP steward review
+status: stable
+verified: { by: human:PaulMRamirez, at: 2026-07-04T00:00:00Z }
+stale_after: 2027-01-04
 ---
 
 # GHRSST MUR Level 4 SST

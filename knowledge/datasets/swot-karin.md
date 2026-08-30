@@ -3,12 +3,12 @@ type: dataset
 title: SWOT KaRIn Level 2 Low Rate SSH
 description: "Wide-swath interferometric SSH, two 50 km swaths with a nadir gap, four product tiers, two version families; baseline recorded here with a verification date."
 tags: [swot, karin, ssh, altimetry, podaac]
-timestamp: 2026-07-05
+generated: { by: knowledge-seeder/claude, at: 2026-07-05T00:00:00Z }
 resource: https://podaac.jpl.nasa.gov/dataset/SWOT_L2_LR_SSH_D
 version: "Version families C (ShortNames *_2.0) and D (*_D) both live in CMR as of 2026-07-04; D is the full-mission reprocessing and the ONLY family carrying the cal/val phase; granule CRIDs observed: PGC0 and PIC0 within C, PGD0 in D (the crid attribute varies within a collection)"
-status: verified
-verified: 2026-07-05
-verified_by: OSP steward review
+status: stable
+verified: { by: human:PaulMRamirez, at: 2026-07-05T00:00:00Z }
+stale_after: 2027-01-04
 ---
 
 # SWOT KaRIn Level 2 Low Rate SSH
