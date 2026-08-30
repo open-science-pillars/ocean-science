@@ -1,7 +1,7 @@
 # podaac-arc bundle (PINNED SNAPSHOT per SPEC v0.6 §5.7)
 
 - Canonical home: github.com/open-science-pillars/nasa-daac-knowledge (podaac/)
-- Snapshot source commit: de6ef2e6c066
+- Snapshot source commit: 41d5ffadd1aa
 - Snapshot date: 2026-08-30
 - Precedence: the canonical concept wins on conflict; this snapshot
   refreshes at plugin releases (tools/sync_check.py in the canonical
@@ -53,6 +53,13 @@ still v0.1-form, pending their own migration.
 - [Meridional heat transport at 26.5N from ECCO v4r4](recipes/ecco-mht-26n.md), status: stable
 - [Closed salt budget on the ECCO v4r4 native grid](recipes/ecco-salt-budget.md), status: stable
 - [Closed volume budget on the ECCO v4r4 native grid](recipes/ecco-volume-budget.md), status: stable
+
+## fields (ECCO V4r4 fields layer, snapshotted)
+
+One Data Collection concept per V4r4 collection family; see
+[fields/ecco-v4r4/index.md](fields/ecco-v4r4/index.md) for the family
+listing (ten demo-critical families stable as of 2026-08-30; the
+remaining sixteen arrive via the community lane).
 
 ## computations (OKF v0.2 section 10, snapshotted)
 
