@@ -1,0 +1,27 @@
+# Regression fixture: briefing 001 (kit 8). The first briefing's numbers
+# are the regression case: a rerun of the sanctioned computation with the
+# same bound parameters against the same granules must reproduce the
+# receipt values exactly (deterministic inputs), and a regenerated
+# briefing must carry no number outside this set or its stated
+# arithmetic restatements.
+briefing: briefings/001-us-northeast-coast-2010.md
+computation: podaac/computations/ecco-regional-sea-level.md (nasa-daac-knowledge fc9733a)
+run_id: 20260830T223624Z-40849f17
+code_sha256_prefix: 9a3da0e37068
+bound_parameters: { region: us-northeast-coast, period: "2010-01:2010-12" }
+receipt_values:
+  ssh_variant: SSH
+  months: 12
+  cells_evaluated: 102
+  trend_total_mm_yr: 146.7492
+  trend_mass_mm_yr: 11.7851
+  trend_steric_mm_yr: 135.7772
+  partition_residual_max_m: 5.085e-4
+tolerance_m: 1.0e-3
+derived_in_briefing:
+  total_change_cm: 14.7    # trend x 1 yr, rounded
+  mass_change_cm: 1.2
+  steric_change_cm: 13.6
+  mass_share_pct: 8
+  steric_share_pct: 93
+citations_dois: [10.5067/ECL5M-SSH44, 10.5067/ECL5M-OBP44, 10.5067/ECL5M-ODE44, 10.5067/ECL5A-GRD44]
