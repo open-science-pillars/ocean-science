@@ -4,6 +4,14 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-08-30 · SNAPSHOT extended with the fields layer (ECCO fields
+  phase 4, open-science-pillars/marketplace#10): fields/ecco-v4r4/
+  copied byte-identical from canonical at 41d5ffadd1aa (ten stable
+  demo-family concepts plus the fields index); sync_check green. The
+  ecco variable catalog slimmed to load behavior plus deferral per the
+  knowledge-vs-skills doctrine; the catalog's OCEAN_VEL row error
+  (WVELMASS for WVEL) leaves with the tables, corrected in the bundle.
+
 - 2026-08-30 · snapshot follow-up: computations/ecco-heat-budget.md
   re-copied byte-identical after the steward sign-off on canonical
   (verified event, status stable); sync_check stays green.
