@@ -3,16 +3,21 @@ type: dataset-gotcha
 title: "SWOT KaRIn ssha_karin: crossover calibration arrives UNAPPLIED"
 description: "Swath or regional ssha statistics computed on ssha_karin without adding height_cor_xover carry a spurious cross-track ramp of order meters."
 tags: [swot, karin, ssha, crossover, height-cor-xover, calibration]
-timestamp: 2026-07-05
+generated: { by: knowledge-seeder/claude, at: 2026-07-05T00:00:00Z }
 severity: high
 dataset: ../datasets/swot-karin.md
 eval_case: swot-crossover-unapplied
-evidence:
-  - https://podaac.jpl.nasa.gov/dataset/SWOT_L2_LR_SSH_D
-  - https://github.com/open-science-pillars/ocean-science/blob/main/skills/swot/references/swot-products.md
-status: verified
-verified: 2026-07-05
-verified_by: OSP steward review
+sources:
+  - id: nasa-swot-l2-lr-ssh-d
+    resource: https://podaac.jpl.nasa.gov/dataset/SWOT_L2_LR_SSH_D
+    title: "PO.DAAC collection page: SWOT_L2_LR_SSH_D (Version D umbrella)"
+  - id: github-swot-products
+    resource: https://github.com/open-science-pillars/ocean-science/blob/main/skills/swot/references/swot-products.md
+    title: "OSP ocean-science reference: SWOT KaRIn L2 SSH products"
+    author: human:PaulMRamirez
+status: stable
+verified: { by: human:PaulMRamirez, at: 2026-07-05T00:00:00Z }
+stale_after: 2027-01-04
 ---
 
 # SWOT KaRIn ssha_karin: crossover calibration arrives UNAPPLIED
@@ -40,5 +45,7 @@ gating is necessary but not sufficient on its own.
 
 **Verification.** Reproducible on a PGD0 Expert-tier granule (cycle
 011, pass 424): the raw field's cross-track ramp versus the corrected
-field's mesoscale structure; the swot-karin dataset concept's Known
+field's mesoscale structure;[^nasa-swot-l2-lr-ssh-d] the swot-karin dataset concept's Known
 issues records the observation.
+
+[^nasa-swot-l2-lr-ssh-d]: PO.DAAC collection page: SWOT_L2_LR_SSH_D (Version D umbrella)

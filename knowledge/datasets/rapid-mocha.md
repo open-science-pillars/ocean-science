@@ -3,12 +3,12 @@ type: dataset
 title: RAPID-MOCHA transports at 26.5N (observational reference)
 description: "The moored-array AMOC and heat-transport observations at 26.5N; the canonical scriptable download is the dataset DOI, not the project pages."
 tags: [rapid, mocha, amoc, mht, observations, "26n"]
-timestamp: 2026-07-04
+generated: { by: knowledge-seeder/claude, at: 2026-07-04T00:00:00Z }
 resource: https://doi.org/10.17604/3nfq-va20
 version: "MOCHA MHT v.2020 via dataset DOI 10.17604/3nfq-va20; RAPID AMOC series via rapid.ac.uk (access verified 2026-07-04)"
-status: verified
-verified: 2026-07-04
-verified_by: OSP steward review
+status: stable
+verified: { by: human:PaulMRamirez, at: 2026-07-04T00:00:00Z }
+stale_after: 2027-01-04
 ---
 
 # RAPID-MOCHA transports at 26.5N (observational reference)
