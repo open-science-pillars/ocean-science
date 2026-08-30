@@ -14,7 +14,8 @@ executor:
 attester:
   resource: references/attesters/budget_residual.py
 generated: { by: claude-code/fable-5, at: 2026-08-30T19:20:00Z }
-status: draft
+verified: { by: human:PaulMRamirez, at: 2026-08-30T19:40:00Z }
+status: stable
 sources:
   - id: github-budget-formulation
     resource: https://github.com/open-science-pillars/ocean-science/blob/main/skills/ecco/references/budget-formulation.md
