@@ -1,5 +1,7 @@
 # ocean-science
 
+![ecco heat budget](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/open-science-pillars/ecco-budget-badge/main/.badges/ecco-budget.json)
+
 Physical oceanography for Open Science Pillars: the ECCO v4r4 state
 estimate, SWOT KaRIn SSH, meridional transport, budget closure, water
 masses, sea level, and the PO.DAAC knowledge arc.
@@ -40,7 +42,13 @@ the [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLO
   uncertainty structure, documented gotchas with evidence, and validated
   recipes with expected numbers.
 - **Verification**: automated notebooks that re-check each workflow on small
-  cached data.
+  cached data. The heat-budget closure is additionally attested: a receipt
+  from the sanctioned computation is checked against the code hash and the
+  steward-signed tolerances by
+  [ecco-budget-badge](https://github.com/open-science-pillars/ecco-budget-badge)
+  (pin tag v1), and the badge above is machine-written from that verdict;
+  it says "does not close" the moment either check fails. Salt, volume,
+  and MHT attach as their computations reach stable.
 - **A project config template** (`ocean-science.local.md.template`): copy it
   into your project and fill in your data paths, region, and download limit.
 
