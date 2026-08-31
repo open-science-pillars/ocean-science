@@ -52,6 +52,12 @@ the [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLO
 - **A project config template** (`ocean-science.local.md.template`): copy it
   into your project and fill in your data paths, region, and download limit.
 
-For NASA data you need an Earthdata Login in `~/.netrc` (never in a repo);
-the [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLOSSARY.md)
-has the one-line format. License: Apache-2.0. Cite via CITATION.cff.
+Downloading NASA data needs an Earthdata Login; nothing else here does,
+so you can install the plugin, read the knowledge bundle, and search
+collections before you have an account. earthaccess finds the
+credential on its own: set `EARTHDATA_TOKEN` (the easy path in CI and
+cloud notebooks), or put a username and password in `~/.netrc`
+(machine `urs.earthdata.nasa.gov`, `chmod 600`), or let it prompt you.
+Never commit either to a repo. The
+[glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLOSSARY.md)
+has the netrc format. License: Apache-2.0. Cite via CITATION.cff.

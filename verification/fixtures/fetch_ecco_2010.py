@@ -1,7 +1,8 @@
 """Scripted, cached real-data fixture per SPEC §6: the 2010 ECCO subset.
 
 Ensures the collections the ocean golden notebooks need are cached under
-~/ECCO_V4r4 (Earthdata login via ~/.netrc required on first fetch; later
+~/ECCO_V4r4 (an Earthdata Login is required on first fetch, from
+EARTHDATA_TOKEN, the environment, or ~/.netrc; later
 runs hit the cache). Nothing here is committed; granules total ~2.5 GB
 (heat, salt, and volume budget inputs).
 """
@@ -34,7 +35,11 @@ def ensure_cache() -> dict:
     geom = geom_dir / "GRID_GEOMETRY_ECCO_V4r4_native_llc0090.nc"
     if not geom.exists():
         import earthaccess
-        earthaccess.login(strategy="netrc")
+        # Default strategy tries EARTHDATA_TOKEN and username or
+        # password environment variables first, then ~/.netrc, then an
+        # interactive prompt. Pinning one strategy would fail a cloud
+        # or CI user who has the environment set and no netrc file.
+        earthaccess.login()
         g = earthaccess.search_data(short_name="ECCO_L4_GEOMETRY_LLC0090GRID_V4R4")
         earthaccess.download(g, str(geom_dir))
     paths["geometry"] = geom
