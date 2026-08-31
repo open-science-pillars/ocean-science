@@ -18,7 +18,8 @@ verdicts are runtime artifacts, never committed to the bundle (spec 10.5).
 ## 1. Stage the data
 
 The computation reads the scripted 2010 ECCO fixture cache (about 2.5 GB
-at `~/ECCO_V4r4`; Earthdata Login via `~/.netrc` on first fetch):
+at `~/ECCO_V4r4`; an Earthdata Login is needed on the first fetch,
+from the environment or `~/.netrc`):
 
 ```bash
 uv run --with marimo,numpy,xarray,netcdf4,earthaccess,ecco_access,ecco_v4_py \
