@@ -25,7 +25,12 @@ merged, gated on volume, gotchas restated. Works by slash command or conversatio
    these facts in this skill.
 3. **Search before fetching:** granule count and estimated volume
    BEFORE any download, using the access path the variable catalog
-   records for dated vs static collections.
+   records for dated vs static collections. Discovery and availability
+   checks may use the registered earthdata MCP connector, no login
+   needed: get_collections with short_name first (keyword second) to
+   resolve, get_granules to verify the window and region actually carry
+   granules before any coverage claim; the download itself stays on
+   earthaccess with Earthdata Login.
 4. **The volume gate.** Threshold from the project local config
    (template default 2 GB). At or below: state count, size,
    destination, proceed. Above: STOP, present count, total size,
@@ -51,6 +56,10 @@ merged, gated on volume, gotchas restated. Works by slash command or conversatio
   anything.)
 - Never deliver native-grid data without the geometry merged. (Load
   procedure.)
+- Never promise data exists from a collection-level match alone:
+  granule-level verification (get_granules or a CMR granule search)
+  precedes any coverage claim, and nothing the connector returns
+  bypasses the bundle's gotchas.
 - Never restate a dataset rule this skill could consult: the access
   quirks (bare-name queries, statics path), the V4R4/V4R4B release
   caveat, and the snapshots-vs-monthly-means rule live in the variable
