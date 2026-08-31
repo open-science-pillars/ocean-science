@@ -1,4 +1,4 @@
-# Regression fixture: briefing 001 (kit 8). The first briefing's numbers
+# Regression fixture: briefing 001. The first briefing's numbers
 # are the regression case: a rerun of the sanctioned computation with the
 # same bound parameters against the same granules must reproduce the
 # receipt values exactly (deterministic inputs), and a regenerated
