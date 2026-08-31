@@ -10,7 +10,7 @@
 #     "ecco_v4_py",
 # ]
 # ///
-# Golden notebook for the ocean-budget workflow (Session 9, SPEC §6): the
+# Golden notebook for the ocean-budget workflow (SPEC §6): the
 # full four-term 2010 heat budget, formulation exactly per
 # skills/ecco/references/budget-formulation.md (tutorial-quoted), with
 # POINTWISE closure asserted on the interior cells of one tile against

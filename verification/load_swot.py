@@ -6,7 +6,7 @@
 #     "xarray",
 # ]
 # ///
-# Golden notebook for the load-swot workflow (Session 8b, SPEC v0.5.1 §6):
+# Golden notebook for the load-swot workflow (SPEC v0.5.1 §6):
 # flag decoding and swath-structure assertions on a synthetic regional SSH
 # fixture built to the granule structure observed live 2026-07-04
 # (dims num_lines x num_pixels = swath grid, ssha_karin + ssha_karin_qual,

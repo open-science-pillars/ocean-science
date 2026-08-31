@@ -81,4 +81,4 @@ region. Quality flags are bit-packed integers (decode per
 quality-control's rules; the swot-karin dataset concept lists the flag
 and uncertainty variables). Hydrology products (river and lake vector
 products, raster inundation) are separate SWOT collections, deferred
-to the hydrology plugin (Phase 2).
+to the hydrology plugin.
