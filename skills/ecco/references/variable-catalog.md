@@ -24,7 +24,11 @@ ShortName verification is owned by that layer: the family manifest and
 re-verify every name against live CMR (last full sweep 2026-08-30,
 90/90 reconciled clean), and machine confirmation is recorded as
 process events on the concepts themselves. No table in this file is
-authoritative for any ShortName or variable name; the bundle is.
+authoritative for any ShortName or variable name; the bundle is. For
+live cross-checks, the plugin's registered earthdata MCP connector
+exposes the same catalog interactively (get_collections by short_name,
+get_variables by collection concept id); signed Schema rows still come
+only from the fields concepts and granule loads.
 
 ## Load behavior (the procedure this file still owns)
 

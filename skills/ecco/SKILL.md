@@ -63,6 +63,21 @@ StartDate=, EndDate=, mode=)`; open with Dask chunks for 3D fields
 large). Volume-gated loading and gotcha restatement are the load-ecco
 workflow's job; this skill supplies what it restates.
 
+**Discover, Verify, Access (the earthdata connector).** The plugin
+registers NASA's official Earthdata MCP server (`.mcp.json`, remote
+Streamable HTTP at the CMR endpoint; CMR search is public, so discovery
+needs no login). Discover with get_keywords and get_collections
+(short_name resolution first, keyword search second); Verify
+availability with get_granules for the exact window and region BEFORE
+promising data exists (collections claim coverage that granules may not
+honor); Access exactly as today, via earthaccess with Earthdata Login,
+the only credentialed step. Boundary rules: nothing the connector
+returns bypasses the bundle's gotchas (a discovered 05DEG collection is
+still refused for budgets; SSH and OBP hits still carry the release
+discipline), and get_variables may inform exploration and
+cross-checking, but a Schema row is only ever trusted from the signed
+fields concept or a granule load.
+
 ## Must NOT
 
 - Never compute budgets or transports on regridded ECCO fields; refuse
@@ -77,3 +92,9 @@ workflow's job; this skill supplies what it restates.
   concept changes this skill's behavior without editing it.
 - Never invent numbers: expected values and uncertainty ranges come
   from the recipe concepts, cited.
+- Never let a connector result bypass a bundle gotcha: discovery output
+  is availability data, not permission; the native-grid refusal and
+  release discipline apply unchanged to anything the MCP surfaced.
+- Never treat get_variables output as a verified Schema: UMM variable
+  records describe intent; signed fields concepts and granule loads are
+  ground truth.
