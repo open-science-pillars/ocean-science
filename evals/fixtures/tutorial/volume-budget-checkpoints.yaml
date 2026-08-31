@@ -1,5 +1,5 @@
 # Eval fixture: checkpoints lifted from the ECCO tutorial's volume and
-# sea level budget chapter (kit 4, tutorial companion). Quoted signals a
+# sea level budget chapter (tutorial companion). Quoted signals a
 # correct walkthrough produces, for tutorial-fidelity graders.
 chapter: https://ecco-v4-python-tutorial.readthedocs.io/ECCO_v4_Volume_budget_closure.html
 extracted: 2026-08-30

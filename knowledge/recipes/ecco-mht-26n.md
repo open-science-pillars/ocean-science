@@ -55,7 +55,7 @@ units PW.
 computes the FULL latitude circle (Atlantic plus Pacific plus Indian).
 The RAPID-comparable Atlantic section requires
 `basin_name="atlExt"`, and the basin masks require ecco_v4_py's binary
-data files to be present in the environment. The original Session 7
+data files to be present in the environment. The original
 anchor (1.098 PW) was the global circle; the scope was identified by a
 skill-following test agent 2026-07-04 and verified by basin
 decomposition (the three basins sum to the no-mask value exactly).
@@ -67,7 +67,7 @@ decomposition (the three basins sum to the no-mask value exactly).
 +0.09 to +1.14 PW, mean 0.666; Pacific 0.430; Indian 0.002. The
 anomalously low Atlantic winter months are consistent with the
 documented 2009/2010 AMOC minimum. The durable executable home is the
-Session 9 golden notebook `verification/transport_analysis.py`, which
+golden notebook `verification/transport_analysis.py`, which
 asserts both anchors and the basin-sum identity.
 
 **Range provenance.** The 0.8 to 1.4 PW multi-year band is the build

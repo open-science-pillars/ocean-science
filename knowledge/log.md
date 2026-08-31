@@ -5,7 +5,7 @@ Newest first. One line per change: date, concept path, what changed, who.
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
 - 2026-08-30 · SNAPSHOT extended with the fields layer (ECCO fields
-  phase 4, open-science-pillars/marketplace#10): fields/ecco-v4r4/
+  open-science-pillars/marketplace#10): fields/ecco-v4r4/
   copied byte-identical from canonical at 41d5ffadd1aa (ten stable
   demo-family concepts plus the fields index); sync_check green. The
   ecco variable catalog slimmed to load behavior plus deferral per the
@@ -17,7 +17,7 @@ _Historical note: older entries use build-era shorthand (a "close lint" is a kno
   (verified event, status stable); sync_check stays green.
 
 - 2026-08-30 · SNAPSHOT REFRESHED from canonical at de6ef2e6c066 (OKF v0.2
-  migration, window open-science-pillars/marketplace#6, phase 4): the 17
+  migration, open-science-pillars/marketplace#6): the 17
   migrated concepts copied byte-identical; the 4 attested-computation
   concepts and references/skills/run-golden.md snapshotted alongside;
   sync_check green (22 files). This CLOSES the declared sync_check red.
@@ -39,7 +39,7 @@ _Historical note: older entries use build-era shorthand (a "close lint" is a kno
   add to protected concepts (GRACE ~300km resolution, THETA/SALT flavor gloss,
   double-hFac). Byte-identity of the podaac mirror preserved.
 
-- 2026-07-05 · steward review PASSED: the five Session-18 concepts
+- 2026-07-05 · steward review PASSED: five concepts
   (recipes/ecco-salt-budget.md, recipes/ecco-volume-budget.md, and gotchas/
   ecco-release-mixing.md, ecco-mht-basin-scope.md, swot-crossover-unapplied.md)
   promoted draft to status: verified (verified_by OSP steward review); datasets

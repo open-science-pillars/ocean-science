@@ -10,7 +10,7 @@
 #     "ecco_v4_py",
 # ]
 # ///
-# Golden notebook for the transport-analysis workflow (Session 9, SPEC §6):
+# Golden notebook for the transport-analysis workflow (SPEC §6):
 # MHT at 26.5N on the cached 2010 fluxes, asserted against the recipe
 # concept knowledge/recipes/ecco-mht-26n.md (range, spread envelope, and
 # the recorded 2010 reproducing anchor). Headless green via

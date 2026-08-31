@@ -10,7 +10,7 @@
 #     "ecco_v4_py",
 # ]
 # ///
-# Golden notebook for the volume budget (Session 18, SPEC §10.5): the z*
+# Golden notebook for the volume budget (SPEC §10.5): the z*
 # volume budget on the ECCO v4r4 native grid, formulation per
 # knowledge/recipes/ecco-volume-budget.md. The budget closes on transport
 # convergence ALONE (WVELMASS carries the surface freshwater flux; a separate

@@ -10,7 +10,7 @@
 #     "ecco_v4_py",
 # ]
 # ///
-# Golden notebook for the salt budget (Session 18, SPEC §10.5): the four-term
+# Golden notebook for the salt budget (SPEC §10.5): the four-term
 # 2010 salt budget on the ECCO v4r4 native grid, formulation per
 # knowledge/recipes/ecco-salt-budget.md, with POINTWISE closure asserted on
 # interior wet cells of one tile against the recipe's measured ABSOLUTE

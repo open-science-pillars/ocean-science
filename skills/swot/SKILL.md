@@ -77,7 +77,7 @@ current-baseline note, never hardcoded here.
 ## Hydrology
 
 SWOT river, lake, and inundation products exist as separate collections and
-are DEFERRED to the hydrology plugin (Phase 2); this plugin's SWOT scope is
+are DEFERRED to the hydrology plugin; this plugin's SWOT scope is
 KaRIn L2 SSH and the nadir altimeter products.
 
 ## Hard refusals (invariant, universal; fire without consulting anything)
