@@ -1,7 +1,9 @@
 # ocean-science quickstart
 
 From installed to a validated ocean number. Assumes core AND
-ocean-science are installed plus Earthdata Login in `~/.netrc`; the
+ocean-science are installed, plus an Earthdata Login reachable by
+earthaccess (an `EARTHDATA_TOKEN` environment variable or a `~/.netrc`
+entry) since this walkthrough downloads data; the
 full walkthrough with real downloads is
 [Tutorial 2](https://github.com/open-science-pillars/tutorials)
 (measured at 15.0 minutes fresh, ~1.3 GB cached).
