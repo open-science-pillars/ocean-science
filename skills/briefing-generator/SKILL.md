@@ -33,6 +33,10 @@ sanctioned computation and its attester live in the knowledge bundle
      concept text, cited by concept path with its commit; the
      situational-meaning and planning sentences are restricted to that
      language.
+   - The "How this period compares" slot fills only from a signed
+     context concept cited by path; when none exists for the region and
+     period, it states that absence plainly (never from literature,
+     never from memory).
    - Uncertainty language follows the cited concepts: ECCO ships no
      formal error fields, so the briefing states the receipt's
      partition-consistency bound and the single-period caveat rather
