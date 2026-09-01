@@ -13,7 +13,7 @@ expected:
   - quantity: "pointwise residual, tendency minus (advection + diffusion + forcing)"
     statement: "the pass bar (absolute pointwise tolerances and the 2026-07-04 baseline measurement) is owned by the attested computation concept ../computations/ecco-heat-budget.md; a run counts only when its receipt passes that concept's deterministic attester"
   - quantity: "why the criterion is absolute, not relative"
-    statement: "the archive stores float32; the measured residual is storage quantization (median 0.15x the snapshot quantization floor, 99.6% of cells within 3x it). Relative-to-dominant-term ratios are meaningful only where terms exceed that floor; in quiescent deep cells the ratio measures quantization, not formulation error (ratios up to 9e-2 observed on a correct formulation)"
+    statement: "the archive stores float32; the measured residual sits at the storage quantization scale, where the floor is one unit in the last place of the stored snapshot tendency divided by the snapshot interval (measured over the 3,341,772 baseline cell-months: median residual 0.66x that floor, 96.4 percent of cells within 3x, 99.7 percent within 10x; derivation in references/derivations/quantization_floor.py). Relative-to-dominant-term ratios are meaningful only where terms exceed that floor; in quiescent deep cells the ratio measures quantization, not formulation error (ratios up to 9e-2 observed on a correct formulation)"
 expected_uncertainty:
   - quantity: "numerical tolerance"
     statement: "the residual expectation IS the uncertainty statement for this identity: pass within the attested computation concept's tolerances (../computations/ecco-heat-budget.md), investigate above them using the formulation traps table (residual signatures map to specific omissions); closure failure is a formulation error, never data noise"
@@ -29,7 +29,7 @@ sources:
     title: "OSP ocean-science reference: ECCO v4r4 heat budget formulation (native grid)"
     author: human:PaulMRamirez
 status: stable
-verified: { by: human:PaulMRamirez, at: 2026-07-04T00:00:00Z }
+verified: { by: human:PaulMRamirez, at: 2026-09-01T06:40:00Z }
 stale_after: 2027-01-04
 ---
 

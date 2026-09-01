@@ -115,5 +115,34 @@ def _(TOL_ABS_MAX, TOL_ABS_P999, g_adv, g_total, hfacc, np):
     return
 
 
+@app.cell
+def _(dt, fresh, g_adv, g_total, grid, hfacc, np):
+    # The claim in this file's header, actually exercised: adding a separate
+    # oceFWflx forcing term DOUBLE COUNTS the surface freshwater flux, because
+    # WVELMASS already carries it. The closure is the detector. Without this
+    # cell the claim was asserted in three concepts and tested nowhere.
+    rhoconst = 1029.0
+    fwflx = np.nan_to_num(fresh.oceFWflx.values)              # (12, 90, 90) kg m-2 s-1
+    drf0 = grid.drF.values[0]
+    hf0 = hfacc[0, :89, :89]
+    with np.errstate(divide="ignore", invalid="ignore"):
+        # the spurious term, as a k=0 volume-budget rate (1/s)
+        g_spurious = np.where(hf0 > 0, fwflx[:, :89, :89] / (rhoconst * drf0 * hf0), 0.0)
+
+    wet0 = hf0 > 0
+    res_correct = np.abs((g_total[:, 0, :89, :89] - g_adv[:, 0, :89, :89])[np.broadcast_to(wet0[None], (12, 89, 89))])
+    res_doubled = np.abs((g_total[:, 0, :89, :89] - (g_adv[:, 0, :89, :89] + g_spurious))[np.broadcast_to(wet0[None], (12, 89, 89))])
+    r_ok, r_bad = float(res_correct.max()), float(res_doubled.max())
+    print(f"volume_budget k=0 residual: correct {r_ok:.2e} 1/s, "
+          f"with a separate oceFWflx term {r_bad:.2e} 1/s "
+          f"({r_bad / r_ok:.0f}x worse)")
+    assert r_ok <= 1e-11, f"surface closure unexpectedly failed: {r_ok:.2e}"
+    assert r_bad >= 1e-9, (
+        f"the double-count demonstration has no teeth: adding oceFWflx only "
+        f"moved the residual to {r_bad:.2e}, so this golden does not show "
+        f"what the recipes claim it shows")
+    print("volume_budget: oceFWflx double-count demonstrated, closure detects it")
+    return
+
 if __name__ == "__main__":
     app.run()
