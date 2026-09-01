@@ -5,6 +5,13 @@ description: "Two centuries of monthly mean sea level through psmsl_monthly; val
 tags: [connector, psmsl, sea-level, tide-gauge, mcp, observations]
 verified: { by: human:PaulMRamirez, at: 2026-09-01T16:55:00Z }
 status: stable
+citation:
+  access_date_required: true
+  authority: https://psmsl.org/data/obtaining/
+  data: "Permanent Service for Mean Sea Level (PSMSL), Tide Gauge Data, retrieved {access_date} from https://psmsl.org/data/obtaining/"
+  paper: "Holgate, S.J. et al. (2013), New Data Systems and Products at the Permanent Service for Mean Sea Level, Journal of Coastal Research 29(3), 493-504"
+  doi: "10.2112/JCOASTRES-D-12-00175.1"
+  note: "PSMSL asks that both the dataset and the Holgate et al. description paper be cited together"
 generated: { by: claude-code/fable-5, at: 2026-09-01T16:30:00Z }
 stale_after: 2026-12-31
 sources:

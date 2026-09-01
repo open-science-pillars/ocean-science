@@ -5,6 +5,11 @@ description: "Coastal water level from the station of record, minutes fresh, thr
 tags: [connector, coops, tides, water-level, mcp, observations]
 verified: { by: human:PaulMRamirez, at: 2026-09-01T16:55:00Z }
 status: stable
+citation:
+  access_date_required: false
+  authority: https://tidesandcurrents.noaa.gov/disclaimers.html
+  data: "NOAA National Ocean Service, Center for Operational Oceanographic Products and Services, station {station}, retrieved {access_date} from https://api.tidesandcurrents.noaa.gov/"
+  note: "NOS requests attribution whenever its material is reproduced; no format is mandated, so the platform's capture convention supplies the station, datum, and retrieval date"
 generated: { by: claude-code/fable-5, at: 2026-09-01T16:30:00Z }
 stale_after: 2026-12-31
 sources:
