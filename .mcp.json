@@ -9,7 +9,7 @@
       "command": "uv",
       "args": [
         "run",
-        "https://raw.githubusercontent.com/open-science-pillars/core/e3e36332bd458fb1c35697d26ae58b857866c63f/connectors/observations_mcp.py"
+        "https://raw.githubusercontent.com/open-science-pillars/core/e046417de95b5518ee518f0a08eca3eb5fc8ad3a/connectors/observations_mcp.py"
       ]
     }
   }
