@@ -67,3 +67,9 @@ remaining sixteen arrive via the community lane).
 - [Salt budget closure on the ECCO v4r4 native grid (attested, draft)](computations/ecco-salt-budget.md), status: draft
 - [Volume budget closure on the ECCO v4r4 native grid (attested, draft)](computations/ecco-volume-budget.md), status: draft
 - [Meridional heat transport at 26.5N from ECCO v4r4 (attested, draft)](computations/ecco-mht-26n.md), status: draft
+
+## connectors
+
+- [NOAA CO-OPS tide and water-level stations](connectors/coops-tides.md), status: draft
+- [Argo profiling floats via ERDDAP](connectors/argo-floats.md), status: draft
+- [PSMSL long-record tide gauges](connectors/psmsl-gauges.md), status: draft

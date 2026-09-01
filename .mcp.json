@@ -3,6 +3,14 @@
     "earthdata": {
       "type": "http",
       "url": "https://cmr.earthdata.nasa.gov/mcp/v1"
+    },
+    "observations": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "https://raw.githubusercontent.com/open-science-pillars/core/e3e36332bd458fb1c35697d26ae58b857866c63f/connectors/observations_mcp.py"
+      ]
     }
   }
 }

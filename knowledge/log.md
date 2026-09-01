@@ -4,6 +4,14 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-01 · three connector concepts land with the observations
+  MCP server (core repo): CO-OPS tide stations (the datum trap), Argo
+  floats (the quality-control discipline the server deliberately does
+  not do), PSMSL gauges (the RLR datum that makes absolutes
+  meaningless). Every capability claim probed live 2026-09-01; the
+  root CONNECTORS.md gains the disclosure section and .mcp.json runs
+  the server from a commit-pinned URL. (drafted by build assistant;
+  steward review pending)
 - 2026-09-01 · The volume budget golden now DEMONSTRATES the oceFWflx
   double-count its header always claimed. It loaded the freshwater flux
   collection and never used it, while three concepts asserted that adding
