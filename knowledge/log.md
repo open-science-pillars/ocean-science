@@ -4,6 +4,14 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-01 · the three connector concepts gain citation blocks
+  (required text, DOI where one exists, whether the source mandates an
+  access date, each claim verified against the authority's own page
+  this day: PSMSL's Holgate-plus-dataset pairing, Argo's required
+  acknowledgment and GDAC DOI with the monthly snapshot mechanism,
+  NOS's attribution request with no mandated format). Added after the
+  concepts' verification events; the steward's merge is the review of
+  this addition. (drafted by build assistant)
 - 2026-09-01 · steward review passed: the three connector concepts
   (coops-tides, argo-floats, psmsl-gauges) verified (verified_by
   human:PaulMRamirez) and promoted draft to stable

@@ -5,6 +5,13 @@ description: "Global in-situ temperature and salinity profiles through argo_sear
 tags: [connector, argo, erddap, profiles, mcp, observations]
 verified: { by: human:PaulMRamirez, at: 2026-09-01T16:55:00Z }
 status: stable
+citation:
+  access_date_required: true
+  authority: https://argo.ucsd.edu/data/acknowledging-argo/
+  data: "Argo float data and metadata from Global Data Assembly Centre (Argo GDAC), SEANOE, retrieved {access_date}"
+  doi: "10.17882/42182"
+  program: "These data were collected and made freely available by the International Argo Program and the national programs that contribute to it (https://argo.ucsd.edu, https://www.ocean-ops.org). The Argo Program is part of the Global Ocean Observing System."
+  note: "for exact reproducibility Argo publishes monthly snapshot DOIs (the base DOI plus a per-month key); cite the snapshot when one brackets the retrieval"
 generated: { by: claude-code/fable-5, at: 2026-09-01T16:30:00Z }
 stale_after: 2026-12-31
 sources:
