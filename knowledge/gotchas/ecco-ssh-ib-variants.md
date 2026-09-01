@@ -12,9 +12,8 @@ severity: medium
 dataset: ../datasets/ecco-v4r4.md
 evidence:
   - https://github.com/open-science-pillars/ocean-science/blob/main/skills/ecco/references/variable-catalog.md
-status: verified
-verified: 2026-07-06
-verified_by: OSP steward review
+verified: { by: human:PaulMRamirez, at: 2026-07-06T00:00:00Z }
+status: stable
 ---
 
 # ECCO SSH inverse-barometer variants: pick the convention and never mix them

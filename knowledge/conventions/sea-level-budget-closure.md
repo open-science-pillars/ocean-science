@@ -4,9 +4,8 @@ title: "Sea level budget closure: a correction-consistency problem first"
 description: "The altimetry = ocean-mass + steric budget closes only under consistent GIA, reference-frame, atmospheric-pressure, smoothing, and period bookkeeping; the deep-steric term below the Argo sampling floor is nonzero and must be acknowledged."
 tags: [sea-level, budget, steric, manometric, gia, closure, altimetry, grace, argo]
 timestamp: 2026-07-05
-status: verified
-verified: 2026-07-06
-verified_by: OSP steward review
+verified: { by: human:PaulMRamirez, at: 2026-07-06T00:00:00Z }
+status: stable
 evidence:
   - https://doi.org/10.5194/essd-10-1551-2018
 ---

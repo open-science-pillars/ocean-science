@@ -3,7 +3,8 @@ type: connector
 title: "Argo profiling floats via ERDDAP (observations server)"
 description: "Global in-situ temperature and salinity profiles through argo_search and argo_profile; the server returns raw rows, and science use requires the quality-control discipline this concept records."
 tags: [connector, argo, erddap, profiles, mcp, observations]
-status: draft
+verified: { by: human:PaulMRamirez, at: 2026-09-01T16:55:00Z }
+status: stable
 generated: { by: claude-code/fable-5, at: 2026-09-01T16:30:00Z }
 stale_after: 2026-12-31
 sources:

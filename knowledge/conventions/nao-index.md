@@ -4,9 +4,8 @@ title: "NAO index: station-based vs EOF-based families"
 description: "The North Atlantic Oscillation has two inequivalent definitions (station SLP difference vs leading North Atlantic SLP EOF) that diverge in trend and variance; the sign convention must be stated."
 tags: [nao, slp, eof, indices, climate, north-atlantic]
 timestamp: 2026-07-05
-status: verified
-verified: 2026-07-06
-verified_by: OSP steward review
+verified: { by: human:PaulMRamirez, at: 2026-07-06T00:00:00Z }
+status: stable
 evidence:
   - https://www.cpc.ncep.noaa.gov/products/precip/CWlink/pna/nao.shtml
 ---

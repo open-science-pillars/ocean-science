@@ -33,19 +33,19 @@ still v0.1-form, pending their own migration.
 - [ECCO V4R4 vs V4R4B: mixing releases conflates corrections with signal](gotchas/ecco-release-mixing.md), severity high, status: stable
 - [ECCO meridional heat transport: no basin mask means the full latitude circle](gotchas/ecco-mht-basin-scope.md), severity high, status: stable
 - [SWOT KaRIn ssha_karin: crossover calibration arrives UNAPPLIED](gotchas/swot-crossover-unapplied.md), severity high, status: stable
-- [ECCO SSH inverse-barometer variants: pick the convention and never mix them](gotchas/ecco-ssh-ib-variants.md), severity medium, status: verified (local, v0.1-form)
-- [ECCO Boussinesq global-mean steric correction](gotchas/ecco-boussinesq-global-steric.md), severity medium, status: verified (local, v0.1-form)
-- [ECCO MXLDEPTH uses the model's own MLD criterion](gotchas/ecco-mxldepth-criterion.md), severity medium, status: verified (local, v0.1-form)
-- [ECCO native-grid density and equation of state](gotchas/ecco-native-density-eos.md), severity medium, status: verified (local, v0.1-form)
+- [ECCO SSH inverse-barometer variants: pick the convention and never mix them](gotchas/ecco-ssh-ib-variants.md), severity medium, status: stable (local, v0.1-form)
+- [ECCO Boussinesq global-mean steric correction](gotchas/ecco-boussinesq-global-steric.md), severity medium, status: stable (local, v0.1-form)
+- [ECCO MXLDEPTH uses the model's own MLD criterion](gotchas/ecco-mxldepth-criterion.md), severity medium, status: stable (local, v0.1-form)
+- [ECCO native-grid density and equation of state](gotchas/ecco-native-density-eos.md), severity medium, status: stable (local, v0.1-form)
 
 ## conventions
 
-- [Mixed layer depth criteria](conventions/mld-criteria.md), status: verified (local, v0.1-form)
-- [Sea level budget closure](conventions/sea-level-budget-closure.md), status: verified (local, v0.1-form)
-- [ENSO SST indices (Nino regions, ONI)](conventions/enso-sst-indices.md), status: verified (local, v0.1-form)
-- [NAO index](conventions/nao-index.md), status: verified (local, v0.1-form)
-- [PDO index](conventions/pdo-index.md), status: verified (local, v0.1-form)
-- [AMO index](conventions/amo-index.md), status: verified (local, v0.1-form)
+- [Mixed layer depth criteria](conventions/mld-criteria.md), status: stable (local, v0.1-form)
+- [Sea level budget closure](conventions/sea-level-budget-closure.md), status: stable (local, v0.1-form)
+- [ENSO SST indices (Nino regions, ONI)](conventions/enso-sst-indices.md), status: stable (local, v0.1-form)
+- [NAO index](conventions/nao-index.md), status: stable (local, v0.1-form)
+- [PDO index](conventions/pdo-index.md), status: stable (local, v0.1-form)
+- [AMO index](conventions/amo-index.md), status: stable (local, v0.1-form)
 
 ## recipes
 
@@ -70,6 +70,6 @@ remaining sixteen arrive via the community lane).
 
 ## connectors
 
-- [NOAA CO-OPS tide and water-level stations](connectors/coops-tides.md), status: draft
-- [Argo profiling floats via ERDDAP](connectors/argo-floats.md), status: draft
-- [PSMSL long-record tide gauges](connectors/psmsl-gauges.md), status: draft
+- [NOAA CO-OPS tide and water-level stations](connectors/coops-tides.md), status: stable
+- [Argo profiling floats via ERDDAP](connectors/argo-floats.md), status: stable
+- [PSMSL long-record tide gauges](connectors/psmsl-gauges.md), status: stable

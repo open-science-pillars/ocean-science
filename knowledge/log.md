@@ -4,6 +4,17 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-01 · steward review passed: the three connector concepts
+  (coops-tides, argo-floats, psmsl-gauges) verified (verified_by
+  human:PaulMRamirez) and promoted draft to stable
+- 2026-09-01 · the v0.2 event-shape migration this bundle was missed
+  by is completed on the steward's direction, original signatures
+  carried across: the ten concepts holding v0.1-form verification
+  (status verified with a bare date and verified_by line) now carry
+  the v0.2 verified event with the ORIGINAL steward date (2026-07-06
+  per file frontmatter and the log entry of that day) and status
+  stable. No verification is new here; the record's shape changed,
+  never its facts
 - 2026-09-01 · three connector concepts land with the observations
   MCP server (core repo): CO-OPS tide stations (the datum trap), Argo
   floats (the quality-control discipline the server deliberately does

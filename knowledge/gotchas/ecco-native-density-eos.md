@@ -6,9 +6,8 @@ tags: [ecco, density, eos, stratification, water-masses]
 timestamp: 2026-07-05
 severity: high
 dataset: ../datasets/ecco-v4r4.md
-status: verified
-verified: 2026-07-06
-verified_by: OSP steward review
+verified: { by: human:PaulMRamirez, at: 2026-07-06T00:00:00Z }
+status: stable
 evidence:
   - https://www.teos-10.org/
 ---

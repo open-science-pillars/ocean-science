@@ -4,9 +4,8 @@ title: "Mixed layer depth criteria: definitions, thresholds, and comparability"
 description: "MLD is a criterion, not an observable; the density and temperature thresholds, reference depth, and input averaging that must match before two MLD values are comparable, plus the workflow default."
 tags: [mixed-layer, mld, criterion, density-threshold, comparability, ocean]
 timestamp: 2026-07-05
-status: verified
-verified: 2026-07-06
-verified_by: OSP steward review
+verified: { by: human:PaulMRamirez, at: 2026-07-06T00:00:00Z }
+status: stable
 evidence:
   - "internal: skills/mixed-layer/SKILL.md (the mixed-layer discipline authority the mixed-layer-analysis workflow cites)"
   - https://doi.org/10.1029/2004JC002378

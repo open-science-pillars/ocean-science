@@ -4,9 +4,8 @@ title: "PDO index: North Pacific SST EOF with global-mean removed first"
 description: "The Pacific Decadal Oscillation is the leading EOF of North Pacific (poleward of 20N) monthly SST anomalies AFTER removing the global-mean SST anomaly; skipping that removal is the most common reproduction error."
 tags: [pdo, sst, eof, indices, climate, north-pacific]
 timestamp: 2026-07-05
-status: verified
-verified: 2026-07-06
-verified_by: OSP steward review
+verified: { by: human:PaulMRamirez, at: 2026-07-06T00:00:00Z }
+status: stable
 evidence:
   - https://www.ncei.noaa.gov/access/monitoring/pdo/
 ---

@@ -4,9 +4,8 @@ title: "ENSO SST indices: Nino regions, ONI, and relative SST"
 description: "Region boxes for Nino3.4/3/4/1+2, the ONI running-mean and updated-baseline convention, and the relative-SST family; each is a distinct published procedure."
 tags: [enso, nino, oni, relative-sst, indices, climate, sst]
 timestamp: 2026-07-05
-status: verified
-verified: 2026-07-06
-verified_by: OSP steward review
+verified: { by: human:PaulMRamirez, at: 2026-07-06T00:00:00Z }
+status: stable
 evidence:
   - https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php
 ---

@@ -12,9 +12,8 @@ severity: medium
 dataset: ../datasets/ecco-v4r4.md
 evidence:
   - https://doi.org/10.1029/94JC00847
-status: verified
-verified: 2026-07-06
-verified_by: OSP steward review
+verified: { by: human:PaulMRamirez, at: 2026-07-06T00:00:00Z }
+status: stable
 ---
 
 # ECCO is Boussinesq: global-mean steric sea level needs the mass-conservation correction

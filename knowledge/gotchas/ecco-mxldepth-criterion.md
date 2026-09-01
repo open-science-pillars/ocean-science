@@ -10,9 +10,8 @@ eval_case: mxldepth-criterion-mixing
 # eval case id fixed here per CLAUDE.md rule 9; the matching case lands
 # in the ocean-science plugin's evals/ at steward promotion, exactly as
 # the geothermal-omission placeholder does for ecco-geothermal-flux.
-status: verified
-verified: 2026-07-06
-verified_by: OSP steward review
+verified: { by: human:PaulMRamirez, at: 2026-07-06T00:00:00Z }
+status: stable
 evidence:
   - "internal: skills/mixed-layer/SKILL.md and skills/ecco/references/variable-catalog.md (the MXLDEPTH row); the authorities the mixed-layer-analysis workflow cited"
   - https://github.com/open-science-pillars/ocean-science/blob/main/skills/ecco/references/variable-catalog.md
