@@ -10,26 +10,27 @@ Background expertise for working on ocean model grids without silent
 geometry errors. This skill carries the grid METHOD that generalizes
 across ocean models; it does not carry any product's grid facts,
 variable names, or conservation caveats. ECCO llc90 specifics live in
-`skills/ecco/references/llc90-grid.md` and in the knowledge bundle's
-ECCO concepts.
+the knowledge bundle's ECCO concepts, listed by the ecco skill, whose
+grid reference is the procedure over them.
 
 ## Consult the bundle for product-specific facts
 
 When an analysis targets a specific product (ECCO, or another GCM
-output), DISCOVER and read the applicable concepts before computing, do
-not work from a remembered list. Glob and grep `knowledge/snapshot-podaac/datasets/`,
-`knowledge/snapshot-podaac/gotchas/`, and `knowledge/snapshot-podaac/recipes/` by product name,
-variable, and grid topic; read the matches; restate what each changes
-about the plan and cite it by path; do not carry those facts back into
-this skill. Which of a product's variables are already cell-integrated,
-which collections conserve, and the product's native grid layout are all
-read from the product's concepts (for ECCO: `datasets/ecco-v4r4.md`, the
-native-vs-regridded gotcha, and `skills/ecco/references/llc90-grid.md`),
-never from an inlined list here. A concept added since you last ran is
-found this way.
+output), consult installed knowledge concepts first, as the core
+`consult-knowledge` skill sets out, by product name, variable, and grid
+topic; read the matches, restate what each changes about the plan, and
+cite it by path; do not carry those facts back into this skill. Which
+of a product's variables are already cell-integrated, which collections
+conserve, and the product's native grid layout are all read from the
+product's concepts (for ECCO: the dataset concept, the geometry family
+concept, and the hFac double-count and native-vs-regridded gotchas, all
+listed by the ecco skill), never from an inlined list here. A concept
+added since you last ran is found this way.
 
-The one rule that fires WITHOUT consulting anything is the hard refusal
-below: a budget or transport on regridded fields is refused outright.
+The refusal of a budget or transport on regridded fields is the ecco
+skill's, which loads on every ECCO task; this skill supplies the method
+reason (below) and the native-grid path offered in its place. The hard
+refusals at the end are this skill's own grid-method gates.
 
 ## Identify the grid before touching the data
 
@@ -63,17 +64,18 @@ fields, and vertical integrals include the partial-cell fraction. A
 variable that is already cell-integrated must not have the cell factor
 applied a second time (double-counting the partial cell is a standard
 budget bug); which of a given product's variables are already
-cell-integrated is a product fact, read from that product's concept or
-variable catalog (for ECCO, its dataset concept and the variable-catalog
-reference), not assumed here.
+cell-integrated is a product fact, read from that product's concepts
+(for ECCO, the geometry and flux family concepts and the hFac
+double-count gotcha), not assumed here.
 
 ## xgcm
 
 xgcm encodes the staggering: a `Grid` object with axes (X, Y, Z), shift
 positions (center, left, right), and metrics. `grid.diff` and
 `grid.interp` respect the topology, including periodic axes and, with
-face-connection maps, multi-tile layouts (the llc90 reference documents
-ECCO's). The failure mode it prevents: numpy operations across index
+face-connection maps, multi-tile layouts (for ECCO,
+`ecco_v4_py.get_llc_grid` builds it; the ecco skill's grid reference
+carries the procedure). The failure mode it prevents: numpy operations across index
 seams that look fine in the interior and corrupt every budget at tile
 or fold boundaries (tripolar grids fold at the northern seam; LLC grids
 rotate between tiles).
@@ -88,15 +90,15 @@ rotate between tiles).
   grid's rotation fields BEFORE any regridding; regridding grid-relative
   components produces direction errors wherever the grid bends (the
   entire Arctic on most grids).
-- **Transports and budgets: never regridded (hard refusal).** Compute on
-  the native grid, integrate to the target quantity (a section
+- **Transports and budgets: never regridded (method reason).** Compute
+  on the native grid, integrate to the target quantity (a section
   transport, a basin budget), and present the integrated result.
   Interpolated fields do not conserve, so a budget or transport
   assembled from regridded fields is wrong by construction. The
-  product-specific evidence and the exact non-conserving collections
-  live in that product's gotcha concept (for ECCO,
-  `gotchas/ecco-native-vs-regridded.md`); consult and cite it rather
-  than restating it here.
+  refusal itself is the ecco skill's; the product-specific evidence and
+  the exact non-conserving collections live in that product's gotcha
+  concept (for ECCO, `gotchas/ecco-native-vs-regridded.md`), consulted
+  and cited in the refusal rather than restated here.
 
 ## Hard refusals
 
@@ -108,7 +110,6 @@ time, refusal-shaped, and wrong or unsafe regardless of dataset.
 - Never difference across tile or fold seams without topology-aware
   operators.
 - Never regrid vectors without rotating to geographic components first.
-- Never compute budgets or transports on regridded fields; refuse and
-  offer the native-grid path. The product-specific evidence (for ECCO,
-  the native-vs-regridded gotcha) is consulted and cited in the refusal,
-  not carried here.
+- Never assemble a budget or transport from regridded fields; the
+  refusal is the ecco skill's, and this skill's part is the
+  native-grid path offered in its place.

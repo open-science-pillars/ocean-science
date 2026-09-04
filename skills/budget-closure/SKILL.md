@@ -15,21 +15,26 @@ never carried here.
 
 ## Consult the bundle for this budget
 
-Before diagnosing or blessing any budget, DISCOVER and read the applicable
-concepts; do not work from a remembered list or carry a number here. Glob and
-grep `knowledge/snapshot-podaac/recipes/` for the property's budget recipe (heat, salt, or
-volume) and take the expected residual, its tolerance, and its provenance from
-there, restating and citing by path. Glob and grep `knowledge/snapshot-podaac/gotchas/` for
-the gotchas that constrain the property (for heat, the geothermal term; for any
-budget, the native-vs-regridded rule) and restate what each changes about the
-plan. The exact term formulation, the z* correction, shortwave penetration, and
-the traps table are the convention concept
+Before diagnosing or blessing any budget, consult installed knowledge
+concepts first, as the core `consult-knowledge` skill sets out, by
+property, product, and depth range; the ecco skill lists the concepts
+this plugin resolves to. Take the expected residual, its pass bar, and
+its provenance from the property's attested computation
+(`knowledge/snapshot-podaac/computations/`) or, until that computation
+reaches stable, from its recipe (`knowledge/snapshot-podaac/recipes/`),
+restating and citing by path; read the gotchas that constrain the
+property (for heat, the geothermal term; for any budget, the
+native-vs-regridded rule and the hFac double count) and restate what
+each changes about the plan. The exact term formulation, the z*
+correction, shortwave penetration, and the traps table are the
+convention concept
 `knowledge/snapshot-podaac/conventions/ecco-budget-formulation.md`;
-consult it for the terms. A concept or tolerance added or corrected since you
-last ran is found this way, which is what lets it change this skill's behavior
-without editing this file. A residual above the recipe's stated expectation is
-a formulation error to diagnose, never noise to average away, and "small
-compared to the terms" is not a closure criterion.
+consult it for the terms. A concept or tolerance added or corrected
+since you last ran is found this way, which is what lets it change this
+skill's behavior without editing this file. A residual above the owning
+concept's stated bar is a formulation error to diagnose, never noise to
+average away, and "small compared to the terms" is not a closure
+criterion.
 
 ## What closure means
 
@@ -80,8 +85,8 @@ detail, consulted per the step above:
 - Residual roughly the within-month evolution: monthly means used as
   tendency bookends instead of snapshots.
 - Residual everywhere, same order as the terms: fields were regridded;
-  consult the native-vs-regridded gotcha (refusing regridded budgets is
-  the ocean-budget workflow's job).
+  consult the native-vs-regridded gotcha (the refusal of regridded
+  budgets is the ecco skill's, applied at the ocean-budget gate).
 
 ## Pointwise vs domain-integrated
 
@@ -94,8 +99,8 @@ test. SPEC §6 encodes this for verification.
 
 ## Discipline
 
-Budget results report all terms plus the residual against the recipe's
-stated expectation, and the budget-auditor agent reviews any budget
+Budget results report all terms plus the residual against the owning
+concept's stated bar, and the budget-auditor agent reviews any budget
 after computation (consulting the applicable gotchas first, the
 geothermal term first on heat-budget failures); it proposes fixes,
 never applies them.
@@ -107,20 +112,21 @@ and universal, not dataset facts:
 
 - Never bless a budget computed on regridded fields; no correct
   formulation exists there. (Consult the native-vs-regridded gotcha for
-  the mechanism; the outright refusal of such a request is the
-  ocean-budget workflow's.)
+  the mechanism; the outright refusal of such a request is the ecco
+  skill's, applied at the ocean-budget gate.)
 - Never accept "residual is small relative to the terms" as closure.
 - Never compute tendencies from consecutive monthly means; tendency
   comes from state snapshots at the interval boundaries.
 - Never omit the implicit vertical diffusion term.
 - Never assert domain-integrated closure on an open domain without the
   boundary transport term.
-- Never hardcode an expected residual; read it from the recipe concept.
+- Never hardcode an expected residual; read it from the computation or
+  recipe concept.
 
 Dataset-specific rules (the geothermal term, the exact term formulation
 and constants, the z* and shortwave corrections, the measured residual
-tolerances) are NOT restated here: they live in the recipe concepts, the
-ECCO gotchas, and the budget formulation convention
+tolerances) are NOT restated here: they live in the computation and
+recipe concepts, the ECCO gotchas, and the budget formulation convention
 (`knowledge/snapshot-podaac/conventions/ecco-budget-formulation.md`),
 consulted per the step above. That is what lets a corrected tolerance or
 a new budget gotcha change this skill's behavior without editing it.

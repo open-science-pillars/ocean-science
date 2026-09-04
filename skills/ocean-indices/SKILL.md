@@ -20,18 +20,21 @@ here as procedure.)
 
 ## Consult the bundle for this index
 
-Before computing ANY index, DISCOVER and consult the installed
-knowledge bundle; do not work from a remembered definition, region box,
-baseline rule, or reproduction caveat. Glob and grep
-`knowledge/conventions/` (and the rest of `knowledge/`) by index name
-(enso, nino, oni, nao, pdo, amo, amv) and by topic (region, baseline,
-detrending, eof), read every concept that applies, and restate what
-each fixes about the plan before computing, citing it by path. The
-region coordinates, the ONI updating-baseline convention, the two NAO
-families, the PDO global-mean-removal requirement, and the AMO
-detrending controversy all live in concepts and are read from them, not
-carried here. A concept added or corrected since you last ran is found
-this way and changes this skill's behavior without editing it.
+Before computing ANY index, consult installed knowledge concepts
+first, as the core `consult-knowledge` skill sets out (the directories
+to glob, how to voice a concept's status, which concept wins on
+conflict), by index name (enso, nino, oni, nao, pdo, amo, amv) and by
+topic (region, baseline, detrending, eof); read every concept that
+applies, and restate what each fixes about the plan before computing,
+citing it by path. The concepts this plugin resolves to today, all the
+plugin's own under `knowledge/conventions/`: `enso-sst-indices.md`
+(the Nino region boxes and the ONI updating-baseline scheme),
+`nao-index.md` (the two NAO families and the sign convention),
+`pdo-index.md` (the global-mean-removal requirement), and
+`amo-index.md` (the detrending controversy and naming discipline). The
+region coordinates and the rules are read from them, not carried here.
+A concept added or corrected since you last ran is found this way and
+changes this skill's behavior without editing it.
 
 ## Computation and baseline conventions
 

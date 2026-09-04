@@ -34,11 +34,11 @@ are hardcoded.
    climatology, winter maxima, trend), plus the criterion: stated by the user,
    or proposed as the criteria convention's default and confirmed, never
    silently assumed.
-2. **Consult the bundle for THIS analysis.** Discover and read the concepts
-   that apply, do not restate them from memory: glob and grep
-   `knowledge/conventions/` (the plugin's own), `knowledge/snapshot-podaac/conventions/`,
-   `knowledge/snapshot-podaac/gotchas/`, and `knowledge/snapshot-podaac/datasets/`
-   for the MLD criterion definitions and default, the comparability rule
+2. **Consult the bundle for THIS analysis.** Consult installed
+   knowledge concepts first, as the core `consult-knowledge` skill
+   sets out, by criterion, product, and regime; the mixed-layer skill
+   lists the concepts this plugin resolves to. Read them for the MLD
+   criterion definitions and default, the comparability rule
    (which criterion, reference depth, threshold, and input averaging must
    match), the monthly-mean input caveat, and any product MLD-diagnostic
    gotcha (for ECCO, the MXLDEPTH-criterion gotcha). Restate what each changes

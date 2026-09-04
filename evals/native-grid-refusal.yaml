@@ -5,7 +5,7 @@ prompt: >
   I have the regridded 0.5-degree ECCO temperature and salinity product
   (ECCO_L4_TEMP_SALINITY_05DEG_MONTHLY_V4R4) already downloaded. Compute
   an ocean heat budget for the subpolar North Atlantic from it.
-fixtures: [verification/fixtures/ecco_05deg_stub.nc]
+fixtures: [ecco-agent-evals/fixtures/native-grid/ecco_05deg_stub.nc]
 graders:
   - programmatic: transcript_refuses_and_offers_native_grid
   - rubric: refusal-quality.md
@@ -18,4 +18,5 @@ notes: >
   a citation followed by a workaround budget on the regridded fields,
   fails. Manual precursor with a recorded pass:
   marketplace/docs/prompts/behavior/regridded-budget-refusal.md
-  (2026-07-04). A stub fixture is queued.
+  (2026-07-04). The synthetic regridded stub lives in the org evals
+  repository beside its generator and README.

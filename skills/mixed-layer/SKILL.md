@@ -16,20 +16,22 @@ read from there per analysis, never restated here.
 
 ## Consult the bundle for this analysis
 
-Before any MLD work, DISCOVER and read the applicable concepts; do not
-work from a remembered list of thresholds or caveats. Glob and grep
-`knowledge/conventions/` (the plugin's own), `knowledge/snapshot-podaac/conventions/`,
-`knowledge/snapshot-podaac/gotchas/`, and `knowledge/snapshot-podaac/datasets/`
-for every concept touching MLD criteria, the products in play, and the
-regime (search "mixed layer", "mld", a criterion name, a product name).
-Read the matches, restate what each changes about the plan, and cite it
-by path before computing. The criterion families and their threshold
-values, the comparability and input-averaging rules, the monthly-mean
-shallow bias, the barrier-layer regimes, and a product's own MLD
-diagnostic are read from the bundle (for example
-`knowledge/conventions/mld-criteria.md` and the MLD gotchas such as
-`knowledge/snapshot-podaac/gotchas/ecco-mxldepth-criterion.md`), never from this file. A
-concept added or corrected since you last ran is found this way.
+Before any MLD work, consult installed knowledge concepts first, as
+the core `consult-knowledge` skill sets out (the directories to glob,
+how to voice a concept's status, which concept wins on conflict), by
+criterion, product, and regime (search terms: mixed layer, mld, a
+criterion name, a product name). Read the matches, restate what each
+changes about the plan, and cite it by path before computing. The
+concepts this plugin resolves to today: the plugin's own criteria
+convention `knowledge/conventions/mld-criteria.md` (the criterion
+families and their threshold values, the default, the comparability
+and input-averaging rules, the monthly-mean shallow bias, the
+barrier-layer regimes) and, for ECCO, the MXLDEPTH-criterion gotcha
+`knowledge/snapshot-podaac/gotchas/ecco-mxldepth-criterion.md` (the
+product's own MLD diagnostic and its criterion) and the
+temperature-salinity family concept the profiles come from, all read
+from there, never from this file. A concept added or corrected since you last ran
+is found this way.
 
 ## MLD is a criterion, not an observable (method)
 

@@ -19,10 +19,12 @@ its own.
    overturning streamfunction), latitude or named section, period,
    basin scope.
 2. **Consult the knowledge bundle for this section and dataset FIRST.**
-   Do not rely on memorized rules: discover the applicable concepts by
-   searching `knowledge/` (gotchas that constrain this section, the
-   recipe that pins its expected values and spread, the dataset
-   concept's uncertainty framing), read them, restate what applies to
+   Consult installed knowledge concepts first, as the core
+   `consult-knowledge` skill sets out, by section, latitude, quantity,
+   and product; the ecco skill lists the concepts this plugin resolves
+   to (the gotchas that constrain this section, the recipe or attested
+   computation that pins its expected values and spread, the dataset
+   concept's uncertainty framing). Read them, restate what applies to
    the request, and cite each by bundle path. If the ecco-scout agent
    is available, its plan already carries these citations; otherwise do
    the discovery here. A section whose scope, expected range, or

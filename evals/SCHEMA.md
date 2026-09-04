@@ -1,10 +1,12 @@
 # Eval case schema (ocean-science)
 
-Case format per SPEC §8. Cases
-live here beside verification/, versioned with the skills and knowledge
-they test. Evals test AGENT SCIENTIFIC JUDGMENT with the plugin
-installed (golden notebooks test code; the surface harness tests
-packaging).
+The case format, field by field, is the org's eval authoring guide,
+`marketplace/docs/eval-authoring-guide.md`; this file points there and
+records what is local. Cases live here beside verification/, versioned
+with the skills and knowledge they test, and the org evals repository
+(ecco-agent-evals) is the declared authority for the cases it carries.
+Evals test AGENT SCIENTIFIC JUDGMENT with the plugin installed (the
+verification scripts test code; the surface harness tests packaging).
 
 ## Case types
 
@@ -19,21 +21,12 @@ packaging).
 
 ## Fields
 
-```yaml
-id: native-grid-refusal        # matches the gotcha's eval_case field
-type: rejection                # one of the four types above
-targets: [ocean-budget, gotchas/ecco-native-vs-regridded]
-prompt: >                      # verbatim; no coaching on the tested behavior
-  ...
-fixtures: [verification/fixtures/...]   # empty list if none needed
-graders:
-  - programmatic: <checker id>          # transcript/output predicate
-  - rubric: <rubric file>               # rubric-eval judge (shared runner)
-trials: 5                      # seed runs; 20 under the shared runner
-pass_threshold: 0.8
-notes: >                       # grading guidance for the manual seed pass
-  ...
-```
+The fields (`id`, `type`, `targets`, `prompt`, `fixtures`, `graders`,
+`trials`, `pass_threshold`, `notes`, and the org repository's
+`concept_basis`) are defined in the authoring guide; a case here
+carries the same fields. `fixtures` names files under this plugin's
+`verification/fixtures/`, or under the org evals repository's
+`fixtures/` when the fixture lives there.
 
 Seed discipline: cases are drafted here, run
 ONCE each manually on Claude Code, and rubric-graded by hand into

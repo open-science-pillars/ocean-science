@@ -53,6 +53,9 @@ there, never from here.
 6. Cite every concept that shaped the run by path with its status; a
    draft is voiced as unverified.
 
-The verification notebook `verification/ocean_budget.py` runs this
-procedure on the 2010 fixture and asserts the heat computation's pass
-bar pointwise on tile-interior cells.
+The verification script `verification/ocean_budget.py` is the smoke
+test over this procedure for heat: it stages the 2010 fixture, runs
+the sanctioned computation from the pinned copy for a receipt, and
+attests the receipt; the pass bar it asserts is the computation's, not
+its own. The salt and volume scripts beside it still carry their
+formulation inline until those computations reach stable.

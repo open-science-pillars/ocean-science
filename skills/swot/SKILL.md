@@ -6,26 +6,36 @@ user-invocable: false
 
 # swot
 
-Background expertise for SWOT KaRIn sea surface height work. This skill is
-deliberately reference-heavy: the product inventory, granule anatomy, and
-orbit-phase details live in `references/swot-products.md` (CMR-verified
-2026-07-04) and in the knowledge bundle's concepts; this file says when to
-reach for which, and carries no dataset facts, numbers, or gotcha rules of
-its own.
+Background expertise for SWOT KaRIn sea surface height work. This
+skill carries the pointer, not the facts: the product inventory,
+granule anatomy, orbit phases, and current baseline live in the
+knowledge bundle's concepts, and `references/swot-products.md` is the
+procedure for choosing among them; this file says when to reach for
+which, and carries no dataset facts, numbers, or gotcha rules of its
+own.
 
 ## Knowledge first
 
-Before ANY SWOT analysis, DISCOVER and consult the installed knowledge
-bundle; do not work from a remembered list of rules. Search
-`knowledge/snapshot-podaac/datasets/`, `knowledge/snapshot-podaac/gotchas/`, and `knowledge/snapshot-podaac/recipes/` for
-every concept touching the products, variables, tiers, cycles, and dates in
-play (glob and grep by product name, variable, and topic), read the matches,
-restate what each changes about the plan before computing, and cite it by
-path. A concept added since you last ran is found this way. The processing
-baseline and version-family state, the ssha uncertainty variables and what
-they do not cover, the crossover-calibration issue, the CRID drift, and the
-orbit-phase/cal-val trap all live in concepts and are read from them, never
-from this skill.
+Before ANY SWOT analysis, consult installed knowledge concepts first,
+as the core `consult-knowledge` skill sets out (the directories to
+glob, how to voice a concept's status, which concept wins on conflict),
+by the products, variables, tiers, cycles, and dates in play (search
+terms: swot, karin, ssha, a tier name, cycle, pass, crid, crossover,
+cal/val). Read each match, restate what it changes about the plan
+before computing, and cite it by path. A concept added since you last
+ran is found this way, not from this file. The concepts this plugin
+resolves to today, all under `knowledge/snapshot-podaac/`:
+
+- the dataset concept `datasets/swot-karin.md`: identity and swath
+  geometry, granule structure, the Variants table (tiers by version
+  family with ShortNames and concept ids), the family holdings, the
+  nadir altimeter collections, the uncertainty variables and what they
+  do not cover, and the known issues (baseline drift within
+  collections, the whole-pass spatial-search caveat);
+- `gotchas/swot-calval-orbit-phases.md`: the two orbit phases, the
+  cycle numbering, and the version-family trap;
+- `gotchas/swot-crossover-unapplied.md`: the crossover correction that
+  arrives unapplied, the field that carries it, and its quality gate.
 
 One consult fires first, always: any date range touching 2023 gets the
 orbit-phase concept read BEFORE anything else, because a window spanning the
@@ -40,17 +50,19 @@ altimetry cannot. What makes it different to work with is the swath geometry
 (cross-track systematic errors, signed cross-track coordinates, the gap),
 phase-dependent sampling, and bit-packed quality flags that gate every
 pixel. The swath widths, along-swath posting, per-tier posting, and gap size
-are dataset facts: read them from the dataset concept and the products
-reference, not from here.
+are dataset facts: read them from the dataset concept, not from here.
 
-## Choosing a tier
+## Choosing a tier and a family
 
-Pick the tier from the reference's table (`references/swot-products.md`) by
-what the analysis needs: SSH-anomaly work, the full correction and
-uncertainty variable set, wind and wave state, or the finest-scale
-structure. The tier inventory and its trade-offs (including granule size)
-live in that table; the version family in play is per the dataset concept's
-current-baseline note, never hardcoded here.
+Pick the tier from the dataset concept's Variants table
+(`knowledge/snapshot-podaac/datasets/swot-karin.md`) by what the
+analysis needs: SSH-anomaly work, the full correction and uncertainty
+variable set, wind and wave state, or the finest-scale structure. The
+tier inventory, its trade-offs (posting, granule size), the ShortNames
+and concept ids per version family, and the family holdings live in
+that concept; `references/swot-products.md` is the procedure for
+reading them. The version family in play follows the holdings and the
+dataset concept's current-baseline note, never a value hardcoded here.
 
 ## Working rules (procedure)
 

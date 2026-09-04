@@ -11,14 +11,21 @@ analysis.
 
 ## Consult the bundle first
 
-Before any sea level statement, DISCOVER and read the installed knowledge
-concepts for the products, corrections, and depth range in play; do not
-work from a remembered list of rules. Glob and grep `knowledge/snapshot-podaac/datasets/`,
-`knowledge/snapshot-podaac/gotchas/`, `knowledge/snapshot-podaac/conventions/`, and the
-plugin's own `knowledge/conventions/` by product name (GRACE,
-ECCO, altimetry), by correction (GIA, inverse barometer, leakage), and by
-topic (steric, manometric, budget closure), read the matches, and restate
-what each changes about the plan before computing, citing it by path. The
+Before any sea level statement, consult installed knowledge concepts
+first, as the core `consult-knowledge` skill sets out (the directories
+to glob, how to voice a concept's status, which concept wins on
+conflict), by product name (GRACE, ECCO, altimetry), by correction
+(GIA, inverse barometer, leakage), and by topic (steric, manometric,
+budget closure, trend); read the matches, and restate what each changes
+about the plan before computing, citing it by path. The concepts this
+plugin resolves to today: the ECCO concepts the ecco skill lists (the
+SSH and OBP family concepts, the SSH inverse-barometer and release
+gotchas, the Boussinesq global-steric gotcha, the trend gotchas, the
+regional sea-level and steric computations, the sea-level findings and
+validity domains); the GRACE dataset concept and its leakage and GIA
+gotchas; the altimetry concepts (the NASA-SSH dataset and the
+SSH-versus-altimetry computation); and the plugin's own connector
+concepts under `knowledge/connectors/` for tide gauges and Argo. The
 sea level budget bookkeeping lives in
 `knowledge/snapshot-podaac/conventions/sea-level-budget-closure.md`; the GRACE effective
 resolution, coastal-leakage, and GIA facts live in the GRACE dataset
