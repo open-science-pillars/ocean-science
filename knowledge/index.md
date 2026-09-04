@@ -1,6 +1,10 @@
+---
+okf_version: "0.2"
+---
+
 # podaac-arc bundle (PINNED SNAPSHOT per SPEC v0.6 §5.7)
 
-- Canonical home: github.com/open-science-pillars/nasa-daac-knowledge (podaac/)
+- Canonical home: github.com/open-science-pillars/nasa-daac-knowledge (knowledge/podaac/)
 - Snapshot source commit: 41d5ffadd1aa
 - Snapshot date: 2026-08-30
 - Precedence: the canonical concept wins on conflict; this snapshot
@@ -10,10 +14,10 @@
   ruling of 2026-07-05.
 
 The PO.DAAC arc knowledge bundle: ECCO, SWOT, GRACE-FO, GHRSST MUR.
-OKF v0.2 conformant in the snapshotted concepts (the canonical root
-index declares okf_version "0.2"; the exact spec text is vendored in
-marketplace docs/upstream). The plugin-local concepts noted below are
-still v0.1-form, pending their own migration.
+OKF v0.2 conformant (okf_version "0.2" above; the exact spec text is
+vendored in marketplace docs/upstream). The plugin-local concepts
+carry the v0.2 event shape with their original steward dates since
+the 2026-09-01 migration (#15).
 
 ## datasets
 
@@ -33,19 +37,19 @@ still v0.1-form, pending their own migration.
 - [ECCO V4R4 vs V4R4B: mixing releases conflates corrections with signal](gotchas/ecco-release-mixing.md), severity high, status: stable
 - [ECCO meridional heat transport: no basin mask means the full latitude circle](gotchas/ecco-mht-basin-scope.md), severity high, status: stable
 - [SWOT KaRIn ssha_karin: crossover calibration arrives UNAPPLIED](gotchas/swot-crossover-unapplied.md), severity high, status: stable
-- [ECCO SSH inverse-barometer variants: pick the convention and never mix them](gotchas/ecco-ssh-ib-variants.md), severity medium, status: stable (local, v0.1-form)
-- [ECCO Boussinesq global-mean steric correction](gotchas/ecco-boussinesq-global-steric.md), severity medium, status: stable (local, v0.1-form)
-- [ECCO MXLDEPTH uses the model's own MLD criterion](gotchas/ecco-mxldepth-criterion.md), severity medium, status: stable (local, v0.1-form)
-- [ECCO native-grid density and equation of state](gotchas/ecco-native-density-eos.md), severity medium, status: stable (local, v0.1-form)
+- [ECCO SSH inverse-barometer variants: pick the convention and never mix them](gotchas/ecco-ssh-ib-variants.md), severity medium, status: stable (local)
+- [ECCO Boussinesq global-mean steric correction](gotchas/ecco-boussinesq-global-steric.md), severity medium, status: stable (local)
+- [ECCO MXLDEPTH uses the model's own MLD criterion](gotchas/ecco-mxldepth-criterion.md), severity medium, status: stable (local)
+- [ECCO native-grid density and equation of state](gotchas/ecco-native-density-eos.md), severity medium, status: stable (local)
 
 ## conventions
 
-- [Mixed layer depth criteria](conventions/mld-criteria.md), status: stable (local, v0.1-form)
-- [Sea level budget closure](conventions/sea-level-budget-closure.md), status: stable (local, v0.1-form)
-- [ENSO SST indices (Nino regions, ONI)](conventions/enso-sst-indices.md), status: stable (local, v0.1-form)
-- [NAO index](conventions/nao-index.md), status: stable (local, v0.1-form)
-- [PDO index](conventions/pdo-index.md), status: stable (local, v0.1-form)
-- [AMO index](conventions/amo-index.md), status: stable (local, v0.1-form)
+- [Mixed layer depth criteria](conventions/mld-criteria.md), status: stable (local)
+- [Sea level budget closure](conventions/sea-level-budget-closure.md), status: stable (local)
+- [ENSO SST indices (Nino regions, ONI)](conventions/enso-sst-indices.md), status: stable (local)
+- [NAO index](conventions/nao-index.md), status: stable (local)
+- [PDO index](conventions/pdo-index.md), status: stable (local)
+- [AMO index](conventions/amo-index.md), status: stable (local)
 
 ## recipes
 
