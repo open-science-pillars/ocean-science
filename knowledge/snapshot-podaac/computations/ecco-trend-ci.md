@@ -20,7 +20,8 @@ attester:
 calibration: references/computations/ecco_trend_ci_calibration.py
 calibration_report: references/calibration/trend-ci-coverage.json
 generated: { by: claude-code/fable-5, at: 2026-09-02T05:10:00Z }
-status: draft
+status: stable
+verified: { by: human:PaulMRamirez, at: 2026-09-04T22:08:00Z }
 stale_after: 2027-01-05
 sources:
   - id: santer-2008
