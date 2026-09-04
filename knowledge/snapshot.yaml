@@ -1,0 +1,14 @@
+# Pinned copy of the PO.DAAC provider bundle (OKF SPEC 5.7). Checked and
+# refreshed by tools/sync_check.py in the canonical repository:
+#   uv run tools/sync_check.py ../ocean-science/knowledge                  # check at the pin
+#   uv run tools/sync_check.py ../ocean-science/knowledge --refresh COMMIT  # rewrite the copy
+# The pin is the steward's signing commit; refresh at every plugin release.
+source:
+  repository: open-science-pillars/nasa-daac-knowledge
+  bundle: knowledge/podaac
+  commit: 24b27927c387
+  date: 2026-09-04
+copy_dir: snapshot-podaac
+scope:
+  exclude:
+    - tutorial/    # the tutorial companions are inputs to the tutorials, not to skills

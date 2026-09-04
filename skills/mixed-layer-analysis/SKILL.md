@@ -36,7 +36,8 @@ are hardcoded.
    silently assumed.
 2. **Consult the bundle for THIS analysis.** Discover and read the concepts
    that apply, do not restate them from memory: glob and grep
-   `knowledge/conventions/`, `knowledge/gotchas/`, and `knowledge/datasets/`
+   `knowledge/conventions/` (the plugin's own), `knowledge/snapshot-podaac/conventions/`,
+   `knowledge/snapshot-podaac/gotchas/`, and `knowledge/snapshot-podaac/datasets/`
    for the MLD criterion definitions and default, the comparability rule
    (which criterion, reference depth, threshold, and input averaging must
    match), the monthly-mean input caveat, and any product MLD-diagnostic

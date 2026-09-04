@@ -1,0 +1,147 @@
+{
+ "overlap": [
+  "2004-04",
+  "2017-12"
+ ],
+ "months": 165,
+ "section_faces": 66,
+ "tiles": [
+  2,
+  10
+ ],
+ "westernmost_faces": [
+  {
+   "lon": -80.5,
+   "lat": 25.676,
+   "kind": "W",
+   "tile": 10,
+   "j": 47,
+   "i": 73,
+   "wet_levels": 27,
+   "depth_m": 861.45,
+   "sign": -1,
+   "mean_Sv": 6.628,
+   "sd_Sv": 0.366
+  },
+  {
+   "lon": -79.5,
+   "lat": 25.676,
+   "kind": "W",
+   "tile": 10,
+   "j": 48,
+   "i": 73,
+   "wet_levels": 27,
+   "depth_m": 861.45,
+   "sign": -1,
+   "mean_Sv": 8.717,
+   "sd_Sv": 0.408
+  },
+  {
+   "lon": -78.5,
+   "lat": 25.676,
+   "kind": "W",
+   "tile": 10,
+   "j": 49,
+   "i": 73,
+   "wet_levels": 27,
+   "depth_m": 861.45,
+   "sign": -1,
+   "mean_Sv": 7.561,
+   "sd_Sv": 0.346
+  },
+  {
+   "lon": -77.5,
+   "lat": 25.676,
+   "kind": "W",
+   "tile": 10,
+   "j": 50,
+   "i": 73,
+   "wet_levels": 27,
+   "depth_m": 861.45,
+   "sign": -1,
+   "mean_Sv": 4.174,
+   "sd_Sv": 0.239
+  },
+  {
+   "lon": -75.5,
+   "lat": 25.676,
+   "kind": "W",
+   "tile": 10,
+   "j": 52,
+   "i": 73,
+   "wet_levels": 47,
+   "depth_m": 4834.0,
+   "sign": -1,
+   "mean_Sv": -2.916,
+   "sd_Sv": 2.785
+  },
+  {
+   "lon": -74.5,
+   "lat": 25.676,
+   "kind": "W",
+   "tile": 10,
+   "j": 53,
+   "i": 73,
+   "wet_levels": 47,
+   "depth_m": 4834.0,
+   "sign": -1,
+   "mean_Sv": -3.696,
+   "sd_Sv": 2.138
+  },
+  {
+   "lon": -73.5,
+   "lat": 25.676,
+   "kind": "W",
+   "tile": 10,
+   "j": 54,
+   "i": 73,
+   "wet_levels": 48,
+   "depth_m": 5244.5,
+   "sign": -1,
+   "mean_Sv": -3.305,
+   "sd_Sv": 1.459
+  },
+  {
+   "lon": -72.5,
+   "lat": 25.676,
+   "kind": "W",
+   "tile": 10,
+   "j": 55,
+   "i": 73,
+   "wet_levels": 48,
+   "depth_m": 5244.5,
+   "sign": -1,
+   "mean_Sv": -1.748,
+   "sd_Sv": 1.078
+  }
+ ],
+ "model_shelf": {
+  "faces": [
+   -80.5,
+   -79.5,
+   -78.5,
+   -77.5
+  ],
+  "depth_m": [
+   861
+  ],
+  "note": "the contiguous westernmost faces shallower than 1000 m: the grid's stand-in for the Florida Straits and the Bahama Banks together",
+  "total_mean_Sv": 27.0804059643263,
+  "total_sd_Sv": 1.289920595747158,
+  "correlation_with_cable_monthly": 0.4994200312235851
+ },
+ "array_components_monthly_over_overlap": {
+  "t_gs10": {
+   "mean_Sv": 31.70781182686229,
+   "sd_Sv": 2.1227384505392473
+  },
+  "t_ek10": {
+   "mean_Sv": 3.6985628605622933,
+   "sd_Sv": 2.206385854628884
+  },
+  "t_umo10": {
+   "mean_Sv": -18.139092544621697,
+   "sd_Sv": 2.9475881229713474
+  }
+ }
+}

@@ -30,7 +30,7 @@ Geometry loads first and merges with everything.
 
 ## 4. Compute against the recipe
 
-transport-analysis reads `knowledge/recipes/ecco-mht-26n.md` for the
+transport-analysis reads `knowledge/snapshot-podaac/recipes/ecco-mht-26n.md` for the
 method and the expected value (0.666 PW Atlantic 2010, with its
 scope stated: the full-circle number is a different quantity). Basin
 scope is named on every number.

@@ -9,20 +9,22 @@ user-invocable: false
 Background expertise for property budgets that actually close. This skill
 carries the architecture and the diagnosis discipline; the exact terms,
 constants, and expected residuals are dataset knowledge and live in the
-bundle's recipe and gotcha concepts and in the ECCO budget-formulation
-reference, consulted per the step below, never carried here.
+bundle's recipe, gotcha and convention concepts (the ECCO budget
+formulation is a convention concept), consulted per the step below,
+never carried here.
 
 ## Consult the bundle for this budget
 
 Before diagnosing or blessing any budget, DISCOVER and read the applicable
 concepts; do not work from a remembered list or carry a number here. Glob and
-grep `knowledge/recipes/` for the property's budget recipe (heat, salt, or
+grep `knowledge/snapshot-podaac/recipes/` for the property's budget recipe (heat, salt, or
 volume) and take the expected residual, its tolerance, and its provenance from
-there, restating and citing by path. Glob and grep `knowledge/gotchas/` for
+there, restating and citing by path. Glob and grep `knowledge/snapshot-podaac/gotchas/` for
 the gotchas that constrain the property (for heat, the geothermal term; for any
 budget, the native-vs-regridded rule) and restate what each changes about the
 plan. The exact term formulation, the z* correction, shortwave penetration, and
-the traps table are quoted in `skills/ecco/references/budget-formulation.md`;
+the traps table are the convention concept
+`knowledge/snapshot-podaac/conventions/ecco-budget-formulation.md`;
 consult it for the terms. A concept or tolerance added or corrected since you
 last ran is found this way, which is what lets it change this skill's behavior
 without editing this file. A residual above the recipe's stated expectation is
@@ -64,7 +66,7 @@ hand before promising closure.
 ## Diagnosing non-closure by signature
 
 Work the signature, not guesswork; the property's recipe and the traps
-table in the budget-formulation reference map these in dataset-specific
+table in the budget formulation convention map these in dataset-specific
 detail, consulted per the step above:
 
 - Residual grows with depth, concentrates at the seafloor: missing
@@ -118,6 +120,7 @@ and universal, not dataset facts:
 Dataset-specific rules (the geothermal term, the exact term formulation
 and constants, the z* and shortwave corrections, the measured residual
 tolerances) are NOT restated here: they live in the recipe concepts, the
-ECCO gotchas, and `skills/ecco/references/budget-formulation.md`,
+ECCO gotchas, and the budget formulation convention
+(`knowledge/snapshot-podaac/conventions/ecco-budget-formulation.md`),
 consulted per the step above. That is what lets a corrected tolerance or
 a new budget gotcha change this skill's behavior without editing it.

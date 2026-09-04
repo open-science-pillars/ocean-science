@@ -8,11 +8,11 @@ rows that lived in this file now live in the knowledge bundle's fields
 layer, one Data Collection concept per family, granule-verified and
 steward-signed. Consult the bundle by path before loading:
 
-- Family index: `knowledge/fields/ecco-v4r4/index.md` (26 families
+- Family index: `knowledge/snapshot-podaac/fields/ecco-v4r4/index.md` (26 families
   covering all 90 ECCO_L4_*V4R4* collections; the ten demo-critical
   families are authored and stable as of 2026-08-30, the rest arrive
   via the community lane).
-- Per-family concepts: `knowledge/fields/ecco-v4r4/<family>.md`
+- Per-family concepts: `knowledge/snapshot-podaac/fields/ecco-v4r4/<family>.md`
   (geometry, temp-salinity, ocean-vel, volume-flux-3d,
   temperature-flux-3d, salinity-flux-3d, heat-flux, fresh-flux, ssh,
   obp, and the rest as they land). Each carries the ShortName variants,
@@ -36,7 +36,7 @@ only from the fields concepts and granule loads.
   dataset before analysis (`xarray.merge` with the data granules); the
   geometry family concept carries the variable inventory.
 - Budget work consults the family concepts named by the recipe in play
-  (the recipe concepts in `knowledge/recipes/` name their input
+  (the recipe concepts in `knowledge/snapshot-podaac/recipes/` name their input
   collections) and the gotchas its Known-issues links reach.
 
 ## Access pattern

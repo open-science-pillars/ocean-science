@@ -11,7 +11,7 @@ claim footnotes either a signed concept (definitions, caveats) or an
 attested-run receipt (the computed numbers, with run id and residual).
 The template ships beside this skill (`briefing-template.md`); the
 sanctioned computation and its attester live in the knowledge bundle
-(`knowledge/computations/ecco-regional-sea-level.md`).
+(`knowledge/snapshot-podaac/computations/ecco-regional-sea-level.md`).
 
 ## Behavior
 

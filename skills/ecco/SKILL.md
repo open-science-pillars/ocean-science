@@ -15,7 +15,7 @@ which.
 
 Before ANY ECCO analysis, DISCOVER and consult the installed knowledge
 bundle, do not work from a remembered list of rules. Search
-`knowledge/datasets/`, `knowledge/gotchas/`, and `knowledge/recipes/`
+`knowledge/snapshot-podaac/datasets/`, `knowledge/snapshot-podaac/gotchas/`, and `knowledge/snapshot-podaac/recipes/`
 for every concept touching the products, quantities, and depth range in
 play (glob and grep by product name, variable, and topic), read the
 matches, and restate what each changes about the plan before computing,
@@ -48,10 +48,12 @@ eddies or shelf processes, and it carries no formal error fields.
   verified against live CMR with the verification date recorded;
   velocity vs OBP disambiguation; snapshot collections for budget
   bookends; the V4R4B note; geothermal flux as ancillary input.
-- `references/budget-formulation.md`: any budget. The four terms quoted
-  from the ECCO v4 tutorial, constants, the z* tendency correction,
-  shortwave penetration, geothermal at the bottom cell, and the traps
-  table mapping residual signatures to formulation errors.
+- `references/budget-formulation.md`: any budget. The procedure, and
+  the pointers to where the formulation lives: the four terms,
+  constants, the z* tendency correction, shortwave penetration,
+  geothermal at the bottom cell, and the traps table are the signed
+  convention `knowledge/snapshot-podaac/conventions/ecco-budget-formulation.md`,
+  read from there.
 
 ## Access pattern
 

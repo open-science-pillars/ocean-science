@@ -12,12 +12,14 @@
 # ///
 # Golden notebook for the ocean-budget workflow (SPEC §6): the
 # full four-term 2010 heat budget, formulation exactly per
-# skills/ecco/references/budget-formulation.md (tutorial-quoted), with
-# POINTWISE closure asserted on the interior cells of one tile against
-# the recipe tolerance (knowledge/recipes/ecco-heat-budget.md: relative
-# residual <= 1e-6 vs the dominant term). Interior-of-tile is a valid
-# spatial subset for pointwise closure per SPEC §6, and it needs no
-# tile-seam operators (within-tile faces are unambiguous).
+# knowledge/snapshot-podaac/conventions/ecco-budget-formulation.md
+# (tutorial-quoted), with POINTWISE closure asserted on the interior
+# cells of one tile against the pass bar owned by the attested
+# computation (knowledge/snapshot-podaac/computations/ecco-heat-budget.md:
+# absolute residual, max <= 1e-10 and p99.9 <= 1e-11 degC/s).
+# Interior-of-tile is a valid spatial subset for pointwise closure per
+# SPEC §6, and it needs no tile-seam operators (within-tile faces are
+# unambiguous).
 # Headless green via `python verification/ocean_budget.py`.
 
 import marimo
@@ -43,10 +45,11 @@ def _():
     spec.loader.exec_module(fx)
     paths = fx.ensure_cache()
 
-    # Recipe tolerance (knowledge/recipes/ecco-heat-budget.md, re-grounded
-    # 2026-07-04 on measurement: absolute, because float32 archives make
-    # relative ratios meaningless below the quantization floor) and
-    # tutorial constants (budget-formulation.md).
+    # Pass bar (knowledge/snapshot-podaac/computations/ecco-heat-budget.md,
+    # grounded 2026-07-04 on measurement: absolute, because float32
+    # archives make relative ratios meaningless below the quantization
+    # floor) and tutorial constants (the budget formulation convention
+    # concept).
     TOL_ABS_MAX = 1e-10    # degC/s, 2x measured max (4.95e-11)
     TOL_ABS_P999 = 1e-11   # degC/s, measured p99.9 was 7.3e-12
     RHOCONST, C_P = 1029.0, 3994.0
@@ -165,7 +168,7 @@ def _(C_P, R_SW, RHOCONST, TILE, ZETA1, ZETA2, ecco, grid, hf, np, paths):
 @app.cell
 def _(TOL_ABS_MAX, TOL_ABS_P999, g_adv, g_dif, g_forc, g_total, grid, np):
     # THE CLOSURE ASSERTION: pointwise ABSOLUTE residual on interior wet
-    # cells, per the re-grounded recipe tolerance (2026-07-04 measurement).
+    # cells, per the attested pass bar (2026-07-04 measurement).
     gt = g_total[:, :, :89, :89]
     gf = g_forc[:, :, :89, :89]
     wet = grid.hFacC.values[:, :89, :89] > 0         # (50, 89, 89)
@@ -178,7 +181,7 @@ def _(TOL_ABS_MAX, TOL_ABS_P999, g_adv, g_dif, g_forc, g_total, grid, np):
     assert n > 1_000_000, "subset unexpectedly small"
     assert r_max <= TOL_ABS_MAX, f"closure FAILED: max {r_max:.2e} > {TOL_ABS_MAX}"
     assert r_p999 <= TOL_ABS_P999, f"closure FAILED: p99.9 {r_p999:.2e} > {TOL_ABS_P999}"
-    print("ocean_budget golden: pointwise closure PASSED at the recipe tolerance")
+    print("ocean_budget golden: pointwise closure PASSED at the attested pass bar")
     return
 
 

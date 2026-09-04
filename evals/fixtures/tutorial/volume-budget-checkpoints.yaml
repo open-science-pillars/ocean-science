@@ -3,7 +3,7 @@
 # correct walkthrough produces, for tutorial-fidelity graders.
 chapter: https://ecco-v4-python-tutorial.readthedocs.io/ECCO_v4_Volume_budget_closure.html
 extracted: 2026-08-30
-companion_concept: podaac/tutorial/ecco-volume-budget-tutorial-checkpoints.md (nasa-daac-knowledge)
+companion_concept: knowledge/podaac/tutorial/ecco-volume-budget-tutorial-checkpoints.md (nasa-daac-knowledge)
 checkpoints:
   tendency_route_agreement:
     value: 1.0e-6

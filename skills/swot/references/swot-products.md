@@ -4,7 +4,7 @@ Reference for the swot skill, per SPEC §4.3.
 **ShortNames and version families verified against live CMR 2026-07-04**
 (earthaccess, netrc auth); granule-level evidence quoted below comes
 from the same session's probes. The current processing baseline is
-recorded in `knowledge/datasets/swot-karin.md` with its verification
+recorded in `knowledge/snapshot-podaac/datasets/swot-karin.md` with its verification
 date, never hardcoded here or in skills.
 
 ## Product tiers (Low Rate / oceanography)
@@ -59,7 +59,7 @@ SWOT_L2_LR_SSH_Basic_011_424_20240229T234642_20240301T003728_PIC0_01.nc
 Date ranges spanning the July 2023 transition mix two incompatible
 sampling regimes and two cycle-numbering schemes; time series and
 crossover analyses treat the phases separately. Details and evidence in
-`knowledge/gotchas/swot-calval-orbit-phases.md`.
+`knowledge/snapshot-podaac/gotchas/swot-calval-orbit-phases.md`.
 
 ## Two-swath geometry
 

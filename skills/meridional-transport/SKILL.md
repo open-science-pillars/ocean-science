@@ -10,7 +10,7 @@ Background expertise for the METHOD of computing meridional transports
 natively and framing them honestly. Dataset-specific facts (basin scope
 of a given product, expected values, the RAPID-comparison discipline)
 are not restated here: they live in the knowledge bundle
-(`knowledge/gotchas/` and `knowledge/recipes/`) and are consulted per
+(`knowledge/snapshot-podaac/gotchas/` and `knowledge/snapshot-podaac/recipes/`) and are consulted per
 analysis by the transport-analysis workflow and the ecco-scout agent.
 Grid mechanics live in ocean-grids and the llc90 reference; expected
 values and spreads live in recipe concepts.

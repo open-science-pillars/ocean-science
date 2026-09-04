@@ -23,7 +23,7 @@ Session 10; template authored in Session 1 per SPECIFICATION.md v0.5.1 §4.1.
 - Orbit phase default: 21-day science (set 1-day cal/val explicitly when intended;
   the swot-calval-orbit-phases gotcha applies to ranges spanning the switch)
 - Product tier default: Expert
-- Processing baseline: consult knowledge/datasets/swot-karin.md, do not hardcode here
+- Processing baseline: consult knowledge/snapshot-podaac/datasets/swot-karin.md, do not hardcode here
 
 ## Knowledge block
 

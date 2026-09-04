@@ -17,8 +17,9 @@ live here: they are read from the knowledge bundle per analysis.
 
 Before any T-S work on a specific product, DISCOVER and read the
 applicable knowledge concepts; do not work from a remembered variable
-list. Glob and grep `knowledge/datasets/`, `knowledge/gotchas/`, and
-`knowledge/conventions/` by product name and by topic (temperature,
+list. Glob and grep `knowledge/snapshot-podaac/datasets/`, `knowledge/snapshot-podaac/gotchas/`,
+`knowledge/snapshot-podaac/conventions/`, and the plugin's own `knowledge/conventions/`
+by product name and by topic (temperature,
 salinity, density, EOS, water mass), read the matches, and restate
 (citing each by path) what the product fixes about the plan: which
 variables carry potential temperature and practical salinity (or whether

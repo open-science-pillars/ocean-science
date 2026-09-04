@@ -1,0 +1,260 @@
+{
+ "verified_utc": "2026-09-01T22:14:54.853026+00:00",
+ "manifest": "podaac/references/retrieval/fixtures-2010-manifest.json",
+ "manifest_sha256": "b28adfd936881fd7f4210db58b288c5be4aa3b04efcce2687b0ea7dc86d6084b",
+ "record": "ecco-v4r4-fixtures-2010",
+ "data_root": "/Users/pramirez/ECCO_V4r4",
+ "tool_sha256": "116ad0d57b358e3846275f7f6b6a5a938cdde185b93969009f89df198476c4d8",
+ "collections": {
+  "ECCO_L4_DENS_STRAT_PRESS_LLC0090GRID_MONTHLY_V4R4": {
+   "declared": 13,
+   "present": 13,
+   "size_ok": 13,
+   "size_max_rel_dev": 6.3784930101542064e-06,
+   "checksum_planned": 13,
+   "checksum_ok": 13
+  },
+  "ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4": {
+   "declared": 13,
+   "present": 13,
+   "size_ok": 13,
+   "size_max_rel_dev": 3.0212170493910038e-05,
+   "checksum_planned": 13,
+   "checksum_ok": 13
+  },
+  "ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4": {
+   "declared": 12,
+   "present": 12,
+   "size_ok": 12,
+   "size_max_rel_dev": 2.7902534156678255e-05,
+   "checksum_planned": 12,
+   "checksum_ok": 12
+  },
+  "ECCO_L4_OBP_LLC0090GRID_MONTHLY_V4R4": {
+   "declared": 13,
+   "present": 13,
+   "size_ok": 13,
+   "size_max_rel_dev": 3.435186317007712e-05,
+   "checksum_planned": 13,
+   "checksum_ok": 13
+  },
+  "ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4": {
+   "declared": 13,
+   "present": 13,
+   "size_ok": 13,
+   "size_max_rel_dev": 3.0469008993789752e-06,
+   "checksum_planned": 13,
+   "checksum_ok": 13
+  },
+  "ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX_LLC0090GRID_MONTHLY_V4R4": {
+   "declared": 12,
+   "present": 12,
+   "size_ok": 12,
+   "size_max_rel_dev": 3.127143931373473e-06,
+   "checksum_planned": 12,
+   "checksum_ok": 12
+  },
+  "ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4": {
+   "declared": 13,
+   "present": 13,
+   "size_ok": 13,
+   "size_max_rel_dev": 6.40768147624612e-06,
+   "checksum_planned": 13,
+   "checksum_ok": 13
+  },
+  "ECCO_L4_OCEAN_VEL_LLC0090GRID_MONTHLY_V4R4": {
+   "declared": 1,
+   "present": 1,
+   "size_ok": 1,
+   "size_max_rel_dev": 6.205344382242943e-06,
+   "checksum_planned": 1,
+   "checksum_ok": 1
+  },
+  "ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4": {
+   "declared": 13,
+   "present": 13,
+   "size_ok": 13,
+   "size_max_rel_dev": 3.279789917621483e-05,
+   "checksum_planned": 13,
+   "checksum_ok": 13
+  },
+  "ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4": {
+   "declared": 13,
+   "present": 13,
+   "size_ok": 13,
+   "size_max_rel_dev": 3.374638344226947e-05,
+   "checksum_planned": 13,
+   "checksum_ok": 13
+  },
+  "ECCO_L4_STRESS_LLC0090GRID_MONTHLY_V4R4": {
+   "declared": 1,
+   "present": 1,
+   "size_ok": 1,
+   "size_max_rel_dev": 3.41759949821598e-05,
+   "checksum_planned": 1,
+   "checksum_ok": 1
+  },
+  "ECCO_L4_TEMP_SALINITY_LLC0090GRID_MONTHLY_V4R4": {
+   "declared": 12,
+   "present": 12,
+   "size_ok": 12,
+   "size_max_rel_dev": 1.1668035831729364e-05,
+   "checksum_planned": 12,
+   "checksum_ok": 12
+  },
+  "ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4": {
+   "declared": 13,
+   "present": 13,
+   "size_ok": 13,
+   "size_max_rel_dev": 1.2074615083911028e-05,
+   "checksum_planned": 13,
+   "checksum_ok": 13
+  },
+  "ECCO_L4_GEOMETRY_LLC0090GRID_V4R4": {
+   "declared": 1,
+   "present": 1,
+   "size_ok": 1,
+   "size_max_rel_dev": 0.0,
+   "checksum_planned": 1,
+   "checksum_ok": 1
+  },
+  "tutorial-distribution": {
+   "declared": 1,
+   "present": 1,
+   "size_ok": 1,
+   "size_max_rel_dev": 0.0,
+   "checksum_planned": 1,
+   "checksum_ok": 1
+  }
+ },
+ "failures": [],
+ "checksum": {
+  "algorithms": [
+   "SHA-256",
+   "SHA-512"
+  ],
+  "hashed": 144,
+  "ok": 144
+ },
+ "undeclared_files": [],
+ "coverage": {
+  "ECCO_L4_DENS_STRAT_PRESS_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 13,
+   "first": "2009-12",
+   "last": "2010-12",
+   "months": 13,
+   "missing_inside_span": []
+  },
+  "ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 13,
+   "first": "2009-12",
+   "last": "2010-12",
+   "months": 13,
+   "missing_inside_span": []
+  },
+  "ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 12,
+   "first": "2010-01",
+   "last": "2010-12",
+   "months": 12,
+   "missing_inside_span": []
+  },
+  "ECCO_L4_OBP_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 13,
+   "first": "2009-12",
+   "last": "2010-12",
+   "months": 13,
+   "missing_inside_span": []
+  },
+  "ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 13,
+   "first": "2009-12",
+   "last": "2010-12",
+   "months": 13,
+   "missing_inside_span": []
+  },
+  "ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 12,
+   "first": "2010-01",
+   "last": "2010-12",
+   "months": 12,
+   "missing_inside_span": []
+  },
+  "ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 13,
+   "first": "2009-12",
+   "last": "2010-12",
+   "months": 13,
+   "missing_inside_span": []
+  },
+  "ECCO_L4_OCEAN_VEL_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 1,
+   "first": "2009-12",
+   "last": "2009-12",
+   "months": 1,
+   "missing_inside_span": []
+  },
+  "ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 13,
+   "first": "2009-12",
+   "last": "2010-12",
+   "months": 13,
+   "missing_inside_span": []
+  },
+  "ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4": {
+   "granules": 13,
+   "first": "2010-01",
+   "last": "2011-01",
+   "months": 13,
+   "missing_inside_span": []
+  },
+  "ECCO_L4_STRESS_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 1,
+   "first": "2009-12",
+   "last": "2009-12",
+   "months": 1,
+   "missing_inside_span": []
+  },
+  "ECCO_L4_TEMP_SALINITY_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 12,
+   "first": "2010-01",
+   "last": "2010-12",
+   "months": 12,
+   "missing_inside_span": []
+  },
+  "ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4": {
+   "granules": 13,
+   "first": "2010-01",
+   "last": "2011-01",
+   "months": 13,
+   "missing_inside_span": []
+  },
+  "ECCO_L4_GEOMETRY_LLC0090GRID_V4R4": {
+   "granules": 1,
+   "dated": 0
+  },
+  "tutorial-distribution": {
+   "granules": 1,
+   "dated": 0
+  },
+  "budget_closable_windows": {
+   "rule": "every monthly input present for the month and both snapshot inputs at its start and at the start of the next month; inputs mirror the regional budget executor",
+   "heat": {
+    "first": "2010-01",
+    "last": "2010-12",
+    "months": 12
+   },
+   "salt": {
+    "first": "2010-01",
+    "last": "2010-12",
+    "months": 12
+   },
+   "volume": {
+    "first": "2010-01",
+    "last": "2010-12",
+    "months": 12
+   }
+  }
+ },
+ "ok": true
+}

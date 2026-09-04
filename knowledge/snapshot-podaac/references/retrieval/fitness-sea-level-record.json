@@ -1,0 +1,32 @@
+{
+  "run_id": "f6132acb",
+  "verdict": "UNADJUDICATED",
+  "declaration": {
+    "product": "ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4",
+    "claim": "trend",
+    "region": {
+      "bbox": [
+        35.0,
+        45.0,
+        -75.0,
+        -65.0
+      ]
+    },
+    "period": {
+      "start": "1992-01",
+      "end": "2017-12"
+    }
+  },
+  "declaration_provenance": "hand-declared",
+  "governing_concepts": [],
+  "advisory_unsigned": [
+    {
+      "concept": "podaac/validity-domains/ecco-large-scale-statistics.md",
+      "polarity": "supporting",
+      "title": "ECCO v4r4 native monthly fields support large-scale statistics over 1992-2017"
+    }
+  ],
+  "malformed_domains": [],
+  "vocabulary_sha256": "b812b8847bc14dd5016f51b736c18bb82664ba5e9f7a10bbce1c7506f7bc2a8a",
+  "generated_at": "2026-09-03T05:42:21Z"
+}

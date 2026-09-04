@@ -18,12 +18,12 @@ knowledge bundle rather than carrying them here.
    analysis).
 2. **Consult the bundle for THIS analysis first.** Discover and read the
    concepts that apply, do not restate them from memory: glob and grep
-   `knowledge/datasets/`, `knowledge/gotchas/`, and `knowledge/recipes/`
+   `knowledge/snapshot-podaac/datasets/`, `knowledge/snapshot-podaac/gotchas/`, and `knowledge/snapshot-podaac/recipes/`
    by product name, variable, depth range, and topic. The T and S
    variable flavors and the uncertainty framing for the product live in
-   the dataset concept (`knowledge/datasets/ecco-v4r4.md` for ECCO); any
+   the dataset concept (`knowledge/snapshot-podaac/datasets/ecco-v4r4.md` for ECCO); any
    recipe that pins expected classes or volumes lives in
-   `knowledge/recipes/`. Restate what each changes about the plan and
+   `knowledge/snapshot-podaac/recipes/`. Restate what each changes about the plan and
    cite it by path. A concept added since you last ran is found this
    way; if no recipe pins expectations for this region, the analysis
    says its class volumes are unvalidated. The water-masses knowledge

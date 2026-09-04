@@ -18,7 +18,8 @@ read from there per analysis, never restated here.
 
 Before any MLD work, DISCOVER and read the applicable concepts; do not
 work from a remembered list of thresholds or caveats. Glob and grep
-`knowledge/conventions/`, `knowledge/gotchas/`, and `knowledge/datasets/`
+`knowledge/conventions/` (the plugin's own), `knowledge/snapshot-podaac/conventions/`,
+`knowledge/snapshot-podaac/gotchas/`, and `knowledge/snapshot-podaac/datasets/`
 for every concept touching MLD criteria, the products in play, and the
 regime (search "mixed layer", "mld", a criterion name, a product name).
 Read the matches, restate what each changes about the plan, and cite it
@@ -27,7 +28,7 @@ values, the comparability and input-averaging rules, the monthly-mean
 shallow bias, the barrier-layer regimes, and a product's own MLD
 diagnostic are read from the bundle (for example
 `knowledge/conventions/mld-criteria.md` and the MLD gotchas such as
-`knowledge/gotchas/ecco-mxldepth-criterion.md`), never from this file. A
+`knowledge/snapshot-podaac/gotchas/ecco-mxldepth-criterion.md`), never from this file. A
 concept added or corrected since you last ran is found this way.
 
 ## MLD is a criterion, not an observable (method)

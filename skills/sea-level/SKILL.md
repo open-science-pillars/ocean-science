@@ -13,13 +13,14 @@ analysis.
 
 Before any sea level statement, DISCOVER and read the installed knowledge
 concepts for the products, corrections, and depth range in play; do not
-work from a remembered list of rules. Glob and grep `knowledge/datasets/`,
-`knowledge/gotchas/`, and `knowledge/conventions/` by product name (GRACE,
+work from a remembered list of rules. Glob and grep `knowledge/snapshot-podaac/datasets/`,
+`knowledge/snapshot-podaac/gotchas/`, `knowledge/snapshot-podaac/conventions/`, and the
+plugin's own `knowledge/conventions/` by product name (GRACE,
 ECCO, altimetry), by correction (GIA, inverse barometer, leakage), and by
 topic (steric, manometric, budget closure), read the matches, and restate
 what each changes about the plan before computing, citing it by path. The
 sea level budget bookkeeping lives in
-`knowledge/conventions/sea-level-budget-closure.md`; the GRACE effective
+`knowledge/snapshot-podaac/conventions/sea-level-budget-closure.md`; the GRACE effective
 resolution, coastal-leakage, and GIA facts live in the GRACE dataset
 concept and its gotchas; the ECCO SSH-variant, V4R4/V4R4B release, and
 Boussinesq facts live in the ECCO concepts. A concept added or corrected
@@ -63,7 +64,7 @@ GIA, reference frame, atmospheric-pressure (inverse-barometer)
 convention, effective smoothing (gravimetry's footprint against pointwise
 altimetry), period, and the deep-steric term. Those consistency
 requirements live in
-`knowledge/conventions/sea-level-budget-closure.md`; consult and restate
+`knowledge/snapshot-podaac/conventions/sea-level-budget-closure.md`; consult and restate
 them for the products in play. Apparent non-closure is a
 correction-consistency finding before it is a missing-physics finding:
 work the corrections table first (that ordering is the hard refusal

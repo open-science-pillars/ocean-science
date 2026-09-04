@@ -38,9 +38,14 @@ the [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLO
 - **Agents**: a scout that recommends datasets and cites the knowledge it
   relied on (never downloading on its own), and a budget auditor that checks
   a computed budget closed and diagnoses it if not.
-- **A knowledge bundle** for the PO.DAAC datasets: dataset concepts with
-  uncertainty structure, documented gotchas with evidence, and validated
-  recipes with expected numbers.
+- **A knowledge bundle**: the plugin's own conventions and connectors
+  beside a pinned copy of the PO.DAAC provider bundle
+  (`knowledge/snapshot-podaac/`, declared in `knowledge/snapshot.yaml`):
+  dataset concepts with uncertainty structure, documented gotchas with
+  evidence, validated recipes with expected numbers, and attested
+  computations with their sanctioned code and receipts. The copy is
+  byte-checked against the canonical bundle at its pinned commit and
+  refreshed at each release.
 - **Verification**: automated notebooks that re-check each workflow on small
   cached data. The heat-budget closure is additionally attested: a receipt
   from the sanctioned computation is checked against the code hash and the
