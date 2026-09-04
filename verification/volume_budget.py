@@ -12,7 +12,7 @@
 # ///
 # Golden notebook for the volume budget (SPEC §10.5): the z*
 # volume budget on the ECCO v4r4 native grid, formulation per
-# knowledge/recipes/ecco-volume-budget.md. The budget closes on transport
+# knowledge/snapshot-podaac/recipes/ecco-volume-budget.md. The budget closes on transport
 # convergence ALONE (WVELMASS carries the surface freshwater flux; a separate
 # oceFWflx forcing term double-counts and blows up the k=0 residual, which this
 # golden also demonstrates). POINTWISE closure on interior wet cells of one
@@ -39,7 +39,7 @@ def _():
     spec.loader.exec_module(fx)
     paths = fx.ensure_cache()
 
-    # Recipe tolerance (knowledge/recipes/ecco-volume-budget.md, measured
+    # Recipe tolerance (knowledge/snapshot-podaac/recipes/ecco-volume-budget.md, measured
     # 2026-07-05: max 4.6e-12, p99.9 5.4e-13 1/s; absolute).
     TOL_ABS_MAX = 1e-11    # 1/s, ~2x measured max
     TOL_ABS_P999 = 1e-12   # 1/s, ~2x measured p99.9

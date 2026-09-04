@@ -1,0 +1,1415 @@
+{
+ "record": "ecco-v4r4-fixtures-2010",
+ "generated_utc": "2026-09-01T22:13:20.027614+00:00",
+ "derived_from": "tree /Users/pramirez/ECCO_V4r4",
+ "collections": {
+  "ECCO_L4_DENS_STRAT_PRESS_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 13,
+   "size_mb": 385.1,
+   "with_checksum": 13,
+   "files": [
+    {
+     "granule": "OCEAN_DENS_STRAT_PRESS_mon_mean_2009-12_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.626327514648438,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_DENS_STRAT_PRESS_LLC0090GRID_MONTHLY_V4R4/OCEAN_DENS_STRAT_PRESS_mon_mean_2009-12_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "cad36745382a78bc44616fbdf80c11eeafe8134b0ef4820b22c78853cd70dba0710ba7266efcfe705bf5be1d7035d9e8dd363dbff20276ce6dc1cd9934da887b"
+     }
+    },
+    {
+     "granule": "OCEAN_DENS_STRAT_PRESS_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.631569862365723,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_DENS_STRAT_PRESS_LLC0090GRID_MONTHLY_V4R4/OCEAN_DENS_STRAT_PRESS_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "35ef1a00ee91783453b61b834a265e1540a6a0a98821c05c062eef28f6303e91d2bde75a4b62d67a60f1debc25ac280c39cf3c41cc27683938c2980dcf1368a9"
+     }
+    },
+    {
+     "granule": "OCEAN_DENS_STRAT_PRESS_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.62148094177246,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_DENS_STRAT_PRESS_LLC0090GRID_MONTHLY_V4R4/OCEAN_DENS_STRAT_PRESS_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "54f2b47d5b6e53e3915eeab85210e9c7b643fff6463ec14ac3a42c19ad8c94ec4bfb603c55003ab4814846421c3af2c65b692f44f28fcd6c4c871db499d20f6e"
+     }
+    },
+    {
+     "granule": "OCEAN_DENS_STRAT_PRESS_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.62050724029541,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_DENS_STRAT_PRESS_LLC0090GRID_MONTHLY_V4R4/OCEAN_DENS_STRAT_PRESS_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "0477b2f3ea00ced3ff8629732a6e32f0ea15294f77900c47ed8efd6254c7b38cf55a2de333396f1b47e1bb86235e5f9a05a851058dfe16bfc313b334af72acf9"
+     }
+    },
+    {
+     "granule": "OCEAN_DENS_STRAT_PRESS_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.615026473999023,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_DENS_STRAT_PRESS_LLC0090GRID_MONTHLY_V4R4/OCEAN_DENS_STRAT_PRESS_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "37eb5e2884ce7a06205be32156b4640541d849771e70e238e7626d5ca7aa6bdba3e50c8eed97155826cac0657f0b227e68b1674e0f1da8d7abd5ffacee2e7e93"
+     }
+    },
+    {
+     "granule": "OCEAN_DENS_STRAT_PRESS_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.61942768096924,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_DENS_STRAT_PRESS_LLC0090GRID_MONTHLY_V4R4/OCEAN_DENS_STRAT_PRESS_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "94b3521ab8eb3d7b9cea0418524c971fcaab0c997d8b273587455476ff080b68fdb7a5ea736e9434f19452e4fa23099a3f97c3b27b94730761c861c080cd7ba0"
+     }
+    },
+    {
+     "granule": "OCEAN_DENS_STRAT_PRESS_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.61957359313965,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_DENS_STRAT_PRESS_LLC0090GRID_MONTHLY_V4R4/OCEAN_DENS_STRAT_PRESS_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "b942c9f60d29b424622ae41cf26019c9cea6d563b709c5512baea6feb6191c036439432b45766136a812f3d90a9a8780b195a17e0704ec1ace13d4182995fdaf"
+     }
+    },
+    {
+     "granule": "OCEAN_DENS_STRAT_PRESS_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.61782932281494,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_DENS_STRAT_PRESS_LLC0090GRID_MONTHLY_V4R4/OCEAN_DENS_STRAT_PRESS_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "882b5666c8a24a73f73df9573b8dcf3d076997d32ee5e2a64a3a5ed3e50f50a8c64e488dcd707b4e1a96e6b47c755459965dae1da83763751fd1f08af0c46bb7"
+     }
+    },
+    {
+     "granule": "OCEAN_DENS_STRAT_PRESS_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.62471866607666,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_DENS_STRAT_PRESS_LLC0090GRID_MONTHLY_V4R4/OCEAN_DENS_STRAT_PRESS_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "c45511e6c4071e40795fc60874ca74a2a3887b9ec24e0f9affba0d6a794b7a107634592dd4bd7dc126f0ed40098e43a93c58fdd04bcd4c74e5a944a309d39b3b"
+     }
+    },
+    {
+     "granule": "OCEAN_DENS_STRAT_PRESS_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.603781700134277,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_DENS_STRAT_PRESS_LLC0090GRID_MONTHLY_V4R4/OCEAN_DENS_STRAT_PRESS_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "761d78cad1abd03a82f56f1f01485f30701e629abbae0736494589d6b4f04e8d453bc915551df82a0930552069736b6cea79b292f8de095a77e89bfb846c38b3"
+     }
+    },
+    {
+     "granule": "OCEAN_DENS_STRAT_PRESS_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.61323642730713,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_DENS_STRAT_PRESS_LLC0090GRID_MONTHLY_V4R4/OCEAN_DENS_STRAT_PRESS_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "bbd8c39cf35c3936a10ee0b21bbd78cf6bcc3ab5aefd9e682a8bccd03e40a2a68ab8a57f87bf09119d3f481f30cfaa79e135f5f7daf60e1ad1b49bb72d41ec9c"
+     }
+    },
+    {
+     "granule": "OCEAN_DENS_STRAT_PRESS_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.608643531799316,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_DENS_STRAT_PRESS_LLC0090GRID_MONTHLY_V4R4/OCEAN_DENS_STRAT_PRESS_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "b75be6cd6a1b255cbdc0506758a53bb42b0ebb8bee58c09be211bf06b2741df3bfbacec86d10e7ec912183b081af26d6dccfc7b031da7ba043cb9f9d10971006"
+     }
+    },
+    {
+     "granule": "OCEAN_DENS_STRAT_PRESS_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.640932083129883,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_DENS_STRAT_PRESS_LLC0090GRID_MONTHLY_V4R4/OCEAN_DENS_STRAT_PRESS_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "c29a2a64bc74eb123b6026ad067a5f512ec52668ffed51262cf95b1008e19b48594e1145bd54c3aa08fa87c6c5d6ee1ff4eae887bea700156a4f81e19db6ec42"
+     }
+    }
+   ]
+  },
+  "ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 13,
+   "size_mb": 84.6,
+   "with_checksum": 13,
+   "files": [
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2009-12_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 6.516572952270508,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2009-12_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "5929e7f99a21227462fbf00d7da091dcc3700f598b38ec0eff44edcf3a03b54458e67b40c7dd233d341dfcfdbe87030f4d92143688d65ab470b971b056d1d666"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 6.491633415222168,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "ecaa15254f578769e12bbdcf7805c98944f9b80a9dec88f28b425d3e887ad5bb5f21f7e1ae0c501562822e867aa388f7e8eae27967cc48186ad901ced0705499"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 6.471009254455566,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "90156a94f2f94448bafa370f2ea88e7e9d5a4fc65999befaffe7a742e38ff294a56a6cf1cd9a930de5a3046e5b1edeb0003d9411efec9a9b6c52316851cda3f4"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 6.476870536804199,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "fc3a0204ae1c5562bbeb20e4c3c8f6e4ec21e2c85290a809dbb640b5c1a65106bb96f926d19ffe4ce71a6bace90ec4700bf557977254e123e795eb28952bcf5e"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 6.5060319900512695,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "f85fa7773cfd7daf8e27490c9a12263a3088898701b0ddccb0be9f759cec3223a48ebc68ebc32ebaa4861a923efe5cb3eaa648521b0c7124f24d8d9e340272c5"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 6.535341262817383,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "52df7bec7b63e062badbf5c2aba85f39ab4a1d575355ddaf8175cc8c5db52af7109892d4d9e6d603c3a279b93728eb75cd245612245c12d8cfadc33d0a2046d0"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 6.531379699707031,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "da11daea23f02820551284ae60c1636f13e0a41e221ba7cbd6a222e4a3ac0ebe74496546b6beec89b249e36d40c8e2d6b355d11662c5127c369cc6cc14d76104"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 6.514080047607422,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "e6f707a992a5a4100158da80e6b3bb9a1a31b6dbc7e8cfa74e0eda38840ab35964e5e02f08fb6adeba127e4b5f4c850cbf58ecb8fad998b850319fc294e1a70e"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 6.512396812438965,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "fd4b51bf9d43bd50abc3166476c7707e51e7d3660d912db7356b608d33e60a81a2affe62fa58c4c6e3065c24a2e6ac4feb862997965aa903f1fc82843b8a6db6"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 6.509587287902832,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "daafc6f01f161e45422bd34e429dce8967252239ae6c3ff42a6203f2d52510fd501ab06c1feb6aa1a151acdd24fec7276af492e1d306a35b7534ebddfe0b53fe"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 6.517378807067871,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "990064759537169f0af8017b4ea6e7941be7092add56626b4d5a882f3b374e4158796bfdb81e829a60f9d809e0e8f2a130648b641643ad9fbd5a96c8a3f32105"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 6.523127555847168,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "0bf5647896f4e5ca765709b865b5c2b48dde42b0b149dca18980e56a1fb82131cc05d2f86fdec01ac4a7ec32958cbd55dfc1393cc381729c49148c16cf8bb5f5"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 6.521496772766113,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_FW_FLUX_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "8d504f31fef955d707cd46e50c649e0fd7f531280ea9a2f07d2eb08897a496f4a5b8f113bc8a5cce6760b481b87880259d938fd581d9602d8e0b3771cd606d4f"
+     }
+    }
+   ]
+  },
+  "ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 12,
+   "size_mb": 85.2,
+   "with_checksum": 12,
+   "files": [
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 7.075005531311035,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "4f3d5aace20e18dab559a8606768507fe83cbb59a36c4b0efc275e0f45bd0845a45d4b9fa1dfbcae304c472305e01a207f9e2e309bc1f449edc766b77ab1c1d0"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 7.078190803527832,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "b6fb4368669334b81cb6e37846a9be83388c06b202b97a700d12f1e9254adbd92e8ab4ebdde042e50d48fa6d91d94bea571d335f87b608a0479af5d58808b8a9"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 7.099819183349609,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "1c7022829c733a11eda469cc65624343c24b40eb9a4173547d619e272aca377bc57d6027f3405144c57149cca04cbb1523c7d4835a6ff5396773bf201f15835d"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 7.101131439208984,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "466442a01da0f02000df35dec5479a0879f5c63edf2371887b0f1d99b401336126f95037ffe635f51f5e09e9c87c29091f670e8bad712fecb6c421cad02ed628"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 7.101672172546387,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "d475378b308b577a2c803838d7e62c9371ee0af6194af3df76a136113c6ccfab47ee340a42537428d35928a8f7c8252d73f9e287969384068d4f1201cef05775"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 7.1027727127075195,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "c1e4a318649c016fa74577f23f3bbfeee65582bb6deb800e7a9ec6ac6af355061bca9b7d00483e94a553915d83426f0a3832cfdffc88b92b8774706ad3a8138d"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 7.103816986083984,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "c89ac4d776ce1fd7bae08ab78c351da5740db86113bb742e0672bf56aacc64f12aaadf8fcf56ba45f7a4fd7bd08ff532b1dc3c69b3efe85d129fb314f1be501f"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 7.106869697570801,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "5ac021df3e18017831627b742085b13357b1b7667b1bf7c7b5b2e39dfbc3f24e78da0131dba5a515146ca274c6dda7ad2208321585dff74e6fe54c188fcf2693"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 7.112522125244141,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "5f914a67e44291bb613af108e55568e74d4287452a85ed8acad6112be81dc300d4bbc0d0e57c186790950653ca0e4df1e6c7188344271a20dfdebc5bbac9b939"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 7.093206405639648,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "1c25ecc7810806a7f6530aab8b92aae47fdd5f42ef7ae2eb75652acfb4a08772ee367e27d728541733ea8fe98acdb0b0e505718cf790bb0880344d5291ec54d0"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 7.089090347290039,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "8b510de3541ec3010edc9df5b8cc0383d8fc4cef6ea596f7bafc728f257558785601757a4e915143992534647828f882549cadab4268d32e41f92c154fefdbef"
+     }
+    },
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 7.085914611816406,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_HEAT_FLUX_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "b0fe1937e6d18e165c98a21715c49c77e86da988383eb2ef9c17d7c4b52426a3d1382299236d357bed7db80a3038ba5d2020ab1783d3aec908652c5af5d3f384"
+     }
+    }
+   ]
+  },
+  "ECCO_L4_OBP_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 13,
+   "size_mb": 71.1,
+   "with_checksum": 13,
+   "files": [
+    {
+     "granule": "OCEAN_BOTTOM_PRESSURE_mon_mean_2009-12_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.4698486328125,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OBP_LLC0090GRID_MONTHLY_V4R4/OCEAN_BOTTOM_PRESSURE_mon_mean_2009-12_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "03bc6efe822617f0009488904b8d483b0658a606113b4985c3a756e0afea1d014bd6d8574c90699c4d769631d00f8b4520368aad871510261ca34f2bd309f122"
+     }
+    },
+    {
+     "granule": "OCEAN_BOTTOM_PRESSURE_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.469842910766602,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OBP_LLC0090GRID_MONTHLY_V4R4/OCEAN_BOTTOM_PRESSURE_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "f5503199838a9a37fc40a5205adefa6f9dda4c4136267abc0dbb5ebeb3457cc6ae85c3169896221da5432ad312f1fbfd1b08c3e9c60ab0b9e8470fc645fe74b6"
+     }
+    },
+    {
+     "granule": "OCEAN_BOTTOM_PRESSURE_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.4695634841918945,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OBP_LLC0090GRID_MONTHLY_V4R4/OCEAN_BOTTOM_PRESSURE_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "e83eae379358cdaf4044cee97c342d5b4dc3774ce7ab6a6bd1bb06221ce2c9a528a9dcf3c6a529b351e6f19837d4c563af4b84066f13c25840d7b12e829b1be0"
+     }
+    },
+    {
+     "granule": "OCEAN_BOTTOM_PRESSURE_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.469101905822754,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OBP_LLC0090GRID_MONTHLY_V4R4/OCEAN_BOTTOM_PRESSURE_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "500d4b5b8c405373cc43c59c90b7df531f0bfd8f41c522627f3b3310569b1e2baab7f2e1912ace0a5068a63156ce6d4a048bf9880e8d34490d31fcb37b5d862a"
+     }
+    },
+    {
+     "granule": "OCEAN_BOTTOM_PRESSURE_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.469281196594238,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OBP_LLC0090GRID_MONTHLY_V4R4/OCEAN_BOTTOM_PRESSURE_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "e7858b752a269f2d70950d4a60f75880ccae9df84c6920e604d63cb66dfa951b8a54838fdbc1c8e168bb827c55191f6196d3512b34556d4c225a9587c1403c7e"
+     }
+    },
+    {
+     "granule": "OCEAN_BOTTOM_PRESSURE_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.469228744506836,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OBP_LLC0090GRID_MONTHLY_V4R4/OCEAN_BOTTOM_PRESSURE_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "49745e9bdca75be8d11ba7a57f4db266967b3b2cbc4628a3227eef16efa0dc50075112cdf42fbe1941947c03e8d21423c7e42e603c1d3ada90c4886274608084"
+     }
+    },
+    {
+     "granule": "OCEAN_BOTTOM_PRESSURE_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.4696550369262695,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OBP_LLC0090GRID_MONTHLY_V4R4/OCEAN_BOTTOM_PRESSURE_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "05a43f7f19b1c923b2a8cc5a5fff083c1d0040fc8ccb1ba39f36ddb50e78f2dbb5248560bf6e004abf6472da0a68101db33b6003037d22f12f872af42bab9874"
+     }
+    },
+    {
+     "granule": "OCEAN_BOTTOM_PRESSURE_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.469839096069336,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OBP_LLC0090GRID_MONTHLY_V4R4/OCEAN_BOTTOM_PRESSURE_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "c25b3d5455ac8ba4794bfbed4872a6a7b8895ca0ab1e209ef5873b22119101fa60c9bc5c20e57b1225d41bb462dac0bdba7f71a815f438e5742693abc604da84"
+     }
+    },
+    {
+     "granule": "OCEAN_BOTTOM_PRESSURE_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.469776153564453,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OBP_LLC0090GRID_MONTHLY_V4R4/OCEAN_BOTTOM_PRESSURE_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "11fb3b7301334912eb1b907ecc3089e86bf4366ba85fdab85a9e54c1c4e6b1fc3a2fa7332d6b817fc77d176b6cefe59b8aebe53d135a66036c59c0212c3b3c4d"
+     }
+    },
+    {
+     "granule": "OCEAN_BOTTOM_PRESSURE_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.469866752624512,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OBP_LLC0090GRID_MONTHLY_V4R4/OCEAN_BOTTOM_PRESSURE_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "85346110611beeefadc91b2e609c6df020942f9438be162efae831daf9c962829d41c808c98b19cce14bd31d1574fa92758c63acf34251dcbd7f960b8c42c8d7"
+     }
+    },
+    {
+     "granule": "OCEAN_BOTTOM_PRESSURE_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.469880104064941,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OBP_LLC0090GRID_MONTHLY_V4R4/OCEAN_BOTTOM_PRESSURE_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "ab652f3323d94b239efc184747057c462fba686a843a1b3f03c4a9c945f19a376a338f53941ff1e578299604729266d2148502c6c6b816c164f5f36b8bee638c"
+     }
+    },
+    {
+     "granule": "OCEAN_BOTTOM_PRESSURE_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.4697418212890625,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OBP_LLC0090GRID_MONTHLY_V4R4/OCEAN_BOTTOM_PRESSURE_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "60b812de826086f3ee3c80b16cf4cbc7b1b1856f10dc0d8336954e55617a40b2f252163f73df9234ec231d347c66671da154dba757876be3c6c751b3522e0905"
+     }
+    },
+    {
+     "granule": "OCEAN_BOTTOM_PRESSURE_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.469736099243164,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OBP_LLC0090GRID_MONTHLY_V4R4/OCEAN_BOTTOM_PRESSURE_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "469e9ccf8b0c036dd6396669b200f4652a9f4ab7c5339bb85ed35eaa58da1ec87317b2b10b31f088f56a4acaed7cfe782e6ffd53b686df306a08987cadb27e7d"
+     }
+    }
+   ]
+  },
+  "ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 13,
+   "size_mb": 810.6,
+   "with_checksum": 13,
+   "files": [
+    {
+     "granule": "OCEAN_3D_SALINITY_FLUX_mon_mean_2009-12_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 62.281585693359375,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_SALINITY_FLUX_mon_mean_2009-12_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "e16b22969766ff0dcc8dc197546f32c219e2a38721e0902a5082ba850634b92288cafca654bba8f7e4d58b3084b16200de178420b1d5b3985e2eb72450dfd03b"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_SALINITY_FLUX_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 62.00946235656738,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_SALINITY_FLUX_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "0e768f8bc6a82fce680a2744827e2a8cb8647226a689596d986f5fc7ea0a9da870284b5c2725607f879d404651f04c3ea7e47d6a91be8ab48d48f90751d90e8d"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_SALINITY_FLUX_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 61.973631858825684,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_SALINITY_FLUX_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "7b3fc1c8dd54965701df4b0ef0553d631c98fafa6bd0e9e11abbfd7a06801233955dcdc5db28e084502b516096fa149cddb9625f89016c4cbd4a933cb4f431ac"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_SALINITY_FLUX_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 62.03004741668701,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_SALINITY_FLUX_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "ed84e7f3d52b84b2274f19284b57a6c4b3406ae2d4e930c686bb2d9c9a1e0db814b2754cc7d4b98c67545f696d3aa716eefd77872a0b8a5566bbb65327d31d0b"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_SALINITY_FLUX_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 62.22392272949219,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_SALINITY_FLUX_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "7f5a5805fb26790e5901c7673368bfe7f90d72de6002d3c0613a6597c1f2f297f35968e281a46cc5bb4c9eb77ecb6df0b341fb1cbea7e75830cb4ce658047443"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_SALINITY_FLUX_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 62.34702014923096,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_SALINITY_FLUX_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "6409b36da3f6798cf0b80bfb4b3b95eff389bfaf79da162d3f88581aaf3f64c88303fd15eef24d2b453f6f3c3818d62c58d471989d244e238d00086c7160870a"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_SALINITY_FLUX_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 62.405035972595215,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_SALINITY_FLUX_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "501a275beaf3a39ece26d553c12772cb379d6928d7464fbc9a57db15b2f428d78ddf62a1e5534c4532be5063837287bbbeb1b8a4fb9c4f892312de852e04dba1"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_SALINITY_FLUX_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 62.497694969177246,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_SALINITY_FLUX_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "86f02fd3d9c825b9fd86e61012717a0938eef287184760b1c4a965356dd429528343b1a009462e09012dcf26cb136549657fe74b1d4f5d583f33f6ea22406de5"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_SALINITY_FLUX_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 62.589715003967285,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_SALINITY_FLUX_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "4d4b7419a629bb28027502a1959d9754421e8467a7d535b6d3830a86f295b43fc895aa2e6b48127b306d5311bd74c4d2278d6514ecaf6146880cfee7c3e0f2f8"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_SALINITY_FLUX_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 62.619935035705566,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_SALINITY_FLUX_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "4f0ce40ed60579a026307eaaa8be0b9e2080c265372a8ec0ebac9595663d03a9d79d71466e5b1488525d9ef0dba9974724a8e41c96e47e5b15af9b152c24f42e"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_SALINITY_FLUX_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 62.61802864074707,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_SALINITY_FLUX_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "0f332662aec4240623525fb1dcc388a981ce92757b44fca69d2cf3a823eb392f1dcc40b608482cd0af350bf7974e15c2b83eef203d636ab0f837ad13116be874"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_SALINITY_FLUX_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 62.5779390335083,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_SALINITY_FLUX_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "046e6eb1e569aefa1101b0e5f652fd9059ea6894eabe65414e1b364603c7605beab95c70e2e97987313db4e344a3fb39de57e61b8bd7cc6edb4c27ceb9431d1f"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_SALINITY_FLUX_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 62.388389587402344,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_SALINITY_FLUX_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "8ad92fd75455cb24058aef19640ef6926f9d1737045bdd2c1ef98f203031430246c3b7047aaacf23d6775be428fca5ed1b81dfd55afd8814ef8f5d582b459332"
+     }
+    }
+   ]
+  },
+  "ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 12,
+   "size_mb": 735.9,
+   "with_checksum": 12,
+   "files": [
+    {
+     "granule": "OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 61.298277854919434,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "77a721387a757d0f07aadd39ae8981925656bc8f014ee9394da92eef3cf23f65ba7061a30637e6d53a5bf0b56dcecf6c4e1f9e6970a16a82754cb9f82ef10db3"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 61.31540584564209,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "b23b4ef3c98485486d08e0a2e8c06ea1ba445e1a49f9825d98e0c5081fda35136d03c0540671b83a4a9a6fa5c45bf8585e385323dac6d2eaa2dfc1894351fee3"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 61.30115985870361,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "47daebf54cd3a0d703f8c6dee7ba534b855e0ec0d87754f924610384de35d22dfca1c3f43913748eb290311b8700130a659e42573d0bd2d5332ffb563a17c93a"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 61.33946228027344,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "15ef495d1a441e8e0a325dee45519b5206fbed909ebd5647c60f33ffda867cb17751c21d0d6dd36d4a5b4742f98b7b3cb0bbcaf3dda51cf1ea0340a424acf7e7"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 61.33612060546875,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "27326e908bb314c969368f634bf050355fa780e3b0f721b68045d82ba4fdf48a3b254894609621057684e22f3d80686fb36d6a9bc9c8b460107f1c3e0583d7a9"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 61.33975887298584,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "8461f9a6fa671ca8239823de4a7c51c9796b3cf3e33e3eb05c112e3caea7796956f9fd1c7ddef937deddd5f654e4ad60d5b8e35f682a9a7848a3b9d47fd3921c"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 61.30919647216797,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "4cc80a2272928435415c254aee205a23cafc4b04e785d8f9e82c9b797725d3a59c6a5f44c0a4a0f7b5eb2260c16e42069f06043da0a6e6bb9509942568580570"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 61.32708549499512,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "9920049c7c3651d1f00c60231725d2ab9a6c37bb84ee10a06c40509bb31638bb9000f8bfbf3b26064e4fab43ada13f73fea3d52f8b65e9d02c965d456f1ab2a5"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 61.333401679992676,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "4aa82dcaf9a21d08361584a4a84413f1be728bc81ec1ef17bbe7b22c6ed479708ae9286e005737d8036d717cc05b163a11ac9eefcee642940cf5ecc67c8764ac"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 61.33302307128906,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "b905840866adfc8613b30c16a1ca7fe53ded504401af296bc66f214b73f0c3f29402f5e9d5b97319f2d9c68cbefe88313097404ad1d5fbdaf2d3d901821d8887"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 61.35219764709473,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "561d0376ce5b9c53fa6ea18f74671e874bdff611c2217e5c91808b7045a7ea2e6599f534511b2c8cbe82c2fae77f3acb485171f3a39cf530f3056998b5708121"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 61.33795928955078,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_TEMPERATURE_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_TEMPERATURE_FLUX_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "6d66d41ba3990b11e28c46df118903cb6f33b08f6098153127e4c6ae7ac9e267e16f8958e2de2155a532b54f10621668681b02501211a5d86e9b8621275c3958"
+     }
+    }
+   ]
+  },
+  "ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 13,
+   "size_mb": 379.6,
+   "with_checksum": 13,
+   "files": [
+    {
+     "granule": "OCEAN_3D_VOLUME_FLUX_mon_mean_2009-12_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.205510139465332,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_VOLUME_FLUX_mon_mean_2009-12_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "8269a6f6de299f39f9939d025f908b42c28ee7eb404246880fb23c91b2e04ea3d9dc2ad5e0be96e16a6667b0a8a2e8ea3d741c4c27db9f91be6399cbeff0c351"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_VOLUME_FLUX_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.17808723449707,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_VOLUME_FLUX_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "4c2289c2f8d222047c043d0f14d2aeab9bc9f1bcf3914e7c927847eabaddadb85fad0053eb57b13aff8fd0941d5eaf89b22d4375f4dfaa383ea69c50f9391c36"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_VOLUME_FLUX_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.19432544708252,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_VOLUME_FLUX_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "fc98ac5dfc1078948e2906796ad38a02afe2c931f9b8727259570995a431788e5ea9c3b9939982431684300b900453e44e48c688b343429afad64d49e131d3b0"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_VOLUME_FLUX_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.171263694763184,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_VOLUME_FLUX_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "ec4fea2860792931a5096dec5df7aea4076fc42ac8d46c70247ef8f621e711e1d4be3e56874ab4ca16b4fb8e2e893149da56431ca4fabe16e0b9436466bd6e43"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_VOLUME_FLUX_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.20900821685791,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_VOLUME_FLUX_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "9ab3d86a906408489c6efca1595d4a3ef49d07868998199759ce76fc975a80bf3f7832e27e38060f3a8e877739b3b57166c69c23f8cbb16d09c532566631be52"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_VOLUME_FLUX_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.205857276916504,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_VOLUME_FLUX_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "752b994489a6a3cc468aca6c52f6c98909811baa47d85d8a95256e2b8ffc707f683a45c13c9b0f0416b0e7cbfd7a80b12e3aa03357c5ac8d6de692e2b414783d"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_VOLUME_FLUX_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.213953018188477,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_VOLUME_FLUX_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "072c645d7ecce744e13ee459b88177ca2b397b46933c57b05a82342eb1dfd68a676627b4add76e0c3bdae0e1285222121cc88010eb98b6a1553b46ded0863212"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_VOLUME_FLUX_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.191858291625977,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_VOLUME_FLUX_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "2dec6f6b9b6308dba7a97513c449ad9692e5b526bb079f2528c1aae4fa3dd4d4e770ebf050c4598a48d01c807b7441ae0ea8486059bb75929ed9bf10c9805bd2"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_VOLUME_FLUX_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.20682144165039,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_VOLUME_FLUX_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "dae8a289f50fb48e292e6267544d674503beff0676c82f1f455a23466eb3e3a21b447f12ccfcb067004604dc266036483476533951be7bba8a3f2d5358dde6ca"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_VOLUME_FLUX_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.20871353149414,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_VOLUME_FLUX_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "ab631bbbad7a0caa99b571e4584150ffe9bea991aa8aaaec8daa4c2fe7c7ca7933854a3290f58ab05897d4ab15bcfc8b5f01aeec8de45722b9e6f814ef9d03d2"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_VOLUME_FLUX_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.206262588500977,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_VOLUME_FLUX_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "5e01aaa9da760be4164161ffc67bd85144f75bfd5f42cdad013a774f40d0b0dfbfb2278da96b3b5618ac65f6912688733fbd5cf563b1da7c85a876eb0a7cc583"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_VOLUME_FLUX_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.216147422790527,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_VOLUME_FLUX_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "3178194410798ff4c769437d51a8fc29506d02647bf251a10f76fc5db26041cf71d894be1a5e17377364b0b8f11e9ea66cab2785d5eaa08f4b41d720113c94e9"
+     }
+    },
+    {
+     "granule": "OCEAN_3D_VOLUME_FLUX_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.202013969421387,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4/OCEAN_3D_VOLUME_FLUX_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "4e77ce15ff2aadea28afb4bc1b2b9cf53e0797f2a213bce6a15c10d19dd9d10873fe5fa3a262c1d8420342950dc76ac4894bbc6a629130587527d2f114c7ffad"
+     }
+    }
+   ]
+  },
+  "ECCO_L4_OCEAN_VEL_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 1,
+   "size_mb": 29.2,
+   "with_checksum": 1,
+   "files": [
+    {
+     "granule": "OCEAN_VELOCITY_mon_mean_2009-12_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 29.200332641601562,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_OCEAN_VEL_LLC0090GRID_MONTHLY_V4R4/OCEAN_VELOCITY_mon_mean_2009-12_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "8f3108bdcbd5102b423f27e6d15d3eedf5ad81d957d54f5258dabf41858d46dc8687588180073d9aac9b1084500b18877833a2c59a944978d12779e6e1bd788b"
+     }
+    }
+   ]
+  },
+  "ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 13,
+   "size_mb": 73.4,
+   "with_checksum": 13,
+   "files": [
+    {
+     "granule": "SEA_SURFACE_HEIGHT_mon_mean_2009-12_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.6423187255859375,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4/SEA_SURFACE_HEIGHT_mon_mean_2009-12_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "5f23e93f34fe95dfa09e58f47146a8bd83cb17c94956b1e9afc4d82b0d271eb654d0be9237f1a46ffb7548a52be564da919bb7db970ce5462b4dee7a38aa2949"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.643780708312988,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4/SEA_SURFACE_HEIGHT_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "38c11f506cd8d5f61e29a31edaf4157ff15cc430491a6ca1a21bc7cb4bbbfeef975ee31e8c537fc8167c38f8f1317ccee78fb9f9fab87b9ed38e30fb2be41eb1"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.641447067260742,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4/SEA_SURFACE_HEIGHT_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "aeda34e68d9147922eed8bad0e654c926cad351d2cdb6fd524de692de4e5c63668761d49fc0724bc45c17e15e1c599de7cfa1bfcbb85df6d0647073e608296a5"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.643101692199707,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4/SEA_SURFACE_HEIGHT_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "b526a3189f9333c18b70d70d935edc5c6ab59ef764a90bace11d3d7540177aff46c29b96c4472d4bf2389b44d864160f570c295fd29fc5fbab57514fdee15080"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.640995979309082,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4/SEA_SURFACE_HEIGHT_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "830e99add7217a7b2ff310a3bfb5c17473824b3a00615324a250d7464e1436fb90e70b07e857db7700f08b5006472ad0669b3f4a9a42bec7976bac6c8a0b958b"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.641475677490234,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4/SEA_SURFACE_HEIGHT_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "3d13cb65e35574080650921ceb8fca396392d7e0e0128f4dc029448f327495e34172239fffd2eb3cd2bdc239a69c14319b74e62c0483d37c6ab6d52b913e4ea4"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.646095275878906,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4/SEA_SURFACE_HEIGHT_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "f8e555d0ab24066c0b8bdfdae638b274dc1623b067795f89bfe5894779ce5b5f0a9d9e4f03c793c88de252564bfe39d49b57512ed9cea500404407fa40266759"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.646974563598633,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4/SEA_SURFACE_HEIGHT_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "00943532c885e299679302176b369de70cab1e81c774c7f4316b9b077e4ed6d693b46bdb2f0ede7e58da11f1c0caf538fc8b3f92b7069515fdfd5544970c1391"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.647945404052734,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4/SEA_SURFACE_HEIGHT_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "b15937dd3a7549f0beee304f303da2b90443cb2b2a260b1e5adbf6cabf8cc35f69f3ee163b888c7dddc9a47e6e8250aa387e63f9d2ecca3c30a5ec6ef091e44b"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.646544456481934,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4/SEA_SURFACE_HEIGHT_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "d8471ef6c7369fbd9ac4b95e08d3d058239c2bfd4a238bd97738ff4e18b12d10f28ae12f105d7fe55c15e356051b5e6ef1c6d59ed5fed2e1946ba33163a30af8"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.647721290588379,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4/SEA_SURFACE_HEIGHT_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "fc2cbc568f3f6209c2914b681383d5d6795b08bf9814c1391fca362bc3bb74f2f90877c11cc04b8da7664ccf959c8f1a5c1fa945697c939b0ca0205c8318bbd0"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.648720741271973,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4/SEA_SURFACE_HEIGHT_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "dfbd542d7f02c39835c65dcaa5685f9c29a636e392a54e05afafe2da8ad568ca7d9fde7019aed91f9176df97dc32b5e2045bb7eb2d450abc14d0666b4f7d15b5"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.645086288452148,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_MONTHLY_V4R4/SEA_SURFACE_HEIGHT_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "933d93e2cd5adaa924bde70cb508d4a9d50ac71ea47df920f7873f1060c2ab2be76ed6e596158259a19eed0435212511a1871e4a7bf7b141f3232902647cc525"
+     }
+    }
+   ]
+  },
+  "ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4": {
+   "granules": 13,
+   "size_mb": 73.5,
+   "with_checksum": 13,
+   "files": [
+    {
+     "granule": "SEA_SURFACE_HEIGHT_snap_2010-01-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.652785301208496,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4/SEA_SURFACE_HEIGHT_snap_2010-01-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "ae76b7fb444b7d96c8a1651427bcfe8c2c7a3e9e6b6c814852fd9c3b7638b67aa849a60d98cf6514aacfd93d05a288115f2c3812547c5bbe016e4bed9d052b18"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_snap_2010-02-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.655147552490234,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4/SEA_SURFACE_HEIGHT_snap_2010-02-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "61befb39bc1197da5f696b672cd9f60f024bdb49a2c19b6cfc2f68b69e224e60dd285106a642b009255ceb0b9badc60c10b79a8cf9b081f57f7b19ab5b886eff"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_snap_2010-03-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.652098655700684,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4/SEA_SURFACE_HEIGHT_snap_2010-03-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "de03842aafc2e4032e40f217c0d0fb73f849a49ee2571804b1c85282e7fe8b301c802662750ee747d5ba20d082f49a77bb10f9ffad395cbc28e3ac26a8e6c4e2"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_snap_2010-04-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.652009010314941,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4/SEA_SURFACE_HEIGHT_snap_2010-04-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "623c2d215c6942d9f0b19e38ab904945c55c5de1881e890736a32ed62d1e35029e9f5d3bd1fc826740c63da8c15febcb170a7b6cd6f220d4e86bc94267ab5db6"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_snap_2010-05-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.653656005859375,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4/SEA_SURFACE_HEIGHT_snap_2010-05-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "c6e16c8c5c037dd3c1ad38bd910ba94c757fd0f343f0ff0fbc854297d92bc80af68c978fb9d9dcb8d9e20d65aadcb901a3caf30dcd20a3993ed8f38d088ecde8"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_snap_2010-06-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.655425071716309,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4/SEA_SURFACE_HEIGHT_snap_2010-06-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "08b8167222dd9e9c89554df3e6634762702c0b213d2a9720235119fc1a4468be076138e16acbe6a1a6f8150620e3f1cbbb8c85f1ad1e130135246e7008c4ae60"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_snap_2010-07-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.6567535400390625,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4/SEA_SURFACE_HEIGHT_snap_2010-07-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "9927e69de8089f566a1de6ac5be7fe9d29995cf7d2f44ccba1ebf72fd518918aa5b83694e777783e7fc5507c42d69782e0afcfadf6e3b7785a737d9ba8cea0d4"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_snap_2010-08-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.658229827880859,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4/SEA_SURFACE_HEIGHT_snap_2010-08-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "6a8a57cc5f6e0d5501225e4770da5dbc1fe7a25bdc41565b226e990b56c16034824683b6fb764e172098d6167e765f65400ef9a63c0114a6736f75616eaa21ae"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_snap_2010-09-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.6588239669799805,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4/SEA_SURFACE_HEIGHT_snap_2010-09-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "f6f2352d510d129f0450074339adb20dcb1af24d703e2018976eba563b3a6ef08e55d074176d01da24356f095b9bae0f232771b4ceb7e92b4a650c9ca73fbfb3"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_snap_2010-10-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.65847110748291,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4/SEA_SURFACE_HEIGHT_snap_2010-10-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "91fac3aaae1cdc54087141161a267df72c12bc102c4af373e73dcff069cc2c6fa7a82eba07c9aea776e05fea0cf53dcaf321b8c5d5ba511979dc0db1f0652ecf"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_snap_2010-11-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.65771484375,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4/SEA_SURFACE_HEIGHT_snap_2010-11-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "a1ccd529f91d97789037ed5e16c21a0804768d8137b13aa69f97347741ba4140700168275a83deb9f9c8c53453f603f07792eff1590fa86b1a92afcdf87a7d2c"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_snap_2010-12-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.656315803527832,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4/SEA_SURFACE_HEIGHT_snap_2010-12-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "92673a7e1cbc43041e9639e3021aefd6a42e0764fb3eb317ec17d3f2a2325260e4deae61883f5ba6f301e1481ca2ecfcd779e496c28207ae968feacd0f21acb9"
+     }
+    },
+    {
+     "granule": "SEA_SURFACE_HEIGHT_snap_2011-01-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.655601501464844,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4/SEA_SURFACE_HEIGHT_snap_2011-01-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "b01646093c4a21b2b8f90e2ae0982452031e7084bfceacaa8f894c721b27e203e4f696697fe57cefdcd1deb2aaa6abd2835299d0e047559cd9b79879c2aa9a36"
+     }
+    }
+   ]
+  },
+  "ECCO_L4_STRESS_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 1,
+   "size_mb": 5.7,
+   "with_checksum": 1,
+   "files": [
+    {
+     "granule": "OCEAN_AND_ICE_SURFACE_STRESS_mon_mean_2009-12_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 5.69257926940918,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_STRESS_LLC0090GRID_MONTHLY_V4R4/OCEAN_AND_ICE_SURFACE_STRESS_mon_mean_2009-12_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "72a822f1605c8688d4c37348fdc327e422d1849003bf7cdcf9ca52cf35c4b1c9c311310d0cb695a357d176f62f9cdeb2d6bf886a705749d7d5f9ec19195ebe84"
+     }
+    }
+   ]
+  },
+  "ECCO_L4_TEMP_SALINITY_LLC0090GRID_MONTHLY_V4R4": {
+   "granules": 12,
+   "size_mb": 199.1,
+   "with_checksum": 12,
+   "files": [
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.59842300415039,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_MONTHLY_V4R4/OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-01_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "74fdb5dd1a607831ff0f464318473d97cd964af0a0d79c38f37e9fb962299a0bffde4d3dc350f984fb2c39bf1578776fa9872764d6c96d6b7bab792a71a479bb"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.595602989196777,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_MONTHLY_V4R4/OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-02_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "e453466b7b0a42939c25987f829cae47559e7b7cfe0a945f0336727d11432fda2bc8ce0acfbe7778065ec247113ebe64480c8f9732b6a0db5d2605febe6fd40b"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.621496200561523,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_MONTHLY_V4R4/OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-03_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "daec820fec09b6d9898e6d45f248c2953ff35247ff64355b01ab12224be64bcb7c80f242978177547ab873f29a6e9008e74c450e8f7dcc00500a55b153594327"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.63232135772705,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_MONTHLY_V4R4/OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-04_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "43dd50843dd6a134a31357d2f6b836cc94bc68ebb42c944554b0d124f8e7993026ed7935f5b70e2de9b1b0a41586f973affc008b7609e437036b8f5940883fbb"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.600590705871582,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_MONTHLY_V4R4/OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-05_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "eaa38fc6830546ed6f47a3b7d88995948af38cd84d34e8fbcacae26d49ba3d7191acaf031af16a70636cb97ff7b84108e81e240a338627c5f5c2f9dd21a14ac7"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.552149772644043,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_MONTHLY_V4R4/OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-06_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "50274a545e87f86c4baf065d68202e221eec62ff22528d5e5ed0555ada493d5b3c559a934a4ddb48779dd9016def64a4e2a5e1435660df86eb518db8d348e103"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.510251998901367,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_MONTHLY_V4R4/OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-07_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "1cd725f7f89f3dc0a16b485f8021894b642012f4d8ba218a7eeafbfdde77a5c760198125fe2ca5fdebad94b688efea0c095b4640d67a9b2b160ac541cf59fdfc"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.520679473876953,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_MONTHLY_V4R4/OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-08_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "834a18aa4c416457d51d7064ea58bb5d6b72e7ec25e20b2efdda6bae7ccd082a568a821211df6121945d54801a6cd71811f6df193f4a4896ce527393ef4e3a46"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.5692777633667,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_MONTHLY_V4R4/OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-09_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "aa9755417bdffee371daceab1c97b09624b1990d1fb426710e01de2bc2aec261fa555e96c4e057a76c304b6137da441491d3a8f7b18229afc461572e990f6c12"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.614493370056152,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_MONTHLY_V4R4/OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-10_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "3e1b00a5c8d9fdf271c90cc88668b74ff3668cae859158469c23153f5517732d7b797a0573e56777dae582354965a83ced651d31219862d29f67d195f6528ecb"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.634967803955078,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_MONTHLY_V4R4/OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-11_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "69cba0aa9d2d13bb0fdb95f37b94a837a7a682153e41d1aa8a5f13d884eec5d6a07e301e10eaef388f3ed8a910cc81e19da8a3dfc654adae59c65625256fa0e6"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.630061149597168,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_MONTHLY_V4R4/OCEAN_TEMPERATURE_SALINITY_mon_mean_2010-12_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "f42e87cc226d2ffa0606c2050c819e0cb4aad7bb11ffee173595b4a81a8e34919d1d89c1923924735713f2ecef86cbddc5ac755119805caa6d0df8582a10c70a"
+     }
+    }
+   ]
+  },
+  "ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4": {
+   "granules": 13,
+   "size_mb": 215.1,
+   "with_checksum": 13,
+   "files": [
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_snap_2010-01-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.56532573699951,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4/OCEAN_TEMPERATURE_SALINITY_snap_2010-01-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "bf5e0c7c8cc1e903ba3eb64fab92da27f85c08f702c81bc2af889d4a0d32491131a1520d2957fce9515cbabc8c1901789d21ca3d43ef24648161f38cb096a8a3"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_snap_2010-02-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.56120777130127,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4/OCEAN_TEMPERATURE_SALINITY_snap_2010-02-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "762b64ca303c711b9fc6cf2b845d0fc906fc1fcd87d31719c439d4dbc6e2f08f4cfbb013d9bff1e37fa864f6f839f7a9afc25660c79f2bb81386a4d21f52ee2e"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_snap_2010-03-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.5575008392334,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4/OCEAN_TEMPERATURE_SALINITY_snap_2010-03-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "7b6735f66daa3bf22ec4b24499c8d4e8412d19802d4b76ad44ab7d1cf54d485306e6677302ca474fb702d7f2ca6133de296456dc11c6a755b30c38ef915eda8c"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_snap_2010-04-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.578606605529785,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4/OCEAN_TEMPERATURE_SALINITY_snap_2010-04-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "8b7ee67da2dc5376f022d8732451f09cc9e565c2a4e1730f9a0742708d531ed126e02b10899fbfc4c931aace58c46ccd34f9d6c693ef0a23400a8923efe09522"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_snap_2010-05-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.572795867919922,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4/OCEAN_TEMPERATURE_SALINITY_snap_2010-05-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "59e1f8793e4d02b748a9dc3762b86c0bdcf790a6b6603824a7ebe6049f26c13c4490f8f3ef4f7ce0d79a63c2a24bb91bbc31c03eae9e014e589b8ad3944815fe"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_snap_2010-06-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.52766513824463,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4/OCEAN_TEMPERATURE_SALINITY_snap_2010-06-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "4f65e13d97b95366c55eadccf3a39d5fccb39e1f0f11a7c0a50acf068b519c898d303d32eeeb165f61c4d1104ac2db4f60c6c9d7e4ffcf8bce001ef1dcaca07d"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_snap_2010-07-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.450641632080078,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4/OCEAN_TEMPERATURE_SALINITY_snap_2010-07-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "8e4259e39f39cfe47e3bfa9ead337dd6e9fe024832c8e689f8b4a4002ab94bcc332f558777dd2a67b079e99a182906a59029bfd8b333ebf2431b4c9669830fd7"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_snap_2010-08-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.428205490112305,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4/OCEAN_TEMPERATURE_SALINITY_snap_2010-08-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "1f08b1abaa77cee171905229b8f23a931bcb3c79444c907162b1d8923b70a8719e576a1efa67580c0a8c3c84e812b1af3ee42602c2b75df179afeff50509cb78"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_snap_2010-09-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.473745346069336,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4/OCEAN_TEMPERATURE_SALINITY_snap_2010-09-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "62c7b93abfd2d3f6c469a5d803f6dda2738e79097f05f3f606a741d8bda7d602526e32683df17d375a427195b43046b663af47c86172e458e6a72770bbb26a9c"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_snap_2010-10-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.550236701965332,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4/OCEAN_TEMPERATURE_SALINITY_snap_2010-10-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "3f6500791e25808dd8be4c0ea51d8dfce2cc8e06d91571fd0e4fe030cf82bf8eb628382b26840e060fb90455c48bbf46c930352e1935a6c381a489b4bbf29719"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_snap_2010-11-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.610506057739258,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4/OCEAN_TEMPERATURE_SALINITY_snap_2010-11-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "f000b55f01f37bc55bd1796db9917120522fc080018e084e56979ef0e6e1d643f9bfbfd36250bb09a8146f95e7971004bb65fbddff14f3ef41a12ea1cb623c75"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_snap_2010-12-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.59923267364502,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4/OCEAN_TEMPERATURE_SALINITY_snap_2010-12-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "e3af60f25b1fbf76cd5a8eed97c5405a14958a72a9aeb46ea092e66b4891f56f348b60c5f2d067f9e265ba2c9de5549d9a4200ae3129b86cc16dff2dbac4f6f4"
+     }
+    },
+    {
+     "granule": "OCEAN_TEMPERATURE_SALINITY_snap_2011-01-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 16.60561466217041,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4/OCEAN_TEMPERATURE_SALINITY_snap_2011-01-01T000000_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-512",
+      "value": "e8fd7c73e7769d9d11549127867db29c0a8e0f86afa4ab9c309244c1cb125edf15633ae9c2ddaa011b5e4779c024df256680186b9a35144ecf8951219018533b"
+     }
+    }
+   ]
+  },
+  "ECCO_L4_GEOMETRY_LLC0090GRID_V4R4": {
+   "granules": 1,
+   "size_mb": 8.2,
+   "with_checksum": 1,
+   "files": [
+    {
+     "granule": "GRID_GEOMETRY_ECCO_V4r4_native_llc0090.nc",
+     "size_mb": 8.175742149353027,
+     "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/ECCO_L4_GEOMETRY_LLC0090GRID_V4R4/GRID_GEOMETRY_ECCO_V4r4_native_llc0090.nc",
+     "checksum": {
+      "algorithm": "SHA-256",
+      "source": "local",
+      "value": "b9b9a0949fa06b82b43759e1fa3400bfa735c941c6ff2e0e14f9a116f29722f9"
+     },
+     "path": "geometry/GRID_GEOMETRY_ECCO_V4r4_native_llc0090.nc",
+     "checksum_note": "CMR publishes no checksum for this granule; hashed locally"
+    }
+   ]
+  },
+  "tutorial-distribution": {
+   "granules": 1,
+   "size_mb": 0.4,
+   "with_checksum": 1,
+   "files": [
+    {
+     "granule": "geothermalFlux.bin",
+     "path": "geothermalFlux.bin",
+     "size_mb": 0.4016876220703125,
+     "url": null,
+     "origin": "ECCO tutorial distribution (geothermalFlux.bin); not a PO.DAAC collection; checksummed locally",
+     "checksum": {
+      "algorithm": "SHA-256",
+      "source": "local",
+      "value": "fa3d60acba67eaff310f1a149e399fb0a86465e5b10795c9189c563e557c66ea"
+     }
+    }
+   ]
+  }
+ },
+ "total_gb": 3.08
+}

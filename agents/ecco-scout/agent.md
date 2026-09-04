@@ -25,8 +25,8 @@ compute constraints.
 2. **Consult the knowledge bundle FIRST, by discovery not memory.**
    Search `knowledge/` of this plugin (and any bundle named in the
    project's local config) for every concept touching the datasets and
-   quantities in play: glob and grep `knowledge/datasets/`,
-   `knowledge/gotchas/`, and `knowledge/recipes/` by product name,
+   quantities in play: glob and grep `knowledge/snapshot-podaac/datasets/`,
+   `knowledge/snapshot-podaac/gotchas/`, and `knowledge/snapshot-podaac/recipes/` by product name,
    variable, and section, and READ the matches. Do not rely on a
    remembered list of concepts: a concept added since you last ran must
    be found this way. The plan CITES each consulted concept by bundle

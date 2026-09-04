@@ -3,7 +3,7 @@
 # walkthrough produces, quoted, for tutorial-fidelity graders.
 chapter: https://ecco-v4-python-tutorial.readthedocs.io/ECCO_v4_Heat_budget_closure.html
 extracted: 2026-08-30
-companion_concept: podaac/tutorial/ecco-heat-budget-tutorial-checkpoints.md (nasa-daac-knowledge)
+companion_concept: knowledge/podaac/tutorial/ecco-heat-budget-tutorial-checkpoints.md (nasa-daac-knowledge)
 checkpoints:
   residual_depth_time_sum_bound:
     value: 1.0e-12

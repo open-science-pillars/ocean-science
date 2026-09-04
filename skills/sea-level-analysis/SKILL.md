@@ -17,8 +17,8 @@ the sea-level knowledge skill.
    attribution), plus which SSH convention the question implies.
 2. **Consult the bundle for this analysis first.** DISCOVER the
    applicable concepts, do not work from a remembered list: glob and
-   grep `knowledge/datasets/`, `knowledge/gotchas/`, and
-   `knowledge/recipes/` for every product, component, and correction in
+   grep `knowledge/snapshot-podaac/datasets/`, `knowledge/snapshot-podaac/gotchas/`, and
+   `knowledge/snapshot-podaac/recipes/` for every product, component, and correction in
    play (the ECCO dataset, its SSH inverse-barometer variants, the
    SSH/OBP release caveat, the Boussinesq global-mean correction, and
    for any observational cross-check the GRACE and altimetry concepts);

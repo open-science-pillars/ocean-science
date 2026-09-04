@@ -7,8 +7,10 @@ description: Ocean property budgets on the native ECCO grid only; refuses regrid
 
 Compute closed property budgets, or refuse. Works by slash command or conversationally
 ("heat budget for the subpolar gyre"). The formulation authority is
-`skills/ecco/references/budget-formulation.md`; the tolerance authority
-is `knowledge/recipes/ecco-heat-budget.md`; the diagnosis discipline is
+`knowledge/snapshot-podaac/conventions/ecco-budget-formulation.md`
+(the procedure for applying it is `skills/ecco/references/budget-formulation.md`);
+the tolerance authority
+is `knowledge/snapshot-podaac/recipes/ecco-heat-budget.md`; the diagnosis discipline is
 budget-closure's.
 
 ## The native-grid rule (🔴, non-negotiable)
@@ -25,8 +27,8 @@ framing of the request.
    period, depth range.
 2. **Consult the bundle for THIS budget first.** Discover and read the
    concepts that apply, do not restate them from memory: search
-   `knowledge/recipes/` for the property's budget recipe (its inputs
-   and its measured tolerance), and `knowledge/gotchas/` for the
+   `knowledge/snapshot-podaac/recipes/` for the property's budget recipe (its inputs
+   and its measured tolerance), and `knowledge/snapshot-podaac/gotchas/` for the
    gotchas that constrain it (for a heat budget, the geothermal term;
    for any budget, the native-grid rule). Restate what applies and cite
    each by path. If the property has no recipe in the bundle, its
@@ -36,9 +38,11 @@ framing of the request.
    and every ancillary the applicable gotchas name. Missing inputs stop
    the budget with the list of what to fetch; no term is approximated
    silently.
-4. **Compute the terms** exactly per the budget-formulation reference
-   (`skills/ecco/references/budget-formulation.md`); that reference is
-   the authority for the term set and the corrections, not this skill.
+4. **Compute the terms** exactly per the budget formulation convention
+   (`knowledge/snapshot-podaac/conventions/ecco-budget-formulation.md`,
+   applied per `skills/ecco/references/budget-formulation.md`); that
+   concept is the authority for the term set and the corrections, not
+   this skill.
    Volume element rA * drF * hFacC.
 5. **Closure check against the recipe's tolerance,** read from the
    recipe concept (it is an absolute, measured tolerance; never a

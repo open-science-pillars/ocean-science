@@ -16,14 +16,14 @@ read-only checks, not for fixing).
 
 Before auditing, DISCOVER and consult the installed knowledge bundle; do
 not work from a remembered list of tolerances, signatures, or traps.
-Glob and grep `knowledge/recipes/`, `knowledge/gotchas/`, and
-`knowledge/datasets/` for every concept touching the property, products,
+Glob and grep `knowledge/snapshot-podaac/recipes/`, `knowledge/snapshot-podaac/gotchas/`, and
+`knowledge/snapshot-podaac/datasets/` for every concept touching the property, products,
 and depth range of the budget under audit (search by property name,
 variable, and topic), read the matches, and restate what each says
 before you judge closure, citing it by path. The formulation authority,
-and its residual-signature traps table, live in
-`skills/ecco/references/budget-formulation.md`; consult that reference
-directly. A tolerance, a signature, or a trap added since you last ran is
+and its residual-signature traps table, are the convention concept
+`knowledge/snapshot-podaac/conventions/ecco-budget-formulation.md`;
+consult it directly. A tolerance, a signature, or a trap added since you last ran is
 found this way, never carried in this file.
 
 ## Input
@@ -35,25 +35,26 @@ produced it.
 ## Checks, in order
 
 1. **Tolerance, from the recipe:** read the property's budget recipe in
-   `knowledge/recipes/` (heat, salt, or volume) and compare the reported
+   `knowledge/snapshot-podaac/recipes/` (heat, salt, or volume) and compare the reported
    residual statistics against the tolerance that recipe pins. Use the
    recipe's tolerance as read; it is an absolute, measured tolerance,
    never a hardcoded relative-to-term ratio, and the recipe records why.
    If the property has no recipe in the bundle, its tolerance is
    unvalidated and the audit says so.
 2. **On a heat-budget failure, geothermal FIRST:** consult
-   `knowledge/gotchas/ecco-geothermal-flux.md` and apply what it records,
+   `knowledge/snapshot-podaac/gotchas/ecco-geothermal-flux.md` and apply what it records,
    the term's mechanism (from the ancillary file, at the bottom wet cell)
    and its residual signature; confirm or clear the geothermal term
    against that signature before any other trap is considered. Restate
    the signature from the gotcha, cited; do not carry it here.
 3. **Then the formulation traps table:** work the remaining residual
    signatures against the traps table in
-   `skills/ecco/references/budget-formulation.md`, matching each residual
+   `knowledge/snapshot-podaac/conventions/ecco-budget-formulation.md`,
+   matching each residual
    pattern to the omission that produces it exactly as that table
    records, and cite it. Regridded inputs are not a trap to diagnose past
    but the native-grid refusal (gotcha
-   `knowledge/gotchas/ecco-native-vs-regridded.md`).
+   `knowledge/snapshot-podaac/gotchas/ecco-native-vs-regridded.md`).
 4. **Bookkeeping checks:** snapshots actually bookend the period;
    collections match the recipe's exact ShortNames; the volume element is
    the partial-cell product rA * drF * hFacC (method); domain-integrated

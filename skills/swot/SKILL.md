@@ -17,7 +17,7 @@ its own.
 
 Before ANY SWOT analysis, DISCOVER and consult the installed knowledge
 bundle; do not work from a remembered list of rules. Search
-`knowledge/datasets/`, `knowledge/gotchas/`, and `knowledge/recipes/` for
+`knowledge/snapshot-podaac/datasets/`, `knowledge/snapshot-podaac/gotchas/`, and `knowledge/snapshot-podaac/recipes/` for
 every concept touching the products, variables, tiers, cycles, and dates in
 play (glob and grep by product name, variable, and topic), read the matches,
 restate what each changes about the plan before computing, and cite it by

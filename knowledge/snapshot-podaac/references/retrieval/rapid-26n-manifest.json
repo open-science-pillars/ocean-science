@@ -1,0 +1,157 @@
+{
+ "record": "rapid-26n-v2024.1a",
+ "generated_utc": "2026-09-02T15:13:27.823439+00:00",
+ "identity": {
+  "version": "v2024.1a",
+  "doi": "10.5285/48d0bf43-0598-ceb2-e063-7086abc062f1",
+  "read_from": [
+   "meridional_transports.nc",
+   "moc_transports.nc",
+   "moc_vertical.nc"
+  ]
+ },
+ "source": {
+  "record": "rapid-26n-v2024.1a",
+  "distribution": "rapid.ac.uk direct files (the RAPID programme's own distribution); the files are refreshed in place by the programme, so this tree is what the server delivered at retrieved_at and the version is read from the files",
+  "retrieved_at": "2026-09-02T15:09:00Z",
+  "retrieved_with": "curl, User-Agent osp-obs-capture/0.1.0, anonymous; no credentials, no registration form",
+  "doi_landing": "https://doi.org/10.5285/48d0bf43-0598-ceb2-e063-7086abc062f1",
+  "doi_package_note": "the DOI landing's own package (BODC, 1,075,185,645 bytes, filename RN-20260812135550_48D0BF430598CEB2E0637086ABC062F1.zip) was requested sixteen times on 2026-09-02; every transfer was closed by the server between 1 MB and 678 MB and the server ignores byte ranges, so no complete copy could be taken; the direct files carry the same version and DOI in their attributes",
+  "files": [
+   {
+    "file": "moc_transports.nc",
+    "url": "https://rapid.ac.uk/sites/default/files/rapid_data/moc_transports.nc",
+    "server_last_modified": "Wed, 02 Sep 2026 08:22:08 GMT",
+    "server_content_length": 1182284,
+    "bytes_on_disk": 1182284
+   },
+   {
+    "file": "moc_vertical.nc",
+    "url": "https://rapid.ac.uk/sites/default/files/rapid_data/moc_vertical.nc",
+    "server_last_modified": "Wed, 02 Sep 2026 08:22:11 GMT",
+    "server_content_length": 35983608,
+    "bytes_on_disk": 35983608
+   },
+   {
+    "file": "meridional_transports.nc",
+    "url": "https://rapid.ac.uk/sites/default/files/rapid_data/meridional_transports.nc",
+    "server_last_modified": "Wed, 22 Jul 2026 08:41:19 GMT",
+    "server_content_length": 9666320,
+    "bytes_on_disk": 9666320
+   },
+   {
+    "file": "moc_transports.mat",
+    "url": "https://rapid.ac.uk/sites/default/files/rapid_data/moc_transports.mat",
+    "server_last_modified": "Thu, 29 Jan 2026 11:02:16 GMT",
+    "server_content_length": 1012687,
+    "bytes_on_disk": 1012687
+   },
+   {
+    "file": "README.pdf",
+    "url": "https://rapid.ac.uk/sites/default/files/rapid_data/README.pdf",
+    "server_last_modified": "Wed, 22 Jul 2026 08:40:51 GMT",
+    "server_content_length": 369816,
+    "bytes_on_disk": 369816
+   },
+   {
+    "file": "README_ERROR.pdf",
+    "url": "https://rapid.ac.uk/sites/default/files/rapid_data/README_ERROR.pdf",
+    "server_last_modified": "Wed, 22 Jul 2026 08:40:51 GMT",
+    "server_content_length": 129212,
+    "bytes_on_disk": 129212
+   }
+  ]
+ },
+ "files": [
+  {
+   "path": "README.pdf",
+   "bytes": 369816,
+   "sha256": "f7edfc8ce056d750ce182f3fe28aac3b7f9e2ddc2e242e81adf0e5631632af73"
+  },
+  {
+   "path": "README_ERROR.pdf",
+   "bytes": 129212,
+   "sha256": "706c160849abb01a56e341ad20a244193f2935a713001de309bab34cc096173b"
+  },
+  {
+   "path": "meridional_transports.nc",
+   "bytes": 9666320,
+   "sha256": "e2df75b5c443bcdd156867082e4993522e9a6acef57ce72c7b3bb4008baea176",
+   "identity": {
+    "version": "v2024-1a",
+    "doi": "10.5285/48d0bf43-0598-ceb2-e063-7086abc062f1",
+    "time": {
+     "n": 730,
+     "first": "2004-04-06 00:00:00",
+     "last": "2024-03-22 00:00:00",
+     "units": "days since 1950-01-01"
+    },
+    "variables": [
+     "amoc_depth",
+     "amoc_sigma0",
+     "amoc_sigma2",
+     "depth",
+     "frwa_trans",
+     "heat_trans",
+     "pressure",
+     "sigma0",
+     "sigma2",
+     "stream_depth",
+     "stream_sigma0",
+     "stream_sigma2"
+    ]
+   }
+  },
+  {
+   "path": "moc_transports.mat",
+   "bytes": 1012687,
+   "sha256": "abe91ceda037590268aecb1b32ef445da2bd510ed91b7b5dabdc0748300927ed"
+  },
+  {
+   "path": "moc_transports.nc",
+   "bytes": 1182284,
+   "sha256": "ba135d9447a87c2bf5dcc8870e2cb73ff348c412fa1bc3501145e01c79788eed",
+   "identity": {
+    "version": "v2024.1a",
+    "doi": "10.5285/48d0bf43-0598-ceb2-e063-7086abc062f1",
+    "time": {
+     "n": 14599,
+     "first": "2004-04-02 00:00:00",
+     "last": "2024-03-27 00:00:00",
+     "units": "days since 2004-4-1 00:00:00"
+    },
+    "variables": [
+     "moc_mar_hc10",
+     "t_aiw10",
+     "t_bw10",
+     "t_ek10",
+     "t_gs10",
+     "t_ld10",
+     "t_therm10",
+     "t_ud10",
+     "t_umo10"
+    ]
+   }
+  },
+  {
+   "path": "moc_vertical.nc",
+   "bytes": 35983608,
+   "sha256": "1e77f263bcf2523e1dd27d71e5574b456c9a983124d4b21bbca608b8572599b4",
+   "identity": {
+    "version": "v2024.1a",
+    "doi": "10.5285/48d0bf43-0598-ceb2-e063-7086abc062f1",
+    "time": {
+     "n": 14599,
+     "first": "2004-04-02 00:00:00",
+     "last": "2024-03-27 00:00:00",
+     "units": "days since 2004-4-1 00:00:00"
+    },
+    "variables": [
+     "depth",
+     "stream_function_mar"
+    ]
+   }
+  }
+ ],
+ "total_bytes": 48343927
+}

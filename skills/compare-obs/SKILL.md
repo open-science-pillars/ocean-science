@@ -17,7 +17,7 @@ to altimetry?").
    SSH, GRACE mass, SST analyses), period, region.
 2. **Consult the bundle for BOTH sides of this comparison.** Discover
    the concepts, do not restate them from memory: search
-   `knowledge/datasets/`, `knowledge/gotchas/`, and `knowledge/recipes/`
+   `knowledge/snapshot-podaac/datasets/`, `knowledge/snapshot-podaac/gotchas/`, and `knowledge/snapshot-podaac/recipes/`
    (glob and grep by product name, variable, and topic) for every
    concept touching the model quantity AND the observational reference,
    read the matches, and restate what each changes about the comparison

@@ -17,8 +17,8 @@ ECCO concepts.
 
 When an analysis targets a specific product (ECCO, or another GCM
 output), DISCOVER and read the applicable concepts before computing, do
-not work from a remembered list. Glob and grep `knowledge/datasets/`,
-`knowledge/gotchas/`, and `knowledge/recipes/` by product name,
+not work from a remembered list. Glob and grep `knowledge/snapshot-podaac/datasets/`,
+`knowledge/snapshot-podaac/gotchas/`, and `knowledge/snapshot-podaac/recipes/` by product name,
 variable, and grid topic; read the matches; restate what each changes
 about the plan and cite it by path; do not carry those facts back into
 this skill. Which of a product's variables are already cell-integrated,

@@ -1,9 +1,29 @@
-# podaac-arc bundle: change log
+# ocean-science bundle: change log
 
 Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-04 · the PO.DAAC snapshot moves from the flat layout to
+  snapshot-podaac/ and becomes a full mirror declared in snapshot.yaml
+  (the whole canonical bundle except tutorial/; 135 files at pin
+  24b27927c387, the steward's signing commit of that day): the 33
+  flat copies of the old snapshot retired (pinned to 41d5ffadd1aa,
+  listed in no manifest, and behind canonical's re-sourcing and
+  signing since) and 97 files arrive that the old copy never carried
+  (14 attested computations, 9 recipes, 8 gotchas, 3 validity
+  domains, the finding, the earthdata-mcp connector, the sanctioned
+  code, attesters, masks and retrieval receipts they cite). Five
+  plugin-local ECCO concepts that were upstreamed to canonical and
+  migrated there (ecco-ssh-ib-variants, ecco-boussinesq-global-
+  steric, ecco-native-density-eos, ecco-mxldepth-criterion,
+  sea-level-budget-closure) are deleted here and return as copies.
+  index.md rewritten around the two parts (local conventions and
+  connectors; the copy with its pin, scope and contents); skills,
+  agents, verification comments, fixtures and the cite-ecco copies
+  repointed. Checked by tools/sync_check.py in the canonical
+  repository: OK at the pin. (build assistant; the steward's merge is
+  the review)
 - 2026-09-01 · the three connector concepts gain citation blocks
   (required text, DOI where one exists, whether the source mandates an
   access date, each claim verified against the authority's own page
