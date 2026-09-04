@@ -61,7 +61,7 @@ def _(ds, grid, np, theta):
     #    including partial cells, masks, and rotation fields.
     for v in ("rA", "drF", "hFacC", "hFacW", "hFacS", "maskC", "CS", "SN", "Depth"):
         assert v in ds, f"grid variable {v} missing after merge"
-    # Coordinates arrive as coordinates (the llc90 reference nuance).
+    # Coordinates arrive as coordinates, not data variables (geometry concept).
     for c in ("XC", "YC", "Z"):
         assert c in ds.coords, f"{c} must be a coordinate"
 

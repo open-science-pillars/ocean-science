@@ -2,8 +2,8 @@
 
 Copy this file to your project as `ocean-science.local.md` and fill it in.
 Skills read it at the start of ocean work; it never enters version control
-if it contains paths you consider private. Filled with working defaults in
-Session 10; template authored in Session 1 per SPECIFICATION.md v0.5.1 §4.1.
+if it contains paths you consider private. The values below are working
+defaults; the loaders read the download limit from here.
 
 ## Data locations
 

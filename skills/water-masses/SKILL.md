@@ -15,13 +15,19 @@ live here: they are read from the knowledge bundle per analysis.
 
 ## Consult the bundle for this product and analysis
 
-Before any T-S work on a specific product, DISCOVER and read the
-applicable knowledge concepts; do not work from a remembered variable
-list. Glob and grep `knowledge/snapshot-podaac/datasets/`, `knowledge/snapshot-podaac/gotchas/`,
-`knowledge/snapshot-podaac/conventions/`, and the plugin's own `knowledge/conventions/`
-by product name and by topic (temperature,
-salinity, density, EOS, water mass), read the matches, and restate
-(citing each by path) what the product fixes about the plan: which
+Before any T-S work on a specific product, consult installed knowledge
+concepts first, as the core `consult-knowledge` skill sets out (the
+directories to glob, how to voice a concept's status, which concept
+wins on conflict), by product name and by topic (temperature,
+salinity, density, EOS, water mass); read the matches, and restate
+(citing each by path) what the product fixes about the plan. The
+concepts this plugin resolves to today, for ECCO: the dataset concept
+and the temperature-salinity family concept under
+`knowledge/snapshot-podaac/fields/ecco-v4r4/` (which variable is which
+flavor), the native density EOS gotcha
+`knowledge/snapshot-podaac/gotchas/ecco-native-density-eos.md` (which
+density the product ships and how to recompute it consistently), and
+any recipe that pins expected classes. What the product fixes: which
 variables carry potential temperature and practical salinity (or whether
 the product ships TEOS-10 Conservative Temperature and Absolute
 Salinity), which density fields it provides from its own equation of

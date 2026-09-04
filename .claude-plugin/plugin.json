@@ -1,6 +1,6 @@
 {
   "name": "ocean-science",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "description": "Physical oceanography: ECCO state estimate, SWOT SSH, meridional transport, budget closure, water masses. Install core first.",
   "author": { "name": "Open Science Pillars Community" },
   "homepage": "https://github.com/open-science-pillars/ocean-science",

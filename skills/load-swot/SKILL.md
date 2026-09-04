@@ -17,22 +17,24 @@ decoded, swath structure intact. Works by slash command or conversationally
    current baseline per the dataset concept. Unstated pieces are asked
    about only if they change what gets downloaded (tier and region
    usually do; an open end date rarely does).
-2. **Consult the bundle for this load first.** Discover and read the
-   SWOT concepts that apply (glob `knowledge/`): the dataset concept for
-   structure, tiers, version family, and current baseline, and the
-   gotchas the request or downstream intent triggers (the orbit-phase
-   and version-family trap whenever the range touches 2023; the
-   crossover-calibration issue whenever statistics are the goal; the
-   within-collection baseline drift when consistency matters
-   downstream). Restate what each changes about the plan and cite it by
-   path; do not carry these facts in this skill. A concept added since
-   you last ran is found this way.
+2. **Consult the bundle for this load first.** Consult installed
+   knowledge concepts first, as the core `consult-knowledge` skill
+   sets out, by product, tier, region, cycles, and dates; the swot
+   skill lists the concepts this plugin resolves to. Read the dataset
+   concept for structure, the tier and family inventory, and the
+   current baseline, and the gotchas the request or downstream intent
+   triggers (the orbit-phase and version-family trap whenever the
+   range touches 2023; the crossover-calibration issue whenever
+   statistics are the goal; the within-collection baseline drift when
+   consistency matters downstream). Restate what each changes about
+   the plan and cite it by path; do not carry these facts in this
+   skill. A concept added since you last ran is found this way.
 3. **Search before fetching:** earthaccess granule search (ShortName,
    temporal, bounding box); report granule count and estimated volume
    BEFORE any download.
 4. **The volume gate (hard gate).** Threshold from the project local
-   config (`ocean-science.local.md`, "maximum ungated download size";
-   template default 2 GB). At or below threshold: state count, size, and
+   config (`ocean-science.local.md`, "maximum ungated download
+   size"). At or below threshold: state count, size, and
    destination, then proceed. Above threshold: STOP and present count,
    total size, destination, and a smaller alternative (fewer cycles,
    tighter box, a lighter tier), and wait for explicit confirmation. The

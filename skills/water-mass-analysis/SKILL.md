@@ -16,11 +16,11 @@ knowledge bundle rather than carrying them here.
 1. **Parse and show back:** region, period, depth range, and the
    deliverable (T-S census, water-mass volumes, transformation
    analysis).
-2. **Consult the bundle for THIS analysis first.** Discover and read the
-   concepts that apply, do not restate them from memory: glob and grep
-   `knowledge/snapshot-podaac/datasets/`, `knowledge/snapshot-podaac/gotchas/`, and `knowledge/snapshot-podaac/recipes/`
-   by product name, variable, depth range, and topic. The T and S
-   variable flavors and the uncertainty framing for the product live in
+2. **Consult the bundle for THIS analysis first.** Consult installed
+   knowledge concepts first, as the core `consult-knowledge` skill
+   sets out, by product name, variable, depth range, and topic; the
+   water-masses skill lists the concepts this plugin resolves to. The
+   T and S variable flavors and the uncertainty framing for the product live in
    the dataset concept (`knowledge/snapshot-podaac/datasets/ecco-v4r4.md` for ECCO); any
    recipe that pins expected classes or volumes lives in
    `knowledge/snapshot-podaac/recipes/`. Restate what each changes about the plan and

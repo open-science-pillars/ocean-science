@@ -15,16 +15,20 @@ to altimetry?").
 1. **Parse and show back:** the model quantity, the observational
    reference (RAPID transports, Argo-based climatologies, altimetry
    SSH, GRACE mass, SST analyses), period, region.
-2. **Consult the bundle for BOTH sides of this comparison.** Discover
-   the concepts, do not restate them from memory: search
-   `knowledge/snapshot-podaac/datasets/`, `knowledge/snapshot-podaac/gotchas/`, and `knowledge/snapshot-podaac/recipes/`
-   (glob and grep by product name, variable, and topic) for every
-   concept touching the model quantity AND the observational reference,
-   read the matches, and restate what each changes about the comparison
-   before computing, citing it by path. The obs product's own
-   Uncertainty section and gotchas bind the comparison as much as the
-   model side's; where a recipe pins the comparison it carries the
-   comparison discipline. A concept added since you last ran is found
+2. **Consult the bundle for BOTH sides of this comparison.** Consult
+   installed knowledge concepts first, as the core `consult-knowledge`
+   skill sets out, by product name, variable, and topic, for every
+   concept touching the model quantity AND the observational reference
+   (the ecco, swot, and sea-level skills list the concepts this plugin
+   resolves to; the confrontation computations under
+   `knowledge/snapshot-podaac/computations/` and the
+   consistency-versus-confrontation convention own the comparison
+   discipline where they exist); read the matches, and restate what
+   each changes about the comparison before computing, citing it by
+   path. The obs product's own Uncertainty section and gotchas bind the
+   comparison as much as the model side's; where a recipe or
+   computation pins the comparison it carries the comparison
+   discipline. A concept added since you last ran is found
    this way; a side with no concept in the bundle is reported as
    unconstrained, not assumed clean.
 3. **Alignment before arithmetic**, each item stated in the report:

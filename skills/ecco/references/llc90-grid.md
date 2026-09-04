@@ -1,80 +1,68 @@
-# The LLC90 native grid
+# The LLC90 native grid: procedure and pointers
 
-Reference for the ecco skill, per SPEC §4.2. Field
-names marked "pending" are granule-verified during this session's access
-test and the marks removed then; everything else follows the ECCO v4
-release documentation and the ecco_v4_py tutorial conventions.
+Reference for the ecco skill. This file is procedure over the knowledge
+concepts; the grid facts (tile layout and dimensions, the geometry
+variable inventory, which variables already carry the partial-cell
+fraction, which collections do not conserve) are read from the concepts
+named below, never from here.
 
-## Topology: lat-lon-cap, 13 tiles
+## Where the facts live
 
-ECCO v4r4 lives on the LLC90 grid: 13 tiles of 90 x 90 cells, 50 depth
-levels. Tiles 0 to 5 cover the Southern Ocean through the Atlantic and
-Indian sectors on a quasi-lat-lon layout; tile 6 is the Arctic cap;
-tiles 7 to 12 cover the Pacific sector with axes ROTATED roughly 90
-degrees relative to tiles 0 to 5. Data arrives with dimensions
-`(time, tile, k, j, i)` (scalars) and curvilinear 2D coordinates
-`XC, YC` per tile. Nothing about `(j, i)` is longitude-latitude; treating
-tiles as regular grids is the foundational llc90 mistake.
+- Tile layout, dimensions, and the curvilinear coordinates:
+  `knowledge/snapshot-podaac/datasets/ecco-v4r4.md` (Structure).
+- The geometry collection and its variable inventory (cell centers and
+  corners, areas, edge lengths, layer spacing, the partial-cell
+  fractions, the masks, the rotation angle fields), with the note that
+  the horizontal and vertical coordinates arrive as xarray coordinates
+  rather than data variables:
+  `knowledge/snapshot-podaac/fields/ecco-v4r4/geometry.md`.
+- Which variables are already cell-integrated (the MASS suffix, the
+  flux diagnostics) and the double-count trap:
+  `knowledge/snapshot-podaac/gotchas/ecco-velmass-hfac-double-count.md`.
+- Why budgets and transports stay on the native grid, with the
+  evidence: `knowledge/snapshot-podaac/gotchas/ecco-native-vs-regridded.md`.
+- Grid-relative velocity components on the rotated tiles:
+  `knowledge/snapshot-podaac/gotchas/ecco-vector-orientation.md` (a
+  draft, voiced as unverified).
+- The grid method that generalizes across models (C-grid staggering,
+  cell geometry as data, xgcm, scalar versus vector regridding): the
+  ocean-grids skill.
 
-## Geometry fields (from ECCO_L4_GEOMETRY_LLC0090GRID_V4R4)
+## Procedure
 
-- Cell centers `XC, YC`; corners `XG, YG`; cell areas `rA` (m^2).
-- Edge lengths `dxG, dyG`; vertical spacing `drF` (m); depths `Depth`,
-  level coordinates `Z, Zl, Zu` (negative down, 50 levels).
-- **Partial cells:** `hFacC, hFacW, hFacS` give the wet fraction of each
-  cell (0 to 1). Volume integrals use `rA * drF * hFacC`, never
-  `rA * drF`; omitting hFac biases every budget and inventory near
-  topography.
-- Land masks `maskC, maskW, maskS` ship in the geometry granule
-  (granule-verified 2026-07-04).
-- Vector rotation fields `CS`, `SN` (cos/sin of the local grid angle,
-  granule-verified 2026-07-04) for rotating model u/v to geographic
-  east/north.
-- Nuance: `XC, YC, XG, YG` and the vertical axes arrive as xarray
-  COORDINATES on the geometry dataset, not data variables; code that
-  iterates `data_vars` looking for them finds nothing.
-
-## C-grid staggering
-
-Arakawa C-grid: scalars (THETA, SALT) at cell centers; `UVEL`/`UVELMASS`
-on western cell faces; `VVEL`/`VVELMASS` on southern faces; `WVELMASS`
-on lower faces. Consequences:
-
-1. Center-point values of velocity require interpolation (xgcm `interp`),
-   and transports across faces use the face values directly:
-   `UVELMASS * dyG * drF` is the volume transport through the western
-   face (hFac is already inside UVELMASS; that is what the MASS suffix
-   means, and double-applying hFac is a classic budget bug).
-2. **On tiles 7 to 12, model u and v are not geographic east and north.**
-   Any map of "zonal velocity" built from raw UVEL is wrong in the
-   Pacific sector; rotate with the grid-angle fields or compute
-   transports in grid-native directions where rotation cancels.
-
-## xgcm and tile connectivity
-
-Differencing and interpolating across tile boundaries requires the tile
-connectivity map; `ecco_v4_py.get_llc_grid(ds)` builds the xgcm Grid
-with the llc face connections, and `xgcm.Grid.diff`/`interp` then respect
-the topology (including the Arctic cap's rotated neighbors). Hand-rolled
-`np.diff` across `(j, i)` silently produces garbage at every tile seam;
-budget divergences built that way fail closure at the seams while looking
-fine in tile interiors.
-
-## Plotting and regridding
-
-- Maps: never pcolormesh a tile array as if `(j, i)` were lon-lat; use
-  `ecco_v4_py.plot_proj_to_latlon_grid` (resamples correctly, handles
-  the cap) or explicit resampling to a regular grid for display.
-- Regridding is for DISPLAY and comparison only. Budgets and transports
-  are computed on the native grid; the interpolated 0.5 degree ECCO
-  product does not conserve, and budget closure fails on it by
-  construction (the ecco-native-vs-regridded gotcha carries the
-  evidence).
-
-## Sections and transports
-
-Meridional/section transports use face transports with section masks:
-`ecco_v4_py.get_section_line_masks` (or `get_available_sections` for
-named sections) produces the W/S face masks; summing
-`UVELMASS * dyG * drF` and `VVELMASS * dxG * drF` over masked faces
-gives the section transport without any rotation step.
+1. Identify the grid from the dataset concept before touching data:
+   dimensions `(time, tile, k, j, i)` with 2D `XC, YC` per tile mean
+   curvilinear; nothing about `(j, i)` is longitude-latitude, and
+   treating a tile as a regular grid is the foundational mistake.
+2. Load the geometry collection first and merge it into every native
+   dataset (`xarray.merge`); take the variable names from the geometry
+   concept, and read its coordinates as coordinates (code that iterates
+   `data_vars` looking for them finds nothing).
+3. Volume element: cell area times layer spacing times the partial-cell
+   fraction at the cell center, per the geometry concept. Never apply
+   the fraction a second time to a variable the double-count gotcha
+   lists as already carrying it.
+4. Staggering: scalars at cell centers, u on western faces, v on
+   southern faces, w on lower faces (C-grid, per ocean-grids). Face
+   transports use the face value times the matching edge length and
+   layer spacing directly; a center-point velocity needs xgcm
+   interpolation.
+5. Tile seams: build the xgcm Grid with `ecco_v4_py.get_llc_grid(ds)`
+   and difference or interpolate through it. Hand-rolled `np.diff`
+   across `(j, i)` produces garbage at every seam that looks fine in
+   tile interiors; within-tile interior cells need no seam operators,
+   which is why pointwise closure fixtures use them.
+6. Vectors: on the rotated tiles, model u and v are not geographic east
+   and north. Rotate with the geometry concept's angle fields before any
+   map or regridding, or compute transports in grid-native directions
+   where the rotation cancels; the vector-orientation gotcha records
+   which tiles rotate.
+7. Plotting: never pcolormesh a tile array as if `(j, i)` were lon-lat;
+   `ecco_v4_py.plot_proj_to_latlon_grid` resamples correctly and handles
+   the cap. Regridding is for display and comparison only; the
+   native-vs-regridded gotcha carries the evidence.
+8. Sections: `ecco_v4_py.get_section_line_masks` (or
+   `get_available_sections` for named sections) gives the W and S face
+   masks; sum the MASS transports times face geometry over the masks,
+   with no rotation step. The meridional-transport skill carries the
+   method.

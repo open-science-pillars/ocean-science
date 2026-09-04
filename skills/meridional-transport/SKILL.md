@@ -9,11 +9,13 @@ user-invocable: false
 Background expertise for the METHOD of computing meridional transports
 natively and framing them honestly. Dataset-specific facts (basin scope
 of a given product, expected values, the RAPID-comparison discipline)
-are not restated here: they live in the knowledge bundle
-(`knowledge/snapshot-podaac/gotchas/` and `knowledge/snapshot-podaac/recipes/`) and are consulted per
-analysis by the transport-analysis workflow and the ecco-scout agent.
-Grid mechanics live in ocean-grids and the llc90 reference; expected
-values and spreads live in recipe concepts.
+are not restated here: they live in the knowledge bundle (the
+`ecco-` gotchas, recipes, and attested computations the ecco skill
+lists) and are consulted per analysis by the transport-analysis
+workflow and the ecco-scout agent, as the core `consult-knowledge`
+skill sets out. Grid mechanics live in ocean-grids and the ecco skill's
+grid reference; expected values and spreads live in the recipe and
+computation concepts.
 
 ## Sections are masks, not index rows
 
@@ -22,7 +24,8 @@ section is a set of cell FACES with signs, not a `j = const` slice.
 `ecco_v4_py.get_section_line_masks` (and `get_available_sections` for
 named straits) produces the west- and south-face masks; transports sum
 face fluxes times face geometry over those masks. Grid-native face
-directions make rotation unnecessary in the sum (llc90 reference).
+directions make rotation unnecessary in the sum (the ecco skill's grid
+reference, step 8).
 
 ## Volume, heat, freshwater
 

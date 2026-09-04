@@ -15,14 +15,15 @@ the sea-level knowledge skill.
 1. **Parse and show back:** region, period, and the deliverable
    (regional trend map, basin series, steric vs manometric
    attribution), plus which SSH convention the question implies.
-2. **Consult the bundle for this analysis first.** DISCOVER the
-   applicable concepts, do not work from a remembered list: glob and
-   grep `knowledge/snapshot-podaac/datasets/`, `knowledge/snapshot-podaac/gotchas/`, and
-   `knowledge/snapshot-podaac/recipes/` for every product, component, and correction in
-   play (the ECCO dataset, its SSH inverse-barometer variants, the
-   SSH/OBP release caveat, the Boussinesq global-mean correction, and
-   for any observational cross-check the GRACE and altimetry concepts);
-   read the matches, restate what each changes about the plan, and cite
+2. **Consult the bundle for this analysis first.** Consult installed
+   knowledge concepts first, as the core `consult-knowledge` skill
+   sets out, by product, component, correction, and region; the
+   sea-level skill lists the concepts this plugin resolves to (the
+   ECCO dataset and SSH family, its SSH inverse-barometer variants, the
+   SSH/OBP release caveat, the Boussinesq global-mean correction, the
+   trend gotchas and the trend computation, and for any observational
+   cross-check the GRACE and altimetry concepts); read the matches,
+   restate what each changes about the plan, and cite
    each by path. Do not carry these facts here; a concept added or
    corrected since you last ran is found this way. Observational
    cross-checks hand the altimetry and gravimetry conventions to

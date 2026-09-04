@@ -51,7 +51,7 @@ the [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLO
   from the sanctioned computation is checked against the code hash and the
   steward-signed tolerances by
   [ecco-budget-badge](https://github.com/open-science-pillars/ecco-budget-badge)
-  (pin tag v1), and the badge above is machine-written from that verdict;
+  (pin tag v2), and the badge above is machine-written from that verdict;
   it says "does not close" the moment either check fails. Salt, volume,
   and MHT attach as their computations reach stable.
 - **A project config template** (`ocean-science.local.md.template`): copy it
