@@ -38,7 +38,9 @@ the [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLO
   water masses, sea level), and workflows: data loaders that show you the
   download size and ask before fetching, an ocean-budget workflow that
   refuses to compute on regridded data (it never closes), and transport and
-  comparison workflows that read validated recipes.
+  comparison workflows that read validated recipes; and a receipt-figures
+  skill that draws maps and series only from attested receipts, with the
+  run id, code hash and verdict in the caption.
 - **Agents**: a scout that recommends datasets and cites the knowledge it
   relied on (never downloading on its own), and a budget auditor that checks
   a computed budget closed and diagnoses it if not.
