@@ -58,7 +58,13 @@ the [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLO
   [ecco-budget-badge](https://github.com/open-science-pillars/ecco-budget-badge)
   (pin tag v2), and the badge above is machine-written from that verdict;
   it says "does not close" the moment either check fails. Salt, volume,
-  and MHT attach as their computations reach stable.
+  and MHT attach as their computations reach stable. The agent-judgment
+  evals (does an agent with this plugin installed avoid the documented
+  ECCO and SWOT traps?) have one home,
+  [ecco-agent-evals](https://github.com/open-science-pillars/ecco-agent-evals):
+  its cases name the skills here they exercise, and each release of
+  this plugin is run against the tagged case set; nothing is copied
+  into this repository.
 - **A project config template** (`ocean-science.local.md.template`): copy it
   into your project and fill in your data paths, region, and download limit.
 

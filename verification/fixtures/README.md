@@ -6,6 +6,7 @@ scripts:
 | Fixture | Kind | Source | License |
 |---|---|---|---|
 | synthetic SWOT swath (in-notebook) | synthesized deterministically inside load_swot.py (seed 20260704), structure mirrored from a live Basic-tier granule inspected 2026-07-04 | this repo | public domain (synthetic) |
+| briefing 001 regression (`briefings/001-regression.yaml`) | the receipt values, bound parameters and code hash prefix of the first briefing's sanctioned run, recorded 2026-08-30; a rerun must reproduce them and a regenerated briefing carries no number outside them | this repo | Apache-2.0 (this repo) |
 | 2010 ECCO subset (~1.3 GB, cached at ~/ECCO_V4r4) | scripted, cached real data per §6: fetched on demand by `fixtures/fetch_ecco_2010.py` (Earthdata login required on first fetch); never committed | PO.DAAC, ECCO v4r4 collections listed in fetch_ecco_2010.py; geothermalFlux.bin from the ECCO-v4-Python-Tutorial misc directory | NASA data, public; tutorial file per its repo license |
 
 Reference numbers the goldens assert (recorded 2026-07-04):

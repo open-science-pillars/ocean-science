@@ -5,7 +5,7 @@
 # briefing must carry no number outside this set or its stated
 # arithmetic restatements.
 briefing: briefings/001-us-northeast-coast-2010.md
-computation: podaac/computations/ecco-regional-sea-level.md (nasa-daac-knowledge fc9733a)
+computation: knowledge/podaac/computations/ecco-regional-sea-level.md (nasa-daac-knowledge fc9733a)
 run_id: 20260830T223624Z-40849f17
 code_sha256_prefix: 9a3da0e37068
 bound_parameters: { region: us-northeast-coast, period: "2010-01:2010-12" }
