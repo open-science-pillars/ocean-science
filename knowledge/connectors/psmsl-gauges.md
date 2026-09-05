@@ -3,7 +3,9 @@ type: connector
 title: "PSMSL long-record tide gauges (observations server)"
 description: "Two centuries of monthly mean sea level through psmsl_monthly; values sit on the Revised Local Reference datum, roughly 7000 mm below mean sea level, so absolute numbers are meaningless and only differences and trends carry science."
 tags: [connector, psmsl, sea-level, tide-gauge, mcp, observations]
-verified: { by: human:PaulMRamirez, at: 2026-09-01T16:55:00Z }
+verified:
+  - { by: human:PaulMRamirez, at: 2026-09-01T16:55:00Z }
+  - { by: human:PaulMRamirez, at: 2026-09-05T00:17:00Z }
 status: stable
 citation:
   access_date_required: true
