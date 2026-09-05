@@ -43,7 +43,7 @@ see marketplace/docs/surface-testing-guide.md.
 An Earthdata Login is needed only to retrieve data, never to search.
 It is read by earthaccess at download time and is never handled by
 this plugin, never sent to the connector above, and never stored in
-this repository in any form (SPEC §5.8).
+this repository in any form.
 
 ## Observations MCP (`observations`)
 

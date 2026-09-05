@@ -6,7 +6,8 @@
 #     "xarray",
 # ]
 # ///
-# Golden notebook for the load-swot workflow (SPEC v0.5.1 §6):
+# Golden notebook for the load-swot workflow (the golden-notebook
+# requirement: one fixture-backed asserting script per workflow skill):
 # flag decoding and swath-structure assertions on a synthetic regional SSH
 # fixture built to the granule structure observed live 2026-07-04
 # (dims num_lines x num_pixels = swath grid, ssha_karin + ssha_karin_qual,

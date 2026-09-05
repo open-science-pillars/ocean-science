@@ -9,7 +9,8 @@
 #     "ecco_access",
 # ]
 # ///
-# Golden notebook for the load-ecco workflow (SPEC v0.5.1 §6):
+# Golden notebook for the load-ecco workflow (the golden-notebook
+# requirement: one fixture-backed asserting script per workflow skill):
 # grid-merge structure assertions on the cached 2010 subset (scripted,
 # cached fixture per fixtures/fetch_ecco_2010.py). Headless green via
 # `python verification/load_ecco.py`; fails loudly if the cache cannot

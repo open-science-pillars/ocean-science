@@ -95,7 +95,8 @@ which is why golden-notebook fixtures can assert it on small regions.
 Domain-integrated closure (tendency of the integral balances boundary
 fluxes plus interior forcing) holds only on closed domains; asserting
 it on an open subset without the boundary transport term is a made-up
-test. SPEC §6 encodes this for verification.
+test. The golden-notebook closure-testing rule encodes this for
+verification.
 
 ## Discipline
 
