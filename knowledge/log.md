@@ -4,6 +4,23 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-04 · THE PINNED COPY OF THE PO.DAAC BUNDLE IS RETIRED:
+  snapshot-podaac/ (135 files at pin b6ac8fc0d5c1) and snapshot.yaml
+  deleted. The bundle now reaches an install only as the
+  nasa-daac-knowledge dependency (declared 2026-09-04, floor
+  >=2026.9.1), and every skill, agent, reference and verification
+  script that cited `knowledge/snapshot-podaac/...` cites the bundle
+  path `knowledge/podaac/...` instead, which consult-knowledge resolves
+  through the installer's record. The heat-budget smoke
+  (verification/ocean_budget.py) reads the provider plugin's
+  installPath from `claude plugin list --json` (NASA_DAAC_KNOWLEDGE
+  overrides it with a checkout) and runs the same sanctioned code: the
+  computation and attester blobs are identical at the old pin and at
+  the 2026.9.1 release. The cite-ecco tool copies now cite the release
+  tag rather than the pin. This index loses its snapshot section for a
+  short account of the dependency. No concept text changed; the three
+  local connectors and four local conventions are untouched. (build
+  assistant, steward review at merge)
 - 2026-09-04 · STEWARD RE-SIGNING of the three connector concepts
   (connectors/argo-floats.md, coops-tides.md, psmsl-gauges.md). Each
   had gained its citation block on 2026-09-01 after the steward's

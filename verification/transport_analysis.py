@@ -12,7 +12,7 @@
 # ///
 # Golden notebook for the transport-analysis workflow (SPEC §6):
 # MHT at 26.5N on the cached 2010 fluxes, asserted against the recipe
-# concept knowledge/snapshot-podaac/recipes/ecco-mht-26n.md (range, spread envelope, and
+# concept knowledge/podaac/recipes/ecco-mht-26n.md (range, spread envelope, and
 # the recorded 2010 reproducing anchor). Headless green via
 # `python verification/transport_analysis.py`.
 
@@ -24,7 +24,7 @@ app = marimo.App()
 
 @app.cell
 def _():
-    # From knowledge/snapshot-podaac/recipes/ecco-mht-26n.md (scope-corrected 2026-07-04);
+    # From knowledge/podaac/recipes/ecco-mht-26n.md (scope-corrected 2026-07-04);
     # the recipe is the authority, these constants mirror it and the golden
     # fails if recomputation drifts from the recorded anchors. The 0.8-1.4
     # multi-year band is ATLANTIC scope and is not asserted on single-year

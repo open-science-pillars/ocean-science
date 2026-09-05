@@ -20,15 +20,15 @@ concepts first, as the core `consult-knowledge` skill sets out, by
 property, product, and depth range; the ecco skill lists the concepts
 this plugin resolves to. Take the expected residual, its pass bar, and
 its provenance from the property's attested computation
-(`knowledge/snapshot-podaac/computations/`) or, until that computation
-reaches stable, from its recipe (`knowledge/snapshot-podaac/recipes/`),
+(`knowledge/podaac/computations/`) or, until that computation
+reaches stable, from its recipe (`knowledge/podaac/recipes/`),
 restating and citing by path; read the gotchas that constrain the
 property (for heat, the geothermal term; for any budget, the
 native-vs-regridded rule and the hFac double count) and restate what
 each changes about the plan. The exact term formulation, the z*
 correction, shortwave penetration, and the traps table are the
 convention concept
-`knowledge/snapshot-podaac/conventions/ecco-budget-formulation.md`;
+`knowledge/podaac/conventions/ecco-budget-formulation.md`;
 consult it for the terms. A concept or tolerance added or corrected
 since you last ran is found this way, which is what lets it change this
 skill's behavior without editing this file. A residual above the owning
@@ -127,6 +127,6 @@ Dataset-specific rules (the geothermal term, the exact term formulation
 and constants, the z* and shortwave corrections, the measured residual
 tolerances) are NOT restated here: they live in the computation and
 recipe concepts, the ECCO gotchas, and the budget formulation convention
-(`knowledge/snapshot-podaac/conventions/ecco-budget-formulation.md`),
+(`knowledge/podaac/conventions/ecco-budget-formulation.md`),
 consulted per the step above. That is what lets a corrected tolerance or
 a new budget gotcha change this skill's behavior without editing it.

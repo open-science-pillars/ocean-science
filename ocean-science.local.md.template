@@ -23,11 +23,11 @@ defaults; the loaders read the download limit from here.
 - Orbit phase default: 21-day science (set 1-day cal/val explicitly when intended;
   the swot-calval-orbit-phases gotcha applies to ranges spanning the switch)
 - Product tier default: Expert
-- Processing baseline: consult knowledge/snapshot-podaac/datasets/swot-karin.md, do not hardcode here
+- Processing baseline: consult knowledge/podaac/datasets/swot-karin.md, do not hardcode here
 
 ## Knowledge block
 
-- Installed standalone bundles consulted alongside this plugin's snapshot
+- Installed standalone bundles consulted alongside the declared ones
   (SPEC §5.7), one path per line:
   - (none)
 - Precedence reminder: provider-bundle concepts win on conflict.

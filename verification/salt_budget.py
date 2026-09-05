@@ -12,7 +12,7 @@
 # ///
 # Golden notebook for the salt budget (SPEC §10.5): the four-term
 # 2010 salt budget on the ECCO v4r4 native grid, formulation per
-# knowledge/snapshot-podaac/recipes/ecco-salt-budget.md, with POINTWISE closure asserted on
+# knowledge/podaac/recipes/ecco-salt-budget.md, with POINTWISE closure asserted on
 # interior wet cells of one tile against the recipe's measured ABSOLUTE
 # tolerance. Interior-of-tile is a valid pointwise subset (SPEC §6) and needs
 # no tile-seam operators. Headless green via `python verification/salt_budget.py`.
@@ -38,7 +38,7 @@ def _():
     spec.loader.exec_module(fx)
     paths = fx.ensure_cache()
 
-    # Recipe tolerance (knowledge/snapshot-podaac/recipes/ecco-salt-budget.md, measured
+    # Recipe tolerance (knowledge/podaac/recipes/ecco-salt-budget.md, measured
     # 2026-07-05: max 7.2e-11, p99.9 1.06e-11 g/kg/s; absolute because
     # float32 quantization makes relative ratios meaningless).
     TOL_ABS_MAX = 1.5e-10   # g/kg/s, ~2x measured max

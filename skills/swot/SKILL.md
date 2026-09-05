@@ -24,7 +24,7 @@ terms: swot, karin, ssha, a tier name, cycle, pass, crid, crossover,
 cal/val). Read each match, restate what it changes about the plan
 before computing, and cite it by path. A concept added since you last
 ran is found this way, not from this file. The concepts this plugin
-resolves to today, all under `knowledge/snapshot-podaac/`:
+resolves to today, all under `knowledge/podaac/`:
 
 - the dataset concept `datasets/swot-karin.md`: identity and swath
   geometry, granule structure, the Variants table (tiers by version
@@ -55,7 +55,7 @@ are dataset facts: read them from the dataset concept, not from here.
 ## Choosing a tier and a family
 
 Pick the tier from the dataset concept's Variants table
-(`knowledge/snapshot-podaac/datasets/swot-karin.md`) by what the
+(`knowledge/podaac/datasets/swot-karin.md`) by what the
 analysis needs: SSH-anomaly work, the full correction and uncertainty
 variable set, wind and wave state, or the finest-scale structure. The
 tier inventory, its trade-offs (posting, granule size), the ShortNames

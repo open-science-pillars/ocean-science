@@ -27,7 +27,7 @@ gotchas; the altimetry concepts (the NASA-SSH dataset and the
 SSH-versus-altimetry computation); and the plugin's own connector
 concepts under `knowledge/connectors/` for tide gauges and Argo. The
 sea level budget bookkeeping lives in
-`knowledge/snapshot-podaac/conventions/sea-level-budget-closure.md`; the GRACE effective
+`knowledge/podaac/conventions/sea-level-budget-closure.md`; the GRACE effective
 resolution, coastal-leakage, and GIA facts live in the GRACE dataset
 concept and its gotchas; the ECCO SSH-variant, V4R4/V4R4B release, and
 Boussinesq facts live in the ECCO concepts. A concept added or corrected
@@ -71,7 +71,7 @@ GIA, reference frame, atmospheric-pressure (inverse-barometer)
 convention, effective smoothing (gravimetry's footprint against pointwise
 altimetry), period, and the deep-steric term. Those consistency
 requirements live in
-`knowledge/snapshot-podaac/conventions/sea-level-budget-closure.md`; consult and restate
+`knowledge/podaac/conventions/sea-level-budget-closure.md`; consult and restate
 them for the products in play. Apparent non-closure is a
 correction-consistency finding before it is a missing-physics finding:
 work the corrections table first (that ordering is the hard refusal

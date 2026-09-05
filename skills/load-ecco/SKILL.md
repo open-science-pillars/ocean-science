@@ -13,7 +13,7 @@ merged, gated on volume, gotchas restated. Works by slash command or conversatio
 
 1. **Parse and show back:** variables or collections (resolved to EXACT
    ShortNames through the fields concepts,
-   `knowledge/snapshot-podaac/fields/ecco-v4r4/`, one per collection
+   `knowledge/podaac/fields/ecco-v4r4/`, one per collection
    family; bare variable-name queries open an interactive picker that
    hangs scripted use), time range, time resolution (monthly, daily,
    snapshot), release (V4R4; the V4R4B variants of SSH and OBP per
@@ -32,7 +32,7 @@ merged, gated on volume, gotchas restated. Works by slash command or conversatio
 3. **Search before fetching:** granule count and estimated volume
    BEFORE any download, on the dated access path the dataset concept
    records, or the static path its access gotcha
-   (`knowledge/snapshot-podaac/gotchas/ecco-access-static-collections.md`)
+   (`knowledge/podaac/gotchas/ecco-access-static-collections.md`)
    prescribes for geometry and the other static collections. Discovery and availability
    checks may use the registered earthdata MCP connector, no login
    needed: get_collections with short_name first (keyword second) to

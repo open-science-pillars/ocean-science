@@ -47,11 +47,10 @@ the [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLO
   structure, documented gotchas with evidence, validated recipes with
   expected numbers, and attested computations with their sanctioned code
   and receipts) is installed alongside as the nasa-daac-knowledge
-  dependency, at a release the plugin names a floor for. A pinned copy of
-  it still travels under `knowledge/snapshot-podaac/` (declared in
-  `knowledge/snapshot.yaml`, byte-checked against the canonical bundle at
-  its pinned commit) while the skills' paths move to the installed
-  bundle; the copy retires when they have.
+  dependency, at a release the plugin names a floor for. The skills
+  cite its concepts by bundle path (`knowledge/podaac/...`), which core's
+  consult-knowledge convention resolves through the installer's record
+  of installed plugins; nothing is copied into this repository.
 - **Verification**: automated notebooks that re-check each workflow on small
   cached data. The heat-budget closure is additionally attested: a receipt
   from the sanctioned computation is checked against the code hash and the

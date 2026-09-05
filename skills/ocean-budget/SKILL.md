@@ -7,13 +7,13 @@ description: Ocean property budgets on the native ECCO grid only; refuses regrid
 
 Compute closed property budgets, or refuse. Works by slash command or conversationally
 ("heat budget for the subpolar gyre"). The formulation authority is
-`knowledge/snapshot-podaac/conventions/ecco-budget-formulation.md`
+`knowledge/podaac/conventions/ecco-budget-formulation.md`
 (the procedure for applying it is `skills/ecco/references/budget-formulation.md`);
 the tolerance authority is the property's attested computation
-(`knowledge/snapshot-podaac/computations/ecco-heat-budget.md` for heat,
+(`knowledge/podaac/computations/ecco-heat-budget.md` for heat,
 which also names the sanctioned code and its attester) or, until a
 property's computation reaches stable, its recipe under
-`knowledge/snapshot-podaac/recipes/`; the diagnosis discipline is
+`knowledge/podaac/recipes/`; the diagnosis discipline is
 budget-closure's.
 
 ## The native-grid rule (🔴, non-negotiable)
@@ -33,10 +33,10 @@ workflow applies it at its gate.
    knowledge concepts first, as the core `consult-knowledge` skill
    sets out, by property, product, and depth range; the ecco skill
    lists the concepts this plugin resolves to. Read the property's
-   attested computation under `knowledge/snapshot-podaac/computations/`
+   attested computation under `knowledge/podaac/computations/`
    (its declared parameters, inputs, pass bar, sanctioned code, and
    attester) or, until that computation reaches stable, its recipe
-   under `knowledge/snapshot-podaac/recipes/` (its inputs and measured
+   under `knowledge/podaac/recipes/` (its inputs and measured
    tolerance), and the gotchas that constrain it (for a heat budget,
    the geothermal term; for any budget, the native-grid rule and the
    hFac double count). Restate what applies and cite each by path. If
@@ -48,12 +48,12 @@ workflow applies it at its gate.
    the budget with the list of what to fetch; no term is approximated
    silently.
 4. **Compute the terms.** Where the property has an attested
-   computation, run its sanctioned code from the pinned copy with the
+   computation, run its sanctioned code from the installed bundle with the
    declared parameters bound (never edited; the attester hashes it)
    and keep the receipt; the executor instructions the concept names
    are the procedure. Otherwise compute exactly per the budget
    formulation convention
-   (`knowledge/snapshot-podaac/conventions/ecco-budget-formulation.md`,
+   (`knowledge/podaac/conventions/ecco-budget-formulation.md`,
    applied per `skills/ecco/references/budget-formulation.md`); that
    concept is the authority for the term set and the corrections, not
    this skill. Volume element rA * drF * hFacC.

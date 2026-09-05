@@ -12,10 +12,10 @@ Reference numbers the goldens assert (recorded 2026-07-04):
 - transport_analysis: MHT 26.5N 2010 mean 1.098 PW (recipe anchor),
   monthly span -0.31 to +1.92 PW.
 - ocean_budget: runs the sanctioned heat-budget computation from the
-  pinned copy and attests the receipt; the pass bar (max 1e-10 / p99.9
+  installed PO.DAAC bundle and attests the receipt; the pass bar (max 1e-10 / p99.9
   1e-11 degC/s, absolute, pointwise on tile-1 interior wet cells) and
   its measured baseline (max 5.0e-11, p99.9 7.4e-12, 3,341,772
   cell-months) are the attested computation's
-  (knowledge/snapshot-podaac/computations/ecco-heat-budget.md).
+  (knowledge/podaac/computations/ecco-heat-budget.md).
 - load_ecco: wet surface footprint 60646 cells; native-weighted 2010
   SST 18.425 degC.

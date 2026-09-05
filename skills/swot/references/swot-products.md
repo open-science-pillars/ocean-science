@@ -13,13 +13,13 @@ below, never from here.
   nadir altimeter collections, the uncertainty variables, and the known
   issues (baseline drift within collections, the unapplied crossover
   correction, the whole-pass spatial-search caveat):
-  `knowledge/snapshot-podaac/datasets/swot-karin.md`.
+  `knowledge/podaac/datasets/swot-karin.md`.
 - Orbit phases, cycle numbering, and the version-family trap (the
   cal/val era lives only in the D family; an empty early-mission result
   is a family symptom before it is a coverage fact):
-  `knowledge/snapshot-podaac/gotchas/swot-calval-orbit-phases.md`.
+  `knowledge/podaac/gotchas/swot-calval-orbit-phases.md`.
 - The crossover correction and its quality gate:
-  `knowledge/snapshot-podaac/gotchas/swot-crossover-unapplied.md`.
+  `knowledge/podaac/gotchas/swot-crossover-unapplied.md`.
 - Hydrology products (river and lake vector products, rasters) are
   separate SWOT collections, deferred to the hydrology plugin.
 
