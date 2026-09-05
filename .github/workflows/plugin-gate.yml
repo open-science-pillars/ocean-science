@@ -41,6 +41,8 @@ jobs:
         run: uv run ../nasa-daac-knowledge/tools/check_okf_v02.py knowledge
       - name: Every script declares the dependencies it imports
         run: uv run ../nasa-daac-knowledge/tools/check_script_deps.py .
+      - name: Wording rules (specification rules by name, no program bookkeeping, no dashes)
+        run: uv run ../nasa-daac-knowledge/tools/check_prose.py .
       - name: Signature debt, reported (main may owe between a merge and its re-sign)
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: uv run ../nasa-daac-knowledge/tools/signature_check.py knowledge --report
