@@ -16,7 +16,7 @@ The tool and the pinned DOI mapping ship beside this skill
 (`ecco_cite.py`, `ecco_v4r4_dois.yaml`), byte-identical copies of
 nasa-daac-knowledge `tools/ecco_cite.py` and `tools/ecco_v4r4_dois.yaml`
 at the release this plugin's dependency floor names
-(`nasa-daac-knowledge--v2026.9.1`, git blob ids 1449a6ad877f and
+(`nasa-daac-knowledge--v2026.9.2`, git blob ids 1449a6ad877f and
 0044edf3e125). They refresh at plugin releases when the canonical files
 change. The tool's `--selftest` cross-checks the mapping
 against the canonical fields concepts and runs in the canonical
