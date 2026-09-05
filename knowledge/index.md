@@ -15,7 +15,7 @@ copy directory, read every match in full, cite by path with status.
 ## snapshot-podaac (pinned copy of the PO.DAAC bundle, SPEC 5.7)
 
 - Canonical home: github.com/open-science-pillars/nasa-daac-knowledge (knowledge/podaac/)
-- Snapshot source commit: 24b27927c387
+- Snapshot source commit: b6ac8fc0d5c1
 - Snapshot date: 2026-09-04
 - Scope: the whole bundle except tutorial/ (the tutorial companions
   are inputs to the tutorials, not to skills), declared in

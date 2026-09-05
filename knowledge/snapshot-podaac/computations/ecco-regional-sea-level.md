@@ -1,6 +1,6 @@
 ---
 type: Attested Computation
-title: "Regional sea level partition from ECCO (attested, draft)"
+title: "Regional sea level partition from ECCO (attested)"
 description: "Sanctioned regional partition of ECCO sea level into manometric and steric parts: the receipt carries the three monthly anomaly series, a machine-checked closure residual recomputed from them, each trend with the interval the one sanctioned trend method states for it, and convention-bound bookkeeping fields."
 tags: [ecco, sea-level, steric, manometric, attested, native-grid]
 runtime: python
@@ -14,7 +14,8 @@ executor:
 attester:
   resource: references/attesters/sea_level_partition.py
 generated: { by: claude-code/fable-5, at: 2026-08-30T22:40:00Z }
-status: draft
+status: stable
+verified: { by: human:PaulMRamirez, at: 2026-09-04T22:08:00Z }
 stale_after: 2027-01-04
 sources:
   - id: convention-slbc
@@ -40,7 +41,7 @@ sources:
     title: "The attested steric height whose independent code reproduces this receipt's steric trend over 2010 and over the full record"
 ---
 
-# Regional sea level partition from ECCO (attested, draft)
+# Regional sea level partition from ECCO (attested)
 
 The sanctioned computation behind receipted sea level briefings: over a
 named coastal region and period, partition ECCO's sea level change into

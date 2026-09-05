@@ -6,7 +6,7 @@
 source:
   repository: open-science-pillars/nasa-daac-knowledge
   bundle: knowledge/podaac
-  commit: 24b27927c387
+  commit: b6ac8fc0d5c1
   date: 2026-09-04
 copy_dir: snapshot-podaac
 scope:

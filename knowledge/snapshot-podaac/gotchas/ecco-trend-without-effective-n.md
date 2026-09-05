@@ -8,7 +8,8 @@ dataset: ../datasets/ecco-v4r4.md
 eval_case: ecco-trend-without-effective-n
 # eval id reserved for the eval-commons seed.
 generated: { by: claude-code/fable-5, at: 2026-09-02T05:10:00Z }
-status: draft
+status: stable
+verified: { by: human:PaulMRamirez, at: 2026-09-04T22:08:00Z }
 stale_after: 2027-01-05
 sources:
   - id: attested-trend

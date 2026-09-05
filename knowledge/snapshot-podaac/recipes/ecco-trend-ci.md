@@ -7,7 +7,8 @@ inputs: "A receipt from a sanctioned computation carrying a monthly {YYYY-MM: va
 expected: "Reference series us-northeast-coast steric height, 2010-01 through 2010-12, scaled to mm, deseasonalize none (measured 2026-09-02): trend +135.7772 mm per year, r1 +0.555, n_eff 3.43 of 12, 95 percent interval [-701.5, +973.1] mm per year; naive half width 109.8, honest 837.3. The same series over the full record, 1992-01 through 2017-12, climatology removed jointly, gives the record trend and interval that ../computations/ecco-steric-height.md owns and states; this recipe cites them there and quotes none of the digits"
 expected_uncertainty: "The interval is calibrated in the regime it is meant for: at 120 months or more and lag-1 autocorrelation up to 0.8 the measured coverage is 91.8 to 95.1 percent (asserted band 90 to 97.5). At 24 months coverage is 67 to 86 percent and at 12 months 74 to 95, worst at high autocorrelation, and the tool declines to state an interval in up to 7 percent of trials; treat any n_eff below about 10 as a description of the window, not a trend. The interval is a statement about sampling under an AR(1) residual model, not about model or observational error in the series"
 generated: { by: claude-code/fable-5, at: 2026-09-02T05:10:00Z }
-status: draft
+status: stable
+verified: { by: human:PaulMRamirez, at: 2026-09-04T22:08:00Z }
 stale_after: 2027-01-05
 sources:
   - id: attested-computation
