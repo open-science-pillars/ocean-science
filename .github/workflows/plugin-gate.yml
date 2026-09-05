@@ -6,7 +6,7 @@ name: plugin gate
 # are the canonical knowledge repository's tools, checked out beside the
 # plugin the way a developer's workspace holds them; nothing is copied.
 #
-# Signature debt (SPEC 5.4, merge-then-sign) is reported on pull requests
+# Signature debt (the merge-then-sign rule) is reported on pull requests
 # and on main, where a concept may owe a signature between a merge and
 # its re-sign, and enforced on a release tag, which must owe none.
 on:

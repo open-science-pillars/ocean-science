@@ -3,7 +3,7 @@
 # requires-python = ">=3.10"
 # dependencies = ["earthaccess", "ecco-access"]
 # ///
-"""Scripted, cached real-data fixture per SPEC §6: the 2010 ECCO subset.
+"""Scripted, cached real-data fixture per the fixtures policy: the 2010 ECCO subset.
 
 Ensures the collections the ocean golden notebooks need are cached under
 ~/ECCO_V4r4 (an Earthdata Login is required on first fetch, from
@@ -24,7 +24,7 @@ DATED = [
     ("ECCO_L4_HEAT_FLUX_LLC0090GRID_MONTHLY_V4R4", "2010-01", "2010-12"),
     ("ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4", "2010-01-01", "2011-01-01"),
     ("ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4", "2010-01-01", "2011-01-01"),
-    # Salt and volume budget inputs (SPEC §10.5):
+    # Salt and volume budget inputs:
     ("ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4", "2010-01", "2010-12"),
     ("ECCO_L4_OCEAN_3D_VOLUME_FLUX_LLC0090GRID_MONTHLY_V4R4", "2010-01", "2010-12"),
     ("ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4", "2010-01", "2010-12"),

@@ -62,8 +62,7 @@ workflow applies it at its gate.
    read; a recipe-owned budget is judged against the recipe's tolerance
    (an absolute, measured tolerance; never a hardcoded relative ratio).
    Domain-integrated closure is asserted only on closed domains;
-   open-domain integrals carry boundary transports explicitly (SPEC §6
-   distinction).
+   open-domain integrals carry boundary transports explicitly.
 6. **budget-auditor auto-runs on the result**: every budget, not just
    failing ones; on residual failure it checks the geothermal gotcha
    first, then the formulation traps table, and proposes fixes without

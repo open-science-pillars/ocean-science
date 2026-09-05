@@ -10,12 +10,13 @@
 #     "ecco_v4_py",
 # ]
 # ///
-# Golden notebook for the salt budget (SPEC §10.5): the four-term
+# Golden notebook for the salt budget: the four-term
 # 2010 salt budget on the ECCO v4r4 native grid, formulation per
 # knowledge/podaac/recipes/ecco-salt-budget.md, with POINTWISE closure asserted on
 # interior wet cells of one tile against the recipe's measured ABSOLUTE
-# tolerance. Interior-of-tile is a valid pointwise subset (SPEC §6) and needs
-# no tile-seam operators. Headless green via `python verification/salt_budget.py`.
+# tolerance. Interior-of-tile is a valid pointwise subset (pointwise closure
+# holds on any spatial subset) and needs no tile-seam operators. Headless
+# green via `python verification/salt_budget.py`.
 
 import marimo
 

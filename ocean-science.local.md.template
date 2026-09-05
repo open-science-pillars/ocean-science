@@ -27,12 +27,12 @@ defaults; the loaders read the download limit from here.
 
 ## Knowledge block
 
-- Installed standalone bundles consulted alongside the declared ones
-  (SPEC §5.7), one path per line:
+- Installed standalone bundles consulted alongside the declared ones,
+  one path per line:
   - (none)
 - Precedence reminder: provider-bundle concepts win on conflict.
 
 ## Earthdata Login
 
 Credentials live in ~/.netrc (machine urs.earthdata.nasa.gov, chmod 600),
-never in this file and never in any repo (SPEC §5.8).
+never in this file and never in any repo.
