@@ -4,6 +4,22 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-04 · STEWARD RE-SIGNING of the three connector concepts
+  (connectors/argo-floats.md, coops-tides.md, psmsl-gauges.md). Each
+  had gained its citation block on 2026-09-01 after the steward's
+  signature of that day, so each owed a signature under the
+  merge-then-sign rule (SPEC 5.4); the canonical repository's new
+  tools/signature_check.py found the debt by the signing commit, the
+  steward read the three diffs (the citation block is the whole
+  change) and signed again at 2026-09-05T00:17:00Z, the earlier event
+  kept as history. The check now runs in the canonical gate for this
+  bundle too. Same day, earlier: the PO.DAAC copy refreshed from pin
+  24b27927c387 to b6ac8fc0d5c1 (the signing commit of the trend
+  family: computations/ecco-trend-ci.md and recipes/ecco-trend-ci.md,
+  gotchas/ecco-trend-deseasonalize-jointly.md and
+  ecco-trend-without-effective-n.md promoted to stable and signed, and
+  computations/ecco-regional-sea-level.md re-signed); five files
+  rewritten, none removed, sync_check OK. (steward)
 - 2026-09-04 · the PO.DAAC snapshot moves from the flat layout to
   snapshot-podaac/ and becomes a full mirror declared in snapshot.yaml
   (the whole canonical bundle except tutorial/; 135 files at pin

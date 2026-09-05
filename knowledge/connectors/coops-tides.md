@@ -3,7 +3,9 @@ type: connector
 title: "NOAA CO-OPS tide and water-level stations (observations server)"
 description: "Coastal water level from the station of record, minutes fresh, through the coops_data tool; the datum is the trap: series on different datums differ by feet and must never be compared unconverted."
 tags: [connector, coops, tides, water-level, mcp, observations]
-verified: { by: human:PaulMRamirez, at: 2026-09-01T16:55:00Z }
+verified:
+  - { by: human:PaulMRamirez, at: 2026-09-01T16:55:00Z }
+  - { by: human:PaulMRamirez, at: 2026-09-05T00:17:00Z }
 status: stable
 citation:
   access_date_required: false
