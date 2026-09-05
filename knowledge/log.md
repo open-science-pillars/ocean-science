@@ -4,6 +4,17 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-04 · THE PLUGIN'S COPY OF THE OCEAN EVAL CASES IS RETIRED:
+  evals/ (nine case files, the schema pointer, the seed grades and the
+  tutorial checkpoint fixtures) deleted. The cases have one home, the
+  ecco-agent-evals repository, which already declared itself their
+  authority; its case headers now carry the `targets` the copy alone
+  recorded, and the seed grades of 2026-07-04 are its first results
+  entry. The one file that guarded this plugin's own output rather
+  than a case, the briefing 001 regression fixture, moves to
+  verification/fixtures/briefings/ with a provenance row. This index
+  and the README point at the one home. No concept text changed.
+  (build assistant, steward review at merge)
 - 2026-09-04 · THE PINNED COPY OF THE PO.DAAC BUNDLE IS RETIRED:
   snapshot-podaac/ (135 files at pin b6ac8fc0d5c1) and snapshot.yaml
   deleted. The bundle now reaches an install only as the
