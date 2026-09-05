@@ -1,10 +1,17 @@
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.10"
+# dependencies = ["earthaccess", "ecco-access"]
+# ///
 """Scripted, cached real-data fixture per SPEC §6: the 2010 ECCO subset.
 
 Ensures the collections the ocean golden notebooks need are cached under
 ~/ECCO_V4r4 (an Earthdata Login is required on first fetch, from
 EARTHDATA_TOKEN, the environment, or ~/.netrc; later
 runs hit the cache). Nothing here is committed; granules total ~2.5 GB
-(heat, salt, and volume budget inputs).
+(heat, salt, and volume budget inputs). Run it as
+`uv run verification/fixtures/fetch_ecco_2010.py`: the header above
+declares what it needs and uv resolves it.
 """
 from pathlib import Path
 from urllib.request import urlretrieve

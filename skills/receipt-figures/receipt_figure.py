@@ -9,8 +9,10 @@ Two modes, both of which first run the receipt's attester and stop on
 anything but PASS, so a figure exists only for a receipt that attests:
 
   map     A per-cell array from the receipt's `fields` file (the .npz a
-          sanctioned computation writes with --fields), scattered at
-          the cell centers XC and YC. The file must hash to the sha256
+          sanctioned computation writes with --fields), drawn as the
+          grid's own cells: each tile becomes a quad mesh on XC and YC,
+          so neighbors meet edge to edge and the only white in the
+          picture is a cell the computation left unscored. The file must hash to the sha256
           in the receipt and every array drawn must hash to its own
           recorded sha256 and match its recorded shape; a file that
           does not is refused. Draws one array (--array), or the speed
@@ -158,9 +160,67 @@ def caption(receipt: dict, verdict: str, attester: Path, fields_sha=None) -> str
     return " · ".join(bits)
 
 
+def tile_frames(xt: np.ndarray, jump: float = 20.0):
+    """The longitude frames in which one tile's cells are contiguous.
+
+    A tile is a 90 by 90 patch of the LLC grid; XC is in [-180, 180),
+    so a tile astride the dateline (the Pacific tiles) is contiguous
+    only in the [0, 360) frame, and one drawn there sticks out past
+    180 and is drawn a second time shifted by -360 so the piece past
+    the dateline lands on the left edge of the map. A tile whose cells
+    still jump more than `jump` degrees between neighbors in the
+    better frame is a polar cap, where longitude is not a coordinate
+    the mesh can use; return None and let the caller scatter it."""
+    frame = min((xt, xt % 360), key=lambda a: float(a.max() - a.min()))
+    step = max(float(np.abs(np.diff(frame, axis=0)).max()),
+               float(np.abs(np.diff(frame, axis=1)).max()))
+    if step > jump:
+        return None
+    frames = [frame]
+    if frame.max() > 180:
+        frames.append(frame - 360)
+    if frame.min() < -180:
+        frames.append(frame + 360)
+    return frames
+
+
+def draw_cells(ax, xc, yc, shown, cmap, norm, marker_size):
+    """Draw every tile as a quad mesh on its own cell centers, so the
+    picture is the grid's cells and not a marker per cell. Neighbors
+    within a tile meet edge to edge whatever the figure size or dpi,
+    so the moire a fixed-size marker leaves when the image is scaled
+    cannot appear, and a white cell is one the computation left NaN.
+    The polar caps, where the mesh cannot follow longitude, fall back
+    to points. Returns (tiles drawn as quads, tiles drawn as points)."""
+    import warnings
+    quads = points = 0
+    for t in range(xc.shape[0]):
+        c = np.ma.masked_invalid(shown[t])
+        if c.mask.all():
+            continue
+        frames = tile_frames(xc[t])
+        if frames is None:
+            k = ~c.mask
+            ax.scatter(xc[t][k], yc[t][k], c=c[k], s=marker_size, marker="s",
+                       linewidths=0, cmap=cmap, norm=norm, rasterized=True)
+            points += 1
+            continue
+        for x in frames:
+            with warnings.catch_warnings():
+                # the rotated tiles run XC along axis 0; the cell edges
+                # are still the midpoints, which is all the mesh needs
+                warnings.simplefilter("ignore", UserWarning)
+                ax.pcolormesh(x, yc[t], c, shading="nearest", cmap=cmap,
+                              norm=norm, rasterized=True)
+        quads += 1
+    return quads, points
+
+
 def draw_map(args) -> int:
     import matplotlib
     matplotlib.use("Agg")
+    import matplotlib.cm
+    import matplotlib.colors
     import matplotlib.pyplot as plt
 
     receipt_path = Path(args.receipt).expanduser().resolve()
@@ -186,24 +246,25 @@ def draw_map(args) -> int:
     n = int(keep.sum())
     if n == 0:
         sys.exit("nothing to draw: no finite values under the mask")
-    x, y, c = xc[keep], yc[keep], val[keep]
-
     if args.vmin is not None and args.vmax is not None:
         vmin, vmax = args.vmin, args.vmax
     elif args.symmetric:
-        vmax = float(np.percentile(np.abs(c), 98)); vmin = -vmax
+        vmax = float(np.percentile(np.abs(val[keep]), 98)); vmin = -vmax
     else:
-        vmin, vmax = (float(np.percentile(c, 2)), float(np.percentile(c, 98)))
+        vmin, vmax = (float(np.percentile(val[keep], 2)), float(np.percentile(val[keep], 98)))
     cmap = args.cmap or ("RdBu_r" if args.symmetric else "viridis")
+    shown = np.where(keep, val, np.nan)
 
-    fig, ax = plt.subplots(figsize=(11, 5.8), dpi=150)
-    sc = ax.scatter(x, y, c=c, s=args.marker_size, marker="s", linewidths=0,
-                    cmap=cmap, vmin=vmin, vmax=vmax, rasterized=True)
+    fig, ax = plt.subplots(figsize=(11, 5.8), dpi=args.dpi)
+    norm = matplotlib.colors.Normalize(vmin=vmin, vmax=vmax)
+    quads, points = draw_cells(ax, xc, yc, shown, cmap, norm, args.marker_size)
     ax.set_xlim(-180, 180); ax.set_ylim(-90, 90)
     ax.set_xlabel("longitude"); ax.set_ylabel("latitude")
     ax.set_facecolor("#f2f2f2")
+    ax.set_axisbelow(True)
     ax.grid(True, linewidth=0.3, alpha=0.5)
-    cb = fig.colorbar(sc, ax=ax, pad=0.02, shrink=0.85)
+    sm = matplotlib.cm.ScalarMappable(norm=norm, cmap=cmap)
+    cb = fig.colorbar(sm, ax=ax, pad=0.02, shrink=0.85)
     cb.set_label(args.units or "")
     bp = receipt.get("bound_parameters", {})
     title = args.title or what
@@ -218,6 +279,8 @@ def draw_map(args) -> int:
     fig.savefig(out)
     print(f"{out}: {what}, {n:,} cells, range [{vmin:.4g}, {vmax:.4g}] "
           f"{args.units or ''}".rstrip())
+    print(f"  drawn as cell quads on {quads} tiles"
+          + (f", as points on {points} (polar caps)" if points else ""))
     print(f"  {caption(receipt, verdict, attester, fb['sha256'])}")
     return 0
 
@@ -286,7 +349,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="mode", required=True)
-    m = sub.add_parser("map", help="scatter one per-cell array at XC, YC")
+    m = sub.add_parser("map", help="draw one per-cell array as the grid's cells at XC, YC")
     m.add_argument("receipt")
     m.add_argument("--attester", required=True,
                    help="attester path, or a bare name under the provider's references/attesters")
@@ -302,7 +365,9 @@ def main() -> int:
     m.add_argument("--vmin", type=float); m.add_argument("--vmax", type=float)
     m.add_argument("--cmap")
     m.add_argument("--marker-size", type=float, default=4.0,
-                   help="scatter marker area in points squared; 4 lets one-degree cells touch")
+                   help="point area in points squared for the polar caps, the only tiles "
+                        "drawn as points rather than cell quads")
+    m.add_argument("--dpi", type=int, default=150, help="output resolution (default 150)")
     m.add_argument("--title")
     m.add_argument("--out", required=True)
     m.set_defaults(func=draw_map)

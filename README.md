@@ -32,6 +32,17 @@ meridional heat transport at 26.5N, and compares it against the RAPID
 observations, with every number carrying its uncertainty. New terms are in
 the [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLOSSARY.md).
 
+## Running the scripts
+
+Every script here (the verification notebooks, the fixture fetch, the
+figure renderer) declares its own dependencies in a PEP 723 header and
+runs as `uv run <script>`; uv builds the environment on first run.
+The one requirement is [uv](https://docs.astral.sh/uv/getting-started/installation/).
+Never `python script.py` or `uv run python script.py`: both skip the
+header and fail at the first import. `uv run
+<nasa-daac-knowledge>/tools/doctor.py --warm .` builds every
+environment ahead of a first or offline run.
+
 ## What's inside
 
 - **Skills** for ECCO and SWOT, ocean methods (grids, budgets, transports,
