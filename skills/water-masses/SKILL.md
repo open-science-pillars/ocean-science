@@ -23,9 +23,9 @@ salinity, density, EOS, water mass); read the matches, and restate
 (citing each by path) what the product fixes about the plan. The
 concepts this plugin resolves to today, for ECCO: the dataset concept
 and the temperature-salinity family concept under
-`knowledge/snapshot-podaac/fields/ecco-v4r4/` (which variable is which
+`knowledge/podaac/fields/ecco-v4r4/` (which variable is which
 flavor), the native density EOS gotcha
-`knowledge/snapshot-podaac/gotchas/ecco-native-density-eos.md` (which
+`knowledge/podaac/gotchas/ecco-native-density-eos.md` (which
 density the product ships and how to recompute it consistently), and
 any recipe that pins expected classes. What the product fixes: which
 variables carry potential temperature and practical salinity (or whether

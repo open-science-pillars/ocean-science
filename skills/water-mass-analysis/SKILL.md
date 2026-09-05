@@ -21,9 +21,9 @@ knowledge bundle rather than carrying them here.
    sets out, by product name, variable, depth range, and topic; the
    water-masses skill lists the concepts this plugin resolves to. The
    T and S variable flavors and the uncertainty framing for the product live in
-   the dataset concept (`knowledge/snapshot-podaac/datasets/ecco-v4r4.md` for ECCO); any
+   the dataset concept (`knowledge/podaac/datasets/ecco-v4r4.md` for ECCO); any
    recipe that pins expected classes or volumes lives in
-   `knowledge/snapshot-podaac/recipes/`. Restate what each changes about the plan and
+   `knowledge/podaac/recipes/`. Restate what each changes about the plan and
    cite it by path. A concept added since you last ran is found this
    way; if no recipe pins expectations for this region, the analysis
    says its class volumes are unvalidated. The water-masses knowledge

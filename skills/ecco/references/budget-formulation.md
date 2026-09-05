@@ -8,26 +8,26 @@ there, never from here.
 
 - Terms, constants, sign conventions, discretization, and the
   formulation traps table:
-  `knowledge/snapshot-podaac/conventions/ecco-budget-formulation.md`
-  (the pinned copy of the PO.DAAC bundle's convention, verified
+  `knowledge/podaac/conventions/ecco-budget-formulation.md`
+  (the PO.DAAC bundle's convention, verified
   against the ECCO v4 Python tutorial notebooks and carried verbatim
   by the sanctioned heat budget code).
 - Pass bars and measured residuals, per budget:
-  `knowledge/snapshot-podaac/computations/ecco-heat-budget.md` (the
+  `knowledge/podaac/computations/ecco-heat-budget.md` (the
   attested heat budget owns the heat tolerance and its baseline),
-  `knowledge/snapshot-podaac/recipes/ecco-salt-budget.md` and
-  `knowledge/snapshot-podaac/recipes/ecco-volume-budget.md` (the salt
+  `knowledge/podaac/recipes/ecco-salt-budget.md` and
+  `knowledge/podaac/recipes/ecco-volume-budget.md` (the salt
   and volume residuals, and the oceFWflx double-count measurement).
 - Sanctioned code and its attester:
-  `knowledge/snapshot-podaac/references/computations/ecco_heat_budget.py`
-  and `knowledge/snapshot-podaac/references/attesters/budget_residual.py`,
+  `knowledge/podaac/references/computations/ecco_heat_budget.py`
+  and `knowledge/podaac/references/attesters/budget_residual.py`,
   reached through the heat computation concept.
 - The gotchas a budget run must honor first:
-  `knowledge/snapshot-podaac/gotchas/ecco-native-vs-regridded.md`
+  `knowledge/podaac/gotchas/ecco-native-vs-regridded.md`
   (budgets close only on the native llc90 grid),
-  `knowledge/snapshot-podaac/gotchas/ecco-geothermal-flux.md` (the
+  `knowledge/podaac/gotchas/ecco-geothermal-flux.md` (the
   geothermal input is not a PO.DAAC collection),
-  `knowledge/snapshot-podaac/gotchas/ecco-velmass-hfac-double-count.md`
+  `knowledge/podaac/gotchas/ecco-velmass-hfac-double-count.md`
   (the MASS velocities and the flux variables already carry hFac).
 
 ## Procedure
@@ -55,7 +55,7 @@ there, never from here.
 
 The verification script `verification/ocean_budget.py` is the smoke
 test over this procedure for heat: it stages the 2010 fixture, runs
-the sanctioned computation from the pinned copy for a receipt, and
+the sanctioned computation from the installed bundle for a receipt, and
 attests the receipt; the pass bar it asserts is the computation's, not
 its own. The salt and volume scripts beside it still carry their
 formulation inline until those computations reach stable.

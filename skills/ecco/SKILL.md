@@ -9,8 +9,8 @@ user-invocable: false
 Background expertise for the ECCO v4r4 ocean state estimate. This
 skill carries the pointer, not the facts: the grid, the collections,
 the formulation, and every caveat live in the knowledge bundle's
-concepts (the pinned PO.DAAC copies under `knowledge/snapshot-podaac/`,
-declared in `knowledge/snapshot.yaml`), and the three reference
+concepts (the PO.DAAC bundle installed with the nasa-daac-knowledge
+dependency, cited here as `knowledge/podaac/...`), and the three reference
 documents beside this file are procedure over those concepts; this file
 says when to reach for which.
 
@@ -25,7 +25,7 @@ release, snapshot, geothermal). Read each match, restate what it
 changes about the plan before computing, and cite it by path. A
 concept added since you last ran is found this way, not from this
 file. The concepts this plugin resolves to today, all under
-`knowledge/snapshot-podaac/`:
+`knowledge/podaac/`:
 
 - the dataset concept `datasets/ecco-v4r4.md`: what the state estimate
   is and is not, the native dims and tile layout, the access pattern,
@@ -79,7 +79,7 @@ fact, a ShortName, or a tolerance of its own.
   the pointers to where the formulation lives: the four terms,
   constants, the z* tendency correction, shortwave penetration,
   geothermal at the bottom cell, and the traps table are the signed
-  convention `knowledge/snapshot-podaac/conventions/ecco-budget-formulation.md`,
+  convention `knowledge/podaac/conventions/ecco-budget-formulation.md`,
   read from there.
 
 ## Access pattern
@@ -95,7 +95,7 @@ workflow's job; this skill supplies what it restates.
 **Discover, Verify, Access (the earthdata connector).** The plugin
 registers NASA's Earthdata MCP server in `.mcp.json`; its tool surface
 and boundaries are the connector concept
-`knowledge/snapshot-podaac/connectors/earthdata-mcp.md` (a draft, voiced
+`knowledge/podaac/connectors/earthdata-mcp.md` (a draft, voiced
 as such), read from there. The order is procedure: Discover with
 get_keywords and get_collections (short_name resolution first, keyword
 search second); Verify availability with get_granules for the exact

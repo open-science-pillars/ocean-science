@@ -21,7 +21,7 @@ to altimetry?").
    concept touching the model quantity AND the observational reference
    (the ecco, swot, and sea-level skills list the concepts this plugin
    resolves to; the confrontation computations under
-   `knowledge/snapshot-podaac/computations/` and the
+   `knowledge/podaac/computations/` and the
    consistency-versus-confrontation convention own the comparison
    discipline where they exist); read the matches, and restate what
    each changes about the comparison before computing, citing it by

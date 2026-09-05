@@ -24,9 +24,10 @@ compute constraints.
    spatiotemporal domain each needs.
 2. **Consult the knowledge bundle FIRST, by discovery, not memory**, as
    the core skill `consult-knowledge` prescribes: it names the concept
-   directories to glob (this plugin's `knowledge/` and the pinned
-   PO.DAAC copies under `knowledge/snapshot-podaac/`, declared in
-   `knowledge/snapshot.yaml`), how to voice a concept's status, and the
+   directories to glob (this plugin's `knowledge/` and the PO.DAAC
+   bundle installed with the nasa-daac-knowledge dependency, whose
+   concepts this plugin cites as `knowledge/podaac/...`), how to voice a
+   concept's status, and the
    precedence between a provider concept and a local one. Search by
    product name, variable, quantity, and topic for every concept
    touching the datasets, quantities, and windows in play, read the
@@ -39,7 +40,7 @@ compute constraints.
    concept, is not a plan.
 3. **Map quantities to collections** with exact ShortNames, taken from
    the concepts and never invented: ECCO collections from the fields
-   family concepts (`knowledge/snapshot-podaac/fields/ecco-v4r4/`,
+   family concepts (`knowledge/podaac/fields/ecco-v4r4/`,
    choosing the release variant the family concept and the
    release-mixing gotcha prescribe); SWOT collections from the SWOT
    dataset concept's Variants table, choosing the version family whose

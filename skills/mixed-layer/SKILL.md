@@ -27,7 +27,7 @@ convention `knowledge/conventions/mld-criteria.md` (the criterion
 families and their threshold values, the default, the comparability
 and input-averaging rules, the monthly-mean shallow bias, the
 barrier-layer regimes) and, for ECCO, the MXLDEPTH-criterion gotcha
-`knowledge/snapshot-podaac/gotchas/ecco-mxldepth-criterion.md` (the
+`knowledge/podaac/gotchas/ecco-mxldepth-criterion.md` (the
 product's own MLD diagnostic and its criterion) and the
 temperature-salinity family concept the profiles come from, all read
 from there, never from this file. A concept added or corrected since you last ran

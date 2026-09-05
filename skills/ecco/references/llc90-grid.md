@@ -9,20 +9,20 @@ named below, never from here.
 ## Where the facts live
 
 - Tile layout, dimensions, and the curvilinear coordinates:
-  `knowledge/snapshot-podaac/datasets/ecco-v4r4.md` (Structure).
+  `knowledge/podaac/datasets/ecco-v4r4.md` (Structure).
 - The geometry collection and its variable inventory (cell centers and
   corners, areas, edge lengths, layer spacing, the partial-cell
   fractions, the masks, the rotation angle fields), with the note that
   the horizontal and vertical coordinates arrive as xarray coordinates
   rather than data variables:
-  `knowledge/snapshot-podaac/fields/ecco-v4r4/geometry.md`.
+  `knowledge/podaac/fields/ecco-v4r4/geometry.md`.
 - Which variables are already cell-integrated (the MASS suffix, the
   flux diagnostics) and the double-count trap:
-  `knowledge/snapshot-podaac/gotchas/ecco-velmass-hfac-double-count.md`.
+  `knowledge/podaac/gotchas/ecco-velmass-hfac-double-count.md`.
 - Why budgets and transports stay on the native grid, with the
-  evidence: `knowledge/snapshot-podaac/gotchas/ecco-native-vs-regridded.md`.
+  evidence: `knowledge/podaac/gotchas/ecco-native-vs-regridded.md`.
 - Grid-relative velocity components on the rotated tiles:
-  `knowledge/snapshot-podaac/gotchas/ecco-vector-orientation.md` (a
+  `knowledge/podaac/gotchas/ecco-vector-orientation.md` (a
   draft, voiced as unverified).
 - The grid method that generalizes across models (C-grid staggering,
   cell geometry as data, xgcm, scalar versus vector regridding): the
