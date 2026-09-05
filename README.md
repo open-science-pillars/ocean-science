@@ -6,19 +6,23 @@ Physical oceanography for Open Science Pillars: the ECCO v4r4 state
 estimate, SWOT KaRIn SSH, meridional transport, budget closure, water
 masses, sea level, and the PO.DAAC knowledge arc.
 
-**Install core first.** This plugin builds on core's foundation skills and
-its start / discover-data / report workflows. They install as peers (no
-shared files), so you add core alongside this one.
+This plugin builds on core's foundation skills and its start /
+discover-data / report workflows, and on the PO.DAAC provider knowledge
+in nasa-daac-knowledge. It declares both as dependencies, so one install
+brings them with it.
 
 ## Install
 
 ```bash
 claude plugin marketplace add open-science-pillars/marketplace
-claude plugin install core@open-science-pillars
 claude plugin install ocean-science@open-science-pillars
 ```
 
-Cowork and Claude Science: add the marketplace and install from it.
+An install stays at the release it was installed from:
+`claude plugin update ocean-science@open-science-pillars` moves it to the
+current one, dependencies included, and `claude plugin list` shows what
+you have. Cowork and Claude Science: add the marketplace and install
+from it.
 
 ## Your first run
 
@@ -38,14 +42,16 @@ the [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLO
 - **Agents**: a scout that recommends datasets and cites the knowledge it
   relied on (never downloading on its own), and a budget auditor that checks
   a computed budget closed and diagnoses it if not.
-- **A knowledge bundle**: the plugin's own conventions and connectors
-  beside a pinned copy of the PO.DAAC provider bundle
-  (`knowledge/snapshot-podaac/`, declared in `knowledge/snapshot.yaml`):
-  dataset concepts with uncertainty structure, documented gotchas with
-  evidence, validated recipes with expected numbers, and attested
-  computations with their sanctioned code and receipts. The copy is
-  byte-checked against the canonical bundle at its pinned commit and
-  refreshed at each release.
+- **A knowledge bundle**: the plugin's own conventions and connectors.
+  The PO.DAAC provider bundle (dataset concepts with uncertainty
+  structure, documented gotchas with evidence, validated recipes with
+  expected numbers, and attested computations with their sanctioned code
+  and receipts) is installed alongside as the nasa-daac-knowledge
+  dependency, at a release the plugin names a floor for. A pinned copy of
+  it still travels under `knowledge/snapshot-podaac/` (declared in
+  `knowledge/snapshot.yaml`, byte-checked against the canonical bundle at
+  its pinned commit) while the skills' paths move to the installed
+  bundle; the copy retires when they have.
 - **Verification**: automated notebooks that re-check each workflow on small
   cached data. The heat-budget closure is additionally attested: a receipt
   from the sanctioned computation is checked against the code hash and the
