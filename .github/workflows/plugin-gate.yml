@@ -1,6 +1,8 @@
 name: plugin gate
 # The per-plugin gate: the manifest validates, the local knowledge bundle
-# conforms to OKF v0.2, and the signature debt is measured. The checkers
+# conforms to OKF v0.2, every script's PEP 723 header covers what it
+# imports (so `uv run <script>` resolves on any machine), and the
+# signature debt is measured. The checkers
 # are the canonical knowledge repository's tools, checked out beside the
 # plugin the way a developer's workspace holds them; nothing is copied.
 #
@@ -37,6 +39,8 @@ jobs:
         run: claude plugin validate .
       - name: Bundle conforms to OKF v0.2
         run: uv run ../nasa-daac-knowledge/tools/check_okf_v02.py knowledge
+      - name: Every script declares the dependencies it imports
+        run: uv run ../nasa-daac-knowledge/tools/check_script_deps.py .
       - name: Signature debt, reported (main may owe between a merge and its re-sign)
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: uv run ../nasa-daac-knowledge/tools/signature_check.py knowledge --report

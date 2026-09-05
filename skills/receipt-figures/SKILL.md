@@ -64,11 +64,17 @@ provider bundle through the installer's record (`claude plugin list
    receipt run id, code sha256 prefix, fields sha256 prefix, data
    record, attester verdict. Say what the mask was and how many cells
    were drawn; the renderer prints both.
-5. Explain the tile stripes when they show. The native grid's
-   centered differences do not cross tile boundaries, so a map of a
-   derivative (curl, Ekman pumping, shear) has thin unpainted seams at
-   the tile edges and a three-cell margin inside each tile. Those are
-   the computation's scoring mask, not gaps in the model.
+5. Explain the white when it shows. The renderer paints the grid's
+   own cells edge to edge, so every unpainted cell is one the
+   computation left unscored, and there are three kinds. Vertical
+   seams about six cells wide at the four face boundaries of the LLC
+   grid (longitudes -127.5, -37.5, 52.5 and 142.5): the stencil of a
+   derivative (curl, Ekman pumping, shear) does not cross a tile edge,
+   so each tile gives up a three-cell margin on each side of the
+   boundary. The band along the equator: the validation domain is 10
+   to 55 degrees in each hemisphere. Scattered single cells: the
+   seafloor-depth criterion. All three are the computation's scoring
+   mask, not gaps in the model or in the data.
 
 ## Reading the maps
 
