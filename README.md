@@ -19,9 +19,12 @@ claude plugin install ocean-science@open-science-pillars
 ```
 
 An install stays at the release it was installed from:
-`claude plugin update ocean-science@open-science-pillars` moves it to the
-current one, dependencies included, and `claude plugin list` shows what
-you have. Cowork and Claude Science: add the marketplace and install
+`claude plugin update ocean-science@open-science-pillars` moves this
+plugin to the current one and only this plugin; a dependency moves by
+its own update command (`claude plugin update core@open-science-pillars`,
+`claude plugin update nasa-daac-knowledge@open-science-pillars`), and a
+release that raises a floor says so in its notes. `claude plugin list`
+shows what you have. Cowork and Claude Science: add the marketplace and install
 from it.
 
 ## Your first run
