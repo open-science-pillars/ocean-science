@@ -1,0 +1,58 @@
+name: release qualification
+# A release candidate is a pull request that changes the package version
+# (or carries the `release` label). For every required runtime surface
+# with no decision for that version, one issue is opened with the
+# checklist and the commands; it closes when the qualification record or
+# the waiver lands on the branch. The merge is gated on every required
+# surface having a decision, on no surface saying supported without a
+# qualified record, and on the README's runtime table being current. The
+# runs themselves happen on maintainers' machines and accounts, the way
+# users would run them; nothing secret is held here (the procedure is the
+# release qualification guide in the marketplace repository).
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+jobs:
+  candidate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: plugin
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          path: plugin
+          fetch-depth: 0
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          repository: open-science-pillars/build-kit
+          path: build-kit
+      - uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5
+      - name: Is this a release candidate (the package version changed, or the release label is on)?
+        id: candidate
+        env:
+          LABELS: ${{ join(github.event.pull_request.labels.*.name, ' ') }}
+        run: |
+          base_version=$(git show "origin/${{ github.base_ref }}:.osp/package.yaml" | sed -n 's/^  version: *"\{0,1\}\([0-9][0-9.]*\).*/\1/p' | head -1)
+          head_version=$(sed -n 's/^  version: *"\{0,1\}\([0-9][0-9.]*\).*/\1/p' .osp/package.yaml | head -1)
+          echo "base=$base_version head=$head_version labels='$LABELS'"
+          if [ "$base_version" != "$head_version" ] || echo " $LABELS " | grep -q " release "; then
+            echo "release=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "release=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Qualification tickets, one per required surface without a decision
+        if: steps.candidate.outputs.release == 'true' && github.event.pull_request.head.repo.full_name == github.repository
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: uv run ../build-kit/scripts/release_tickets.py sync --repo "${{ github.repository }}" --pr "${{ github.event.pull_request.number }}" --capability .
+      - name: Every required surface has a decision; nothing is advertised without a qualified record
+        if: steps.candidate.outputs.release == 'true'
+        run: uv run ../build-kit/scripts/osp.py advertise . --check --release --into README.md
+      - name: Not a release candidate
+        if: steps.candidate.outputs.release != 'true'
+        run: echo "the package version is unchanged and the release label is off; nothing to qualify"
