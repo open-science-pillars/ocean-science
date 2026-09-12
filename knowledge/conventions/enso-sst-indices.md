@@ -1,5 +1,6 @@
 ---
 type: convention
+spheres: [hydrosphere, atmosphere]
 title: "ENSO SST indices: Nino regions, ONI, and relative SST"
 description: "Region boxes for Nino3.4/3/4/1+2, the ONI running-mean and updated-baseline convention, and the relative-SST family; each is a distinct published procedure."
 tags: [enso, nino, oni, relative-sst, indices, climate, sst]

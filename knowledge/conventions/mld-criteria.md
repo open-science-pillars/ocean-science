@@ -1,5 +1,6 @@
 ---
 type: convention
+spheres: [hydrosphere]
 title: "Mixed layer depth criteria: definitions, thresholds, and comparability"
 description: "MLD is a criterion, not an observable; the density and temperature thresholds, reference depth, and input averaging that must match before two MLD values are comparable, plus the workflow default."
 tags: [mixed-layer, mld, criterion, density-threshold, comparability, ocean]

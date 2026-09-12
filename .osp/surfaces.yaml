@@ -1,0 +1,39 @@
+# Runtime support policy (ADR B). `required` is what a release must qualify
+# on before it advertises the surface; `status` is the evidence today.
+schema_version: 1
+surfaces:
+  claude-code:
+    role:
+    - development
+    - runtime
+    required: true
+    status: supported
+    evidence: Every release is exercised on Claude Code; the surface testing guide in the marketplace
+      repository records the passes
+  claude-cowork:
+    role: runtime
+    required: true
+    status: tested
+    evidence: Marketplace install verified 2026-07-04 (surface testing guide); no per-release qualification
+      yet
+  openai-codex:
+    role: runtime
+    required: true
+    status: planned
+    evidence: 'No projection yet: the Agent Plugins renderer and the reference capability are the runtime
+      track of osp-architecture-alignment'
+  claude-science:
+    role: future-runtime
+    required: false
+    status: limited-release
+qualification:
+  require:
+  - install
+  - skill-discovery
+  - skill-invocation
+  - knowledge-resolution
+  - dependency-resolution
+  - golden-computation
+  - prove
+  - receipt
+  - release-lock

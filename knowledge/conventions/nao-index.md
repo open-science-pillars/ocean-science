@@ -1,5 +1,6 @@
 ---
 type: convention
+spheres: [atmosphere, hydrosphere]
 title: "NAO index: station-based vs EOF-based families"
 description: "The North Atlantic Oscillation has two inequivalent definitions (station SLP difference vs leading North Atlantic SLP EOF) that diverge in trend and variance; the sign convention must be stated."
 tags: [nao, slp, eof, indices, climate, north-atlantic]

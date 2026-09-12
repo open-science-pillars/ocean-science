@@ -1,9 +1,26 @@
-schema_version: 1
+schema_version: 2
 repository: ocean-science
 maintainers:
-  users: [PaulMRamirez]
+  users:
+  - PaulMRamirez
   teams: []
   status: interim
+runtime_maintainers:
+  claude-cowork:
+    users:
+    - PaulMRamirez
+    teams: []
+    status: interim
+  openai-codex:
+    users:
+    - PaulMRamirez
+    teams: []
+    status: interim
+  agent-plugins:
+    users:
+    - PaulMRamirez
+    teams: []
+    status: interim
 roadmap:
   proposals: enabled
   authority: repository-maintainers
@@ -11,3 +28,4 @@ reviews:
   ordinary: 1
   cross_repository: org-policy
   knowledge: org-knowledge-policy
+  runtime_adapter: org-runtime-policy
