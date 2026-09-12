@@ -22,8 +22,9 @@ above; the exact spec text is vendored in marketplace docs/upstream).
   concepts by bundle path, `knowledge/podaac/<type>/<concept>.md`.
 - Precedence: the provider concept wins on conflict; `stable` outranks
   `draft`; a draft is voiced as a draft.
-- Eval coverage for the high gotchas lives in the ecco-agent-evals
-  repository, the one home of the ocean cases; nothing is copied here.
+- Eval coverage for the high gotchas lives in the agent-evals
+  repository (its ECCO set, `ecco/cases/`), the one home of the ocean
+  cases; nothing is copied here.
 
 ## conventions (local)
 
