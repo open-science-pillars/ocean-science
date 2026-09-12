@@ -3,23 +3,27 @@ repository: ocean-science
 maintainers:
   users:
   - PaulMRamirez
-  teams: []
+  teams:
+  - hydrosphere-maintainers
   status: interim
 runtime_maintainers:
   claude-cowork:
     users:
     - PaulMRamirez
-    teams: []
+    teams:
+    - runtime-cowork-maintainers
     status: interim
   openai-codex:
     users:
     - PaulMRamirez
-    teams: []
+    teams:
+    - runtime-codex-maintainers
     status: interim
   agent-plugins:
     users:
     - PaulMRamirez
-    teams: []
+    teams:
+    - runtime-agent-plugins-maintainers
     status: interim
 roadmap:
   proposals: enabled

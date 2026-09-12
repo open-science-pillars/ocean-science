@@ -1,5 +1,13 @@
-# Interim repository ownership; replace with the repository maintainer team at handoff.
-* @PaulMRamirez
+# Ownership by team (ADR A, decision 10; the registry is osp/teams.yaml in
+# build-kit). Hydrosphere capability, discipline Ocean Physics. One person
+# occupies every team during the interim solo period.
+* @open-science-pillars/hydrosphere-maintainers
 
-# Knowledge bundle stewardship (named stewards; pull requests auto-request them)
-/knowledge/ @PaulMRamirez
+# The domain bundle (local conventions and connectors); the PO.DAAC product
+# concepts live in the provider bundle and are owned there.
+/knowledge/       @open-science-pillars/hydrosphere-maintainers
+
+# Runtime projections (ADR B): the Claude package files are the Cowork
+# projection of .osp/package.yaml and belong to the runtime maintainers.
+/.claude-plugin/  @open-science-pillars/runtime-cowork-maintainers
+/.mcp.json        @open-science-pillars/runtime-cowork-maintainers
