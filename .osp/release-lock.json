@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "package": "ocean-science",
+  "version": "0.8.2",
+  "package_type": "capability",
+  "agent_plugins_spec": "1.0.0",
+  "repository_classification_digest": "sha256:ce84d66904a4914a8889ccfa33d7a2d03b14d6da76b06451145a32c65dc56687",
+  "dependencies": {
+    "capabilities": {
+      "core": null
+    },
+    "knowledge": {
+      "nasa-daac-knowledge": ">=2026.9.2"
+    }
+  },
+  "agents_digest": "sha256:ec4eb6a9bc68861f1c11c506455761c0e20c271be40f786b3b97a0290d907265",
+  "knowledge_digest": "sha256:be0870f126a0430d81ebb31fac256c19fb348e052dec50d3272acb2ac2162c1a",
+  "skills_digest": "sha256:1f3c78beb87eed68c7b7e89185b237e9bf211112f034bb78596b73068c20097f",
+  "verification_digest": "sha256:e547fb96e33f668e77cc79631a238b061c7a1b764319fd763acc2189b86bf155",
+  "adapters": {
+    "claude": "sha256:e9dcdd1924fb3a2b5b222b72a1fd30c3b9d99f4bde564315f1edd8f5376db111",
+    "agent-plugins": "sha256:b891d89a1086e69cd2c7ebfec6adc9e618d6ea6d7a130a72a017abe885ffb59b"
+  }
+}

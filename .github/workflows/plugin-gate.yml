@@ -43,6 +43,16 @@ jobs:
         run: claude plugin validate .
       - name: Canonical metadata validates and the manifest agrees with it
         run: uv run ../build-kit/scripts/osp.py validate . --standalone
+      - name: Runtime projections are rendered from package.yaml, not hand-edited
+        run: uv run ../build-kit/scripts/osp.py render . --check
+      - name: The portable package conforms to Agent Plugins 1.0.0
+        run: uv run ../build-kit/scripts/osp.py plugin-check .
+      - name: Release lock, reported (content may move between releases)
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        run: uv run ../build-kit/scripts/osp.py lock . --report
+      - name: Release lock, enforced (a release tag digests to its lock)
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: uv run ../build-kit/scripts/osp.py lock . --check
       - name: Bundle conforms to OKF v0.2
         run: uv run ../nasa-daac-knowledge/tools/check_okf_v02.py knowledge
       - name: Every script declares the dependencies it imports

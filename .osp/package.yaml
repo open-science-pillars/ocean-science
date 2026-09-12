@@ -1,6 +1,7 @@
-# Package identity, content and declared dependencies (ADR B). The Claude
-# manifest .claude-plugin/plugin.json is a projection of this file and the
-# gate fails when the two disagree.
+# Package identity, content, dependencies, presentation metadata and REACH
+# (ADR B). The Claude package files and the Agent Plugins package are
+# rendered from this file by build-kit's osp.py render; the gate fails on
+# a hand edit to any of them.
 schema_version: 1
 package:
   name: ocean-science
@@ -17,3 +18,25 @@ dependencies:
   knowledge:
   - name: nasa-daac-knowledge
     version: '>=2026.9.2'
+metadata:
+  description: 'Physical oceanography: ECCO state estimate, SWOT SSH, meridional transport, budget closure,
+    water masses.'
+  keywords:
+  - oceanography
+  - ecco
+  - swot
+  - podaac
+  - amoc
+  - heat-transport
+  - sea-level
+reach:
+  servers:
+    earthdata:
+      type: streamable-http
+      url: https://cmr.earthdata.nasa.gov/mcp/v1
+    observations:
+      type: stdio
+      command: uv
+      args:
+      - run
+      - https://raw.githubusercontent.com/open-science-pillars/core/e046417de95b5518ee518f0a08eca3eb5fc8ad3a/connectors/observations_mcp.py
