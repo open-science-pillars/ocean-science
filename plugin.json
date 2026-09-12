@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ocean-science",
+  "version": "0.8.2",
+  "description": "Physical oceanography: ECCO state estimate, SWOT SSH, meridional transport, budget closure, water masses.",
+  "author": {
+    "name": "Open Science Pillars Community"
+  },
+  "homepage": "https://github.com/open-science-pillars/ocean-science",
+  "repository": "https://github.com/open-science-pillars/ocean-science",
+  "license": "Apache-2.0",
+  "keywords": [
+    "oceanography",
+    "ecco",
+    "swot",
+    "podaac",
+    "amoc",
+    "heat-transport",
+    "sea-level"
+  ],
+  "extensions": {
+    "io.github.open-science-pillars": {
+      "kind": "capability",
+      "status": "available",
+      "spheres": [
+        "hydrosphere"
+      ],
+      "primary_sphere": "hydrosphere",
+      "discipline": "Ocean Physics",
+      "package_type": "capability",
+      "dependencies": {
+        "capabilities": [
+          {
+            "name": "core"
+          }
+        ],
+        "knowledge": [
+          {
+            "name": "nasa-daac-knowledge",
+            "version": ">=2026.9.2"
+          }
+        ]
+      }
+    }
+  }
+}

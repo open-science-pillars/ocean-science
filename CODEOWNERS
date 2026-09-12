@@ -11,3 +11,10 @@
 # projection of .osp/package.yaml and belong to the runtime maintainers.
 /.claude-plugin/  @open-science-pillars/runtime-cowork-maintainers
 /.mcp.json        @open-science-pillars/runtime-cowork-maintainers
+
+# The Agent Plugins projection (plugin.json, mcp.json) and the release lock
+# are rendered by build-kit from .osp/package.yaml and belong to the portable
+# runtime maintainers; a hand edit fails the gate.
+/plugin.json             @open-science-pillars/runtime-agent-plugins-maintainers
+/mcp.json                @open-science-pillars/runtime-agent-plugins-maintainers
+/.osp/release-lock.json  @open-science-pillars/runtime-agent-plugins-maintainers

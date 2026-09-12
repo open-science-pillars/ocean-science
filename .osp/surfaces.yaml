@@ -20,8 +20,9 @@ surfaces:
     role: runtime
     required: true
     status: planned
-    evidence: 'No projection yet: the Agent Plugins renderer and the reference capability are the runtime
-      track of osp-architecture-alignment'
+    evidence: The Agent Plugins projection (plugin.json, mcp.json) is rendered from package.yaml and passes
+      osp.py plugin-check in the gate; Codex qualification of a release is the reference capability deliverable
+      of osp-architecture-alignment and has not run
   claude-science:
     role: future-runtime
     required: false
