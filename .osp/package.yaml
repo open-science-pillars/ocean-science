@@ -1,0 +1,19 @@
+# Package identity, content and declared dependencies (ADR B). The Claude
+# manifest .claude-plugin/plugin.json is a projection of this file and the
+# gate fails when the two disagree.
+schema_version: 1
+package:
+  name: ocean-science
+  version: 0.8.2
+  type: capability
+content:
+  skills: ./skills
+  agents: ./agents
+  knowledge: ./knowledge
+  verification: ./verification
+dependencies:
+  capabilities:
+  - name: core
+  knowledge:
+  - name: nasa-daac-knowledge
+    version: '>=2026.9.2'

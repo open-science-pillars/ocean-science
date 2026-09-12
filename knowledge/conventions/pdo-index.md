@@ -1,5 +1,6 @@
 ---
 type: convention
+spheres: [hydrosphere]
 title: "PDO index: North Pacific SST EOF with global-mean removed first"
 description: "The Pacific Decadal Oscillation is the leading EOF of North Pacific (poleward of 20N) monthly SST anomalies AFTER removing the global-mean SST anomaly; skipping that removal is the most common reproduction error."
 tags: [pdo, sst, eof, indices, climate, north-pacific]

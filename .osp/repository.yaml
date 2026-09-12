@@ -1,0 +1,13 @@
+# Canonical classification of this repository (ADR A, docs/decisions in the
+# marketplace repository). GitHub topics, the sphere view and every runtime
+# manifest are rendered from this file, never the other way round.
+schema_version: 1
+repository:
+  name: ocean-science
+  kind: capability
+  status: available
+classification:
+  spheres:
+  - hydrosphere
+  primary_sphere: hydrosphere
+  discipline: Ocean Physics

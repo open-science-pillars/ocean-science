@@ -1,5 +1,6 @@
 ---
 type: convention
+spheres: [hydrosphere]
 title: "AMO / AMV index: North Atlantic SST anomaly and the detrending choice"
 description: "The Atlantic Multidecadal Oscillation/Variability is a North Atlantic (commonly 0-60N) mean SST anomaly; the detrending choice (linear, global-mean removal, forced-signal regression) is a scientific controversy that must be named."
 tags: [amo, amv, sst, indices, climate, north-atlantic, detrending]

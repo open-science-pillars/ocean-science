@@ -4,6 +4,12 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-12 · the five conventions: `spheres` added to the
+  frontmatter, hydrosphere on the AMO, PDO and mixed-layer
+  conventions, hydrosphere with atmosphere on the ENSO indices and
+  atmosphere with hydrosphere on the NAO index. Classification by
+  Earth science sphere (ADR A in the marketplace repository), outside
+  the signed text; no claim changed. (claude-code)
 - 2026-09-04 · THE PLUGIN'S COPY OF THE OCEAN EVAL CASES IS RETIRED:
   evals/ (nine case files, the schema pointer, the seed grades and the
   tutorial checkpoint fixtures) deleted. The cases have one home, the
