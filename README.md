@@ -5,10 +5,19 @@ Physical oceanography for Open Science Pillars: the ECCO v4r4 state
 estimate, SWOT KaRIn SSH, meridional transport, budget closure, water
 masses, sea level, and the PO.DAAC knowledge arc.
 
-This plugin builds on core's foundation skills and its start /
+This capability builds on core's foundation skills and its start /
 discover-data / report workflows, and on the PO.DAAC provider knowledge
 in nasa-daac-knowledge. It declares both as dependencies, so one install
 brings them with it.
+
+A Hydrosphere capability, discipline Ocean Physics (`.osp/repository.yaml`;
+ADR A in the marketplace repository). Its knowledge (KNOW) is the PO.DAAC
+bundle, signed by that provider's stewards and consulted in place, plus
+the local conventions and connectors here; its behavior (ACT) is the
+skills; its verification (PROVE) is the golden notebooks here and the
+attested computations in the provider bundle, whose receipts any runtime's
+result can be checked against; its connectors (REACH) are in `.mcp.json`.
+The Claude package files are the runtime projection of `.osp/package.yaml`.
 
 ## Install
 
@@ -23,8 +32,11 @@ plugin to the current one and only this plugin; a dependency moves by
 its own update command (`claude plugin update core@open-science-pillars`,
 `claude plugin update nasa-daac-knowledge@open-science-pillars`), and a
 release that raises a floor says so in its notes. `claude plugin list`
-shows what you have. Cowork and Claude Science: add the marketplace and install
-from it.
+shows what you have. Claude Code is the supported runtime; Claude Cowork installs from the
+same marketplace and is tested; OpenAI Codex arrives through the Agent
+Plugins projection, not built yet; Claude Science is a future runtime.
+What each word asserts is in the marketplace repository's
+docs/runtime-distribution.md.
 
 ## Your first run
 
