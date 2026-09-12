@@ -32,11 +32,22 @@ plugin to the current one and only this plugin; a dependency moves by
 its own update command (`claude plugin update core@open-science-pillars`,
 `claude plugin update nasa-daac-knowledge@open-science-pillars`), and a
 release that raises a floor says so in its notes. `claude plugin list`
-shows what you have. Claude Code is the supported runtime; Claude Cowork installs from the
-same marketplace and is tested; OpenAI Codex arrives through the Agent
-Plugins projection, not built yet; Claude Science is a future runtime.
-What each word asserts is in the marketplace repository's
-docs/runtime-distribution.md.
+shows what you have. Which runtimes this release is qualified on is the table below, rendered
+from the qualification records; what each word asserts is in the
+marketplace repository's docs/runtime-distribution.md.
+
+<!-- osp-runtimes:start -->
+Runtime support for ocean-science 0.8.2 (release lock `sha256:dba92d2233f7`), rendered by build-kit's `osp.py advertise` from `.osp/surfaces.yaml` and the qualification records; edit those, not this block.
+
+| Runtime | Role | Declared status | Qualification |
+|---|---|---|---|
+| Claude Code | development and runtime, required | supported | Supported (development environment) |
+| Claude Cowork | runtime, required | tested | Not qualified |
+| OpenAI Codex | runtime, required | planned | Not qualified |
+| Claude Science | future runtime | limited-release | Outside the required matrix |
+
+A runtime is advertised as supported only on a qualified record for this exact release; a release stays valid when a runtime is not qualified, and that runtime is simply not advertised.
+<!-- osp-runtimes:end -->
 
 ## Your first run
 
