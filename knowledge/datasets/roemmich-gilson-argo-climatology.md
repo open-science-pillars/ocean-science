@@ -16,7 +16,7 @@ sources:
     title: "The August 2026 monthly extension file, downloaded and read with netCDF4 on 2026-09-13: dimensions, axes, variables, units, long names and fill value"
   - id: rg-climatology-temperature
     resource: https://sio-argo.ucsd.edu/RG/RG_ArgoClim_Temperature_2019.nc.gz
-    title: "The 2004 to 2018 temperature climatology file; its header (dimensions, variables and attributes) read 2026-09-13 from the first 4 MB of the archive"
+    title: "The 2004 to 2018 temperature climatology file (663 MB gzipped), downloaded in full and read with netCDF4 on 2026-09-13: the mean field, the 180 monthly anomalies, and the bathymetry and mapping masks"
   - id: roemmich-gilson-2009
     resource: https://doi.org/10.1016/j.pocean.2009.03.004
     title: "Roemmich and Gilson, 2009, The 2004-2008 mean and annual cycle of temperature, salinity, and steric height in the global ocean from the Argo Program, Progress in Oceanography 82(2), 81-100 (the mapping method the product page names; the Crossref registry record was verified 2026-09-13, the publisher's page is unreachable from the drafting environment)"
@@ -73,10 +73,20 @@ hand from the month count.[^rg-extension-202608] The climatology file
 for temperature has TIME 180 (the 180 months of 2004 to 2018) and four
 data variables: ARGO_TEMPERATURE_MEAN on (PRESSURE, LATITUDE,
 LONGITUDE), ARGO_TEMPERATURE_ANOMALY on (TIME, PRESSURE, LATITUDE,
-LONGITUDE), a BATHYMETRY_MASK and a MAPPING_MASK, the last with the
-long name "pressure limits of mapping can be shallower than 2000dbar
-in marginal seas"; the two masks use minus 9 as their fill
-value.[^rg-climatology-temperature] The extension files carry the
+LONGITUDE), a BATHYMETRY_MASK and a MAPPING_MASK, both on (PRESSURE,
+LATITUDE, LONGITUDE) with minus 9 as their fill
+value.[^rg-climatology-temperature] The bathymetry mask is 1 where
+the level lies within the water column (31,652 columns at 2.5 dbar,
+27,976 at 1975 dbar) and 0 or fill elsewhere; the mapping mask, whose
+long name reads "pressure limits of mapping can be shallower than
+2000dbar in marginal seas", holds one pressure limit per column,
+repeated at every level: 2000 dbar for 30,999 open-ocean columns, and
+675 dbar (83 columns, the Sea of Japan), 975 dbar (468 columns, the
+Nordic seas and the mapped Arctic between 61.5N and 79.5N), 1025 dbar
+(301 columns, the Gulf of Mexico and the Caribbean) and 1175 dbar (347
+columns, the Mediterranean and the South China Sea region) for the
+marginal seas, with 20,002 columns not mapped at
+all.[^rg-climatology-temperature] The extension files carry the
 anomalies only: an absolute temperature or salinity for any month
 after 2018 is the extension anomaly added to the mean field of the
 climatology file, and the masks live only in the climatology
@@ -131,10 +141,11 @@ ocean heat content integrated from these fields is therefore an upper
   2006, with more than 80 percent of the planned array deployed
   during 2005, and reports a larger spread between in situ estimates
   before the Argo era than after it.[^wcrp-2018]
-- **Marginal seas and shelves.** The mapping mask records that the
-  mapping's pressure limit can be shallower than 2000 dbar in marginal
-  seas, and the product's global-average series excludes marginal
-  seas and the Arctic by
+- **Marginal seas and shelves.** The mapping mask records a limit
+  shallower than 2000 dbar for every mapped marginal sea (675 to 1175
+  dbar, by sea), so the water column below that limit in those seas
+  is not analysed, and the product's global-average series excludes
+  marginal seas and the Arctic by
   mask.[^rg-climatology-temperature][^rg-page] The Argo array samples
   the ice-free ocean, with quasi-global coverage between 60S and 60N,
   so the mapped values poleward of that and over shelves rest on fewer
@@ -164,7 +175,7 @@ ocean heat content integrated from these fields is therefore an upper
 
 [^rg-page]: Scripps RG Argo Climatology product page, read 2026-09-13
 [^rg-extension-202608]: RG_ArgoClim_202608_2019.nc.gz, downloaded and read 2026-09-13
-[^rg-climatology-temperature]: RG_ArgoClim_Temperature_2019.nc.gz, header read 2026-09-13
+[^rg-climatology-temperature]: RG_ArgoClim_Temperature_2019.nc.gz, downloaded and read 2026-09-13
 [^roemmich-gilson-2009]: Roemmich and Gilson, 2009, Progress in Oceanography, doi:10.1016/j.pocean.2009.03.004 (registry record)
 [^argo-doi]: Argo (2000), SEANOE, doi:10.17882/42182
 [^wcrp-2018]: WCRP Global Sea Level Budget Group, 2018, Earth System Science Data, doi:10.5194/essd-10-1551-2018

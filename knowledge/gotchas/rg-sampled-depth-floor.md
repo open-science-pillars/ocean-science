@@ -14,6 +14,9 @@ sources:
   - id: rg-extension-202608
     resource: https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202608_2019.nc.gz
     title: "The August 2026 monthly extension file, downloaded and read with netCDF4 on 2026-09-13: the PRESSURE axis of 58 levels from 2.5 to 1975 dbar"
+  - id: rg-climatology-temperature
+    resource: https://sio-argo.ucsd.edu/RG/RG_ArgoClim_Temperature_2019.nc.gz
+    title: "The 2004 to 2018 temperature climatology file, downloaded in full and read with netCDF4 on 2026-09-13: the MAPPING_MASK pressure limit per column, 2000 dbar in the open ocean and 675 to 1175 dbar in the marginal seas"
   - id: rg-page
     resource: https://sio-argo.ucsd.edu/RG_Climatology.html
     title: "Scripps RG Argo Climatology product page (read 2026-09-13): the product's own global-average series is labelled 0 to 2000 dbar"
@@ -41,8 +44,12 @@ sources:
 extension file.[^rg-extension-202608] The floor is the observing
 system's: the Argo array measures the temperature and salinity of the
 upper 2000 m of the ocean, and the product is an analysis of Argo
-data alone.[^argo-doi][^rg-page] The product's own headline series is
-labelled a 0 to 2000 dbar global average.[^rg-page] The WCRP sea level
+data alone.[^argo-doi][^rg-page] In the marginal seas the floor is shallower
+still: the climatology file's mapping mask carries a pressure limit
+per column, 2000 dbar in the open ocean and 675 to 1175 dbar in the
+mapped marginal seas, below which nothing is
+analysed.[^rg-climatology-temperature] The product's own headline
+series is labelled a 0 to 2000 dbar global average.[^rg-page] The WCRP sea level
 budget assessment lists the Scripps product among its in situ
 thermosteric estimates as a 0 to 2000 m product, and builds its
 full-depth thermosteric series for the Argo era by summing a 0 to
@@ -86,7 +93,8 @@ the consistency requirements of the budget.[^closure-convention]
 
 **Verification.** The pressure axis was read from the August 2026
 extension file with netCDF4 on 2026-09-13 (58 levels, 2.5 to 1975
-dbar).[^rg-extension-202608] The product page's 0 to 2000 dbar label
+dbar), and the mapping mask from the temperature climatology file
+downloaded in full the same day.[^rg-extension-202608][^rg-climatology-temperature] The product page's 0 to 2000 dbar label
 on its global-average series and the Argo DOI landing page's
 statement that the array measures the upper 2000 m were read the same
 day.[^rg-page][^argo-doi] The WCRP paper was read in full from the
@@ -101,6 +109,7 @@ the floor among the product's known issues.[^dataset]
 
 [^rg-extension-202608]: RG_ArgoClim_202608_2019.nc.gz, downloaded and read 2026-09-13
 [^rg-page]: Scripps RG Argo Climatology product page, read 2026-09-13
+[^rg-climatology-temperature]: RG_ArgoClim_Temperature_2019.nc.gz, downloaded and read 2026-09-13
 [^argo-doi]: Argo (2000), SEANOE, doi:10.17882/42182
 [^wcrp-2018]: WCRP Global Sea Level Budget Group, 2018, Earth System Science Data, doi:10.5194/essd-10-1551-2018
 [^purkey-johnson-2010]: Purkey and Johnson, 2010, Journal of Climate, doi:10.1175/2010JCLI3682.1

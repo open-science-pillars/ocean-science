@@ -19,8 +19,8 @@ _Historical note: older entries use build-era shorthand (a "close lint" is a kno
   Sources read 2026-09-13: the Scripps product page
   (sio-argo.ucsd.edu/RG_Climatology.html); the August 2026 extension
   file RG_ArgoClim_202608_2019.nc.gz downloaded and read with
-  netCDF4; the header of RG_ArgoClim_Temperature_2019.nc.gz from a
-  partial download; the WCRP Global Sea Level Budget Group 2018 paper
+  netCDF4; RG_ArgoClim_Temperature_2019.nc.gz downloaded in full for its
+  mean field and its bathymetry and mapping masks; the WCRP Global Sea Level Budget Group 2018 paper
   (doi 10.5194/essd-10-1551-2018) in full from the publisher's PDF;
   the SEANOE landing page of the Argo DOI 10.17882/42182; the
   Crossref registry records of that paper, of Purkey and Johnson
