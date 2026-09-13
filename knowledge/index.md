@@ -14,7 +14,8 @@ above; the exact spec text is vendored in marketplace docs/upstream).
 - Canonical home: github.com/open-science-pillars/nasa-daac-knowledge
   (knowledge/podaac/), installed alongside this plugin as the
   nasa-daac-knowledge dependency at a release the plugin names a floor
-  for (`.claude-plugin/plugin.json`); nothing from it is copied here.
+  for (`.osp/package.yaml`, from which the plugin manifest is rendered);
+  nothing from it is copied here.
 - How it is consulted: the core skill consult-knowledge finds every
   installed bundle through the installer's record of installed plugins
   (`claude plugin list --json`, each entry's installPath) and globs

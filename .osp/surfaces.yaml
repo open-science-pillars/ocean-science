@@ -8,14 +8,14 @@ surfaces:
     - runtime
     required: true
     status: supported
-    evidence: Every release is exercised on Claude Code; the surface testing guide in the marketplace
-      repository records the passes
+    evidence: Every release is exercised on Claude Code; the qualification record for the release
+      under .osp/qualification/ records the passes
   claude-cowork:
     role: runtime
     required: true
     status: tested
-    evidence: Marketplace install verified 2026-07-04 (surface testing guide); no per-release qualification
-      yet
+    evidence: Marketplace install verified 2026-07-04 (what that asserts is docs/runtime-distribution.md
+      in the marketplace repository); no per-release qualification yet
   openai-codex:
     role: runtime
     required: true
