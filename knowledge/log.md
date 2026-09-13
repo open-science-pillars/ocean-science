@@ -4,6 +4,31 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-13 · SEEDED, status draft: the gridded Argo product the
+  organization uses as the steric term of its sea level budget.
+  datasets/roemmich-gilson-argo-climatology.md (the Scripps
+  Roemmich and Gilson Argo climatology, 2019 release with monthly
+  extensions) and three gotchas: gotchas/rg-sampled-depth-floor.md
+  (high; the product ends at 1975 dbar and a budget that carries it
+  as the whole steric term omits the deep term; eval case
+  rg-sampled-depth-floor drafted in agent-evals, its manifest
+  registration the coordinator's follow-up),
+  gotchas/rg-coverage-excludes-high-latitudes-and-marginal-seas.md
+  (medium) and gotchas/rg-anomaly-against-a-fixed-climatology.md
+  (medium). This index gains a datasets and a gotchas section.
+  Sources read 2026-09-13: the Scripps product page
+  (sio-argo.ucsd.edu/RG_Climatology.html); the August 2026 extension
+  file RG_ArgoClim_202608_2019.nc.gz downloaded and read with
+  netCDF4; the header of RG_ArgoClim_Temperature_2019.nc.gz from a
+  partial download; the WCRP Global Sea Level Budget Group 2018 paper
+  (doi 10.5194/essd-10-1551-2018) in full from the publisher's PDF;
+  the SEANOE landing page of the Argo DOI 10.17882/42182; the
+  Crossref registry records of that paper, of Purkey and Johnson
+  2010 (doi 10.1175/2010JCLI3682.1, abstract read there) and of
+  Roemmich and Gilson 2009 (doi 10.1016/j.pocean.2009.03.004, whose
+  publisher page the drafting environment's proxy refused). Every
+  claim carries a footnote to one of these. (knowledge-seeder,
+  coordinator review pending)
 - 2026-09-12 · the five conventions: `spheres` added to the
   frontmatter, hydrosphere on the AMO, PDO and mixed-layer
   conventions, hydrosphere with atmosphere on the ENSO indices and
