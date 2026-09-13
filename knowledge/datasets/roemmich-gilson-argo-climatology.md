@@ -5,6 +5,7 @@ title: "Roemmich and Gilson Argo climatology (Scripps, 2019 release with monthly
 description: "Argo-only gridded temperature and practical salinity on a 1 degree grid over 58 pressure levels from 2.5 to 1975 dbar, distributed as a 2004 to 2018 mean plus monthly anomalies and extended month by month against that fixed baseline; a steric height or heat content from it covers the upper 2000 dbar of the open ocean only."
 tags: [argo, roemmich-gilson, climatology, gridded, temperature, salinity, steric, ocean-heat-content, scripps]
 generated: { by: knowledge-seeder/claude, at: 2026-09-13T20:20:00Z }
+verified: { by: human:PaulMRamirez, at: 2026-09-13T21:08:30Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/47 }
 resource: https://sio-argo.ucsd.edu/RG_Climatology.html
 version: "2019 release (the product page reads Latest Version 2019, Updated Jan 17, 2020, using Argo data from January 1, 2004 through December 31, 2018), extended by monthly files RG_ArgoClim_YYYYMM_2019.nc.gz through August 2026; product page read and the August 2026 extension file downloaded and inspected 2026-09-13"
 sources:
@@ -29,7 +30,7 @@ sources:
   - id: argo-connector
     resource: ../connectors/argo-floats.md
     title: "This bundle's Argo connector concept, which carries the Argo citation and acknowledgement convention"
-status: draft
+status: stable
 stale_after: 2027-03-13
 ---
 

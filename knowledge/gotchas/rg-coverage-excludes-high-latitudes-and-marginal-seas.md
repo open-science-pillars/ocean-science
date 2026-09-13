@@ -5,9 +5,10 @@ title: "The Roemmich and Gilson grid starts at 64.5S and its global average mask
 description: "The gridded Argo climatology has no cells south of 64.5S; its 2019 release maps some marginal seas and the Nordic seas and Arctic north to 79.5N, but only to a shallower pressure limit, and the product's own global-average series excludes them by a mask carried only in the climatology files; the columns mapped to 2000 dbar end at 66.5N, several enclosed seas hold no values at all, and the mapped open ocean covers about 61 percent of the Earth's surface. A mean labelled global from these fields is a mean over the mapped, masked, ice-free open ocean, and it differs from a truly global product or from the same product averaged under a different mask by the coverage, not by the ocean."
 tags: [argo, roemmich-gilson, coverage, mask, marginal-seas, arctic, southern-ocean, global-mean, ocean-heat-content]
 generated: { by: knowledge-seeder/claude, at: 2026-09-13T20:20:00Z }
+verified: { by: human:PaulMRamirez, at: 2026-09-13T21:08:30Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/47 }
 severity: medium
 dataset: ../datasets/roemmich-gilson-argo-climatology.md
-status: draft
+status: stable
 stale_after: 2027-03-13
 sources:
   - id: rg-extension-202608

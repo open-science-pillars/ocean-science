@@ -4,6 +4,17 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-13 · STEWARD SIGNING of
+  knowledge/datasets/roemmich-gilson-argo-climatology.md,
+  knowledge/gotchas/rg-coverage-excludes-high-latitudes-and-marginal-seas.md,
+  knowledge/gotchas/rg-anomaly-against-a-fixed-climatology.md,
+  knowledge/gotchas/rg-sampled-depth-floor.md: maintainer's review of PR
+  47 recorded on the maintainer's instruction; the dataset concept and
+  the two medium gotchas promoted to stable; rg-sampled-depth-floor
+  (high severity) keeps draft with this first review until a second
+  human review, per the two-review rule The verified event is written on
+  the steward's word. (steward)
+
 - 2026-09-13 · SEEDED, status draft: the Scripps Roemmich and Gilson
   Argo climatology, 2019 release with monthly extensions, the gridded
   Argo product whose steric height and heat content cover the upper
