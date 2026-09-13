@@ -38,3 +38,25 @@ qualification:
   - prove
   - receipt
   - release-lock
+probes:
+  skill-invocation:
+    skill: sea-level-analysis
+    prompt: Run a sea level analysis for the US northeast coast over 2010 and show me the plan before any data is loaded.
+    expect:
+    - ocean-science
+  prove:
+    prompt: 'Run the capability''s attested sea level budget closure on its synthetic fixture and report
+      the verdict and the residual trend it prints. The command is: uv run ${PLUGIN_ROOT}/verification/sea_level_budget.py
+      --runtime ${RUNTIME} --out ${WORK}/receipt.json'
+    receipt: ${WORK}/receipt.json
+    command:
+    - uv
+    - run
+    - ${PLUGIN_ROOT}/verification/sea_level_budget.py
+    - --attest
+    - ${WORK}/receipt.json
+    - --out
+    - ${WORK}/attestation.json
+    attestation: ${WORK}/attestation.json
+  golden-computation:
+  - verification/sea_level_budget.py

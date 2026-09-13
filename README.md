@@ -122,7 +122,10 @@ including downloads, about 1.3 GB cached).
   `volume_budget.py`, golden notebooks that re-check each workflow on
   small cached data. The heat-budget closure is additionally attested
   against the sanctioned computation and steward-signed tolerances by
-  the attester in nasa-daac-knowledge.
+  the attester in nasa-daac-knowledge. `sea_level_budget.py` runs the
+  bundle's attested sea level budget closure on its synthetic fixture
+  (no download, no NASA host) and proves the gap refusal; it is the
+  golden and the PROVE step of the release qualification.
 - **Evals**: the agent-judgment cases (does an agent with this plugin
   avoid the documented ECCO and SWOT traps?) have one home, the ECCO set
   of [agent-evals](https://github.com/open-science-pillars/agent-evals)
