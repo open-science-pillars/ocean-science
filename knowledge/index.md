@@ -6,7 +6,9 @@ okf_version: "0.2"
 
 The ocean-science knowledge bundle: the concepts this plugin owns (the
 climate index conventions, the mixed layer criteria convention, the
-three observational connectors). OKF v0.2 conformant (okf_version "0.2"
+three observational connectors, and the gridded Argo climatology
+whose steric height and heat content cover the upper 2000 dbar of
+the open ocean, with its gotchas). OKF v0.2 conformant (okf_version "0.2"
 above; the exact spec text is vendored in marketplace docs/upstream).
 
 ## The PO.DAAC provider bundle (a declared dependency)
@@ -39,6 +41,24 @@ The MLD criteria convention is the plugin's; the ECCO MXLDEPTH gotcha
 that cites it lives in the provider bundle
 (`knowledge/podaac/gotchas/ecco-mxldepth-criterion.md`) and pins its
 link to this repository at the commit it was upstreamed from.
+
+## datasets (local)
+
+- [Roemmich and Gilson Argo climatology (Scripps, 2019 release with monthly extensions)](datasets/roemmich-gilson-argo-climatology.md), status: draft
+
+The Scripps product is not a NASA DAAC product, so it has no provider
+bundle to move to; it is local domain material.
+
+## gotchas (local)
+
+- [Roemmich and Gilson steric height and heat content stop at 1975 dbar](gotchas/rg-sampled-depth-floor.md), severity high, status: draft
+- [The Roemmich and Gilson grid starts at 64.5S and its global average masks out the marginal seas and the Arctic](gotchas/rg-coverage-excludes-high-latitudes-and-marginal-seas.md), severity medium, status: draft
+- [The Roemmich and Gilson anomalies are departures from a fixed 2004 to 2018 climatology](gotchas/rg-anomaly-against-a-fixed-climatology.md), severity medium, status: draft
+
+The high gotcha's eval case, rg-sampled-depth-floor, lives in the
+agent-evals repository under `ecco/cases/`, the one home of the ocean
+cases, and is registered in the evals repository's ocean-science
+manifest.
 
 ## connectors (local)
 

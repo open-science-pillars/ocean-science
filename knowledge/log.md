@@ -4,6 +4,51 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-13 · SEEDED, status draft: the Scripps Roemmich and Gilson
+  Argo climatology, 2019 release with monthly extensions, the gridded
+  Argo product whose steric height and heat content cover the upper
+  2000 dbar of the open ocean (the product the PO.DAAC bundle's
+  attested sea level budget reads as its steric term, through the
+  loader knowledge/podaac/references/loaders/slb_steric_rg.py of
+  nasa-daac-knowledge pull request 127).
+  datasets/roemmich-gilson-argo-climatology.md and three gotchas:
+  gotchas/rg-sampled-depth-floor.md (high; the product ends at 1975
+  dbar and a budget that carries it as the whole steric term omits
+  the deep term; its eval case rg-sampled-depth-floor lives in the
+  agent-evals repository under ecco/cases, opened there as pull
+  request 12, and the evals repository's ocean-science manifest
+  already registers it at that path);
+  gotchas/rg-coverage-excludes-high-latitudes-and-marginal-seas.md
+  (medium: the coverage is visible in the files, the grid's latitude
+  axis and the fill values show where the product stops, so a wrong
+  global mean is a labelling error the reader can catch rather than a
+  silently wrong number); and
+  gotchas/rg-anomaly-against-a-fixed-climatology.md (medium: the
+  baseline is written into every anomaly variable's long name and the
+  file name carries the release, so a mixed-release series or a
+  mis-baselined comparison is detectable from the files, and a
+  single-release trend over whole years is unaffected). This index
+  gains a datasets and a gotchas section. Sources read 2026-09-13:
+  the Scripps product page (sio-argo.ucsd.edu/RG_Climatology.html);
+  the August 2026 extension file RG_ArgoClim_202608_2019.nc.gz
+  downloaded and read with netCDF4; RG_ArgoClim_Temperature_2019.nc.gz,
+  its header first from the first 4 MB of the archive and then the
+  whole file downloaded for its mean field and its bathymetry and
+  mapping masks; the WCRP Global Sea Level Budget Group 2018 paper
+  (doi 10.5194/essd-10-1551-2018) in full from the publisher's PDF;
+  the SEANOE landing page of the Argo DOI 10.17882/42182; the
+  Crossref registry records of that paper, of Purkey and Johnson
+  2010 (doi 10.1175/2010JCLI3682.1, abstract read there) and of
+  Roemmich and Gilson 2009 (doi 10.1016/j.pocean.2009.03.004, whose
+  publisher page the drafting environment's proxy refused). Every
+  claim carries a footnote to one of these. Same day, later: the
+  coordinator's lint applied (the steric-term claim reworded to what
+  the product is, the CF time statement and the mapping-error
+  statement made plain, the four cell counts defined, the whole-years
+  qualification on the slope, the climatology file's provenance
+  stated the same way everywhere, the area-fraction computation
+  written out, the gotcha titles shortened to the trap).
+  (knowledge-seeder, coordinator review pending)
 - 2026-09-12 · the five conventions: `spheres` added to the
   frontmatter, hydrosphere on the AMO, PDO and mixed-layer
   conventions, hydrosphere with atmosphere on the ENSO indices and
