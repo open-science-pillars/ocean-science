@@ -12,7 +12,8 @@ plugin, sphere, knowledge bundle, runtime) are defined in the
 [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLOSSARY.md).
 
 How it is organized: its knowledge (KNOW) is the PO.DAAC provider bundle,
-signed by that provider's stewards and consulted in place, plus the local
+reviewed by its maintainers and confirmed by the provider where a
+contact has confirmed it, consulted in place, plus the local
 conventions and connectors here; its behavior (ACT) is the skills; its
 verification (PROVE) is the golden notebooks here and the attested
 computations in the provider bundle; its connectors (REACH) are declared
