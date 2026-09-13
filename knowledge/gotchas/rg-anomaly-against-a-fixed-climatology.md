@@ -5,9 +5,10 @@ title: "The Roemmich and Gilson anomalies are departures from a fixed 2004 to 20
 description: "Every anomaly field in the 2019 release and its monthly extensions is defined against the 2004 to 2018 RG climatology, the mean field lives only in the climatology files, and each biennial re-analysis redefines the baseline from more data. Subtracting a different climatology from a single-release series shifts every month by a fixed per-cell, per-calendar-month amount, which moves the intercept and the annual cycle of a fit and leaves the slope of a fit over whole years alone; a series that joins two releases, or a comparison against a product on another baseline, carries the baseline difference as an offset that a trend or a difference plot reads as signal."
 tags: [argo, roemmich-gilson, anomaly, baseline, climatology, release, re-baseline, trend, comparison]
 generated: { by: knowledge-seeder/claude, at: 2026-09-13T20:20:00Z }
+verified: { by: human:PaulMRamirez, at: 2026-09-13T21:08:30Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/47 }
 severity: medium
 dataset: ../datasets/roemmich-gilson-argo-climatology.md
-status: draft
+status: stable
 stale_after: 2027-03-13
 sources:
   - id: rg-extension-202608
