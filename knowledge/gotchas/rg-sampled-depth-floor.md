@@ -1,7 +1,7 @@
 ---
 type: dataset-gotcha
 spheres: [hydrosphere]
-title: "The Roemmich and Gilson product stops at 1975 dbar: a steric height or heat content from it is an upper 2000 dbar term, and a budget that carries it as the whole steric term omits the deep ocean"
+title: "Roemmich and Gilson steric height and heat content stop at 1975 dbar"
 description: "The gridded Argo climatology has 58 pressure levels from 2.5 to 1975 dbar and nothing below, because Argo floats profile the upper 2000 m. A steric height, thermosteric sea level or ocean heat content integrated from it is a 0 to 2000 dbar quantity; quoted as full depth, or entered as the steric term of altimetry equals mass plus steric with no term for the ocean below 2000 m, it misstates the budget by the deep term, which the WCRP assessment carries as a separate estimate extrapolated from the Purkey and Johnson repeat-hydrography trend."
 tags: [argo, roemmich-gilson, steric, thermosteric, ocean-heat-content, sea-level-budget, deep-ocean, abyssal, 2000-dbar]
 generated: { by: knowledge-seeder/claude, at: 2026-09-13T20:20:00Z }
@@ -16,7 +16,7 @@ sources:
     title: "The August 2026 monthly extension file, downloaded and read with netCDF4 on 2026-09-13: the PRESSURE axis of 58 levels from 2.5 to 1975 dbar"
   - id: rg-climatology-temperature
     resource: https://sio-argo.ucsd.edu/RG/RG_ArgoClim_Temperature_2019.nc.gz
-    title: "The 2004 to 2018 temperature climatology file, downloaded in full and read with netCDF4 on 2026-09-13: the MAPPING_MASK pressure limit per column, 2000 dbar in the open ocean and 675 to 1175 dbar in the marginal seas"
+    title: "The 2004 to 2018 temperature climatology file: its header read 2026-09-13 from the first 4 MB of the archive, then the whole file downloaded the same day and read with netCDF4 for the MAPPING_MASK pressure limit per column, 2000 dbar in the open ocean and 675 to 1175 dbar in the marginal seas"
   - id: rg-page
     resource: https://sio-argo.ucsd.edu/RG_Climatology.html
     title: "Scripps RG Argo Climatology product page (read 2026-09-13): the product's own global-average series is labelled 0 to 2000 dbar"
@@ -37,7 +37,7 @@ sources:
     title: "This bundle's Roemmich and Gilson dataset concept, which lists the depth floor among the known issues"
 ---
 
-# The Roemmich and Gilson product stops at 1975 dbar
+# Roemmich and Gilson steric height and heat content stop at 1975 dbar
 
 **Mechanism.** The product's PRESSURE axis has 58 levels from 2.5 to
 1975 dbar and no level below, in the climatology and in every monthly
@@ -93,8 +93,10 @@ the consistency requirements of the budget.[^closure-convention]
 
 **Verification.** The pressure axis was read from the August 2026
 extension file with netCDF4 on 2026-09-13 (58 levels, 2.5 to 1975
-dbar), and the mapping mask from the temperature climatology file
-downloaded in full the same day.[^rg-extension-202608][^rg-climatology-temperature] The product page's 0 to 2000 dbar label
+dbar), and the mapping mask from the temperature climatology file,
+whose header was read from the first 4 MB of the archive and which
+was then downloaded in full and read the same
+day.[^rg-extension-202608][^rg-climatology-temperature] The product page's 0 to 2000 dbar label
 on its global-average series and the Argo DOI landing page's
 statement that the array measures the upper 2000 m were read the same
 day.[^rg-page][^argo-doi] The WCRP paper was read in full from the
@@ -109,7 +111,7 @@ the floor among the product's known issues.[^dataset]
 
 [^rg-extension-202608]: RG_ArgoClim_202608_2019.nc.gz, downloaded and read 2026-09-13
 [^rg-page]: Scripps RG Argo Climatology product page, read 2026-09-13
-[^rg-climatology-temperature]: RG_ArgoClim_Temperature_2019.nc.gz, downloaded and read 2026-09-13
+[^rg-climatology-temperature]: RG_ArgoClim_Temperature_2019.nc.gz, header read from a partial download and then the whole file downloaded and read, 2026-09-13
 [^argo-doi]: Argo (2000), SEANOE, doi:10.17882/42182
 [^wcrp-2018]: WCRP Global Sea Level Budget Group, 2018, Earth System Science Data, doi:10.5194/essd-10-1551-2018
 [^purkey-johnson-2010]: Purkey and Johnson, 2010, Journal of Climate, doi:10.1175/2010JCLI3682.1

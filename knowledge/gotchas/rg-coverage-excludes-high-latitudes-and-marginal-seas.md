@@ -1,7 +1,7 @@
 ---
 type: dataset-gotcha
 spheres: [hydrosphere]
-title: "The Roemmich and Gilson grid starts at 64.5S and its global average masks out the marginal seas and the Arctic: a global mean from this product is an open-ocean mean over that domain"
+title: "The Roemmich and Gilson grid starts at 64.5S and its global average masks out the marginal seas and the Arctic"
 description: "The gridded Argo climatology has no cells south of 64.5S; its 2019 release maps some marginal seas and the Nordic seas and Arctic north to 79.5N, but only to a shallower pressure limit, and the product's own global-average series excludes them by a mask carried only in the climatology files; the columns mapped to 2000 dbar end at 66.5N, several enclosed seas hold no values at all, and the mapped open ocean covers about 61 percent of the Earth's surface. A mean labelled global from these fields is a mean over the mapped, masked, ice-free open ocean, and it differs from a truly global product or from the same product averaged under a different mask by the coverage, not by the ocean."
 tags: [argo, roemmich-gilson, coverage, mask, marginal-seas, arctic, southern-ocean, global-mean, ocean-heat-content]
 generated: { by: knowledge-seeder/claude, at: 2026-09-13T20:20:00Z }
@@ -15,7 +15,7 @@ sources:
     title: "The August 2026 monthly extension file, downloaded and read with netCDF4 on 2026-09-13: the latitude axis, and the count of mapped cells by latitude band and by region"
   - id: rg-climatology-temperature
     resource: https://sio-argo.ucsd.edu/RG/RG_ArgoClim_Temperature_2019.nc.gz
-    title: "The 2004 to 2018 temperature climatology file, downloaded in full and read with netCDF4 on 2026-09-13: the MAPPING_MASK pressure limits by column and the BATHYMETRY_MASK, counted by latitude band and by region"
+    title: "The 2004 to 2018 temperature climatology file: its header read 2026-09-13 from the first 4 MB of the archive, then the whole file downloaded the same day and read with netCDF4 for the MAPPING_MASK pressure limits by column and the BATHYMETRY_MASK, counted by latitude band and by region"
   - id: rg-page
     resource: https://sio-argo.ucsd.edu/RG_Climatology.html
     title: "Scripps RG Argo Climatology product page (read 2026-09-13): the marginal seas and the Arctic added in the 2019 release, and the global-average series computed under the file's spatial mask with marginal seas and the Arctic excluded"
@@ -84,11 +84,18 @@ covers is stated beside the mean. A statement about the ocean south of
 
 **Verification.** The latitude axis was read from the August 2026
 extension file with netCDF4 on 2026-09-13; the climatology file for
-temperature was downloaded in full the same day and its two mask
-variables read with netCDF4, the mapping limits counted by value, by
-latitude band and by 1 degree boxes over the seas named above, and
-the area fractions summed with the cosine of
-latitude.[^rg-extension-202608][^rg-climatology-temperature] The
+temperature had its header read from the first 4 MB of the archive
+and was then downloaded in full the same day, and its two mask
+variables were read with netCDF4, the mapping limits counted by
+value, by 5 degree latitude band and by 1 degree boxes over the seas
+named above.[^rg-extension-202608][^rg-climatology-temperature] The
+two area fractions are the sum over the 145 by 360 grid of the cosine
+of each cell's latitude, restricted to the columns whose mapping
+limit is 2000 dbar (61 percent) or to every column with a mapping
+limit (63 percent), divided by the same sum over a full 1 degree
+sphere (180 by 360 cells), each cell counted whole; the counts and
+fractions are from the file as read and not from any distributed
+script.[^rg-climatology-temperature] The
 product page's statements on the added seas and on the masked global
 average were read the same day.[^rg-page] The WCRP paper's coverage
 statements and its Table 2 were read in full from the publisher's PDF
@@ -97,7 +104,7 @@ day.[^wcrp-2018] The dataset concept lists the coverage among the
 product's known issues.[^dataset]
 
 [^rg-extension-202608]: RG_ArgoClim_202608_2019.nc.gz, downloaded and read 2026-09-13
-[^rg-climatology-temperature]: RG_ArgoClim_Temperature_2019.nc.gz, downloaded and read 2026-09-13
+[^rg-climatology-temperature]: RG_ArgoClim_Temperature_2019.nc.gz, header read from a partial download and then the whole file downloaded and read, 2026-09-13
 [^rg-page]: Scripps RG Argo Climatology product page, read 2026-09-13
 [^wcrp-2018]: WCRP Global Sea Level Budget Group, 2018, Earth System Science Data, doi:10.5194/essd-10-1551-2018
 [^dataset]: This bundle's Roemmich and Gilson dataset concept
