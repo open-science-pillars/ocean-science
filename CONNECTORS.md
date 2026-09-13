@@ -34,9 +34,11 @@ github.com/open-science-pillars/nasa-daac-knowledge), re-verified on a
 schedule. This file deliberately does not restate them, so there is
 one place to correct when they change.
 
-**Per-surface.** Claude Code and Cowork read `.mcp.json` from the
-installed plugin. Claude Science configures connectors per session;
-see marketplace/docs/surface-testing-guide.md.
+**Per runtime.** Claude Code and Cowork read `.mcp.json` from the
+installed plugin; on Cowork the stdio observations server runs on your
+computer with your permissions, so `uv` must be reachable from the app.
+What each runtime consumes, and what a qualified record asserts, is in
+the marketplace repository's docs/runtime-distribution.md.
 
 ## Credentials
 
