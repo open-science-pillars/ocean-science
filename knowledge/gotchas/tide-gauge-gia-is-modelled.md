@@ -5,9 +5,10 @@ title: "The GIA correction at a tide gauge is a model prediction that names its 
 description: "Glacial isostatic adjustment at a tide gauge is not measured but predicted by a model of the ice history and the Earth's viscosity structure. The set PSMSL distributes is Peltier's ICE-5G version 1.3 with the VM2 Earth model and a 90 km lithosphere, supplied in 2012, as separate relative sea level and crustal uplift rates at each PSMSL station; ICE-5G (VM4) and the models of Mitrovica, Lambeck, Sabadini and Wahr give other values. A GIA-corrected gauge trend that does not name the model and which of the two rates was applied cannot be reproduced, and the three rate variants in the files are, in the supplier's words, not an error bar."
 tags: [tide-gauge, gia, glacial-isostatic-adjustment, ice-5g, vm2, peltier, psmsl, sea-level, trend, correction]
 generated: { by: knowledge-seeder/claude, at: 2026-09-14T05:30:00Z }
+verified: { by: human:PaulMRamirez, at: 2026-09-14T12:13:17Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/51 }
 severity: medium
 dataset: ../connectors/psmsl-gauges.md
-status: draft
+status: stable
 stale_after: 2027-03-14
 sources:
   - id: psmsl-gia
