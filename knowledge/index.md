@@ -8,7 +8,8 @@ The ocean-science knowledge bundle: the concepts this plugin owns (the
 climate index conventions, the mixed layer criteria convention, the
 three observational connectors, and the gridded Argo climatology
 whose steric height and heat content cover the upper 2000 dbar of
-the open ocean, with its gotchas). OKF v0.2 conformant (okf_version "0.2"
+the open ocean, with its gotchas, and the tide gauge datum and land
+motion gotchas on the PSMSL and CO-OPS connectors). OKF v0.2 conformant (okf_version "0.2"
 above; the exact spec text is vendored in marketplace docs/upstream).
 
 ## The PO.DAAC provider bundle (a declared dependency)
@@ -54,11 +55,21 @@ bundle to move to; it is local domain material.
 - [Roemmich and Gilson steric height and heat content stop at 1975 dbar](gotchas/rg-sampled-depth-floor.md), severity high, status: draft
 - [The Roemmich and Gilson grid starts at 64.5S and its global average masks out the marginal seas and the Arctic](gotchas/rg-coverage-excludes-high-latitudes-and-marginal-seas.md), severity medium, status: stable
 - [The Roemmich and Gilson anomalies are departures from a fixed 2004 to 2018 climatology](gotchas/rg-anomaly-against-a-fixed-climatology.md), severity medium, status: stable
+- [PSMSL RLR records are reduced to one station datum and metric records are not](gotchas/psmsl-rlr-versus-metric.md), severity high, status: draft
+- [CO-OPS water levels are heights above a chosen datum on the 1983 to 2001 epoch](gotchas/coops-datum-and-epoch.md), severity medium, status: draft
+- [A tide gauge trend is relative sea level and carries the land's vertical motion](gotchas/tide-gauge-relative-sea-level-and-land-motion.md), severity high, status: draft
+- [The GIA correction at a tide gauge is a model prediction that names its ice and Earth model](gotchas/tide-gauge-gia-is-modelled.md), severity medium, status: draft
+- [A tide gauge trend carries its record length and its gaps](gotchas/tide-gauge-record-length-and-gaps.md), severity medium, status: draft
 
 The high gotcha's eval case, rg-sampled-depth-floor, lives in the
 agent-evals repository under `ecco/cases/`, the one home of the ocean
 cases, and is registered in the evals repository's ocean-science
-manifest.
+manifest. The tide gauge gotchas qualify the two tide gauge connector
+concepts (PSMSL and CO-OPS) rather than a dataset concept; the eval
+cases of the two high ones, psmsl-rlr-versus-metric and
+tide-gauge-relative-sea-level-and-land-motion, live in the same
+agent-evals directory, and their registration in the evals
+repository's manifest is a follow-up.
 
 ## connectors (local)
 
