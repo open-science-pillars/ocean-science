@@ -5,11 +5,13 @@ title: "Roemmich and Gilson steric height and heat content stop at 1975 dbar"
 description: "The gridded Argo climatology has 58 pressure levels from 2.5 to 1975 dbar and nothing below, because Argo floats profile the upper 2000 m. A steric height, thermosteric sea level or ocean heat content integrated from it is a 0 to 2000 dbar quantity; quoted as full depth, or entered as the steric term of altimetry equals mass plus steric with no term for the ocean below 2000 m, it misstates the budget by the deep term, which the WCRP assessment carries as a separate estimate extrapolated from the Purkey and Johnson repeat-hydrography trend."
 tags: [argo, roemmich-gilson, steric, thermosteric, ocean-heat-content, sea-level-budget, deep-ocean, abyssal, 2000-dbar]
 generated: { by: knowledge-seeder/claude, at: 2026-09-13T20:20:00Z }
-verified: { by: human:PaulMRamirez, at: 2026-09-13T21:08:30Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/47 }
+verified:
+  - { by: human:PaulMRamirez, at: 2026-09-13T21:08:30Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/47 }
+  - { by: human:PaulMRamirez, at: 2026-09-14T12:27:15Z, role: maintainer, source: https://claude.ai/code/session_01DVKYxSeRJWncZVsmaxC4p4 }
 severity: high
 dataset: ../datasets/roemmich-gilson-argo-climatology.md
 eval_case: rg-sampled-depth-floor
-status: draft
+status: stable
 stale_after: 2027-03-13
 sources:
   - id: rg-extension-202608

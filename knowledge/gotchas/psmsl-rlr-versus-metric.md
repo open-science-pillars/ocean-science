@@ -5,11 +5,13 @@ title: "PSMSL RLR records are reduced to one station datum and metric records ar
 description: "PSMSL holds two monthly series per station. The metric file is the means as received from the supplying authority, on a common datum within each year only; the Revised Local Reference (RLR) series is the same means reduced by PSMSL to a station datum about 7000 mm below mean sea level using the benchmark datum history the authority supplied. About two thirds of stations have an RLR series and the rest are metric only. A trend fitted to a metric series carries the station's gauge zero and benchmark changes as sea level, with nothing in the file to separate them, and PSMSL states that metric records serve the seasonal cycle only. The psmsl_monthly connector reads the RLR path."
 tags: [psmsl, tide-gauge, rlr, metric, datum, sea-level, trend, revised-local-reference]
 generated: { by: knowledge-seeder/claude, at: 2026-09-14T05:30:00Z }
-verified: { by: human:PaulMRamirez, at: 2026-09-14T12:13:17Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/51 }
+verified:
+  - { by: human:PaulMRamirez, at: 2026-09-14T12:13:17Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/51 }
+  - { by: human:PaulMRamirez, at: 2026-09-14T12:27:15Z, role: maintainer, source: https://claude.ai/code/session_01DVKYxSeRJWncZVsmaxC4p4 }
 severity: high
 dataset: ../connectors/psmsl-gauges.md
 eval_case: psmsl-rlr-versus-metric
-status: draft
+status: stable
 stale_after: 2027-03-14
 sources:
   - id: psmsl-rlr

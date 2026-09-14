@@ -5,11 +5,13 @@ title: "A tide gauge trend is relative sea level and carries the land's vertical
 description: "A tide gauge measures the water against a benchmark on the local land, so its series, a PSMSL RLR record or a CO-OPS station, is relative sea level, the sum of sea surface change and vertical land motion at the gauge, while altimetry measures the sea surface against the ellipsoid. A gauge trend compared with an altimetry trend, or used as a sea level record, differs from the sea surface change by the land motion, which reaches more than 10 mm per year of subsidence on the northern Gulf coast and makes relative sea level fall in southeastern Alaska; at Brest four GNSS solutions on one receiver give minus 0.22 to minus 1.50 mm per year. The comparison is not a sea level comparison until the land motion, its source and its uncertainty are stated."
 tags: [tide-gauge, relative-sea-level, vertical-land-motion, gnss, altimetry, psmsl, coops, sea-level, trend]
 generated: { by: knowledge-seeder/claude, at: 2026-09-14T05:30:00Z }
-verified: { by: human:PaulMRamirez, at: 2026-09-14T12:13:17Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/51 }
+verified:
+  - { by: human:PaulMRamirez, at: 2026-09-14T12:13:17Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/51 }
+  - { by: human:PaulMRamirez, at: 2026-09-14T12:27:15Z, role: maintainer, source: https://claude.ai/code/session_01DVKYxSeRJWncZVsmaxC4p4 }
 severity: high
 dataset: ../connectors/psmsl-gauges.md
 eval_case: tide-gauge-relative-sea-level-and-land-motion
-status: draft
+status: stable
 stale_after: 2027-03-14
 sources:
   - id: psmsl-ellipsoid
