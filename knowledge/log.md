@@ -4,6 +4,20 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-14 · STEWARD SIGNING of
+  knowledge/gotchas/coops-datum-and-epoch.md,
+  knowledge/gotchas/tide-gauge-gia-is-modelled.md,
+  knowledge/gotchas/tide-gauge-record-length-and-gaps.md,
+  knowledge/gotchas/psmsl-rlr-versus-metric.md,
+  knowledge/gotchas/tide-gauge-relative-sea-level-and-land-motion.md:
+  maintainer's review of PR 51 recorded on the maintainer's standing
+  instruction for round two of seeding; the three medium gotchas
+  promoted to stable; psmsl-rlr-versus-metric and
+  tide-gauge-relative-sea-level-and-land-motion (high severity) keep
+  draft with this first review until a second human review, per the
+  two-review rule. The verified event is written on the steward's word.
+  The verified event is written on the steward's word. (steward)
+
 - 2026-09-14 · SEEDED, status draft: five tide gauge datum and vertical
   land motion gotchas on the two tide gauge connector concepts
   (connectors/psmsl-gauges.md and connectors/coops-tides.md; no new

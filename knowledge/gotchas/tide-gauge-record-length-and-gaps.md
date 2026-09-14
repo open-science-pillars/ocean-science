@@ -5,9 +5,10 @@ title: "A tide gauge trend carries its record length and its gaps"
 description: "A linear trend from monthly mean sea level depends on how long the record is and where it is missing. CO-OPS computes its relative trends only from records spanning at least 30 years, and the confidence widths it publishes are about plus or minus 1.5 mm per year at 30 years and plus or minus 0.5 mm per year at 60 years, because interannual variability from coastal temperature, salinity, winds, pressure, currents and ENSO enters a short record as trend. PSMSL pads missing months with minus 99999, records the days missing from each month, drops an annual mean when more than one month is missing and flags suspect months and mean tide level substitutions. A trend quoted without its span, its gaps and a confidence interval is a number whose meaning is unknown."
 tags: [tide-gauge, sea-level, trend, record-length, gaps, missing-data, confidence-interval, variability, psmsl, coops]
 generated: { by: knowledge-seeder/claude, at: 2026-09-14T05:30:00Z }
+verified: { by: human:PaulMRamirez, at: 2026-09-14T12:13:17Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/51 }
 severity: medium
 dataset: ../connectors/psmsl-gauges.md
-status: draft
+status: stable
 stale_after: 2026-09-30
 sources:
   - id: coops-sltrends

@@ -56,10 +56,10 @@ bundle to move to; it is local domain material.
 - [The Roemmich and Gilson grid starts at 64.5S and its global average masks out the marginal seas and the Arctic](gotchas/rg-coverage-excludes-high-latitudes-and-marginal-seas.md), severity medium, status: stable
 - [The Roemmich and Gilson anomalies are departures from a fixed 2004 to 2018 climatology](gotchas/rg-anomaly-against-a-fixed-climatology.md), severity medium, status: stable
 - [PSMSL RLR records are reduced to one station datum and metric records are not](gotchas/psmsl-rlr-versus-metric.md), severity high, status: draft
-- [CO-OPS water levels are heights above a chosen datum on the 1983 to 2001 epoch](gotchas/coops-datum-and-epoch.md), severity medium, status: draft
+- [CO-OPS water levels are heights above a chosen datum on the 1983 to 2001 epoch](gotchas/coops-datum-and-epoch.md), severity medium, status: stable
 - [A tide gauge trend is relative sea level and carries the land's vertical motion](gotchas/tide-gauge-relative-sea-level-and-land-motion.md), severity high, status: draft
-- [The GIA correction at a tide gauge is a model prediction that names its ice and Earth model](gotchas/tide-gauge-gia-is-modelled.md), severity medium, status: draft
-- [A tide gauge trend carries its record length and its gaps](gotchas/tide-gauge-record-length-and-gaps.md), severity medium, status: draft
+- [The GIA correction at a tide gauge is a model prediction that names its ice and Earth model](gotchas/tide-gauge-gia-is-modelled.md), severity medium, status: stable
+- [A tide gauge trend carries its record length and its gaps](gotchas/tide-gauge-record-length-and-gaps.md), severity medium, status: stable
 
 The Roemmich and Gilson high gotcha's eval case,
 rg-sampled-depth-floor, lives in the agent-evals repository under
