@@ -4,6 +4,58 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-14 · SEEDED, status draft: five tide gauge datum and vertical
+  land motion gotchas on the two tide gauge connector concepts
+  (connectors/psmsl-gauges.md and connectors/coops-tides.md; no new
+  dataset concept, and each gotcha's dataset field names the
+  connector concept it qualifies because no dataset concept exists
+  for either service, accepted by design), issue 50.
+  gotchas/psmsl-rlr-versus-metric.md
+  (high; a metric record is the means as received with datum
+  continuity only within a year, an RLR record is reduced to one
+  station datum, and a trend from a metric file carries the datum
+  history silently; eval case psmsl-rlr-versus-metric proposed in
+  agent-evals pull request 16, branch claude/seed-tide-gauge-datums,
+  under ecco/cases); gotchas/coops-datum-and-epoch.md (medium; the
+  datum choice and the 1983 to 2001 National Tidal Datum Epoch, with
+  the 2002 to 2020 epoch due in 2029, the Boston datum collection as
+  the worked offsets; medium because the tool returns the datum in
+  every response so the error is visible);
+  gotchas/tide-gauge-relative-sea-level-and-land-motion.md (high; a
+  gauge series is relative sea level and carries the land motion, and
+  a comparison with altimetry without the land motion stated is
+  silently a comparison of different quantities; eval case
+  tide-gauge-relative-sea-level-and-land-motion proposed in the same
+  agent-evals pull request under ecco/cases);
+  gotchas/tide-gauge-gia-is-modelled.md (medium; the GIA correction
+  is a model prediction named by its ice and Earth model, the PSMSL
+  set being ICE-5G v1.3 VM2 with a 90 km lithosphere from 2012;
+  medium because the trap is a provenance omission, a corrected trend
+  with no model named, rather than a wrong value: the model and the
+  rate applied are recoverable from the analysis that used them, and
+  the uncorrected relative trend is unaffected); and gotchas/tide-gauge-record-length-and-gaps.md (medium; the
+  30-year minimum and the published confidence widths of CO-OPS, the
+  PSMSL padding, missing days and flags). Registration of the two
+  eval cases in the evals repository's manifest is the coordinator's
+  follow-up. Sources read 2026-09-14: psmsl.org (the RLR definition,
+  the help file, the notes on data and formats, the metric-only
+  station list, the referencing page, the ellipsoidal links page, the
+  GIA page and the Peltier GIA data sets page, the Brest station page
+  and its RLR diagram page with the SONEL GNSS rates);
+  tidesandcurrents.noaa.gov (the tidal datums page, the NTDE page and
+  its FAQ, the sea level trends page, its FAQ and the Boston station
+  trend page) and api.tidesandcurrents.noaa.gov (the data API
+  documentation for the datum parameter, the metadata API
+  documentation and the Boston datum collection); api.crossref.org
+  for Holgate and others 2013 (doi 10.2112/JCOASTRES-D-12-00175.1,
+  whose registry record carries no author list, the authors taken
+  from PSMSL's referencing page) and Peltier 2004 (doi
+  10.1146/annurev.earth.32.082503.144359, abstract read there); the
+  publisher pages of both, reached through doi.org, were refused by
+  the drafting environment's proxy and are cited on their registry
+  records. Every claim carries a footnote to one of these; no data
+  file was downloaded. (knowledge-seeder)
+
 - 2026-09-13 · STEWARD SIGNING of
   knowledge/datasets/roemmich-gilson-argo-climatology.md,
   knowledge/gotchas/rg-coverage-excludes-high-latitudes-and-marginal-seas.md,
