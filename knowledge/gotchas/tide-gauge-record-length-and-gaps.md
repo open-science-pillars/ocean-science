@@ -8,7 +8,7 @@ generated: { by: knowledge-seeder/claude, at: 2026-09-14T05:30:00Z }
 severity: medium
 dataset: ../connectors/psmsl-gauges.md
 status: draft
-stale_after: 2027-03-14
+stale_after: 2026-09-30
 sources:
   - id: coops-sltrends
     resource: https://tidesandcurrents.noaa.gov/sltrends/sltrends.html
@@ -31,15 +31,19 @@ sources:
   - id: connector
     resource: ../connectors/psmsl-gauges.md
     title: "This bundle's PSMSL connector concept: the tool drops the minus 99999 sentinel and counts the months dropped"
+  - id: coops-connector
+    resource: ../connectors/coops-tides.md
+    title: "This bundle's CO-OPS connector concept: the station water level record the CO-OPS trends, thresholds and confidence widths belong to, served on a declared datum"
 ---
 
 # A tide gauge trend carries its record length and its gaps
 
-**Mechanism.** CO-OPS computes relative sea level trends at 142
-long-term stations from a minimum span of 30 years of monthly means,
-and its FAQ states that the minimum exists to account for long-term
-sea level variations and to reduce the error of a trend computed from
-monthly means.[^coops-sltrends][^coops-sltrends-faq] The confidence
+**Mechanism.** CO-OPS, whose station records the connector
+serves, computes relative sea level trends at 142 long-term stations
+from a minimum span of 30 years of monthly means, and its FAQ states
+that the minimum exists to account for long-term sea level variations
+and to reduce the error of a trend computed from monthly
+means.[^coops-sltrends][^coops-sltrends-faq][^coops-connector] The confidence
 widths it publishes, from its report on sea level variations of the
 United States from 1854 to 2006, are about plus or minus 1.5 mm per
 year for a 30-year record and plus or minus 0.5 mm per year for a
@@ -89,13 +93,18 @@ fall, the flagged months included or excluded, a 95 percent confidence
 interval as CO-OPS publishes one, and the same window when two
 stations or two products are compared; a record under 30 years yields
 variability rather than a rate in CO-OPS's
-practice.[^coops-sltrends][^coops-sltrends-faq][^psmsl-notes]
+practice.[^coops-sltrends][^coops-sltrends-faq][^coops-connector][^psmsl-notes]
 
 **Verification.** The CO-OPS sea level trends page, its FAQ and the
 station page as rendered for Boston were read on 2026-09-14; the
 confidence widths are quoted from the FAQ, which attributes them to
 NOAA Technical Report NOS CO-OPS 53, not
 read.[^coops-sltrends][^coops-sltrends-faq][^coops-sltrends-station]
+The three CO-OPS trends pages carry a notice that the site retires
+after 2026-09-30 in favour of a site the notice names as Sea Level
+Trends and Extremes, in beta, without a URL in the fetched page, so
+this concept's stale_after is that date and the numbers above are
+to be re-read from the replacement site then.[^coops-sltrends]
 PSMSL's notes page, help file and the Brest station page were read the
 same day.[^psmsl-notes][^psmsl-help][^psmsl-station-brest] No data
 were downloaded and no trend was computed.
@@ -107,3 +116,4 @@ were downloaded and no trend was computed.
 [^psmsl-help]: PSMSL help file psmsl.hel, read 2026-09-14
 [^psmsl-station-brest]: PSMSL station page for Brest (station 1), read 2026-09-14
 [^connector]: This bundle's PSMSL connector concept
+[^coops-connector]: This bundle's CO-OPS connector concept

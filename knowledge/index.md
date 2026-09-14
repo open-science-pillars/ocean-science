@@ -61,14 +61,16 @@ bundle to move to; it is local domain material.
 - [The GIA correction at a tide gauge is a model prediction that names its ice and Earth model](gotchas/tide-gauge-gia-is-modelled.md), severity medium, status: draft
 - [A tide gauge trend carries its record length and its gaps](gotchas/tide-gauge-record-length-and-gaps.md), severity medium, status: draft
 
-The high gotcha's eval case, rg-sampled-depth-floor, lives in the
-agent-evals repository under `ecco/cases/`, the one home of the ocean
-cases, and is registered in the evals repository's ocean-science
-manifest. The tide gauge gotchas qualify the two tide gauge connector
-concepts (PSMSL and CO-OPS) rather than a dataset concept; the eval
-cases of the two high ones, psmsl-rlr-versus-metric and
-tide-gauge-relative-sea-level-and-land-motion, live in the same
-agent-evals directory, and their registration in the evals
+The Roemmich and Gilson high gotcha's eval case,
+rg-sampled-depth-floor, lives in the agent-evals repository under
+`ecco/cases/`, the one home of the ocean cases, and is registered in
+the evals repository's ocean-science manifest. The tide gauge gotchas
+qualify the two tide gauge connector concepts (PSMSL and CO-OPS)
+rather than a dataset concept; the eval cases of the two high ones,
+psmsl-rlr-versus-metric and
+tide-gauge-relative-sea-level-and-land-motion, are proposed for the
+same directory in agent-evals pull request 16 (branch
+claude/seed-tide-gauge-datums), and their registration in the evals
 repository's manifest is a follow-up.
 
 ## connectors (local)

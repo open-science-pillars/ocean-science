@@ -2,7 +2,7 @@
 type: dataset-gotcha
 spheres: [hydrosphere]
 title: "CO-OPS water levels are heights above a chosen datum on the 1983 to 2001 epoch"
-description: "Every CO-OPS water level is a height above the datum named in the request (MLLW, MSL, NAVD88, the station datum and others), and the tidal datums are means over the National Tidal Datum Epoch, at present 1983 through 2001, with a 2002 to 2020 epoch scheduled for release in 2029. At Boston the datums sit 3.53 ft (MLLW), 8.73 ft (MSL) and 9.03 ft (NAVD88) above the station datum, so one water level differs by 5.5 ft between MLLW and NAVD88, and because each tidal datum is local to its station two stations' heights compare only on one datum."
+description: "Every CO-OPS water level is a height above the datum named in the request (MLLW, MSL, NAVD88, the station datum and others), and the tidal datums are means over the National Tidal Datum Epoch, at present 1983 through 2001, with a 2002 to 2020 epoch proposed for release in 2029. At Boston the datums sit 3.53 ft (MLLW), 8.73 ft (MSL) and 9.03 ft (NAVD88) above the station datum, so one water level differs by 5.5 ft between MLLW and NAVD88, and because each tidal datum is local to its station two stations' heights compare only on one datum."
 tags: [coops, tides, water-level, datum, mllw, navd88, station-datum, ntde, epoch]
 generated: { by: knowledge-seeder/claude, at: 2026-09-14T05:30:00Z }
 severity: medium

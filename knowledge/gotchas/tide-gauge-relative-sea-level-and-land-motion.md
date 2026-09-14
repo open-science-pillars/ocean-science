@@ -74,7 +74,7 @@ minus 0.23, minus 1.09 plus or minus 0.41 and minus 1.50 plus or minus
 0.30 mm per year, with RLR datum heights of 44.073 to 44.094 m above
 the ellipsoid at epoch 2020.0.[^psmsl-rlr-diagram-brest] The spread
 between the solutions on one receiver exceeds the stated uncertainty
-of each. Glacial isostatic adjustment is one contributor to the land
+of each.[^psmsl-rlr-diagram-brest] Glacial isostatic adjustment is one contributor to the land
 motion and a modelled correction of its own, and a GNSS rate removes
 the crustal motion at the gauge only: PSMSL notes that GIA also changes
 the sea surface, so a correction for crustal motion removes only part
@@ -113,8 +113,9 @@ read on 2026-09-14; the four Brest GNSS rates are as printed on the
 RLR diagram page, which attributes them to SONEL, whose site was not
 visited.[^psmsl-ellipsoid][^psmsl-gia][^psmsl-station-brest][^psmsl-rlr-diagram-brest][^coops-sltrends][^coops-sltrends-faq][^coops-sltrends-station]
 The CO-OPS sea level trends site announces its own retirement after
-2026-09-30 in favour of a new site, so the CO-OPS URLs cited are
-dated.[^coops-sltrends] No data were downloaded.
+2026-09-30 in favour of a site the notice names as Sea Level Trends
+and Extremes, in beta, without a URL in the fetched page, so the
+CO-OPS trends URLs cited are dated.[^coops-sltrends] No data were downloaded.
 
 [^psmsl-ellipsoid]: PSMSL, ellipsoidal links for RLR data, read 2026-09-14
 [^psmsl-rlr-diagram-brest]: PSMSL RLR diagram page for Brest, read 2026-09-14

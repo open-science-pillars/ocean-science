@@ -7,11 +7,15 @@ _Historical note: older entries use build-era shorthand (a "close lint" is a kno
 - 2026-09-14 · SEEDED, status draft: five tide gauge datum and vertical
   land motion gotchas on the two tide gauge connector concepts
   (connectors/psmsl-gauges.md and connectors/coops-tides.md; no new
-  dataset concept), issue 50. gotchas/psmsl-rlr-versus-metric.md
+  dataset concept, and each gotcha's dataset field names the
+  connector concept it qualifies because no dataset concept exists
+  for either service, accepted by design), issue 50.
+  gotchas/psmsl-rlr-versus-metric.md
   (high; a metric record is the means as received with datum
   continuity only within a year, an RLR record is reduced to one
   station datum, and a trend from a metric file carries the datum
-  history silently; eval case psmsl-rlr-versus-metric in agent-evals
+  history silently; eval case psmsl-rlr-versus-metric proposed in
+  agent-evals pull request 16, branch claude/seed-tide-gauge-datums,
   under ecco/cases); gotchas/coops-datum-and-epoch.md (medium; the
   datum choice and the 1983 to 2001 National Tidal Datum Epoch, with
   the 2002 to 2020 epoch due in 2029, the Boston datum collection as
@@ -21,11 +25,15 @@ _Historical note: older entries use build-era shorthand (a "close lint" is a kno
   gauge series is relative sea level and carries the land motion, and
   a comparison with altimetry without the land motion stated is
   silently a comparison of different quantities; eval case
-  tide-gauge-relative-sea-level-and-land-motion in agent-evals under
-  ecco/cases); gotchas/tide-gauge-gia-is-modelled.md (medium; the GIA
-  correction is a model prediction named by its ice and Earth model,
-  the PSMSL set being ICE-5G v1.3 VM2 with a 90 km lithosphere from
-  2012); and gotchas/tide-gauge-record-length-and-gaps.md (medium; the
+  tide-gauge-relative-sea-level-and-land-motion proposed in the same
+  agent-evals pull request under ecco/cases);
+  gotchas/tide-gauge-gia-is-modelled.md (medium; the GIA correction
+  is a model prediction named by its ice and Earth model, the PSMSL
+  set being ICE-5G v1.3 VM2 with a 90 km lithosphere from 2012;
+  medium because the trap is a provenance omission, a corrected trend
+  with no model named, rather than a wrong value: the model and the
+  rate applied are recoverable from the analysis that used them, and
+  the uncorrected relative trend is unaffected); and gotchas/tide-gauge-record-length-and-gaps.md (medium; the
   30-year minimum and the published confidence widths of CO-OPS, the
   PSMSL padding, missing days and flags). Registration of the two
   eval cases in the evals repository's manifest is the coordinator's

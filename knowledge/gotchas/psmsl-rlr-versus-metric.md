@@ -13,10 +13,10 @@ stale_after: 2027-03-14
 sources:
   - id: psmsl-rlr
     resource: https://psmsl.org/data/obtaining/rlr.php
-    title: "PSMSL, Revised Local Reference (RLR) definition (read 2026-09-14): the reduction to a common datum from the supplied datum history, the 7000 mm convention, the two thirds of stations that are RLR, the statement that metric records are not for time series or secular trends, and the German and Netherlands exceptions"
+    title: "PSMSL, Revised Local Reference (RLR) definition (read 2026-09-14): the reduction to a common datum from the supplied datum history, the 7000 mm convention and its stated motive of avoiding negative numbers, the two thirds of stations that are RLR, the statement that metric records are not for time series or secular trends, and the German and Netherlands exceptions"
   - id: psmsl-help
     resource: https://psmsl.org/data/obtaining/psmsl.hel
-    title: "PSMSL help file (read 2026-09-14): the metric file as the raw data as received with datum continuity required within a year only, separate RLR records where benchmark datums cannot be connected, mixed MTL and MSL records with differences over 10 cm, the 010 and 011 flags, and the correction applied in RLR but not in metric files"
+    title: "PSMSL help file (read 2026-09-14): the metric file as the raw data as received with datum continuity required within a year only, separate RLR records where benchmark datums cannot be connected and the few pairs listed as combinable into composites, mixed MTL and MSL records with differences over 10 cm, the 010 and 011 flags, and the correction applied in RLR but not in metric files"
   - id: psmsl-notes
     resource: https://psmsl.org/data/obtaining/notes.php
     title: "PSMSL notes on data and formats (read 2026-09-14): the three files of an RLR station and the one file of a metric-only station, the monthly file columns, the minus 99999 padding and the flag for attention"
@@ -51,9 +51,10 @@ supplying authority.[^psmsl-help] To build a time series PSMSL reduces
 the means to a common datum using the tide gauge datum history the
 authority provides; about two thirds of the stations have been
 adjusted this way and form the RLR dataset, whose datum at each
-station is defined about 7000 mm below mean sea level so that the
-values stay positive, and a record without a full benchmark datum
-history stays metric only.[^psmsl-rlr] The reduction is an offset per
+station is defined about 7000 mm below mean sea level, an arbitrary
+choice the page says was made many years ago to avoid negative
+numbers in the RLR monthly and annual means, and a record without a
+full benchmark datum history stays metric only.[^psmsl-rlr] The reduction is an offset per
 period of the datum history: the Brest RLR diagram adds 2.459 m to the
 values from 1807 to 1835 and 2.959 m to the values from 1846 onwards
 to refer them to RLR, which lies 12.500 m below the primary benchmark
@@ -97,8 +98,9 @@ read.[^psmsl-rlr]
 RLR series, read from the RLR monthly or annual path, and the record's
 status (RLR, or metric only) is stated beside the trend; a metric-only
 station contributes a seasonal cycle and no trend; a station with more
-than one RLR record is one record per fit unless PSMSL's documentation
-names the pair as a composite; the flag column is read, and the months
+than one RLR record is one record per fit, except for the small number
+of pairs the help file lists as combinable into composites with the
+station documentation read; the flag column is read, and the months
 flagged 011, an MTL value whose correction PSMSL calls uncertain beyond
 1 cm, are outside a long-term trend as PSMSL
 recommends.[^psmsl-help][^psmsl-notes] The RLR values are heights above
@@ -110,7 +112,9 @@ and metric station list were read on 2026-09-14, as were the Brest
 station page (station 1, 1807 to 2025) and its RLR diagram page with
 the two RLR
 offsets.[^psmsl-rlr][^psmsl-help][^psmsl-notes][^psmsl-metric-list][^psmsl-station-brest][^psmsl-rlr-diagram-brest]
-The data description paper, Holgate and others 2013, is cited through
+The RLR definition page gives one motive for the 7000 mm offset, the
+avoidance of negative numbers, and no other.[^psmsl-rlr] The data
+description paper, Holgate and others 2013, is cited through
 its registry record: Crossref places it in the Journal of Coastal
 Research, volume 29, issue 3, first page 493, with a registry date of
 2012-12-18 and no author list; the ten authors and the page range 493
