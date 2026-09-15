@@ -4,6 +4,58 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-15 · SEEDED, status draft: the regional sea level trend
+  recipe and two gotchas for issue 55.
+  recipes/regional-sea-level-trend.md (the NASA-SSH altimetry trend
+  in a box against the coast, the GIA correction named with its model
+  and with the right one of its two rates applied to each quantity,
+  the land motion at the gauge from gnss_vertical_velocity with its
+  frame beside the SONEL solutions PSMSL prints and the laboratory's
+  own tide gauge estimate, the PSMSL RLR relative trend over the same
+  window, the identity geocentric equals relative plus uplift with a
+  residual read against the combined uncertainty and the two
+  differences of place; the Brest land motion term worked from the
+  printed values, no trend computed for any site);
+  gotchas/coastal-heights-ellipsoidal-versus-orthometric.md (high; a
+  GNSS height is above the ellipsoid, a gauge series is above a local
+  or orthometric datum and an SSHA is an anomaly against a mean sea
+  surface, three surfaces tens of metres apart at one site, with
+  nothing in the files naming the surface; eval case
+  coastal-heights-ellipsoidal-versus-orthometric proposed in
+  agent-evals on branch claude/r3-regional-sea-level under
+  ecco/cases; qualifies the PSMSL connector);
+  gotchas/velocity-reference-frame.md (medium; a vertical velocity is
+  a number in a frame, IGS20, IGS14, ITRF2014 or a plate frame, and a
+  difference across frames or solutions reads the frame as land
+  motion; medium because the tool returns the frame with every answer
+  and the recorded difference between the IGS14 and IGS20 tables at
+  one station, which mixes the frame with two more years of data,
+  sits below the stated uncertainty, so the trap is a recoverable provenance
+  omission; qualifies the GNSS vertical velocity connector). The
+  connector concept for the tool (connectors/gnss-vertical-velocity.md,
+  merged in PR 57) and the five tide gauge gotchas are linked, not
+  repeated. Registration of the eval case in the evals repository's
+  manifest is the coordinator's follow-up. Sources read 2026-09-15:
+  geodesy.unr.edu (the home page, the vertical land motion at tide gauges page and its README, the
+  GipsyX-2.3/IGS20 analysis strategy summary, the MIDAS README, the
+  velocities directory README, the BRST station page, and from the laboratory's publications directory Blewitt 2004
+  in full, the abstract and introduction of Blewitt 2003 and sections
+  1 to 3 and 5 of Hammond and others 2021); psmsl.org (the ellipsoidal
+  links page, the Brest RLR diagram page, the GIA page and the Peltier
+  GIA data sets page; the ellipsoidal station list page returned not
+  found); podaac.jpl.nasa.gov (the NASA_SSH_REF_SIMPLE_GRID_V11 dataset
+  page) and the NASA-SSH V1.1 User Guide it links on
+  archive.podaac.earthdata.nasa.gov, read anonymously through the
+  signed redirect; api.crossref.org for Blewitt, Hammond and Kreemer
+  2018 (doi 10.1029/2018EO104623), Hammond and others 2021 (doi
+  10.1029/2021JB022355) and Peltier 2004 (doi
+  10.1146/annurev.earth.32.082503.144359), whose publisher page was
+  not fetched. Read and not cited by any new concept: the reference
+  frames page and the tenv3 README on geodesy.unr.edu, and the
+  Crossref record of Blewitt and others 2016 (doi
+  10.1002/2015JB012552). The CO-OPS facts are taken from this bundle's signed
+  CO-OPS gotchas and not re-read. Every claim carries a footnote to
+  one of these; no data file was downloaded. (knowledge-seeder)
 - 2026-09-15 · STEWARD SIGNING of
   knowledge/connectors/gnss-vertical-velocity.md: Maintainer review of
   the GNSS vertical velocity connector concept for the observations
