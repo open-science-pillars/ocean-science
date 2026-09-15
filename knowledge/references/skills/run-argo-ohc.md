@@ -99,7 +99,11 @@ carries `anchor.ohc-DEPTH` (a published rate in watts per square meter
 of the Earth's surface with its uncertainty, period, ocean-area
 fraction and source), the receipt states the run's distance from it.
 The receipt copies the stamp, the two file digests and the record's
-digest.
+digest, and records the tree's path relative to this package when the
+tree sits under it (absolute otherwise). The receipt's `run_id`
+digests the receipt without its timestamp, so it is bound to the
+runtime name and to that recorded path: the same runtime name on the
+committed root reproduces the id on any machine.
 
 The loader, from a cache of the product files outside the tree:
 
@@ -127,7 +131,15 @@ uv run knowledge/references/computations/argo_ohc.py \
 ```bash
 uv run knowledge/references/attesters/argo_ohc_check.py /tmp/argo-ohc-receipt.json \
   [--out /tmp/attestation.json]
+uv run knowledge/references/attesters/argo_ohc_check.py /tmp/argo-ohc-record.json \
+  --data-root knowledge/references/retrieval/argo-ohc-root [--out /tmp/attestation.json]
 ```
+
+A data-root receipt is attested with `--data-root DIR`: the attester
+rehashes RECORD.json, the CSV and the stamp in that tree against the
+receipt's digests and reproduces a refusal from the tree's stamp and
+series. Without the tree the digests are reported as not verified,
+and a data-root refusal is taken on the executor's word and fails.
 
 PASS requires every declared field, the sanctioned code hash, this
 repository's package name, version and release lock digest in the

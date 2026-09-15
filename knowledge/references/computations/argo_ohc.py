@@ -29,7 +29,11 @@ carries four terms and a residual:
                    width times the same span;
   endpoint_change  the same change read directly: the mean of the last
                    twelve months minus the mean of the first twelve,
-                   its uncertainty from the per-month floor;
+                   its uncertainty from the per-month floor with the
+                   variance of each twelve-month mean inflated by
+                   (1 + r1) over (1 - r1), r1 the lag-1 autocorrelation
+                   of the trend's residuals, so the floor's white noise
+                   is not the whole statement;
   deep_omission    the ocean below 2000 dbar, which the product does
                    not sample and this term does not carry: a stated
                    omission with the published rate and its source,
@@ -62,7 +66,11 @@ than 24 months, or fewer than 12 in either end year, in the window
 (too-few-months), or a trend whose interval cannot be stated
 (interval-not-stated).
 
-Consumers bind values for the declared parameters and MUST NOT edit
+The receipt's run_id digests the receipt without its timestamp, so
+it is bound to the runtime name and, on a data root, to the tree's
+path as recorded: package-relative when the tree sits under this
+package, so a record run reproduces its id on any machine. Consumers
+bind values for the declared parameters and MUST NOT edit
 this file; the attester hashes it, regenerates the fixture at the
 receipt's seed, and recomputes every number from the series in the
 receipt.
@@ -260,7 +268,18 @@ def read_data_root(root: Path, depth: int) -> dict:
         files[p.name] = digest
     stamp = json.loads(stamp_path.read_text(encoding="utf-8"))
     return {"series": read_csv_series(csv_path), "record": record, "stamp": stamp,
-            "files": files, "record_sha256": sha256_file(record_path), "data_root": str(root)}
+            "files": files, "record_sha256": sha256_file(record_path), "data_root": tree_label(root)}
+
+
+def tree_label(root: Path) -> str:
+    """The data root as the receipt records it: relative to the package
+    this executor ships in when the tree sits under it (so the run id
+    reproduces on any machine), else absolute."""
+    pkg = package_root(HERE)
+    try:
+        return root.resolve().relative_to(pkg.resolve()).as_posix() if pkg else str(root)
+    except ValueError:
+        return str(root)
 
 
 # ---- Student's t, written from the definition
@@ -491,8 +510,9 @@ def compute(series: dict, start: str, end: str, depth: int, bookkeeping: dict, a
     m_first = sum(by[d][0] for d in first_year) / END_MONTHS
     m_last = sum(by[d][0] for d in last_year) / END_MONTHS
     end_change = m_last - m_first
-    end_unc = Z95 * math.sqrt(sum(by[d][1] ** 2 for d in first_year) / END_MONTHS ** 2
-                              + sum(by[d][1] ** 2 for d in last_year) / END_MONTHS ** 2)
+    inflation = max(1.0, (1.0 + block["r1"]) / (1.0 - block["r1"]))
+    end_unc = Z95 * math.sqrt(inflation * (sum(by[d][1] ** 2 for d in first_year) / END_MONTHS ** 2
+                                           + sum(by[d][1] ** 2 for d in last_year) / END_MONTHS ** 2))
     residual = end_change - change
     combined = math.sqrt(change_unc ** 2 + end_unc ** 2)
     consistent = abs(residual) <= combined
@@ -525,9 +545,13 @@ def compute(series: dict, start: str, end: str, depth: int, bookkeeping: dict, a
                        "stamp": stamp_name},
             "endpoint_change": {"value": end_change, "units": "ZJ", "uncertainty": end_unc,
                                 "first_year_mean_ZJ": m_first, "last_year_mean_ZJ": m_last,
+                                "autocorrelation_inflation": inflation,
                                 "uncertainty_basis": "95 percent, the per-month uncertainties "
                                                      "of the two twelve-month means in "
-                                                     "quadrature",
+                                                     "quadrature, each mean's variance "
+                                                     "inflated by (1 + r1) over (1 - r1) "
+                                                     "with r1 the lag-1 autocorrelation of "
+                                                     "the trend's residuals (never below 1)",
                                 "stamp": stamp_name},
             "deep_omission": {"value": None, "units": "ZJ/year", "uncertainty": None,
                               "omitted": True, "published": dict(DEEP_OMISSION),

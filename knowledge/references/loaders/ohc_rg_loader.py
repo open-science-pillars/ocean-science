@@ -25,8 +25,9 @@ What it computes, per calendar month from 2004-01 onward:
      TEOS-10 constant 3991.86795711963 J per kg per K. Layer
      thicknesses come from the midpoints between pressure levels, the
      top layer from 0 dbar and the bottom layer to the layer floor
-     (700 or 2000 dbar), converted to height with gsw.z_from_p at the
-     cell's latitude.
+     (700 or 2000 dbar; for the 2000 dbar layer the deepest level,
+     1975 dbar, is extended down to the floor), converted to height
+     with gsw.z_from_p at the cell's latitude.
   3. The sum over the cells that carry a value at all 58 levels in
      every month of the record (one fixed open-ocean mask, so a cell
      dropping out cannot move the sum; it is the set of columns mapped
@@ -314,7 +315,9 @@ def run(rg_dir: Path, out_dir: Path, start: str | None, end: str | None, downloa
             "layer": {"top_dbar": 0.0, "floor_dbar": floor,
                       "statement": f"0 to {floor:.0f} dbar; the RG levels at or above the floor, "
                                    "each level's layer bounded by the midpoints to its neighbours, "
-                                   "the top from 0 dbar, the bottom cut at the floor"},
+                                   "the top from 0 dbar, the bottom cut at the floor"
+                                   + (", and the deepest level (1975 dbar) extended down to the "
+                                      "2000 dbar floor" if floor > p.max() else "")},
             "product": "Roemmich and Gilson gridded Argo climatology, 2019 release, "
                        "2004 to 2018 mean plus monthly anomalies and extension files "
                        "(sio-argo.ucsd.edu/RG_Climatology.html)",

@@ -51,10 +51,15 @@ def _():
         receipt = json.loads(out.read_text()) if out.is_file() else None
         return p.returncode, p.stdout, p.stderr, receipt, out
 
-    def attest(receipt_path):
+    def attest(receipt_path, tree=None):
+        # A data-root receipt is attested against the tree, so the
+        # record, the CSV and the stamp are rehashed and a refusal is
+        # reproduced from the tree rather than taken on the executor's word.
         att = tmp / (receipt_path.stem + "-attestation.json")
-        p = subprocess.run(["uv", "run", str(attester), str(receipt_path), "--out", str(att)],
-                           capture_output=True, text=True, cwd=root)
+        cmd = ["uv", "run", str(attester), str(receipt_path), "--out", str(att)]
+        if tree is not None:
+            cmd += ["--data-root", str(tree)]
+        p = subprocess.run(cmd, capture_output=True, text=True, cwd=root)
         doc = json.loads(att.read_text()) if att.is_file() else {}
         return p.returncode, p.stdout, p.stderr, doc
 
@@ -157,13 +162,25 @@ def _(attest, compute, data_root, json):
     assert abs(r2000["terms"]["trend"]["per_area"]["W_m2_of_earth_surface"] - 0.60053) < 0.0001
     assert abs(r2000["anchor"]["distance_W_m2_of_earth_surface"] - -0.01947) < 0.0001
     assert r2000["known_truth"] is None
-    _rc, _o, _e, _doc = attest(r2000_path)
+    assert r2000["data"]["data_root"] == "knowledge/references/retrieval/argo-ohc-root"
+    _rc, _o, _e, _doc = attest(r2000_path, data_root)
     assert _rc == 0 and _doc["verdict"] == "PASS" and _doc["refusal"] is False, _o + _e
+    assert "verified against the tree" in next(c["detail"] for c in _doc["checks"] if c["name"] == "data")
+    # without the tree the digests are not verified, and a receipt whose
+    # file digest was forged passes only until the tree is given
+    _rc, _o, _e, _doc = attest(r2000_path)
+    assert _rc == 0 and "NOT verified" in next(c["detail"] for c in _doc["checks"] if c["name"] == "data")
+    _forged = json.loads(r2000_path.read_text())
+    _forged["data"]["files"]["ohc-2000.csv"] = "sha256:" + "1" * 64
+    _forged_path = r2000_path.with_name("forged-record.json")
+    _forged_path.write_text(json.dumps(_forged, indent=2) + "\n")
+    _rc, _o, _e, _doc = attest(_forged_path, data_root)
+    assert _rc == 1 and "FAIL data" in _o, _o
     return
 
 
 @app.cell
-def _(attest, compute):
+def _(attest, compute, data_root):
     # 6. The same window for 0 to 700 dbar, and the record's refusal of
     #    a window past its coverage.
     _code, _out, _err, r700, r700_path = compute("2006-01:2020-12", 700, "record-700", fixture=False)
@@ -172,12 +189,15 @@ def _(attest, compute):
     assert abs(r700["terms"]["trend"]["interval"]["half_width"] - 0.9582) < 0.001
     assert abs(r700["terms"]["change"]["value"] - 83.2973) < 0.001
     assert abs(r700["anchor"]["distance_W_m2_of_earth_surface"] - -0.02036) < 0.0001
-    _rc, _o, _e, _doc = attest(r700_path)
+    _rc, _o, _e, _doc = attest(r700_path, data_root)
     assert _rc == 0 and _doc["verdict"] == "PASS", _o + _e
     _code, _out, _err, rr, rr_path = compute("2010-01:2030-12", 700, "record-refusal", fixture=False)
     assert _code == 3 and rr["reason_code"] == "window-outside-coverage", _err
-    _rc, _o, _e, _doc = attest(rr_path)
+    _rc, _o, _e, _doc = attest(rr_path, data_root)
     assert _rc == 0 and _doc["refusal"] is True and "PASS refusal" in _o
+    # a data-root refusal with no tree is taken on the executor's word and fails
+    _rc, _o, _e, _doc = attest(rr_path)
+    assert _rc == 1 and "FAIL refusal" in _o, _o
     return
 
 

@@ -22,7 +22,10 @@ or `FAIL name: reason`:
                depth hashes to the receipt's digest, and the generator
                (the executor itself) to the receipt's generator digest;
                for a data root, the record name, the record's digest,
-               the two files read and the stamp are present;
+               the two files read and the stamp are present, and with
+               --data-root DIR the record, the CSV and the stamp in
+               that tree hash to the receipt's digests (without the
+               tree the check says the digests were not verified);
   series       the months used and missing partition the window, and on
                a fixture the values and uncertainties are what the
                regenerated fixture yields (1e-9);
@@ -46,16 +49,19 @@ or `FAIL name: reason`:
 
 A refusal receipt (refused true) attests PASS only as a refusal: the
 identity checks hold, the reason code is one the executor issues, and
-the refusal is reproduced here from the window and the record's
-coverage (or the regenerated fixture). The verdict line then reads
-`PASS refusal`, and the exit is 0.
+the refusal is reproduced here from the window and the regenerated
+fixture, or from the tree --data-root names (its stamp's coverage,
+its CSV's months, or the executor's own compute on its series). A
+data-root refusal with no tree given is taken on the executor's word
+and is not reproduced, so it FAILS. The verdict line of a reproduced
+refusal reads `PASS refusal`, and the exit is 0.
 
 --out writes the attestation: the verdict, whether it is a refusal, the
 attester's and the computation's digests, the receipt's digest and run
 id, the capability, bundle and runtime blocks copied from the receipt,
 and every check.
 
-  argo_ohc_check.py RECEIPT.json [--computation PATH] [--out ATTESTATION.json]
+  argo_ohc_check.py RECEIPT.json [--computation PATH] [--data-root DIR] [--out ATTESTATION.json]
   argo_ohc_check.py --selftest
 """
 
@@ -229,9 +235,12 @@ def check_interval(block, c):
 
 # ---- the attestation
 
-def attest(receipt_path: Path, computation: Path):
-    """(verdict, refusal, checks, receipt) for one receipt."""
+def attest(receipt_path: Path, computation: Path, data_root=None):
+    """(verdict, refusal, checks, receipt) for one receipt; data_root
+    is the tree a data-root receipt is verified against, when given."""
     checks = []
+    tree = Path(data_root).expanduser().resolve() if data_root else None
+    tree_series = None
 
     def check(name, ok, detail):
         checks.append({"name": name, "ok": bool(ok), "detail": detail})
@@ -305,8 +314,43 @@ def attest(receipt_path: Path, computation: Path):
               and len(stamp["months"]) == 2)
         if ok:
             coverage = (stamp["months"][0], stamp["months"][1])
-        check("data", ok, f"data root {data.get('data_root')} record {data.get('record')} "
-                          f"({data.get('record_sha256')})")
+        detail = f"data root {data.get('data_root')} record {data.get('record')} ({data.get('record_sha256')})"
+        if ok and tree is not None:
+            problems = []
+            rec_path = tree / "RECORD.json"
+            if not rec_path.is_file():
+                problems.append(f"{tree} carries no RECORD.json")
+            else:
+                if sha256_file(rec_path) != data["record_sha256"]:
+                    problems.append("RECORD.json in the tree does not hash to the receipt's record_sha256")
+                try:
+                    rec = json.loads(rec_path.read_text(encoding="utf-8"))
+                    if rec.get("record") != data["record"] or rec.get("manifest_sha256") != data["manifest_sha256"]:
+                        problems.append("the tree's record name or manifest digest differs from the receipt's")
+                except ValueError:
+                    problems.append("RECORD.json in the tree is not JSON")
+            for name, digest in files.items():
+                fp = tree / name
+                if not fp.is_file():
+                    problems.append(f"{name} is missing from the tree")
+                elif sha256_file(fp) != digest:
+                    problems.append(f"{name} in the tree does not hash to the receipt's digest")
+            stamp_path = tree / f"ohc-{depth}-stamp.json"
+            if stamp_path.is_file():
+                try:
+                    if json.loads(stamp_path.read_text(encoding="utf-8")) != stamp:
+                        problems.append("the stamp copied into the receipt differs from the tree's")
+                except ValueError:
+                    problems.append("the tree's stamp is not JSON")
+            csv_path = tree / f"ohc-{depth}.csv"
+            if csv_path.is_file() and not problems:
+                tree_series = mod.read_csv_series(csv_path)
+            ok = not problems
+            detail += ("; verified against the tree: RECORD.json, the CSV and the stamp hash to the "
+                       "receipt's digests" if ok else "; " + "; ".join(problems))
+        elif ok:
+            detail += "; digests well formed but NOT verified against a tree (give --data-root)"
+        check("data", ok, detail)
     else:
         check("data", False, f"data mode {data.get('mode')!r} is neither fixture nor data-root")
 
@@ -314,34 +358,33 @@ def attest(receipt_path: Path, computation: Path):
         code = r.get("reason_code")
         recognized = code in mod.REASONS
         reproduced, why = False, "reason not reproduced"
-        if recognized and start and coverage:
+        series_for = fx["series"] if fx else tree_series
+        if recognized and start and coverage and data.get("mode") == "data-root" and tree is None:
+            why = ("a data-root refusal is taken on the executor's word and not reproduced: "
+                   "give --data-root to reproduce it from the tree")
+        elif recognized and start and coverage:
             if code == "window-outside-coverage":
                 reproduced = not (ym(coverage[0]) <= ym(start) and ym(end) <= ym(coverage[1]))
                 why = f"the window {window} leaves {coverage[0]}..{coverage[1]}: {reproduced}"
-            elif code == "too-few-months":
+            elif code == "too-few-months" and series_for:
                 n_cal = ym(end) - ym(start) + 1
-                if fx:
-                    have = set(fx["series"]["dates"])
-                    cal = [label(k) for k in range(ym(start), ym(end) + 1)]
-                    used = [d for d in cal if d in have]
-                    first = sum(d in have for d in cal[:mod.END_MONTHS])
-                    last = sum(d in have for d in cal[-mod.END_MONTHS:])
-                    reproduced = (n_cal < mod.MIN_MONTHS or len(used) < mod.MIN_MONTHS
-                                  or first < mod.END_MONTHS or last < mod.END_MONTHS)
-                    why = (f"{len(used)} of {n_cal} months, first year {first}, last year {last}, "
-                           f"floor {mod.MIN_MONTHS}: {reproduced}")
-                else:
-                    reproduced = n_cal < mod.MIN_MONTHS or True
-                    why = (f"{n_cal} calendar months against a floor of {mod.MIN_MONTHS}; a data-root "
-                           "hole count is taken on the executor's word")
-            elif code == "interval-not-stated" and fx:
-                body, again = mod.compute(fx["series"], start, end, depth,
-                                          mod.FIXTURE_BOOKKEEPING, None)
+                have = set(series_for["dates"])
+                cal = [label(k) for k in range(ym(start), ym(end) + 1)]
+                used = [d for d in cal if d in have]
+                first = sum(d in have for d in cal[:mod.END_MONTHS])
+                last = sum(d in have for d in cal[-mod.END_MONTHS:])
+                reproduced = (n_cal < mod.MIN_MONTHS or len(used) < mod.MIN_MONTHS
+                              or first < mod.END_MONTHS or last < mod.END_MONTHS)
+                why = (f"{len(used)} of {n_cal} months, first year {first}, last year {last}, "
+                       f"floor {mod.MIN_MONTHS}: {reproduced}")
+            elif code == "interval-not-stated" and series_for:
+                book = mod.FIXTURE_BOOKKEEPING if fx else (json.loads((tree / "RECORD.json").read_text(
+                    encoding="utf-8")).get("bookkeeping") or {})
+                body, again = mod.compute(series_for, start, end, depth, book, None)
                 reproduced = body is None and again[0] == code
                 why = f"the executor's compute refuses the same way: {reproduced}"
             else:
-                reproduced = True
-                why = "a data-root interval refusal cannot be reproduced without the tree"
+                why = "the series to reproduce the refusal from is not available"
         check("refusal", recognized and reproduced,
               f"reason_code {code!r} {'recognized' if recognized else 'unknown'}; {why}")
         verdict = "PASS" if all(c["ok"] for c in checks) else "FAIL"
@@ -400,8 +443,9 @@ def attest(receipt_path: Path, computation: Path):
             m_first = sum(by[d][0] for d in first) / mod.END_MONTHS
             m_last = sum(by[d][0] for d in last) / mod.END_MONTHS
             end_change = m_last - m_first
-            end_unc = Z95 * math.sqrt(sum(by[d][1] ** 2 for d in first) / mod.END_MONTHS ** 2
-                                      + sum(by[d][1] ** 2 for d in last) / mod.END_MONTHS ** 2)
+            inflation = max(1.0, (1.0 + c["r1"]) / (1.0 - c["r1"]))
+            end_unc = Z95 * math.sqrt(inflation * (sum(by[d][1] ** 2 for d in first) / mod.END_MONTHS ** 2
+                                                   + sum(by[d][1] ** 2 for d in last) / mod.END_MONTHS ** 2))
             residual = end_change - change
             combined = math.sqrt(change_unc ** 2 + end_unc ** 2)
             ch = terms.get("change") if isinstance(terms.get("change"), dict) else {}
@@ -413,6 +457,7 @@ def attest(receipt_path: Path, computation: Path):
                     ("terms.change.span_years", ch.get("span_years"), span),
                     ("terms.endpoint_change.value", ec.get("value"), end_change),
                     ("terms.endpoint_change.uncertainty", ec.get("uncertainty"), end_unc),
+                    ("terms.endpoint_change.autocorrelation_inflation", ec.get("autocorrelation_inflation"), inflation),
                     ("terms.endpoint_change.first_year_mean_ZJ", ec.get("first_year_mean_ZJ"), m_first),
                     ("terms.endpoint_change.last_year_mean_ZJ", ec.get("last_year_mean_ZJ"), m_last),
                     ("residual.value", (r.get("residual") or {}).get("value"), residual),
@@ -575,12 +620,12 @@ def selftest(computation: Path) -> int:
         with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
             return mod.main([*argv, "--runtime", "selftest", "--receipt", str(path)])
 
-    def verdict_of(path, comp=None):
-        v, refusal, checks, _ = attest(path, comp or computation)
+    def verdict_of(path, comp=None, tree=None):
+        v, refusal, checks, _ = attest(path, comp or computation, tree)
         return v, refusal, [c["name"] for c in checks if not c["ok"]]
 
-    def first_fail(path, comp=None):
-        v, _, failed = verdict_of(path, comp)
+    def first_fail(path, comp=None, tree=None):
+        v, _, failed = verdict_of(path, comp, tree)
         return failed[0] if v == "FAIL" and failed else None
 
     def tampered(src: Path, dst: Path, edit):
@@ -673,15 +718,34 @@ def selftest(computation: Path) -> int:
         (root / "RECORD.json").write_text(json.dumps(record, indent=2) + "\n", encoding="utf-8")
         dr = w / "dataroot.json"
         assert run(["--data-root", str(root), "--window", "2005-01:2016-12", "--depth", "2000"], dr) == 0
-        v, refusal, checks, r = attest(dr, computation)
+        v, refusal, checks, r = attest(dr, computation, root)
         assert (v, refusal) == ("PASS", False), checks
+        assert "verified against the tree" in checks[4]["detail"]
+        v, refusal, checks, r = attest(dr, computation)
+        assert (v, refusal) == ("PASS", False) and "NOT verified" in checks[4]["detail"], checks
         assert r["anchor"]["distance_over_anchor_uncertainty"] is not None
         assert abs(r["terms"]["trend"]["value"] - json.loads(ref.read_text())["terms"]["trend"]["value"]) < 1e-5
         t11 = tampered(dr, w / "t11.json", lambda r: r["anchor"].__setitem__("distance_W_m2_of_earth_surface", 0.0))
         assert first_fail(t11) == "recompute", verdict_of(t11)
+        # a fabricated but self-consistent data-root receipt fails against the tree
+        t12 = tampered(dr, w / "t12.json", lambda r: r["data"]["files"].__setitem__("ohc-2000.csv", "sha256:" + "1" * 64))
+        assert verdict_of(t12)[0] == "PASS" and first_fail(t12, tree=root) == "data", verdict_of(t12, tree=root)
+        t13 = tampered(dr, w / "t13.json", lambda r: r["data"].__setitem__("record_sha256", "sha256:" + "2" * 64))
+        assert first_fail(t13, tree=root) == "data", verdict_of(t13, tree=root)
+        t14 = tampered(dr, w / "t14.json", lambda r: r["data"]["stamp"].__setitem__("months", ["2004-01", "2024-12"]))
+        assert first_fail(t14, tree=root) == "data", verdict_of(t14, tree=root)
+        # data-root refusals reproduce only against the tree
         drr = w / "dataroot-refused.json"
         assert run(["--data-root", str(root), "--window", "2015-01:2030-12", "--depth", "2000"], drr) == 3
-        assert verdict_of(drr) == ("PASS", True, []), verdict_of(drr)
+        assert verdict_of(drr, tree=root) == ("PASS", True, []), verdict_of(drr, tree=root)
+        assert verdict_of(drr)[2] == ["refusal"], verdict_of(drr)
+        drf = w / "dataroot-toofew.json"
+        assert run(["--data-root", str(root), "--window", "2010-01:2010-12", "--depth", "2000"], drf) == 3
+        v, refusal, checks, r = attest(drf, computation, root)
+        assert (v, refusal) == ("PASS", True) and r["reason_code"] == "too-few-months", checks
+        assert verdict_of(drf)[2] == ["refusal"], verdict_of(drf)
+        forged_dr = tampered(drf, w / "forged-dr.json", lambda r: r["bound_parameters"].__setitem__("window", "2005-01:2016-12"))
+        assert verdict_of(forged_dr, tree=root)[2] == ["refusal"], verdict_of(forged_dr, tree=root)
         # an edited tree is not computed on
         (root / "ohc-2000.csv").write_text("\n".join(rows[:-1]) + "\n", encoding="utf-8")
         try:
@@ -704,6 +768,9 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("receipt", nargs="?", type=Path)
     ap.add_argument("--computation", type=Path, default=DEFAULT_COMPUTATION)
+    ap.add_argument("--data-root", type=Path, default=None,
+                    help="the tree a data-root receipt is verified against (RECORD.json, the CSV "
+                         "and the stamp rehashed; a data-root refusal reproduced from it)")
     ap.add_argument("--out", type=Path, default=None, help="write the attestation JSON here")
     ap.add_argument("--selftest", action="store_true")
     args = ap.parse_args()
@@ -712,7 +779,7 @@ def main() -> int:
         return selftest(computation)
     if not args.receipt:
         ap.error("give a receipt, or --selftest")
-    verdict, refusal, checks, r = attest(args.receipt, computation)
+    verdict, refusal, checks, r = attest(args.receipt, computation, args.data_root)
     if args.out:
         args.out.parent.mkdir(parents=True, exist_ok=True)
         args.out.write_text(json.dumps(attestation_doc(verdict, refusal, checks, r, args.receipt,

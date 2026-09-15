@@ -169,7 +169,11 @@ uncertainty is the larger of the two. The change is the rate times
 the span between the centres of the first and last year of the
 window, with the same uncertainty scaled; the endpoint change is the
 mean of the last twelve months minus the mean of the first twelve,
-with the per-month floor propagated at 95 percent. The residual is
+with the per-month floor propagated at 95 percent and the variance of
+each twelve-month mean inflated by (1 + r1) over (1 - r1), r1 the
+lag-1 autocorrelation of the trend's residuals, so that the floor's
+white noise is not the whole statement of a mean over autocorrelated
+months. The residual is
 endpoint change minus change, the combined uncertainty their
 quadrature, and the verdict `consistent_within_uncertainty` is true
 when the residual lies within it: a record that departs from a line
@@ -226,7 +230,11 @@ area and the anchor distance recompute from the series (1e-9 relative,
 with the attester's own Student's t integrated from the density); the
 bookkeeping statements are complete, the deep omission is the
 sanctioned published statement and the window handling agrees with
-the months; and the stated plausibility bounds hold: the trend within
+the months; (for a data root given with `--data-root`, the record,
+the CSV and the stamp in the tree hash to the receipt's digests, and a
+data-root refusal is reproduced from the tree; without the tree the
+digests are reported as not verified and a data-root refusal fails);
+and the stated plausibility bounds hold: the trend within
 40 ZJ per year of zero (four times the published 0 to 2000 m rate),
 the per-month uncertainty positive and below 50 ZJ, the domain area
 between 1e14 and 4e14 square meters, and on the fixture the planted
@@ -235,9 +243,20 @@ rate within 1.5 ZJ per year of the recovered one with the
 pass on both layers, ten tampers each failing on its check, a
 wrong-release receipt, a tampered computation, three refusals and a
 forged one, and a data root built in a temporary directory that runs,
-attests, refuses a window past its stamp and rejects an edited tree.
+attests against its tree, fails on three forged digests when the tree
+is given, refuses a window past its stamp and a window too short
+(reproduced against the tree, failed without it), and rejects an
+edited tree.
 
 ## Reference run
+
+A receipt's `run_id` digests the receipt without its timestamp, so it
+is bound to the runtime name and, on a data root, to the tree's path
+as recorded (package-relative when the tree sits under this
+repository); the ids below were made with the runtime name
+`claude-code` on the committed root and reproduce with that name on
+any machine. A data-root receipt is attested with `--data-root` so the
+attester rehashes the tree.
 
 **Fixture run (seed 7, 0 to 2000 dbar, 2005-01 through 2016-12,
 measured 2026-09-15; receipt run sha256:be6d26d7317714d4).** 144 of
@@ -246,7 +265,7 @@ measured 2026-09-15; receipt run sha256:be6d26d7317714d4).** 144 of
 50.78 of 144); change +110.6532 ZJ over the 11.00 years between the
 first and last year centres against a planted change of 110.0;
 endpoint change +110.4110 ZJ; residual minus 0.2423 ZJ against a bar
-of 6.4076; `consistent_within_uncertainty` true; the planted rate of
+of 7.7370; `consistent_within_uncertainty` true; the planted rate of
 10.0 lies inside the interval and the planted change within the
 change's uncertainty. The refusal case the golden exercises is
 2001-01 through 2016-12 with depth 700: exit 3, attested as a refusal.
@@ -264,26 +283,35 @@ stamped by the assembler.[^loaders][^data-root][^rg-files][^ecco-ohc-recipe]
   95 percent interval [+8.4546, +10.8782], the per-month floor
   9.8442 ZJ; change +135.3300 ZJ over the 14.00 years between the
   first and last year centres; endpoint change +110.0473 ZJ; residual
-  minus 25.2827 against a bar of 18.7044; `consistent_within_uncertainty`
-  false. Per unit area: 1.0011 watts per square meter of the
+  minus 25.2827 against a bar of 24.1291 (the endpoint uncertainty
+  17.1580 with the autocorrelation inflation 4.745, the change
+  uncertainty 16.9647); `consistent_within_uncertainty` false. Per unit area: 1.0011 watts per square meter of the
   domain, 0.6005 of the Earth's surface.
 - 0 to 700 dbar (receipt run sha256:89ae0e67f801c8d0): trend +5.9498 ZJ per year,
   95 percent interval [+4.9916, +6.9080], floor 7.1262 ZJ; change
   +83.2973 ZJ; endpoint change +65.6873 ZJ; residual minus 17.6100 against a
-  bar of 14.5762; `consistent_within_uncertainty` false. Per unit
+  bar of 18.6705 (endpoint uncertainty 12.9861 with the inflation
+  5.187, change uncertainty 13.4152); `consistent_within_uncertainty`
+  true. Per unit
   area: 0.6162 of the domain, 0.3696 of the Earth's surface.
 
-**The verdict on the record.** Both layers fail
-`consistent_within_uncertainty`: the change the linear rate implies
+**The verdict on the record.** The change the linear rate implies
 exceeds the endpoint change by 25 ZJ (0 to 2000 dbar) and 18 ZJ (0 to
-700 dbar), outside bars of 19 and 15. The record over 2006 through
-2020 is not a line: the annual means sit low and flat through 2012
-and rise faster after, and 2020 sits just below 2019, so a rate fitted
-through the whole window overstates the first-year to last-year
-difference. The verdict is the receipt saying so, not a failure of
-the chain; the attester confirms both numbers, and a reader quoting
-the change over this window quotes the endpoint change and the rate
-side by side, as the receipt does. The product page's note that the
+700 dbar). The 0 to 2000 dbar layer fails
+`consistent_within_uncertainty` by about one zettajoule against its
+bar of 24, and the 0 to 700 dbar layer passes by about one against
+its bar of 19. The record over 2006 through 2020 is not a line: the
+annual means sit low and flat through 2012 and rise faster after, and
+2020 sits just below 2019, so a rate fitted through the whole window
+overstates the first-year to last-year difference. The bar is partly
+the floor: the endpoint uncertainty propagates the loader's stated
+per-month floor, inflated for the residuals' lag-1 autocorrelation
+but with no term for the mapping or the interannual variability the
+floor does not see, so it is a lower bound on the endpoint change's
+uncertainty and a verdict this close to its bar is a statement about
+the record's shape, not a finding. The attester confirms both numbers,
+and a reader quoting the change over this window quotes the endpoint
+change and the rate side by side, as the receipt does. The product page's note that the
 early years lean warm toward the baseline where the array was sparse
 bears on the low start of the window and is recorded in the dataset
 concept.[^dataset][^rg-page]
