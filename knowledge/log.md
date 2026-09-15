@@ -28,18 +28,17 @@ _Historical note: older entries use build-era shorthand (a "close lint" is a kno
   a number in a frame, IGS20, IGS14, ITRF2014 or a plate frame, and a
   difference across frames or solutions reads the frame as land
   motion; medium because the tool returns the frame with every answer
-  and the recorded IGS14 to IGS20 effect at one station sits below
-  the stated uncertainty, so the trap is a recoverable provenance
+  and the recorded difference between the IGS14 and IGS20 tables at
+  one station, which mixes the frame with two more years of data,
+  sits below the stated uncertainty, so the trap is a recoverable provenance
   omission; qualifies the GNSS vertical velocity connector). The
   connector concept for the tool (connectors/gnss-vertical-velocity.md,
   merged in PR 57) and the five tide gauge gotchas are linked, not
   repeated. Registration of the eval case in the evals repository's
   manifest is the coordinator's follow-up. Sources read 2026-09-15:
-  geodesy.unr.edu (the home page, the reference frames page, the
-  vertical land motion at tide gauges page and its README, the
+  geodesy.unr.edu (the home page, the vertical land motion at tide gauges page and its README, the
   GipsyX-2.3/IGS20 analysis strategy summary, the MIDAS README, the
-  velocities directory README, the tenv3 README, the BRST station
-  page, and from the laboratory's publications directory Blewitt 2004
+  velocities directory README, the BRST station page, and from the laboratory's publications directory Blewitt 2004
   in full, the abstract and introduction of Blewitt 2003 and sections
   1 to 3 and 5 of Hammond and others 2021); psmsl.org (the ellipsoidal
   links page, the Brest RLR diagram page, the GIA page and the Peltier
@@ -48,11 +47,13 @@ _Historical note: older entries use build-era shorthand (a "close lint" is a kno
   page) and the NASA-SSH V1.1 User Guide it links on
   archive.podaac.earthdata.nasa.gov, read anonymously through the
   signed redirect; api.crossref.org for Blewitt, Hammond and Kreemer
-  2018 (doi 10.1029/2018EO104623), Blewitt and others 2016 (doi
-  10.1002/2015JB012552), Hammond and others 2021 (doi
+  2018 (doi 10.1029/2018EO104623), Hammond and others 2021 (doi
   10.1029/2021JB022355) and Peltier 2004 (doi
   10.1146/annurev.earth.32.082503.144359), whose publisher page was
-  not fetched. The CO-OPS facts are taken from this bundle's signed
+  not fetched. Read and not cited by any new concept: the reference
+  frames page and the tenv3 README on geodesy.unr.edu, and the
+  Crossref record of Blewitt and others 2016 (doi
+  10.1002/2015JB012552). The CO-OPS facts are taken from this bundle's signed
   CO-OPS gotchas and not re-read. Every claim carries a footnote to
   one of these; no data file was downloaded. (knowledge-seeder)
 - 2026-09-15 · STEWARD SIGNING of

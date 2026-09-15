@@ -95,7 +95,9 @@ separate gotcha.[^land-motion-gotcha]
 
 **Wrong-result mode.** A GNSS height or a MIDAS table height read as
 an elevation above the sea puts the Brest receiver 66 m above sea
-level when it stands about 15 m above it, the difference being the
+level when, taking the page's height as ellipsoidal as a
+GNSS-derived height is, it stands about 15 m above it, the
+difference being the
 ellipsoid's separation from the sea surface at that
 place.[^ngl-brst-station][^psmsl-rlr-diagram-brest] The mean
 difference between an SSHA series and a gauge series read as the

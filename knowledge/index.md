@@ -6,11 +6,13 @@ okf_version: "0.2"
 
 The ocean-science knowledge bundle: the concepts this plugin owns (the
 climate index conventions, the mixed layer criteria convention, the
-three observational connectors, the gridded Argo climatology
+four observational connectors, the gridded Argo climatology
 whose steric height and heat content cover the upper 2000 dbar of
 the open ocean, with its gotchas, the attested ocean heat content
-computation on it with its recipe, and the tide gauge datum and land
-motion gotchas on the PSMSL and CO-OPS connectors). OKF v0.2 conformant (okf_version "0.2"
+computation on it with its recipe, the tide gauge datum and land
+motion gotchas on the PSMSL and CO-OPS connectors, and the regional
+sea level trend recipe on the tide gauge, GNSS and altimetry records
+with its coastal heights and velocity frame gotchas). OKF v0.2 conformant (okf_version "0.2"
 above; the exact spec text is vendored in marketplace docs/upstream).
 
 ## The PO.DAAC provider bundle (a declared dependency)

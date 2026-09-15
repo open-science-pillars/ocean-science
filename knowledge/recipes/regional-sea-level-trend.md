@@ -12,19 +12,19 @@ inputs:
   - gauge: ../connectors/psmsl-gauges.md
   - land_motion: ../connectors/gnss-vertical-velocity.md
   - gia: "the PSMSL Peltier set, ICE-5G v1.3 with the VM2 Earth model and a 90 km lithosphere, supplied 2012: the relative sea level rate at the PSMSL station (the tide gauge quantity) and the crustal uplift rate (the GNSS quantity), the variant centred on now"
-  - method: "the provider bundle's sanctioned trend method (the ecco-trend-ci computation, cited below): a linear trend with an interval from the series' own autocorrelation, applied to the altimetry month series and to the gauge month series over one window"
+  - method: "the method the provider bundle's attested trend computation fixes (the ecco-trend-ci computation, cited below), re-implemented on the altimetry month series and on the gauge month series over one window: the monthly climatology fitted jointly with the slope, an ordinary least squares slope against time in months, the lag-1 autocorrelation r1 of the residuals, an effective sample size n (1 - r1) / (1 + r1) capped at n, and a two-sided 95 percent interval from Student's t on n_eff minus 2 degrees of freedom; the attested executor accepts only series that arrive inside a sanctioned receipt whose data record is a verified-tree stamp, psmsl_monthly produces no receipt and the only sanctioned producer of a NASA-SSH box series needs an ECCO partition receipt as its other side, so each trend here is a trend by the sanctioned method and not an attested trend, until a computation that reads a gauge series and a NASA-SSH box series into a receipt exists"
 expected:
   - quantity: "the identity"
     statement: "the geocentric sea level trend at the gauge is the relative trend plus the up velocity of the land, positive up meaning the land rises; the altimetry trend in the box less that sum is the residual of the reconciliation, and it is read against the combined uncertainty and against the two known differences of place, the offshore information in a coastal altimetry cell and the distance from the receiver to the gauge, before it is read as an altimeter bias"
   - quantity: "worked land motion term, Brest"
-    statement: "the four SONEL solutions on receiver BRST, 293 m from the gauge, over 1998-10-31 to 2023-03-23 in ITRF2014, give -0.22 plus or minus 0.17 (ULR7a), -1.12 plus or minus 0.23 (JPL14), -1.09 plus or minus 0.41 (NGL14) and -1.50 plus or minus 0.30 (GT3) mm per year, a spread of 1.28 mm per year; the laboratory's tide gauge estimate for Brest is -1.136 mm per year with a formal uncertainty of 0.269, spatial variability 0.443 and temporal variability 0.996 mm per year, from five stations at 0.29 to 31.25 km, rated good, in the IGS14 frame; the term a reconciliation at Brest carries lies between -0.22 and -1.50 mm per year by solution, with that spread reported beside the chosen value"
+    statement: "the four SONEL solutions on receiver BRST, 293 m from the gauge, over 1998-10-31 to 2023-03-23 in ITRF2014, whose rates and uncertainties this bundle's land motion gotcha carries (cited below), spread over 1.28 mm per year; the laboratory's tide gauge estimate for Brest is -1.136 mm per year with a formal uncertainty of 0.269, spatial variability 0.443 and temporal variability 0.996 mm per year, from five stations at 0.29 to 31.25 km, rated good, in the IGS14 frame; the term a reconciliation at Brest carries is the chosen solution's rate with that 1.28 mm per year spread reported beside it, or the laboratory's estimate with its four parameters"
   - quantity: "the GIA term"
     statement: "a model value with no error bar: the PSMSL set gives at each station one relative sea level rate for the gauge and one crustal uplift rate for the GNSS receiver, from ICE-5G v1.3 with VM2 and a 90 km lithosphere, in three variants of which the centred one is recommended and whose spread is stated not to be an error bar; another model gives another value, and the uncorrected trend stands beside the corrected one"
 expected_uncertainty:
   - quantity: "altimetry trend"
-    statement: "the product publishes no uncertainty for the grids; the interval is the sampling interval from the month series' own autocorrelation under the sanctioned trend method, and the published order of a regional gridded-altimetry trend uncertainty, 0.8 to 1.2 mm per year at the 90 percent level over 1993 to 2019 for a different product, is context and never this product's figure"
+    statement: "the product publishes no uncertainty for the grids; the interval is the sampling interval from the month series' own autocorrelation under the sanctioned method as re-implemented here, not an attested interval, and the published order of a regional gridded-altimetry trend uncertainty, 0.8 to 1.2 mm per year at the 90 percent level over 1993 to 2019 for a different product, is context and never this product's figure"
   - quantity: "gauge trend"
-    statement: "the interval from the same trend method over the same window, with the record's span and gaps stated; CO-OPS's published widths of about plus or minus 1.5 mm per year at 30 years and plus or minus 0.5 mm per year at 60 years give the order"
+    statement: "the interval from the same re-implemented method over the same window, not an attested interval, with the record's span and gaps stated; CO-OPS's published widths of about plus or minus 1.5 mm per year at 30 years and plus or minus 0.5 mm per year at 60 years give the order"
   - quantity: "land motion"
     statement: "the larger of the chosen solution's own uncertainty and the spread across the solutions on the receiver, 1.28 mm per year at Brest, or the laboratory's four uncertainty parameters where its tide gauge estimate is used; the frame stated and the same on both sides of any difference"
   - quantity: "combined"
@@ -41,7 +41,7 @@ sources:
     title: "NASA-SSH V1.1 User Guide, Willis, Fournier, Killett and Marlis, JPL (read 2026-09-15 through the PO.DAAC dataset page's link): the simple grids as Gaussian averages of width 100 km over at most 500 points within 600 km respecting basin connections, every 7 days from 10 days of passes so that adjacent grids share data, anomalies relative to the DTU21 mean sea surface computed from altimetry over 1993 to 2012, and a consistent reference frame for the orbits among the homogenisation steps"
   - id: trend-method
     resource: https://github.com/open-science-pillars/nasa-daac-knowledge/blob/nasa-daac-knowledge--v2026.9.2/knowledge/podaac/computations/ecco-trend-ci.md
-    title: "The provider bundle's attested trend computation (knowledge/podaac/computations/ecco-trend-ci.md at the nasa-daac-knowledge--v2026.9.2 release tag): the one sanctioned linear trend with an interval from a monthly series' own autocorrelation"
+    title: "The provider bundle's attested trend computation (knowledge/podaac/computations/ecco-trend-ci.md at the nasa-daac-knowledge--v2026.9.2 release tag): the one sanctioned linear trend with an interval from a monthly series' own autocorrelation, whose executor accepts only series that arrive inside a sanctioned receipt with a verified-tree stamp, so that a trend over a series of unknown origin is not attested whatever its arithmetic"
   - id: psmsl-ellipsoid
     resource: https://psmsl.org/data/obtaining/ellipsoid.php
     title: "PSMSL, ellipsoidal links for RLR data (read 2026-09-15): RLR records as relative mean sea level against the local land, the land movement removed for a reconstruction and the datum height above the ellipsoid needed for a comparison with altimetry, the link through levelling to a nearby GNSS receiver, the solution, height, rate, epoch, span and distance published per link, positive rates meaning the land rises, and ITRF2014 with GRS80 for every solution"
@@ -120,8 +120,20 @@ average of width 100 km over the passes within 600 km during ten
 days, every seven days, so that adjacent grids share
 data.[^nasa-ssh-user-guide][^podaac-nasa-ssh] The reader names a box
 against the coast, averages the grids of each calendar month, and
-fits the sanctioned trend with its interval from the month series'
-own autocorrelation over a stated window.[^trend-method][^nasa-ssh-concept]
+fits a trend over a stated window by the method the provider's
+attested computation fixes, re-implemented here: the climatology
+fitted jointly with the slope, ordinary least squares, the lag-1
+autocorrelation of the residuals, an effective sample size capped at
+the sample, and a two-sided 95 percent interval from Student's t on
+the effective degrees of freedom less two.[^trend-method] The attested
+executor accepts only series that arrive inside a sanctioned receipt
+whose data record is a verified-tree stamp, and the only sanctioned
+producer of a NASA-SSH box month series needs an ECCO partition
+receipt as its other side, so this trend is a trend by the
+sanctioned method and not an attested one until a computation that
+reads a NASA-SSH box series into a receipt exists.[^trend-method]
+The provider's verified record ends 2018-01-01; a window past it
+needs a new stamped record.[^nasa-ssh-concept]
 Two facts travel with the number: the product publishes no
 uncertainty for its grids, and a cell against the coast carries
 offshore information because the weighting reaches hundreds of
@@ -146,12 +158,17 @@ applies the relative sea level rate to the gauge; a GIA-corrected land
 motion applies the crustal uplift rate to the GNSS velocity; the
 model, its version and which rate was applied are named, the
 uncorrected number stands beside the corrected one, and another model
-gives another value.[^gia-gotcha] The set lists those two tables and
-no third, so the sea surface part of GIA that an altimetry trend
-carries is not a column the reader can take from it; the recipe's
-identity is therefore stated on uncorrected quantities, and a
+gives another value.[^gia-gotcha] Relative sea level is the sea
+surface less the crust, the definition the identity in step 5 uses,
+so the model's sea surface rate at a station, the part of GIA an
+altimetry trend carries, is the relative sea level rate plus the
+crustal uplift rate, both of which the set carries: a derived model
+value with no uncertainty of its own.[^psmsl-peltier][^psmsl-gia]
+The recipe's identity is stated on uncorrected quantities, and a
 GIA-corrected version applies one named model to every term on both
-sides.[^psmsl-peltier][^psmsl-gia]
+sides, the sea surface rate to the altimetry, the relative sea level
+rate to the gauge and the crustal uplift rate to the
+velocity.[^psmsl-peltier][^gia-gotcha]
 
 **Step 3, the land motion at the gauge.** The tool returns a station's
 up velocity, its uncertainty, the frame, the epochs and the steps
@@ -162,9 +179,10 @@ laboratory asks that its Eos paper be cited for the
 products.[^gnss-connector][^crossref-eos] Where PSMSL prints an
 ellipsoidal link, the RLR diagram page carries the SONEL solutions
 on the same receiver in ITRF2014, with the rate, its uncertainty, the
-span and the distance to the gauge, and at Brest four solutions on
-BRST span 1.28 mm per year, from -0.22 to -1.50, a spread larger than
-any one solution's uncertainty.[^psmsl-ellipsoid][^psmsl-rlr-diagram-brest][^land-motion-gotcha]
+span and the distance to the gauge; at Brest the four solutions on
+BRST, whose rates the land motion gotcha carries, span 1.28 mm per
+year, more than any one solution's stated
+uncertainty.[^psmsl-ellipsoid][^psmsl-rlr-diagram-brest][^land-motion-gotcha]
 The laboratory's own tide gauge table gives a rate imaged to the gauge
 from the connected stations by a weighted median, with four
 uncertainty parameters and a good, medium or poor rating; at Brest
@@ -185,8 +203,9 @@ with it.[^psmsl-rlr-diagram-brest][^ngl-vlm]
 PSMSL RLR monthly series through psmsl_monthly, on the RLR path and
 not the metric one, with the sentinel dropped and the months dropped
 counted, or a CO-OPS station series on a declared datum for a United
-States gauge; its trend is fitted by the same sanctioned method over
-the same window as the altimetry, and it is stated with the record's
+States gauge; its trend is fitted by the same re-implemented method
+over the same window as the altimetry, unattested because
+psmsl_monthly produces no receipt, and it is stated with the record's
 span, its gaps and its interval, CO-OPS's practice of a 30-year
 minimum and its published widths giving the
 order.[^psmsl-connector][^rlr-gotcha][^coops-connector][^coops-datum-gotcha][^record-length-gotcha][^trend-method]
@@ -198,9 +217,11 @@ rises, as PSMSL defines it, the geocentric trend at the gauge is the
 relative trend plus the up velocity, and the residual is the altimetry
 trend in the box less that sum.[^psmsl-ellipsoid][^land-motion-gotcha]
 The combined uncertainty is the three observed intervals in
-quadrature, the altimetry's from its autocorrelation, the gauge's from
-its record, the land motion's as stated in step 3, with the GIA model
-named beside them and never folded in.[^trend-method][^record-length-gotcha][^gia-gotcha]
+quadrature, the altimetry's and the gauge's from the re-implemented
+method's intervals, the land motion's as stated in step 3, with the
+GIA model named beside them and never folded in; the two trends and
+the residual are stated as results by the sanctioned method and not
+as attested results.[^trend-method][^record-length-gotcha][^gia-gotcha]
 A residual inside the combined interval closes the reconciliation. A
 residual outside it is read first against the two known differences
 of place, the coastal cell's offshore reach and the receiver's
@@ -220,7 +241,10 @@ ellipsoidal height enters.[^heights-gotcha] The GIA model is named
 with its version, the rate applied to each quantity is the right one
 of the two, and the uncorrected numbers stand beside.[^gia-gotcha][^psmsl-peltier]
 The residual is quoted with the combined interval and the two
-differences of place stated.[^nasa-ssh-concept][^ngl-vlm]
+differences of place stated.[^nasa-ssh-concept][^ngl-vlm] Both
+trends are stated as trends by the sanctioned method, re-implemented,
+and not as attested trends, since neither series arrives in a
+sanctioned receipt.[^trend-method]
 
 **Verification.** The PO.DAAC dataset page and the NASA-SSH V1.1 User
 Guide, PSMSL's ellipsoidal links page, Brest RLR diagram page, GIA

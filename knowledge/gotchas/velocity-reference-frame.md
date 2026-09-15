@@ -33,7 +33,7 @@ sources:
     title: "The velocities directory README (read 2026-09-15): the files there are in IGS14 and superseded by the IGS20 velocities under gps_timeseries/IGS20/midas/"
   - id: ngl-vlm
     resource: https://geodesy.unr.edu/vlm.php
-    title: "The laboratory's vertical land motion at PSMSL tide gauges page (read 2026-09-15): the tide gauge rates built from the MIDAS rates the page links as the IGS14 table, and at Brest the contributing station BRST at 0.29 km with a MIDAS rate of -1.136 mm per year"
+    title: "The laboratory's vertical land motion at PSMSL tide gauges page (read 2026-09-15): the tide gauge rates built from the MIDAS rates the page links as the IGS14 table; at Brest the gauge's imaged rate is -1.136 mm per year with a formal uncertainty of 0.269, and the contributing station BRST at 0.29 km has a MIDAS rate of -1.136 with an uncertainty of 0.347 mm per year and a weight of 0.380 among five stations"
   - id: hammond-2021
     resource: https://geodesy.unr.edu/publications/HammondEtAl2021.pdf
     title: "Hammond, W. C., G. Blewitt, C. Kreemer and R. S. Nerem (2021), GPS Imaging of global vertical land motion for studies of sea level rise, Journal of Geophysical Research: Solid Earth 126, e2021JB022355, doi:10.1029/2021JB022355 (read 2026-09-15 from the laboratory's site: the abstract, the introduction, the data and rate estimation section and the discussion of Australia; the Crossref record verified the same day): the solutions are aligned to the IGS14 realisation of ITRF2014, and reference frame origin and geocenter drift are among the potential noise sources Riddell and others 2020 list for a continent-wide downward rate in Australia"
@@ -45,7 +45,7 @@ sources:
     title: "PSMSL, ellipsoidal links for RLR data (read 2026-09-15): all solutions provided use ITRF2014 and hence GRS80, which may change in the future; positive vertical rates mean the land is rising"
   - id: psmsl-rlr-diagram-brest
     resource: https://psmsl.org/data/obtaining/rlr.diagrams/1.php
-    title: "PSMSL RLR diagram page for Brest (read 2026-09-15): four solutions on receiver BRST, ULR7a, JPL14, NGL14 and GT3, with vertical rates of -0.22 plus or minus 0.17, -1.12 plus or minus 0.23, -1.09 plus or minus 0.41 and -1.50 plus or minus 0.30 mm per year over 1998-10-31 to 2023-03-23"
+    title: "PSMSL RLR diagram page for Brest (read 2026-09-15): four solutions on receiver BRST, ULR7a, JPL14, NGL14 and GT3, over 1998-10-31 to 2023-03-23, whose rates and uncertainties this bundle's land motion gotcha carries, spanning 1.28 mm per year"
   - id: connector
     resource: ../connectors/gnss-vertical-velocity.md
     title: "This bundle's GNSS vertical velocity connector concept: the tool serves the IGS20 and IGS14 tables by name and returns the frame, the table URL and the file date with every answer; at P224 the IGS20 table gives +0.214 plus or minus 0.386 mm per year and the IGS14 table -0.046 mm per year, a difference of 0.26 mm per year from the frame and two more years of data; a plate-fixed velocity is a different number from the same station's IGS velocity"
@@ -92,10 +92,15 @@ The sizes are recorded in this bundle. At P224 the IGS20 table gives
 per year, a difference of 0.26 mm per year that mixes the frame with
 two more years of data.[^connector] The solutions PSMSL prints from
 SONEL are in ITRF2014, and at Brest four of them on the one receiver
-BRST give -0.22, -1.12, -1.09 and -1.50 mm per year, a spread of 1.28
-mm per year that exceeds each solution's stated uncertainty; the
+BRST, whose rates the land motion gotcha carries, spread over 1.28 mm
+per year, more than each solution's stated uncertainty; the
 laboratory's own tide gauge table, built from its IGS14 rates, puts
 BRST at -1.136 mm per year.[^psmsl-ellipsoid][^psmsl-rlr-diagram-brest][^land-motion-gotcha][^ngl-vlm]
+The gauge's imaged rate on that page is the same -1.136 mm per year,
+because the weighted median of the five contributing stations falls
+on BRST; the two numbers carry different uncertainties, 0.269 mm per
+year for the gauge's formal uncertainty and 0.347 for BRST's MIDAS
+rate.[^ngl-vlm]
 Hammond and others 2021 align their solutions to the IGS14 realisation
 of ITRF2014 and, discussing a continent-wide downward rate in
 Australia, list reference frame origin and geocenter drift among the
@@ -118,8 +123,9 @@ realisations is of that size.[^connector][^blewitt-2004] The trap is
 visible rather than silent: the tool returns the frame with every
 answer, the PSMSL diagram page names each solution, and the tables
 are named by frame, so the error is a provenance omission that a
-reader can recover, and the recorded frame effect between the IGS
-realisations at one station sits below the stated
+reader can recover, and the recorded difference between the IGS14
+and IGS20 tables at one station, which mixes the frame with two more
+years of data, sits below the stated
 uncertainty.[^connector][^psmsl-rlr-diagram-brest]
 
 **Correct approach.** A vertical velocity is quoted with its frame and
