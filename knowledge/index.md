@@ -6,9 +6,10 @@ okf_version: "0.2"
 
 The ocean-science knowledge bundle: the concepts this plugin owns (the
 climate index conventions, the mixed layer criteria convention, the
-three observational connectors, and the gridded Argo climatology
+three observational connectors, the gridded Argo climatology
 whose steric height and heat content cover the upper 2000 dbar of
-the open ocean, with its gotchas, and the tide gauge datum and land
+the open ocean, with its gotchas, the attested ocean heat content
+computation on it with its recipe, and the tide gauge datum and land
 motion gotchas on the PSMSL and CO-OPS connectors). OKF v0.2 conformant (okf_version "0.2"
 above; the exact spec text is vendored in marketplace docs/upstream).
 
@@ -72,6 +73,22 @@ tide-gauge-relative-sea-level-and-land-motion, are proposed for the
 same directory in agent-evals pull request 16 (branch
 claude/seed-tide-gauge-datums), and their registration in the evals
 repository's manifest is a follow-up.
+
+## computations (local)
+
+- [Ocean heat content change from gridded Argo, 0 to 700 and 0 to 2000 dbar (attested)](computations/argo-ohc.md), status: draft
+
+The executor, the attester, the loaders and the stamped data root sit
+under knowledge/references (computations/argo_ohc.py,
+attesters/argo_ohc_check.py, loaders/ohc_rg_loader.py and
+loaders/ohc_data_root.py, retrieval/argo-ohc-root), with the run
+skill at references/skills/run-argo-ohc.md; the golden is
+verification/argo_ohc.py. The ECCO-based counterpart is the provider
+bundle's `knowledge/podaac/recipes/ecco-ocean-heat-content.md`.
+
+## recipes (local)
+
+- [Ocean heat content change from gridded Argo: the layer, the domain, the baseline and the deep term it does not carry](recipes/argo-ohc.md), status: draft
 
 ## connectors (local)
 
