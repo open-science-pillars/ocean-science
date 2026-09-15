@@ -15,7 +15,8 @@ executor:
 attester:
   resource: references/attesters/argo_ohc_check.py
 generated: { by: knowledge-seeder/claude, at: 2026-09-15T16:00:00Z }
-status: draft
+verified: { by: human:PaulMRamirez, at: 2026-09-15T14:26:35Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/56 }
+status: stable
 stale_after: 2027-03-15
 sources:
   - id: dataset

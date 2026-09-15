@@ -1,0 +1,21 @@
+name: goldens
+# The attested computation goldens run headless on every pull request
+# and on main. The Argo ocean heat content golden reads only the
+# committed data root under knowledge/references/retrieval/argo-ohc-root
+# and a fixture it generates, so the job touches no live service, needs
+# no credential and carries no secret. The older scripts under
+# verification/ read the ECCO fixture cache and stay local.
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  goldens:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5
+      - name: Every golden passes on the committed fixtures
+        run: uv run verification/argo_ohc.py

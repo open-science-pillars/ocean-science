@@ -76,7 +76,7 @@ repository's manifest is a follow-up.
 
 ## computations (local)
 
-- [Ocean heat content change from gridded Argo, 0 to 700 and 0 to 2000 dbar (attested)](computations/argo-ohc.md), status: draft
+- [Ocean heat content change from gridded Argo, 0 to 700 and 0 to 2000 dbar (attested)](computations/argo-ohc.md), status: stable
 
 The executor, the attester, the loaders and the stamped data root sit
 under knowledge/references (computations/argo_ohc.py,
@@ -88,7 +88,7 @@ bundle's `knowledge/podaac/recipes/ecco-ocean-heat-content.md`.
 
 ## recipes (local)
 
-- [Ocean heat content change from gridded Argo: the layer, the domain, the baseline and the deep term it does not carry](recipes/argo-ohc.md), status: draft
+- [Ocean heat content change from gridded Argo: the layer, the domain, the baseline and the deep term it does not carry](recipes/argo-ohc.md), status: stable
 
 ## connectors (local)
 
