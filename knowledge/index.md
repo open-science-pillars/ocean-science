@@ -64,7 +64,7 @@ bundle to move to; it is local domain material.
 - [The GIA correction at a tide gauge is a model prediction that names its ice and Earth model](gotchas/tide-gauge-gia-is-modelled.md), severity medium, status: stable
 - [A tide gauge trend carries its record length and its gaps](gotchas/tide-gauge-record-length-and-gaps.md), severity medium, status: stable
 - [A coastal height names its surface: ellipsoidal, orthometric and local datum heights at one site differ by metres to tens of metres](gotchas/coastal-heights-ellipsoidal-versus-orthometric.md), severity high, status: draft
-- [A vertical velocity carries its reference frame: the IGS20, IGS14, ITRF2014 and plate-fixed rates of one station are different numbers](gotchas/velocity-reference-frame.md), severity medium, status: draft
+- [A vertical velocity carries its reference frame: the IGS20, IGS14, ITRF2014 and plate-fixed rates of one station are different numbers](gotchas/velocity-reference-frame.md), severity medium, status: stable
 
 The Roemmich and Gilson high gotcha's eval case,
 rg-sampled-depth-floor, lives in the agent-evals repository under
@@ -99,7 +99,7 @@ bundle's `knowledge/podaac/recipes/ecco-ocean-heat-content.md`.
 ## recipes (local)
 
 - [Ocean heat content change from gridded Argo: the layer, the domain, the baseline and the deep term it does not carry](recipes/argo-ohc.md), status: stable
-- [Regional sea level trend at a coast: the altimetry trend, the GIA model, the land motion at the gauge and the tide gauge relative trend reconciled](recipes/regional-sea-level-trend.md), status: draft
+- [Regional sea level trend at a coast: the altimetry trend, the GIA model, the land motion at the gauge and the tide gauge relative trend reconciled](recipes/regional-sea-level-trend.md), status: stable
 
 ## connectors (local)
 

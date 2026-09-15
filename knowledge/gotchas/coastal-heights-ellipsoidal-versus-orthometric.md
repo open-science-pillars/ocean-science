@@ -5,6 +5,7 @@ title: "A coastal height names its surface: ellipsoidal, orthometric and local d
 description: "A GNSS receiver measures heights above an ellipsoid, a tide gauge series is heights above a local datum (the PSMSL RLR datum about 7 m below mean sea level, a CO-OPS tidal datum, or the orthometric geodetic datum NAVD88) and a NASA-SSH grid value is an anomaly against the DTU21 mean sea surface, so the three are heights above three different surfaces. At Brest the RLR datum sits 44.07 to 44.09 m above the GRS80 ellipsoid and the receiver 293 m from the gauge reports a height of 65.834 m, so mean sea level there is about 51 m above the ellipsoid and a GNSS height is not an elevation above the sea. Nothing in an RLR file, a CO-OPS series, a MIDAS table or an SSHA grid carries the surface, and a height joined to a height above another surface is wrong by the separation between them."
 tags: [tide-gauge, ellipsoid, orthometric, geoid, datum, navd88, rlr, gnss, altimetry, nasa-ssh, mean-sea-surface, coastal, sea-level, height]
 generated: { by: knowledge-seeder/claude, at: 2026-09-15T17:50:00Z }
+verified: { by: human:PaulMRamirez, at: 2026-09-15T18:32:59Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/60 }
 severity: high
 dataset: ../connectors/psmsl-gauges.md
 eval_case: coastal-heights-ellipsoidal-versus-orthometric
