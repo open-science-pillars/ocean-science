@@ -1,10 +1,10 @@
 name: goldens
-# The golden notebooks (the golden-notebook requirement: one
-# fixture-backed asserting script per workflow skill) run headless on
-# every pull request and on main. They read only the committed fixtures
-# under verification/ and the committed data root under knowledge/references/retrieval/, so the job
-# touches no live service, needs no credential and carries no secret;
-# a fixture refetch is a deliberate commit, not a CI side effect.
+# The attested computation goldens run headless on every pull request
+# and on main. The Argo ocean heat content golden reads only the
+# committed data root under knowledge/references/retrieval/argo-ohc-root
+# and a fixture it generates, so the job touches no live service, needs
+# no credential and carries no secret. The older scripts under
+# verification/ read the ECCO fixture cache and stay local.
 on:
   pull_request:
   push:
@@ -18,9 +18,4 @@ jobs:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5
       - name: Every golden passes on the committed fixtures
-        run: |
-          set -e
-          for golden in verification/*.py; do
-            echo "== $golden"
-            uv run "$golden"
-          done
+        run: uv run verification/argo_ohc.py
