@@ -4,6 +4,7 @@ spheres: [hydrosphere]
 title: "Run instructions: attested Argo ocean heat content change"
 description: "Executor instructions for the Argo ocean heat content change: the fixture command, the data-root layout for real inputs and which loader produces each file, the refusal rule, the attester command."
 generated: { by: knowledge-seeder/claude, at: 2026-09-15T16:00:00Z }
+verified: { by: human:PaulMRamirez, at: 2026-09-15T14:26:35Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/56 }
 status: draft
 stale_after: 2027-03-15
 ---

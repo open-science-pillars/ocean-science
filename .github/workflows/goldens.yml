@@ -1,0 +1,26 @@
+name: goldens
+# The golden notebooks (the golden-notebook requirement: one
+# fixture-backed asserting script per workflow skill) run headless on
+# every pull request and on main. They read only the committed fixtures
+# under verification/ and the committed data root under knowledge/references/retrieval/, so the job
+# touches no live service, needs no credential and carries no secret;
+# a fixture refetch is a deliberate commit, not a CI side effect.
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  goldens:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5
+      - name: Every golden passes on the committed fixtures
+        run: |
+          set -e
+          for golden in verification/*.py; do
+            echo "== $golden"
+            uv run "$golden"
+          done

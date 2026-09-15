@@ -4,6 +4,17 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-15 · STEWARD SIGNING of knowledge/computations/argo-ohc.md,
+  knowledge/recipes/argo-ohc.md,
+  knowledge/references/skills/run-argo-ohc.md: Maintainer review of the
+  attested Argo ocean heat content computation merged in PR #56 after
+  the coordinator's review and fix round (the attester now verifies the
+  data root, the run ids reproduce, the endpoint bar carries the
+  autocorrelation inflation); the computation concept and the recipe
+  promoted to stable, the run skill stays a draft reference as the sea
+  level budget's does; the golden runs in CI from this commit. The
+  verified event is written on the steward's word. (steward)
+
 - 2026-09-15 · SEEDED, status draft: the attested ocean heat content
   computation on the Roemmich and Gilson gridded Argo product, issue
   54. computations/argo-ohc.md (type Attested Computation: the 0 to

@@ -5,7 +5,8 @@ title: "Ocean heat content change from gridded Argo: the layer, the domain, the 
 description: "How an ocean heat content change for 0 to 700 m and 0 to 2000 m is read off the Roemmich and Gilson gridded Argo product: Conservative Temperature and in situ density through TEOS-10, the heat capacity constant cp0, layer thickness from the pressure levels, cell area from the grid's latitude bounds under the product's own mask, the 2004 to 2018 climatology as the anomaly baseline, a rate with an interval over a stated window, the deep ocean below 2000 m stated as an omission with its published rate, and the published Argo-era rate the result is anchored to."
 tags: [argo, roemmich-gilson, ocean-heat-content, teos-10, conservative-temperature, recipe, deep-ocean, earth-heat-inventory]
 generated: { by: knowledge-seeder/claude, at: 2026-09-15T16:00:00Z }
-status: draft
+verified: { by: human:PaulMRamirez, at: 2026-09-15T14:26:35Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/56 }
+status: stable
 stale_after: 2027-03-15
 inputs:
   - dataset: ../datasets/roemmich-gilson-argo-climatology.md
