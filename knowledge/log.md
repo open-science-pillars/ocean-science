@@ -4,6 +4,13 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-15 · STEWARD SIGNING of
+  knowledge/connectors/gnss-vertical-velocity.md: Maintainer review of
+  the GNSS vertical velocity connector concept for the observations
+  server's round three tool, merged in PR #57 after the coordinator's
+  lint and fix round; promoted to stable. The verified event is written
+  on the steward's word. (steward)
+
 - 2026-09-15 · STEWARD SIGNING of knowledge/computations/argo-ohc.md,
   knowledge/recipes/argo-ohc.md,
   knowledge/references/skills/run-argo-ohc.md: Maintainer review of the
