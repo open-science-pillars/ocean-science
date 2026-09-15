@@ -10,7 +10,7 @@
       "bytes": 695480508,
       "retrieved_utc": "2026-09-15T13:32:33Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_Salinity_2019.nc.gz",
@@ -19,7 +19,7 @@
       "bytes": 460914366,
       "retrieved_utc": "2026-09-15T13:37:20Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_201901_2019.nc.gz",
@@ -28,7 +28,7 @@
       "bytes": 6541699,
       "retrieved_utc": "2026-09-15T13:39:23Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_201902_2019.nc.gz",
@@ -37,7 +37,7 @@
       "bytes": 6562648,
       "retrieved_utc": "2026-09-15T13:39:26Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_201903_2019.nc.gz",
@@ -46,7 +46,7 @@
       "bytes": 6585629,
       "retrieved_utc": "2026-09-15T13:39:26Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_201904_2019.nc.gz",
@@ -55,7 +55,7 @@
       "bytes": 6572066,
       "retrieved_utc": "2026-09-15T13:39:29Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_201905_2019.nc.gz",
@@ -64,7 +64,7 @@
       "bytes": 6538796,
       "retrieved_utc": "2026-09-15T13:39:34Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_201906_2019.nc.gz",
@@ -73,7 +73,7 @@
       "bytes": 6516136,
       "retrieved_utc": "2026-09-15T13:39:37Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_201907_2019.nc.gz",
@@ -82,7 +82,7 @@
       "bytes": 6483432,
       "retrieved_utc": "2026-09-15T13:39:39Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_201908_2019.nc.gz",
@@ -91,7 +91,7 @@
       "bytes": 6498059,
       "retrieved_utc": "2026-09-15T13:39:42Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_201909_2019.nc.gz",
@@ -100,7 +100,7 @@
       "bytes": 6534838,
       "retrieved_utc": "2026-09-15T13:39:43Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_201910_2019.nc.gz",
@@ -109,7 +109,7 @@
       "bytes": 6565283,
       "retrieved_utc": "2026-09-15T13:39:45Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_201911_2019.nc.gz",
@@ -118,7 +118,7 @@
       "bytes": 6565639,
       "retrieved_utc": "2026-09-15T13:39:47Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_201912_2019.nc.gz",
@@ -127,7 +127,7 @@
       "bytes": 6583752,
       "retrieved_utc": "2026-09-15T13:39:48Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202001_2019.nc.gz",
@@ -136,7 +136,7 @@
       "bytes": 6592585,
       "retrieved_utc": "2026-09-15T13:39:54Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202002_2019.nc.gz",
@@ -145,7 +145,7 @@
       "bytes": 6589650,
       "retrieved_utc": "2026-09-15T13:39:55Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202003_2019.nc.gz",
@@ -154,7 +154,7 @@
       "bytes": 6602948,
       "retrieved_utc": "2026-09-15T13:39:57Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202004_2019.nc.gz",
@@ -163,7 +163,7 @@
       "bytes": 6588746,
       "retrieved_utc": "2026-09-15T13:39:59Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202005_2019.nc.gz",
@@ -172,7 +172,7 @@
       "bytes": 6556836,
       "retrieved_utc": "2026-09-15T13:40:02Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202006_2019.nc.gz",
@@ -181,7 +181,7 @@
       "bytes": 6510443,
       "retrieved_utc": "2026-09-15T13:40:12Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202007_2019.nc.gz",
@@ -190,7 +190,7 @@
       "bytes": 6501893,
       "retrieved_utc": "2026-09-15T13:40:13Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202008_2019.nc.gz",
@@ -199,7 +199,7 @@
       "bytes": 6506417,
       "retrieved_utc": "2026-09-15T13:40:15Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202009_2019.nc.gz",
@@ -208,7 +208,7 @@
       "bytes": 6520025,
       "retrieved_utc": "2026-09-15T13:40:17Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202010_2019.nc.gz",
@@ -217,7 +217,7 @@
       "bytes": 6557877,
       "retrieved_utc": "2026-09-15T13:40:19Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202011_2019.nc.gz",
@@ -226,7 +226,7 @@
       "bytes": 6534707,
       "retrieved_utc": "2026-09-15T13:40:21Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202012_2019.nc.gz",
@@ -235,7 +235,7 @@
       "bytes": 6552119,
       "retrieved_utc": "2026-09-15T13:40:23Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202101_2019.nc.gz",
@@ -244,7 +244,7 @@
       "bytes": 6557231,
       "retrieved_utc": "2026-09-15T13:40:25Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202102_2019.nc.gz",
@@ -253,7 +253,7 @@
       "bytes": 6551242,
       "retrieved_utc": "2026-09-15T13:40:28Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202103_2019.nc.gz",
@@ -262,7 +262,7 @@
       "bytes": 6565378,
       "retrieved_utc": "2026-09-15T13:40:31Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202104_2019.nc.gz",
@@ -271,7 +271,7 @@
       "bytes": 6552465,
       "retrieved_utc": "2026-09-15T13:40:33Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202105_2019.nc.gz",
@@ -280,7 +280,7 @@
       "bytes": 6540102,
       "retrieved_utc": "2026-09-15T13:40:35Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202106_2019.nc.gz",
@@ -289,7 +289,7 @@
       "bytes": 6485974,
       "retrieved_utc": "2026-09-15T13:40:37Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202107_2019.nc.gz",
@@ -298,7 +298,7 @@
       "bytes": 6490581,
       "retrieved_utc": "2026-09-15T13:40:45Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202108_2019.nc.gz",
@@ -307,7 +307,7 @@
       "bytes": 6511594,
       "retrieved_utc": "2026-09-15T13:40:48Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202109_2019.nc.gz",
@@ -316,7 +316,7 @@
       "bytes": 6486327,
       "retrieved_utc": "2026-09-15T13:40:54Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202110_2019.nc.gz",
@@ -325,7 +325,7 @@
       "bytes": 6546893,
       "retrieved_utc": "2026-09-15T13:40:57Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202111_2019.nc.gz",
@@ -334,7 +334,7 @@
       "bytes": 6547756,
       "retrieved_utc": "2026-09-15T13:41:06Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202112_2019.nc.gz",
@@ -343,7 +343,7 @@
       "bytes": 6574786,
       "retrieved_utc": "2026-09-15T13:41:13Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202201_2019.nc.gz",
@@ -352,7 +352,7 @@
       "bytes": 6557494,
       "retrieved_utc": "2026-09-15T13:41:18Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202202_2019.nc.gz",
@@ -361,7 +361,7 @@
       "bytes": 6524758,
       "retrieved_utc": "2026-09-15T13:41:21Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202203_2019.nc.gz",
@@ -370,7 +370,7 @@
       "bytes": 6576374,
       "retrieved_utc": "2026-09-15T13:41:23Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202204_2019.nc.gz",
@@ -379,7 +379,7 @@
       "bytes": 6548285,
       "retrieved_utc": "2026-09-15T13:41:25Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202205_2019.nc.gz",
@@ -388,7 +388,7 @@
       "bytes": 6541435,
       "retrieved_utc": "2026-09-15T13:41:27Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202206_2019.nc.gz",
@@ -397,7 +397,7 @@
       "bytes": 6498360,
       "retrieved_utc": "2026-09-15T13:41:33Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202207_2019.nc.gz",
@@ -406,7 +406,7 @@
       "bytes": 6494036,
       "retrieved_utc": "2026-09-15T13:41:38Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202208_2019.nc.gz",
@@ -415,7 +415,7 @@
       "bytes": 6515717,
       "retrieved_utc": "2026-09-15T13:41:43Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202209_2019.nc.gz",
@@ -424,7 +424,7 @@
       "bytes": 6531953,
       "retrieved_utc": "2026-09-15T13:41:45Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202210_2019.nc.gz",
@@ -433,7 +433,7 @@
       "bytes": 6567180,
       "retrieved_utc": "2026-09-15T13:41:51Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202211_2019.nc.gz",
@@ -442,7 +442,7 @@
       "bytes": 6553507,
       "retrieved_utc": "2026-09-15T13:41:53Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202212_2019.nc.gz",
@@ -451,7 +451,7 @@
       "bytes": 6561166,
       "retrieved_utc": "2026-09-15T13:41:59Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202301_2019.nc.gz",
@@ -460,7 +460,7 @@
       "bytes": 6548892,
       "retrieved_utc": "2026-09-15T13:42:05Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202302_2019.nc.gz",
@@ -469,7 +469,7 @@
       "bytes": 6531769,
       "retrieved_utc": "2026-09-15T13:42:07Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202303_2019.nc.gz",
@@ -478,7 +478,7 @@
       "bytes": 6572641,
       "retrieved_utc": "2026-09-15T13:42:12Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202304_2019.nc.gz",
@@ -487,7 +487,7 @@
       "bytes": 6576206,
       "retrieved_utc": "2026-09-15T13:42:16Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202305_2019.nc.gz",
@@ -496,7 +496,7 @@
       "bytes": 6541619,
       "retrieved_utc": "2026-09-15T13:42:21Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202306_2019.nc.gz",
@@ -505,7 +505,7 @@
       "bytes": 6521742,
       "retrieved_utc": "2026-09-15T13:42:24Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202307_2019.nc.gz",
@@ -514,7 +514,7 @@
       "bytes": 6524847,
       "retrieved_utc": "2026-09-15T13:42:26Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202308_2019.nc.gz",
@@ -523,7 +523,7 @@
       "bytes": 6544922,
       "retrieved_utc": "2026-09-15T13:42:29Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202309_2019.nc.gz",
@@ -532,7 +532,7 @@
       "bytes": 6554757,
       "retrieved_utc": "2026-09-15T13:42:33Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202310_2019.nc.gz",
@@ -541,7 +541,7 @@
       "bytes": 6568773,
       "retrieved_utc": "2026-09-15T13:42:50Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202311_2019.nc.gz",
@@ -550,7 +550,7 @@
       "bytes": 6548397,
       "retrieved_utc": "2026-09-15T13:42:53Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202312_2019.nc.gz",
@@ -559,7 +559,7 @@
       "bytes": 6554970,
       "retrieved_utc": "2026-09-15T13:42:59Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202401_2019.nc.gz",
@@ -568,7 +568,7 @@
       "bytes": 6576431,
       "retrieved_utc": "2026-09-15T13:43:04Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202402_2019.nc.gz",
@@ -577,7 +577,7 @@
       "bytes": 6575966,
       "retrieved_utc": "2026-09-15T13:43:07Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202403_2019.nc.gz",
@@ -586,7 +586,7 @@
       "bytes": 6568180,
       "retrieved_utc": "2026-09-15T13:43:10Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202404_2019.nc.gz",
@@ -595,7 +595,7 @@
       "bytes": 6569653,
       "retrieved_utc": "2026-09-15T13:43:12Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202405_2019.nc.gz",
@@ -604,7 +604,7 @@
       "bytes": 6562230,
       "retrieved_utc": "2026-09-15T13:43:16Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202406_2019.nc.gz",
@@ -613,7 +613,7 @@
       "bytes": 6528300,
       "retrieved_utc": "2026-09-15T13:43:20Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202407_2019.nc.gz",
@@ -622,7 +622,7 @@
       "bytes": 6552774,
       "retrieved_utc": "2026-09-15T13:43:22Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202408_2019.nc.gz",
@@ -631,7 +631,7 @@
       "bytes": 6535792,
       "retrieved_utc": "2026-09-15T13:43:27Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202409_2019.nc.gz",
@@ -640,7 +640,7 @@
       "bytes": 6554900,
       "retrieved_utc": "2026-09-15T13:43:29Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202410_2019.nc.gz",
@@ -649,7 +649,7 @@
       "bytes": 6562347,
       "retrieved_utc": "2026-09-15T13:43:37Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202411_2019.nc.gz",
@@ -658,7 +658,7 @@
       "bytes": 6544520,
       "retrieved_utc": "2026-09-15T13:43:39Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202412_2019.nc.gz",
@@ -667,7 +667,7 @@
       "bytes": 6552578,
       "retrieved_utc": "2026-09-15T13:43:42Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202501_2019.nc.gz",
@@ -676,7 +676,7 @@
       "bytes": 6572549,
       "retrieved_utc": "2026-09-15T13:43:45Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202502_2019.nc.gz",
@@ -685,7 +685,7 @@
       "bytes": 6577611,
       "retrieved_utc": "2026-09-15T13:43:52Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202503_2019.nc.gz",
@@ -694,7 +694,7 @@
       "bytes": 6617867,
       "retrieved_utc": "2026-09-15T13:43:56Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202504_2019.nc.gz",
@@ -703,7 +703,7 @@
       "bytes": 6636594,
       "retrieved_utc": "2026-09-15T13:43:58Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202505_2019.nc.gz",
@@ -712,7 +712,7 @@
       "bytes": 6599403,
       "retrieved_utc": "2026-09-15T13:44:04Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202506_2019.nc.gz",
@@ -721,7 +721,7 @@
       "bytes": 6563786,
       "retrieved_utc": "2026-09-15T13:44:12Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202507_2019.nc.gz",
@@ -730,7 +730,7 @@
       "bytes": 6562978,
       "retrieved_utc": "2026-09-15T13:44:16Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202508_2019.nc.gz",
@@ -739,7 +739,7 @@
       "bytes": 6564336,
       "retrieved_utc": "2026-09-15T13:44:19Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202509_2019.nc.gz",
@@ -748,7 +748,7 @@
       "bytes": 6558118,
       "retrieved_utc": "2026-09-15T13:44:22Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202510_2019.nc.gz",
@@ -757,7 +757,7 @@
       "bytes": 6576418,
       "retrieved_utc": "2026-09-15T13:44:32Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202511_2019.nc.gz",
@@ -766,7 +766,7 @@
       "bytes": 6577626,
       "retrieved_utc": "2026-09-15T13:44:34Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202512_2019.nc.gz",
@@ -775,7 +775,7 @@
       "bytes": 6571962,
       "retrieved_utc": "2026-09-15T13:44:37Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202601_2019.nc.gz",
@@ -784,7 +784,7 @@
       "bytes": 6596407,
       "retrieved_utc": "2026-09-15T13:44:41Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202602_2019.nc.gz",
@@ -793,7 +793,7 @@
       "bytes": 6578938,
       "retrieved_utc": "2026-09-15T13:44:44Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202603_2019.nc.gz",
@@ -802,7 +802,7 @@
       "bytes": 6636958,
       "retrieved_utc": "2026-09-15T13:44:47Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202604_2019.nc.gz",
@@ -811,7 +811,7 @@
       "bytes": 6628937,
       "retrieved_utc": "2026-09-15T13:44:50Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202605_2019.nc.gz",
@@ -820,7 +820,7 @@
       "bytes": 6610519,
       "retrieved_utc": "2026-09-15T13:44:52Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202606_2019.nc.gz",
@@ -829,7 +829,7 @@
       "bytes": 6591857,
       "retrieved_utc": "2026-09-15T13:44:56Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202607_2019.nc.gz",
@@ -838,7 +838,7 @@
       "bytes": 6645702,
       "retrieved_utc": "2026-09-15T13:45:00Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     },
     {
       "file": "RG_ArgoClim_202608_2019.nc.gz",
@@ -847,7 +847,7 @@
       "bytes": 6673591,
       "retrieved_utc": "2026-09-15T13:45:13Z",
       "status": 200,
-      "read_utc": "2026-09-15T13:50:09Z"
+      "read_utc": "2026-09-15T14:21:43Z"
     }
   ]
 }

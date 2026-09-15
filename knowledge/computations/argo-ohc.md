@@ -259,7 +259,7 @@ any machine. A data-root receipt is attested with `--data-root` so the
 attester rehashes the tree.
 
 **Fixture run (seed 7, 0 to 2000 dbar, 2005-01 through 2016-12,
-measured 2026-09-15; receipt run sha256:be6d26d7317714d4).** 144 of
+measured 2026-09-15; receipt run sha256:4f5e4c0f60e48ff8).** 144 of
 144 months used. Trend +10.0594 ZJ per year, 95 percent interval
 [+9.5547, +10.5640] (lag-1 autocorrelation +0.4786, effective sample
 50.78 of 144); change +110.6532 ZJ over the 11.00 years between the
@@ -279,7 +279,7 @@ ECCO ocean surface area the provider bundle's recipe anchors), and
 stamped by the assembler.[^loaders][^data-root][^rg-files][^ecco-ohc-recipe]
 180 of 180 months carry a value in each layer.
 
-- 0 to 2000 dbar (receipt run sha256:20abc0837b7f1dba): trend +9.6664 ZJ per year,
+- 0 to 2000 dbar (receipt run sha256:a3f1f2cf52272fe3): trend +9.6664 ZJ per year,
   95 percent interval [+8.4546, +10.8782], the per-month floor
   9.8442 ZJ; change +135.3300 ZJ over the 14.00 years between the
   first and last year centres; endpoint change +110.0473 ZJ; residual
@@ -287,7 +287,7 @@ stamped by the assembler.[^loaders][^data-root][^rg-files][^ecco-ohc-recipe]
   17.1580 with the autocorrelation inflation 4.745, the change
   uncertainty 16.9647); `consistent_within_uncertainty` false. Per unit area: 1.0011 watts per square meter of the
   domain, 0.6005 of the Earth's surface.
-- 0 to 700 dbar (receipt run sha256:89ae0e67f801c8d0): trend +5.9498 ZJ per year,
+- 0 to 700 dbar (receipt run sha256:ac1fa7bf8e15c437): trend +5.9498 ZJ per year,
   95 percent interval [+4.9916, +6.9080], floor 7.1262 ZJ; change
   +83.2973 ZJ; endpoint change +65.6873 ZJ; residual minus 17.6100 against a
   bar of 18.6705 (endpoint uncertainty 12.9861 with the inflation

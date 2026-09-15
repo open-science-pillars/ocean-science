@@ -3,12 +3,12 @@
   "manifest": {
     "ohc-700.csv": "sha256:34ab75d2af1cac151b4435e13738103ba99624795a9991b5436e2e7e84390a9d",
     "ohc-2000.csv": "sha256:6f4ddac01061f24806cce8dc7d01c2938024c1b404eb36115cb90970af7d26f0",
-    "ohc-700-stamp.json": "sha256:93c4aefc63bb278e33d2689e2fd654a586b3deaff675e71ceb5f0817858f8708",
-    "ohc-2000-stamp.json": "sha256:207fdc00ddd8af3cbe387b04e3fa36ff6da530fba2df62575a4273c69baebd4e",
-    "SOURCES.json": "sha256:01142d299896400d25f45d1521ba8a25cc39424ab4c6a017dd29873ff3183657"
+    "ohc-700-stamp.json": "sha256:e2b6968f24c35fe691fafd6efb8ca2236c1c90405a93d2bbdfce1f2025141f14",
+    "ohc-2000-stamp.json": "sha256:e184a92600f93b7a868bf9969ba34634e3a334d6c53aaebf6382d71b07b53c52",
+    "SOURCES.json": "sha256:6698b6958ddb20fac6b5e66b5b26e17acdb30bdfdf316258172127ef0864f5d0"
   },
-  "manifest_sha256": "sha256:cdd809c384c41be2806e31fef60dcb39d72b093e74596bb577bf745629456afc",
-  "verified_utc": "2026-09-15T13:50:32Z",
+  "manifest_sha256": "sha256:d4d0f11569b2d83dcfb40bfc81d03cc422d1ebc7763e71a270c150817dd2b090",
+  "verified_utc": "2026-09-15T14:22:04Z",
   "terms": {
     "ohc-700": {
       "term": "ohc-700",
@@ -42,8 +42,8 @@
       "uncertainty_basis": "stated noise floor: standard deviation of adjacent-month differences of the finished series with its calendar-month means removed, divided by sqrt(2); the product ships no error field",
       "deep_omission": "the ocean below 2000 dbar is not sampled by the product and is not in this term",
       "loader": "references/loaders/ohc_rg_loader.py",
-      "loader_sha256": "sha256:e99788856eb8822eed58b93c0fc6f9325e7174fc9f0b8b32623b38de0c7a34e0",
-      "written_utc": "2026-09-15T13:50:09Z",
+      "loader_sha256": "sha256:92f24b967ea50d0b08a6da067791f9d21826bf97c9bced69f1376b752ce0507c",
+      "written_utc": "2026-09-15T14:21:43Z",
       "sources": {
         "RG_ArgoClim_Temperature_2019.nc.gz": "sha256:b618ec96ca634bc83f499a76032618febf140bdab392731df603d57b9fda3b4c",
         "RG_ArgoClim_Salinity_2019.nc.gz": "sha256:94d86ec8d33b4638c22ef2f6b9c604f72111e16a6e2502bb20da94e2b8edcf67",
@@ -146,7 +146,7 @@
       "layer": {
         "top_dbar": 0.0,
         "floor_dbar": 2000.0,
-        "statement": "0 to 2000 dbar; the RG levels at or above the floor, each level's layer bounded by the midpoints to its neighbours, the top from 0 dbar, the bottom cut at the floor"
+        "statement": "0 to 2000 dbar; the RG levels at or above the floor, each level's layer bounded by the midpoints to its neighbours, the top from 0 dbar, the bottom cut at the floor, and the deepest level (1975 dbar) extended down to the 2000 dbar floor"
       },
       "product": "Roemmich and Gilson gridded Argo climatology, 2019 release, 2004 to 2018 mean plus monthly anomalies and extension files (sio-argo.ucsd.edu/RG_Climatology.html)",
       "product_version": "2019 release (Latest Version 2019, Updated Jan 17, 2020), monthly extension files RG_ArgoClim_YYYYMM_2019.nc.gz",
@@ -173,8 +173,8 @@
       "uncertainty_basis": "stated noise floor: standard deviation of adjacent-month differences of the finished series with its calendar-month means removed, divided by sqrt(2); the product ships no error field",
       "deep_omission": "the ocean below 2000 dbar is not sampled by the product and is not in this term",
       "loader": "references/loaders/ohc_rg_loader.py",
-      "loader_sha256": "sha256:e99788856eb8822eed58b93c0fc6f9325e7174fc9f0b8b32623b38de0c7a34e0",
-      "written_utc": "2026-09-15T13:50:09Z",
+      "loader_sha256": "sha256:92f24b967ea50d0b08a6da067791f9d21826bf97c9bced69f1376b752ce0507c",
+      "written_utc": "2026-09-15T14:21:43Z",
       "sources": {
         "RG_ArgoClim_Temperature_2019.nc.gz": "sha256:b618ec96ca634bc83f499a76032618febf140bdab392731df603d57b9fda3b4c",
         "RG_ArgoClim_Salinity_2019.nc.gz": "sha256:94d86ec8d33b4638c22ef2f6b9c604f72111e16a6e2502bb20da94e2b8edcf67",
@@ -306,7 +306,7 @@
       "ohc-2000": {
         "top_dbar": 0.0,
         "floor_dbar": 2000.0,
-        "statement": "0 to 2000 dbar; the RG levels at or above the floor, each level's layer bounded by the midpoints to its neighbours, the top from 0 dbar, the bottom cut at the floor"
+        "statement": "0 to 2000 dbar; the RG levels at or above the floor, each level's layer bounded by the midpoints to its neighbours, the top from 0 dbar, the bottom cut at the floor, and the deepest level (1975 dbar) extended down to the 2000 dbar floor"
       }
     },
     "deep_omission": {

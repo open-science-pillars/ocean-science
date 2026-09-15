@@ -3,7 +3,7 @@
   "layer": {
     "top_dbar": 0.0,
     "floor_dbar": 2000.0,
-    "statement": "0 to 2000 dbar; the RG levels at or above the floor, each level's layer bounded by the midpoints to its neighbours, the top from 0 dbar, the bottom cut at the floor"
+    "statement": "0 to 2000 dbar; the RG levels at or above the floor, each level's layer bounded by the midpoints to its neighbours, the top from 0 dbar, the bottom cut at the floor, and the deepest level (1975 dbar) extended down to the 2000 dbar floor"
   },
   "product": "Roemmich and Gilson gridded Argo climatology, 2019 release, 2004 to 2018 mean plus monthly anomalies and extension files (sio-argo.ucsd.edu/RG_Climatology.html)",
   "product_version": "2019 release (Latest Version 2019, Updated Jan 17, 2020), monthly extension files RG_ArgoClim_YYYYMM_2019.nc.gz",
@@ -30,8 +30,8 @@
   "uncertainty_basis": "stated noise floor: standard deviation of adjacent-month differences of the finished series with its calendar-month means removed, divided by sqrt(2); the product ships no error field",
   "deep_omission": "the ocean below 2000 dbar is not sampled by the product and is not in this term",
   "loader": "references/loaders/ohc_rg_loader.py",
-  "loader_sha256": "sha256:e99788856eb8822eed58b93c0fc6f9325e7174fc9f0b8b32623b38de0c7a34e0",
-  "written_utc": "2026-09-15T13:50:09Z",
+  "loader_sha256": "sha256:92f24b967ea50d0b08a6da067791f9d21826bf97c9bced69f1376b752ce0507c",
+  "written_utc": "2026-09-15T14:21:43Z",
   "sources": {
     "RG_ArgoClim_Temperature_2019.nc.gz": "sha256:b618ec96ca634bc83f499a76032618febf140bdab392731df603d57b9fda3b4c",
     "RG_ArgoClim_Salinity_2019.nc.gz": "sha256:94d86ec8d33b4638c22ef2f6b9c604f72111e16a6e2502bb20da94e2b8edcf67",
