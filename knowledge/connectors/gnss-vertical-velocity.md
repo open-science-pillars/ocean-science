@@ -40,7 +40,7 @@ sources:
     resource: ../gotchas/tide-gauge-relative-sea-level-and-land-motion.md
     title: "This bundle's gotcha: a tide gauge trend is relative sea level and carries the land's vertical motion, the PSMSL ellipsoidal links through SONEL, and the frame those links are given in"
   - id: server
-    resource: https://github.com/open-science-pillars/core/blob/9fad9ab515e05aef5be73076ef24ca4a9ad83f5f/connectors/observations_mcp.py
+    resource: https://github.com/open-science-pillars/core/blob/6d8de538894c59bbefef4c4fa7ea91fc654dd95c/connectors/observations_mcp.py
     title: "The observations server carrying gnss_vertical_velocity (contract 0.5.0): the table read once per process, the parser on the README columns, the nearest-station lookup, and the recorded fixture (the table's first three lines and every station within 1.5 degrees of the San Francisco Bay, 262 lines of 21,821)"
 ---
 
@@ -51,15 +51,16 @@ Geodetic Laboratory's MIDAS velocity table, anonymous over HTTPS, by
 the laboratory's 4-character station id or by the station nearest a
 latitude and longitude, and returns the up velocity, its uncertainty,
 the east and north components, the epochs, the steps assumed and the
-frame.[^igs20-table][^server] Verified live 2026-09-15 at P224 in
-Berkeley by id and by coordinates.[^igs20-table]
+frame; a coordinate lookup also lists the three nearest stations with
+their distances.[^igs20-table][^server] Verified live 2026-09-15 at
+P224 in Berkeley by id and by coordinates.[^igs20-table][^server]
 
 **The table, the frame and the date.** The current table is the IGS20
 one under `gps_timeseries/IGS20/midas/midas.IGS.txt`, rebuilt weekly
 (Last-Modified 2026-09-15 on the day it was read), 21,821 stations in
-27 columns with no header.[^igs20-table][^midas-readme] The IGS14
-table under `velocities/` is superseded and dated 2024-11-04; the
-laboratory's own README there says so.[^igs14-readme][^igs14-table]
+27 columns.[^igs20-table][^midas-readme] The IGS14 table under
+`velocities/` is superseded and dated 2024-11-04; the laboratory's
+own README there says so.[^igs14-readme][^igs14-table]
 The tool serves both by name and returns the frame, the table URL and
 the file's last modification with every answer, because a velocity
 without its frame and date cannot be joined to another.[^server] A
@@ -70,25 +71,25 @@ serves the IGS frames only.[^midas-readme][^ngl-home]
 **Units and columns.** The file writes velocities and uncertainties
 in metres per year in columns 9 to 14 (east, north, up, then their
 uncertainties); the tool returns millimetres per year.[^midas-readme]
-Longitudes in columns 25 and 26 are written below -180 for eastern
-stations (00NA in Darwin at 130.844E appears as -229.156), so a
-nearest-station search normalises them first.[^igs20-table] The
-uncertainty is the MIDAS estimator's own, from the distribution of
-velocity pairs; the count of pairs and of steps assumed travel with
-it.[^midas-readme]
+Latitude is column 25 and longitude column 26; longitudes are
+written below -180 for eastern stations (00NA at 130.844E appears as
+-229.156), so a nearest-station search normalises them
+first.[^igs20-table][^server] The uncertainty is the MIDAS estimator's
+own, from the distribution of velocity pairs; the count of pairs and
+of steps assumed travel with it.[^midas-readme]
 
 **What the up velocity is.** At P224 the IGS20 table gives
 +0.214 mm/yr with an uncertainty of 0.386 mm/yr over 21.5 years; the
 IGS14 table gave -0.046 mm/yr over 19.6 years.[^igs20-table][^igs14-table]
-The difference is the frame and the added years, and it is of the
-size of the uncertainty: a vertical rate under a millimetre a year is
-not distinguishable from zero at one station, and a tide gauge
-correction built from it inherits that.[^igs20-table] A tide gauge
-measures the water against the local land, so its trend is relative
-sea level and carries this vertical motion; the PSMSL ellipsoidal
-links give the gauge's own GNSS solutions through SONEL in their
-frame, and the nearest MIDAS station is a different station at a
-different distance from the gauge.[^land-motion-gotcha]
+The difference between the two, 0.26 mm/yr, is smaller than the
+stated uncertainty of 0.386 mm/yr: a vertical rate under a millimetre
+a year is not distinguishable from zero at one station, and a tide
+gauge correction built from it inherits that.[^igs20-table][^igs14-table]
+A tide gauge measures the water against the local land, so its trend
+is relative sea level and carries this vertical motion; the PSMSL
+ellipsoidal links give the gauge's own GNSS solutions through SONEL
+in their frame, and the nearest MIDAS station is a different station
+at a different distance from the gauge.[^land-motion-gotcha]
 
 **Cost.** The table is one request of 5.4 MB, read once per process
 and matched locally; the station id and the coordinates never leave
