@@ -109,7 +109,7 @@ def _(attest, compute):
 
 
 @app.cell
-def _(attest, fx_path, json, tmp_path=None):
+def _(attest, fx_path, json):
     # 3. A doctored receipt fails on its check: the attester recomputes
     #    from the series and does not take the receipt's word.
     _r = json.loads(fx_path.read_text())
@@ -143,19 +143,19 @@ def _(attest, compute, data_root, json):
     #    2006-01 through 2020-12: the numbers the concept records, the
     #    anchor distance, and a PASS attestation.
     _rec = json.loads((data_root / "RECORD.json").read_text())
-    assert _rec["record"] == "RECORD_NAME"
+    assert _rec["record"] == "argo-ohc-root-2026-09-15"
     _code, _out, _err, r2000, r2000_path = compute("2006-01:2020-12", 2000, "record-2000", fixture=False)
     assert _code == 0, _err
     assert r2000["data"]["mode"] == "data-root" and r2000["data"]["record"] == _rec["record"]
     assert r2000["months"]["n_used"] == 180 and r2000["months"]["missing"] == []
-    assert abs(r2000["terms"]["trend"]["value"] - TREND_2000) < 0.001
-    assert abs(r2000["terms"]["trend"]["interval"]["half_width"] - HALF_2000) < 0.001
-    assert abs(r2000["terms"]["change"]["value"] - CHANGE_2000) < 0.001
-    assert abs(r2000["terms"]["endpoint_change"]["value"] - ENDPOINT_2000) < 0.001
-    assert abs(r2000["residual"]["value"] - RESIDUAL_2000) < 0.001
-    assert r2000["verdict"]["consistent_within_uncertainty"] is VERDICT_2000
-    assert abs(r2000["terms"]["trend"]["per_area"]["W_m2_of_earth_surface"] - WM2_EARTH_2000) < 0.0001
-    assert abs(r2000["anchor"]["distance_W_m2_of_earth_surface"] - DIST_2000) < 0.0001
+    assert abs(r2000["terms"]["trend"]["value"] - 9.6664) < 0.001
+    assert abs(r2000["terms"]["trend"]["interval"]["half_width"] - 1.2118) < 0.001
+    assert abs(r2000["terms"]["change"]["value"] - 135.33) < 0.001
+    assert abs(r2000["terms"]["endpoint_change"]["value"] - 110.0473) < 0.001
+    assert abs(r2000["residual"]["value"] - -25.2827) < 0.001
+    assert r2000["verdict"]["consistent_within_uncertainty"] is False
+    assert abs(r2000["terms"]["trend"]["per_area"]["W_m2_of_earth_surface"] - 0.60053) < 0.0001
+    assert abs(r2000["anchor"]["distance_W_m2_of_earth_surface"] - -0.01947) < 0.0001
     assert r2000["known_truth"] is None
     _rc, _o, _e, _doc = attest(r2000_path)
     assert _rc == 0 and _doc["verdict"] == "PASS" and _doc["refusal"] is False, _o + _e
@@ -168,10 +168,10 @@ def _(attest, compute):
     #    a window past its coverage.
     _code, _out, _err, r700, r700_path = compute("2006-01:2020-12", 700, "record-700", fixture=False)
     assert _code == 0, _err
-    assert abs(r700["terms"]["trend"]["value"] - TREND_700) < 0.001
-    assert abs(r700["terms"]["trend"]["interval"]["half_width"] - HALF_700) < 0.001
-    assert abs(r700["terms"]["change"]["value"] - CHANGE_700) < 0.001
-    assert abs(r700["anchor"]["distance_W_m2_of_earth_surface"] - DIST_700) < 0.0001
+    assert abs(r700["terms"]["trend"]["value"] - 5.9498) < 0.001
+    assert abs(r700["terms"]["trend"]["interval"]["half_width"] - 0.9582) < 0.001
+    assert abs(r700["terms"]["change"]["value"] - 83.2973) < 0.001
+    assert abs(r700["anchor"]["distance_W_m2_of_earth_surface"] - -0.02036) < 0.0001
     _rc, _o, _e, _doc = attest(r700_path)
     assert _rc == 0 and _doc["verdict"] == "PASS", _o + _e
     _code, _out, _err, rr, rr_path = compute("2010-01:2030-12", 700, "record-refusal", fixture=False)

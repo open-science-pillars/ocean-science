@@ -251,38 +251,53 @@ of 6.4076; `consistent_within_uncertainty` true; the planted rate of
 change's uncertainty. The refusal case the golden exercises is
 2001-01 through 2016-12 with depth 700: exit 3, attested as a refusal.
 
-**Real-data run (the stamped data root RECORD_NAME, 2006-01 through
+**Real-data run (the stamped data root argo-ohc-root-2026-09-15, 2006-01 through
 2020-12, measured 2026-09-15).** The two terms were built by the
 loader from the product's two climatology files and the 92 extension
-files through 2026-08, over the fixed mask of CELLS cells (latitudes
-LATMIN to LATMAX, domain area AREA square meters, FRACTION of the
+files through 2026-08, over the fixed mask of 30,650 cells (latitudes
+64.5S to 65.5N, domain area 3.0598e+14 square meters, 85.5 percent of the
 ECCO ocean surface area the provider bundle's recipe anchors), and
 stamped by the assembler.[^loaders][^data-root][^rg-files][^ecco-ohc-recipe]
 180 of 180 months carry a value in each layer.
 
-- 0 to 2000 dbar (receipt run RUN2000): trend TREND2000 ZJ per year,
-  95 percent interval [CILO2000, CIHI2000], the per-month floor
-  FLOOR2000 ZJ; change CHANGE2000 ZJ over the 14.00 years between the
-  first and last year centres; endpoint change END2000 ZJ; residual
-  RES2000 against a bar of BAR2000; `consistent_within_uncertainty`
-  VERDICT2000. Per unit area: WDOM2000 watts per square meter of the
-  domain, WEARTH2000 of the Earth's surface.
-- 0 to 700 dbar (receipt run RUN700): trend TREND700 ZJ per year,
-  95 percent interval [CILO700, CIHI700], floor FLOOR700 ZJ; change
-  CHANGE700 ZJ; endpoint change END700 ZJ; residual RES700 against a
-  bar of BAR700; `consistent_within_uncertainty` VERDICT700. Per unit
-  area: WDOM700 of the domain, WEARTH700 of the Earth's surface.
+- 0 to 2000 dbar (receipt run sha256:20abc0837b7f1dba): trend +9.6664 ZJ per year,
+  95 percent interval [+8.4546, +10.8782], the per-month floor
+  9.8442 ZJ; change +135.3300 ZJ over the 14.00 years between the
+  first and last year centres; endpoint change +110.0473 ZJ; residual
+  minus 25.2827 against a bar of 18.7044; `consistent_within_uncertainty`
+  false. Per unit area: 1.0011 watts per square meter of the
+  domain, 0.6005 of the Earth's surface.
+- 0 to 700 dbar (receipt run sha256:89ae0e67f801c8d0): trend +5.9498 ZJ per year,
+  95 percent interval [+4.9916, +6.9080], floor 7.1262 ZJ; change
+  +83.2973 ZJ; endpoint change +65.6873 ZJ; residual minus 17.6100 against a
+  bar of 14.5762; `consistent_within_uncertainty` false. Per unit
+  area: 0.6162 of the domain, 0.3696 of the Earth's surface.
+
+**The verdict on the record.** Both layers fail
+`consistent_within_uncertainty`: the change the linear rate implies
+exceeds the endpoint change by 25 ZJ (0 to 2000 dbar) and 18 ZJ (0 to
+700 dbar), outside bars of 19 and 15. The record over 2006 through
+2020 is not a line: the annual means sit low and flat through 2012
+and rise faster after, and 2020 sits just below 2019, so a rate fitted
+through the whole window overstates the first-year to last-year
+difference. The verdict is the receipt saying so, not a failure of
+the chain; the attester confirms both numbers, and a reader quoting
+the change over this window quotes the endpoint change and the rate
+side by side, as the receipt does. The product page's note that the
+early years lean warm toward the baseline where the array was sparse
+bears on the low start of the window and is recorded in the dataset
+concept.[^dataset][^rg-page]
 
 **The anchor.** The published 2006 to 2020 rates are 0.62 plus or
 minus 0.2 watts per square meter of the Earth's surface for 0 to 2000
 m and 0.39 plus or minus 0.1 for 0 to 700 m, LOWESS trends of an
 ensemble of products over the ocean between 60S and 60N deeper than
 300 m with an ocean-surface factor of 0.61.[^vs-2023] The run's rate
-per unit Earth surface lands DIST2000 watts per square meter from the
-0 to 2000 m anchor (DISTU2000 of its uncertainty) and DIST700 from the
-0 to 700 m anchor (DISTU700 of its uncertainty). Per unit area of the
+per unit Earth surface lands 0.0195 watts per square meter below the
+0 to 2000 m anchor (0.10 of its uncertainty) and 0.0204 below the
+0 to 700 m anchor (0.20 of its uncertainty). Per unit area of the
 ocean the anchors read 1.02 plus or minus 0.33 and 0.64 plus or minus
-0.16 watts per square meter, against the run's WDOM2000 and WDOM700
+0.16 watts per square meter, against the run's 1.0011 and 0.6162
 over its own domain. The run's domain omits the ocean poleward of the
 grid, the marginal seas mapped short and the shelves, and the
 published estimate omits the shallow ocean above 300 m depth and the
