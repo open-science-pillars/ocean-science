@@ -4,7 +4,8 @@ title: "GNSS vertical land motion: the Nevada Geodetic Laboratory MIDAS velocity
 description: "A station's vertical velocity, its uncertainty and its reference frame through gnss_vertical_velocity, by station id or by the station nearest a point: the laboratory's MIDAS table for the IGS20 frame, 21,821 stations in 27 columns rebuilt weekly, velocities in metres per year in the file and millimetres per year in the tool, longitudes written below -180 for eastern stations, and a superseded IGS14 table kept beside it. The up velocity is the land motion a tide gauge series carries; a plate-fixed velocity is a different number."
 tags: [connector, gnss, gps, vertical-land-motion, midas, ngl, geodesy, tide-gauge, sea-level, mcp, observations]
 generated: { by: process:claude-code, at: 2026-09-15T14:00:00Z }
-status: draft
+verified: { by: human:PaulMRamirez, at: 2026-09-15T17:38:42Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/57 }
+status: stable
 citation:
   access_date_required: true
   authority: https://geodesy.unr.edu/
