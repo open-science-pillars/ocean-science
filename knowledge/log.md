@@ -4,6 +4,18 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-15 · STEWARD SIGNING of
+  knowledge/recipes/regional-sea-level-trend.md,
+  knowledge/gotchas/velocity-reference-frame.md,
+  knowledge/gotchas/coastal-heights-ellipsoidal-versus-orthometric.md:
+  Maintainer review of the regional sea level trend recipe and its two
+  coastal geodesy gotchas, merged in PR #60 after the coordinator's lint
+  and fix round. The recipe and the medium velocity frame gotcha are
+  promoted to stable; the high-severity coastal heights gotcha keeps
+  status draft with this one review until the maintainer's second
+  review. The verified events are written on the steward's word. The
+  verified event is written on the steward's word. (steward)
+
 - 2026-09-15 · SEEDED, status draft: the regional sea level trend
   recipe and two gotchas for issue 55.
   recipes/regional-sea-level-trend.md (the NASA-SSH altimetry trend

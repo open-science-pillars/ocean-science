@@ -5,7 +5,8 @@ title: "Regional sea level trend at a coast: the altimetry trend, the GIA model,
 description: "How a coastal sea level trend is assembled from four numbers that are not the same quantity: the NASA-SSH altimetry trend in a box against the coast (geocentric, an anomaly against the DTU21 mean sea surface, with offshore information in the coastal cells), the GIA correction named by its model (the PSMSL Peltier set, ICE-5G v1.3 with VM2 and a 90 km lithosphere, one rate for the gauge and one for the GNSS receiver), the vertical land motion at the gauge from gnss_vertical_velocity with its frame and uncertainty, and the PSMSL RLR relative trend over the same window. The identity is geocentric trend equals relative trend plus land uplift; the residual against the altimetry is read against the combined uncertainty and the two differences of place before any altimeter bias."
 tags: [sea-level, trend, coastal, regional, altimetry, nasa-ssh, tide-gauge, psmsl, gia, vertical-land-motion, gnss, midas, recipe]
 generated: { by: knowledge-seeder/claude, at: 2026-09-15T17:50:00Z }
-status: draft
+verified: { by: human:PaulMRamirez, at: 2026-09-15T18:32:59Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/60 }
+status: stable
 stale_after: 2027-03-15
 inputs:
   - altimetry: "the NASA-SSH V1.1 simple grids (the provider bundle's dataset concept, cited below): monthly means of the half-degree ssha grids over the box the reader names against the coast, each grid a Gaussian average of width 100 km over points within 600 km, ten days of passes every seven days, anomalies against the DTU21 mean sea surface"

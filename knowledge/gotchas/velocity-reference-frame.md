@@ -5,9 +5,10 @@ title: "A vertical velocity carries its reference frame: the IGS20, IGS14, ITRF2
 description: "Vertical motion is defined by the reference frame it is measured in, and the frame is realised by a set of station coordinates, an origin convention and a scale, so two analyses of one receiver give different vertical velocities without either being wrong. The Nevada Geodetic Laboratory now serves MIDAS velocities in IGS20 with 26 plate-fixed frames beside them, its IGS14 tables are superseded, its solutions are in the centre of mass frame with a translation to the centre of figure supplied, and the SONEL solutions PSMSL prints are in ITRF2014; at P224 the IGS20 and IGS14 tables differ by 0.26 mm per year and at Brest four solutions on one receiver span 1.28 mm per year. A velocity differenced against one from another frame or solution, or a modelled uplift compared with an observed one with neither frame stated, reads the frame as land motion."
 tags: [gnss, gps, vertical-land-motion, reference-frame, igs20, igs14, itrf2014, plate-fixed, geocenter, midas, sonel, tide-gauge, sea-level]
 generated: { by: knowledge-seeder/claude, at: 2026-09-15T17:50:00Z }
+verified: { by: human:PaulMRamirez, at: 2026-09-15T18:32:59Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/60 }
 severity: medium
 dataset: ../connectors/gnss-vertical-velocity.md
-status: draft
+status: stable
 stale_after: 2027-03-15
 sources:
   - id: blewitt-2004
