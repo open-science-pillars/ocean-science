@@ -44,6 +44,13 @@ _Historical note: older entries use build-era shorthand (a "close lint" is a kno
   others 2016 and von Schuckmann and others 2023; the Nature abstract
   of Roemmich and others 2015. The dataset concept and its three
   gotchas are linked, not repeated. (knowledge-seeder)
+- 2026-09-15 · knowledge/connectors/gnss-vertical-velocity.md drafted
+  for the ocean tool of the observations server's round three
+  (gnss_vertical_velocity; core issue 43): the Nevada Geodetic
+  Laboratory's MIDAS README, the IGS20 and IGS14 tables and the home
+  page read live, both citation DOIs verified on Crossref, the P224
+  and TIBB values recorded with their frames; status draft pending
+  steward review (drafting session, connector seed)
 
 - 2026-09-14 · STEWARD RE-SIGNING of
   knowledge/gotchas/psmsl-rlr-versus-metric.md,

@@ -95,3 +95,4 @@ bundle's `knowledge/podaac/recipes/ecco-ocean-heat-content.md`.
 - [NOAA CO-OPS tide and water-level stations](connectors/coops-tides.md), status: stable
 - [Argo profiling floats via ERDDAP](connectors/argo-floats.md), status: stable
 - [PSMSL long-record tide gauges](connectors/psmsl-gauges.md), status: stable
+- [GNSS vertical land motion: the Nevada Geodetic Laboratory MIDAS velocity table](connectors/gnss-vertical-velocity.md), status: draft
