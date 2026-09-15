@@ -55,6 +55,12 @@ _Historical note: older entries use build-era shorthand (a "close lint" is a kno
   not fetched. The CO-OPS facts are taken from this bundle's signed
   CO-OPS gotchas and not re-read. Every claim carries a footnote to
   one of these; no data file was downloaded. (knowledge-seeder)
+- 2026-09-15 · STEWARD SIGNING of
+  knowledge/connectors/gnss-vertical-velocity.md: Maintainer review of
+  the GNSS vertical velocity connector concept for the observations
+  server's round three tool, merged in PR #57 after the coordinator's
+  lint and fix round; promoted to stable. The verified event is written
+  on the steward's word. (steward)
 
 - 2026-09-15 · STEWARD SIGNING of knowledge/computations/argo-ohc.md,
   knowledge/recipes/argo-ohc.md,
