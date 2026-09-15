@@ -4,6 +4,46 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-15 · STEWARD SIGNING of knowledge/computations/argo-ohc.md,
+  knowledge/recipes/argo-ohc.md,
+  knowledge/references/skills/run-argo-ohc.md: Maintainer review of the
+  attested Argo ocean heat content computation merged in PR #56 after
+  the coordinator's review and fix round (the attester now verifies the
+  data root, the run ids reproduce, the endpoint bar carries the
+  autocorrelation inflation); the computation concept and the recipe
+  promoted to stable, the run skill stays a draft reference as the sea
+  level budget's does; the golden runs in CI from this commit. The
+  verified event is written on the steward's word. (steward)
+
+- 2026-09-15 · SEEDED, status draft: the attested ocean heat content
+  computation on the Roemmich and Gilson gridded Argo product, issue
+  54. computations/argo-ohc.md (type Attested Computation: the 0 to
+  700 and 0 to 2000 dbar heat content change over a window as a rate
+  with the sanctioned interval, the change the rate implies, the
+  endpoint change, the residual and the combined uncertainty, the
+  deep ocean below 2000 m as a stated omission with its published
+  rate, the rates per unit area, and the anchor distance; a fixture
+  with a planted change recovered, a refusal for a window outside the
+  coverage, and a real-data run on the stamped root anchored to the
+  published 2006 to 2020 rates); recipes/argo-ohc.md (the layer, the
+  domain, the baseline and the deep term); references/skills/run-argo-ohc.md;
+  the executor references/computations/argo_ohc.py, the attester
+  references/attesters/argo_ohc_check.py, the loader
+  references/loaders/ohc_rg_loader.py and the data-root tool
+  references/loaders/ohc_data_root.py, the stamped root
+  references/retrieval/argo-ohc-root (two CSVs, two stamps,
+  SOURCES.json, RECORD.json; no product file), and the golden
+  verification/argo_ohc.py. Sources read: the Scripps product page
+  and the 2019 climatology and extension files through 2026-08
+  (downloaded by the loader, hashed in the stamps and SOURCES.json);
+  the TEOS-10 manual sections 3.3 and A.18 (cp0 and Conservative
+  Temperature as the heat content variable); von Schuckmann and
+  others 2023 in full on the journal's site (Table 1 layer rates, the
+  deep ocean rate); the Crossref records of Roemmich and Gilson 2009,
+  Roemmich and others 2015, Purkey and Johnson 2010, Desbruyeres and
+  others 2016 and von Schuckmann and others 2023; the Nature abstract
+  of Roemmich and others 2015. The dataset concept and its three
+  gotchas are linked, not repeated. (knowledge-seeder)
 - 2026-09-15 · knowledge/connectors/gnss-vertical-velocity.md drafted
   for the ocean tool of the observations server's round three
   (gnss_vertical_velocity; core issue 43): the Nevada Geodetic

@@ -1,0 +1,853 @@
+{
+  "purpose": "provenance of the Roemmich and Gilson product files the ocean heat content loader read; the files themselves are never committed",
+  "product_page": "https://sio-argo.ucsd.edu/RG_Climatology.html",
+  "credentials": "none: the Scripps files are public",
+  "files": [
+    {
+      "file": "RG_ArgoClim_Temperature_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_Temperature_2019.nc.gz",
+      "sha256": "sha256:b618ec96ca634bc83f499a76032618febf140bdab392731df603d57b9fda3b4c",
+      "bytes": 695480508,
+      "retrieved_utc": "2026-09-15T13:32:33Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_Salinity_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_Salinity_2019.nc.gz",
+      "sha256": "sha256:94d86ec8d33b4638c22ef2f6b9c604f72111e16a6e2502bb20da94e2b8edcf67",
+      "bytes": 460914366,
+      "retrieved_utc": "2026-09-15T13:37:20Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_201901_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_201901_2019.nc.gz",
+      "sha256": "sha256:e03aa89596cdf0c6c05145d2bbc6a17e39d14efbd7ed24f71fa913ade4895eb7",
+      "bytes": 6541699,
+      "retrieved_utc": "2026-09-15T13:39:23Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_201902_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_201902_2019.nc.gz",
+      "sha256": "sha256:eb0c1b346440bf81dd129ace840eb1827c48859c4de1a6b61efcedcde82a7704",
+      "bytes": 6562648,
+      "retrieved_utc": "2026-09-15T13:39:26Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_201903_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_201903_2019.nc.gz",
+      "sha256": "sha256:2dcbad6bb3b79470949ba2b7d09cacc1b2c433a35de2ab593dedfb9a871ccac0",
+      "bytes": 6585629,
+      "retrieved_utc": "2026-09-15T13:39:26Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_201904_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_201904_2019.nc.gz",
+      "sha256": "sha256:1e924297989063d7c74b87f50ca489e4bd3768944c68ce77398f62048349bec9",
+      "bytes": 6572066,
+      "retrieved_utc": "2026-09-15T13:39:29Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_201905_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_201905_2019.nc.gz",
+      "sha256": "sha256:aad4b5e14d91c81e305f115e0d211819782426f48f6d835f163da78e0895b0ae",
+      "bytes": 6538796,
+      "retrieved_utc": "2026-09-15T13:39:34Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_201906_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_201906_2019.nc.gz",
+      "sha256": "sha256:17074a2c5f280f90815f7443f3210b52b066e8462689c6015d0c4de6721c4e64",
+      "bytes": 6516136,
+      "retrieved_utc": "2026-09-15T13:39:37Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_201907_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_201907_2019.nc.gz",
+      "sha256": "sha256:07f9479698aeccdf7914e436a132f74d0fbbdbd4e47026c5d034acaf34fed84a",
+      "bytes": 6483432,
+      "retrieved_utc": "2026-09-15T13:39:39Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_201908_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_201908_2019.nc.gz",
+      "sha256": "sha256:1b1da8ae2db6dccc927a210a24cbba633970b407255192be419f626e8d994fae",
+      "bytes": 6498059,
+      "retrieved_utc": "2026-09-15T13:39:42Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_201909_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_201909_2019.nc.gz",
+      "sha256": "sha256:eccfc2007bdddbe2f4e887ab073b1f4d753e2ccb4f6cecd3d2efb74bfa35cf7c",
+      "bytes": 6534838,
+      "retrieved_utc": "2026-09-15T13:39:43Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_201910_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_201910_2019.nc.gz",
+      "sha256": "sha256:785ef8dad1e20b8ff2a0417713f4bd9256ee5f59a08addb92e56eec8bd36867a",
+      "bytes": 6565283,
+      "retrieved_utc": "2026-09-15T13:39:45Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_201911_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_201911_2019.nc.gz",
+      "sha256": "sha256:f042bdc920b9b423b11f0a876dbaecc94519ed3fc21cf17c82f8926b94c08a93",
+      "bytes": 6565639,
+      "retrieved_utc": "2026-09-15T13:39:47Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_201912_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_201912_2019.nc.gz",
+      "sha256": "sha256:efb91b6633316a608967a98dcab734a785be3e7dff0d8513f2618492d5860df3",
+      "bytes": 6583752,
+      "retrieved_utc": "2026-09-15T13:39:48Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202001_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202001_2019.nc.gz",
+      "sha256": "sha256:0ac9dc09e2d5bb5757724ea42a7f36bc9863521caf7ecf18b8b2c3677f14566f",
+      "bytes": 6592585,
+      "retrieved_utc": "2026-09-15T13:39:54Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202002_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202002_2019.nc.gz",
+      "sha256": "sha256:32ec582a0defa599087ef90dacc1c24be2ba531140f313a258c46b4a56a9ca28",
+      "bytes": 6589650,
+      "retrieved_utc": "2026-09-15T13:39:55Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202003_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202003_2019.nc.gz",
+      "sha256": "sha256:596fd0cd157777321b5e78613167f508a1706e6ee1937f9d72b32597a17f2f3e",
+      "bytes": 6602948,
+      "retrieved_utc": "2026-09-15T13:39:57Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202004_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202004_2019.nc.gz",
+      "sha256": "sha256:9ee4f53ac23a832c28aa1390d328edadabbeed45d4bdf2102e00cc24d93eee84",
+      "bytes": 6588746,
+      "retrieved_utc": "2026-09-15T13:39:59Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202005_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202005_2019.nc.gz",
+      "sha256": "sha256:506b084990530291cf3d14767ff9dd355893864240e7b7cb830f498067e31b29",
+      "bytes": 6556836,
+      "retrieved_utc": "2026-09-15T13:40:02Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202006_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202006_2019.nc.gz",
+      "sha256": "sha256:14ad33d456fece7f6c0837dfe698e8e9343b9c4b6a548e2fd9672143945cca8d",
+      "bytes": 6510443,
+      "retrieved_utc": "2026-09-15T13:40:12Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202007_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202007_2019.nc.gz",
+      "sha256": "sha256:e6097ef06735b735f7117f234a3fcaea3e5d697476c5fa6073ee7476dbb9a01f",
+      "bytes": 6501893,
+      "retrieved_utc": "2026-09-15T13:40:13Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202008_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202008_2019.nc.gz",
+      "sha256": "sha256:b8d90dab13bfb806dbdb6f1d157ec874182b618d7864c26c3a8cccccb3fd024a",
+      "bytes": 6506417,
+      "retrieved_utc": "2026-09-15T13:40:15Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202009_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202009_2019.nc.gz",
+      "sha256": "sha256:0486c6cfc5b05beb6879d5d5bef9b286c8ea4a214b25ffb94916a7f8fb6fd1c6",
+      "bytes": 6520025,
+      "retrieved_utc": "2026-09-15T13:40:17Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202010_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202010_2019.nc.gz",
+      "sha256": "sha256:82df92a598454bd3856b411d43a9106d0edea71f5ecbbcf7133b28ec77b98fac",
+      "bytes": 6557877,
+      "retrieved_utc": "2026-09-15T13:40:19Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202011_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202011_2019.nc.gz",
+      "sha256": "sha256:1f357da30d6bf897f7322985d1ebb75470241e9fa25059edf0c73edf02df0d28",
+      "bytes": 6534707,
+      "retrieved_utc": "2026-09-15T13:40:21Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202012_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202012_2019.nc.gz",
+      "sha256": "sha256:42281f39211cca0f159fb479f481c09aeab220376a2a4c08a168b189203ad99b",
+      "bytes": 6552119,
+      "retrieved_utc": "2026-09-15T13:40:23Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202101_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202101_2019.nc.gz",
+      "sha256": "sha256:5751b49e2d8e680afc014c67c6576ae6ba1d1ed6f95082af6149175c665084ef",
+      "bytes": 6557231,
+      "retrieved_utc": "2026-09-15T13:40:25Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202102_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202102_2019.nc.gz",
+      "sha256": "sha256:53ecaf94d6822ca30ccc5b6b102bb75288e861357303d48667199d36dec7772c",
+      "bytes": 6551242,
+      "retrieved_utc": "2026-09-15T13:40:28Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202103_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202103_2019.nc.gz",
+      "sha256": "sha256:5a675f05d58a2de0cd13a740a1d78554d9d4f2fcf7a66090483f00134a676326",
+      "bytes": 6565378,
+      "retrieved_utc": "2026-09-15T13:40:31Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202104_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202104_2019.nc.gz",
+      "sha256": "sha256:d7b1f76215f4482ff0fe657c640ea3d5fc114e017ea0c84317715fbd7e66b5ac",
+      "bytes": 6552465,
+      "retrieved_utc": "2026-09-15T13:40:33Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202105_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202105_2019.nc.gz",
+      "sha256": "sha256:1b786ec215e4a2a2c8a1e286bf50c7a13c95c539481426ba2f20e289d02bf045",
+      "bytes": 6540102,
+      "retrieved_utc": "2026-09-15T13:40:35Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202106_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202106_2019.nc.gz",
+      "sha256": "sha256:96cdb61348906cd711ec02fc818505d17bad94055fa292d5ee1a72635acd5ce2",
+      "bytes": 6485974,
+      "retrieved_utc": "2026-09-15T13:40:37Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202107_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202107_2019.nc.gz",
+      "sha256": "sha256:6209f32e44061e04df65a46cfeca7e9622bb6477fdcca24effa1e69a421839f9",
+      "bytes": 6490581,
+      "retrieved_utc": "2026-09-15T13:40:45Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202108_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202108_2019.nc.gz",
+      "sha256": "sha256:19fb3bcc64d7e65bf2e75b4e6340fde5636e4bbbc08108ca069f0c4c33d97129",
+      "bytes": 6511594,
+      "retrieved_utc": "2026-09-15T13:40:48Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202109_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202109_2019.nc.gz",
+      "sha256": "sha256:2a86c2fa300d3b362669c26075cbff96b59dbf8d4b980841f8d42753433b6b04",
+      "bytes": 6486327,
+      "retrieved_utc": "2026-09-15T13:40:54Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202110_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202110_2019.nc.gz",
+      "sha256": "sha256:abab8d3c81a0a9d406b538cabcea69637839564e8b31e313f678817aa96dff00",
+      "bytes": 6546893,
+      "retrieved_utc": "2026-09-15T13:40:57Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202111_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202111_2019.nc.gz",
+      "sha256": "sha256:73f5ece9477ec39710e3a78c386f3d663d83dbe15b60faa88a8a5bd57b587eaf",
+      "bytes": 6547756,
+      "retrieved_utc": "2026-09-15T13:41:06Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202112_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202112_2019.nc.gz",
+      "sha256": "sha256:e69ab4365b6ec9fa605d75dc120a5802e74eb140e85189999043c38b3417338a",
+      "bytes": 6574786,
+      "retrieved_utc": "2026-09-15T13:41:13Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202201_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202201_2019.nc.gz",
+      "sha256": "sha256:de9d34d89706b826a728cb29b15631851d89cf064372ac087d583168919b41a4",
+      "bytes": 6557494,
+      "retrieved_utc": "2026-09-15T13:41:18Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202202_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202202_2019.nc.gz",
+      "sha256": "sha256:ee08761ddfb7a2a345b794db4e1e22c9caccc17af5fc25508b4957deab2a3be5",
+      "bytes": 6524758,
+      "retrieved_utc": "2026-09-15T13:41:21Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202203_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202203_2019.nc.gz",
+      "sha256": "sha256:31204bb108460b71d1c0bb5a0683cca1ac7ff69b34eaf5ff054d24423495e932",
+      "bytes": 6576374,
+      "retrieved_utc": "2026-09-15T13:41:23Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202204_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202204_2019.nc.gz",
+      "sha256": "sha256:8667558eb7b993591772287004aba40356d7a7144378b5ec6ec4a0948cc65e9a",
+      "bytes": 6548285,
+      "retrieved_utc": "2026-09-15T13:41:25Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202205_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202205_2019.nc.gz",
+      "sha256": "sha256:60f443736eec8faa7c491a191af2c62d77508139a8e263ab485af2bdb9e0a4cb",
+      "bytes": 6541435,
+      "retrieved_utc": "2026-09-15T13:41:27Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202206_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202206_2019.nc.gz",
+      "sha256": "sha256:33e77c65b9491b532f60e35c752ba15303dd4c4ec7999f66d7e88a5eac87538f",
+      "bytes": 6498360,
+      "retrieved_utc": "2026-09-15T13:41:33Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202207_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202207_2019.nc.gz",
+      "sha256": "sha256:7117d7f4fdd278d2978cb47254b325fa7033cf3ffa5872d9fee6da3bfa71a85f",
+      "bytes": 6494036,
+      "retrieved_utc": "2026-09-15T13:41:38Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202208_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202208_2019.nc.gz",
+      "sha256": "sha256:fa4572d264631b570fd2b9353077f2cbf4c1a7754157578f16aa606be7bfc95f",
+      "bytes": 6515717,
+      "retrieved_utc": "2026-09-15T13:41:43Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202209_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202209_2019.nc.gz",
+      "sha256": "sha256:1202aa320ee7c76726eba4963f7559313855c079afb1f0d9dd58de6da61d5956",
+      "bytes": 6531953,
+      "retrieved_utc": "2026-09-15T13:41:45Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202210_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202210_2019.nc.gz",
+      "sha256": "sha256:6ac01e34fab709d0a88ff6e69129ba9a58d92b21a98e23700efabbcbf2c4200d",
+      "bytes": 6567180,
+      "retrieved_utc": "2026-09-15T13:41:51Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202211_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202211_2019.nc.gz",
+      "sha256": "sha256:18b9032ce786534d2d9fb992629e45e2467236cdd5938a042f229a7343269aa0",
+      "bytes": 6553507,
+      "retrieved_utc": "2026-09-15T13:41:53Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202212_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202212_2019.nc.gz",
+      "sha256": "sha256:85b74a1a3e543e80063dbd815b9b3d98d83e44397f58a8f46fb6899bd855ef02",
+      "bytes": 6561166,
+      "retrieved_utc": "2026-09-15T13:41:59Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202301_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202301_2019.nc.gz",
+      "sha256": "sha256:5eb143bb6c71361585ebbcf868a6a955aaa22f10b6687afefef0ba314f470949",
+      "bytes": 6548892,
+      "retrieved_utc": "2026-09-15T13:42:05Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202302_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202302_2019.nc.gz",
+      "sha256": "sha256:814b6f2c63d6c94309c81b57c8b397f028cb335e7b9d794dfd8ef2b81958dada",
+      "bytes": 6531769,
+      "retrieved_utc": "2026-09-15T13:42:07Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202303_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202303_2019.nc.gz",
+      "sha256": "sha256:93c3a6470d9740b78924c9df5d2cd1c9edd77e99d14f745885bd7f2a3b7c1cc7",
+      "bytes": 6572641,
+      "retrieved_utc": "2026-09-15T13:42:12Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202304_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202304_2019.nc.gz",
+      "sha256": "sha256:5d4d48edb5f4f8d3cabb429da55f8b5ab95b1d9b07b981d1a9f6859ec69ecc36",
+      "bytes": 6576206,
+      "retrieved_utc": "2026-09-15T13:42:16Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202305_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202305_2019.nc.gz",
+      "sha256": "sha256:638d5fad7fe5f26ec7f67a7e5f03d5985e940ab8df566ec889d979623cd0d980",
+      "bytes": 6541619,
+      "retrieved_utc": "2026-09-15T13:42:21Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202306_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202306_2019.nc.gz",
+      "sha256": "sha256:4d0eaf1718e5434cfc4c7075778ead559927fa9e7a156cae8dc0b972746664a2",
+      "bytes": 6521742,
+      "retrieved_utc": "2026-09-15T13:42:24Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202307_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202307_2019.nc.gz",
+      "sha256": "sha256:6506270f66863ceaa8621e03d6fa62cc12d1c3fc112ed8ec91e7c8123c5d8789",
+      "bytes": 6524847,
+      "retrieved_utc": "2026-09-15T13:42:26Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202308_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202308_2019.nc.gz",
+      "sha256": "sha256:bbf0fcdcef6063aaa324fa2967bf5c58689e9dc0cc9b7e06f99753ecde7fc7a2",
+      "bytes": 6544922,
+      "retrieved_utc": "2026-09-15T13:42:29Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202309_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202309_2019.nc.gz",
+      "sha256": "sha256:4341c2c606e093d1a769c8b161b21133a8b6286399a0ef77d527afe8b7c7f332",
+      "bytes": 6554757,
+      "retrieved_utc": "2026-09-15T13:42:33Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202310_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202310_2019.nc.gz",
+      "sha256": "sha256:3df0aa3d0aa5398af09c30db14b420f79e1a417d36a5f2f8f213957e456f0cd9",
+      "bytes": 6568773,
+      "retrieved_utc": "2026-09-15T13:42:50Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202311_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202311_2019.nc.gz",
+      "sha256": "sha256:9086e122cd2176a7bf4712b3891411dee29a0b4beb2ce6d5b0a7888c2b197c5f",
+      "bytes": 6548397,
+      "retrieved_utc": "2026-09-15T13:42:53Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202312_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202312_2019.nc.gz",
+      "sha256": "sha256:3e33a81d9d0dff482cbe410cecd2b8081a4a3585b106a6e4507190437d46965c",
+      "bytes": 6554970,
+      "retrieved_utc": "2026-09-15T13:42:59Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202401_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202401_2019.nc.gz",
+      "sha256": "sha256:e94242c9d07018f8c473e0413e10ce6532ee693a4ca3f4e4287880fe1f13680d",
+      "bytes": 6576431,
+      "retrieved_utc": "2026-09-15T13:43:04Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202402_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202402_2019.nc.gz",
+      "sha256": "sha256:c9b50ca005e8b6a5ecea03c25b0746071451bb30247a1294cd93d21fe55e7775",
+      "bytes": 6575966,
+      "retrieved_utc": "2026-09-15T13:43:07Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202403_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202403_2019.nc.gz",
+      "sha256": "sha256:cf740bbfc1d65b2a37d79a162ea3e8c7bc2f3ca0b224fe235dda3d0955eb6399",
+      "bytes": 6568180,
+      "retrieved_utc": "2026-09-15T13:43:10Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202404_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202404_2019.nc.gz",
+      "sha256": "sha256:1d4a985a22eba4cf46672aab43daf89b82273f5306e58a89a5b4e1ba1fa34860",
+      "bytes": 6569653,
+      "retrieved_utc": "2026-09-15T13:43:12Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202405_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202405_2019.nc.gz",
+      "sha256": "sha256:56d90612b11afce395b0bf5988bde5d6eb0cbc122c1087d3c97e6bb113b51273",
+      "bytes": 6562230,
+      "retrieved_utc": "2026-09-15T13:43:16Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202406_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202406_2019.nc.gz",
+      "sha256": "sha256:f9ee5b8a791488a9afe2cffe31162f10c363aa9b0d3131982bf40a9669742e7b",
+      "bytes": 6528300,
+      "retrieved_utc": "2026-09-15T13:43:20Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202407_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202407_2019.nc.gz",
+      "sha256": "sha256:202e3d9bb2d1a28bcaf9ae0241654af54b5897ebcbd9e0742d8b494386719f79",
+      "bytes": 6552774,
+      "retrieved_utc": "2026-09-15T13:43:22Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202408_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202408_2019.nc.gz",
+      "sha256": "sha256:41dda30c1b9fc9e009873c100a5361efb15bb3cd9e53baf40bf19a0c9e018b1e",
+      "bytes": 6535792,
+      "retrieved_utc": "2026-09-15T13:43:27Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202409_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202409_2019.nc.gz",
+      "sha256": "sha256:6f0442d188f6d39b389229a749ceab13c855bc9ffcd92ea73f1617317848f3c0",
+      "bytes": 6554900,
+      "retrieved_utc": "2026-09-15T13:43:29Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202410_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202410_2019.nc.gz",
+      "sha256": "sha256:82204fa90bc826a8127ceac26142310efea309d53aa97be6c76c9043a6eb2829",
+      "bytes": 6562347,
+      "retrieved_utc": "2026-09-15T13:43:37Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202411_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202411_2019.nc.gz",
+      "sha256": "sha256:9892c2253c46342fc5b8664099e2f6643e434579cacc75c6bd6815a3b162c6e2",
+      "bytes": 6544520,
+      "retrieved_utc": "2026-09-15T13:43:39Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202412_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202412_2019.nc.gz",
+      "sha256": "sha256:0d40181755a8b80910699224e5bbda017586cedc017ac1ff88cb2e3235b0d86a",
+      "bytes": 6552578,
+      "retrieved_utc": "2026-09-15T13:43:42Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202501_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202501_2019.nc.gz",
+      "sha256": "sha256:50740b4963636f8358567553cc20109d16160c0ac6cf91dbb5bec56b5f61d998",
+      "bytes": 6572549,
+      "retrieved_utc": "2026-09-15T13:43:45Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202502_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202502_2019.nc.gz",
+      "sha256": "sha256:289e8cdbb86a5afcbbab1846c6753e5aaecd566561641c6f4c47f5a6453af22d",
+      "bytes": 6577611,
+      "retrieved_utc": "2026-09-15T13:43:52Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202503_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202503_2019.nc.gz",
+      "sha256": "sha256:394bb5c0eb845fb774fcec4e68e5009f8922361cd773f2fc7bf3a79e1cee6fdb",
+      "bytes": 6617867,
+      "retrieved_utc": "2026-09-15T13:43:56Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202504_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202504_2019.nc.gz",
+      "sha256": "sha256:5bcd4247a3aba4919e8d99507a40cde39d93698e9ddce3d500b7dd66e50e4030",
+      "bytes": 6636594,
+      "retrieved_utc": "2026-09-15T13:43:58Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202505_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202505_2019.nc.gz",
+      "sha256": "sha256:326bbf8e26e64384638ecd9d65ebbaa0dde7299b1ee84b15b1de74ba7fc83e53",
+      "bytes": 6599403,
+      "retrieved_utc": "2026-09-15T13:44:04Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202506_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202506_2019.nc.gz",
+      "sha256": "sha256:12641d5971bc08d778e9b4713656b84bf1059874fbd9de3b72c8a715be54d07b",
+      "bytes": 6563786,
+      "retrieved_utc": "2026-09-15T13:44:12Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202507_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202507_2019.nc.gz",
+      "sha256": "sha256:695977008776575f2b27376d2a48ebd3f10a720a8b2d02fba218f6b4bc58ceb4",
+      "bytes": 6562978,
+      "retrieved_utc": "2026-09-15T13:44:16Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202508_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202508_2019.nc.gz",
+      "sha256": "sha256:625bf4444524a1dcaf701e596e056b6d3b04077de726470f6fe72a02707613bb",
+      "bytes": 6564336,
+      "retrieved_utc": "2026-09-15T13:44:19Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202509_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202509_2019.nc.gz",
+      "sha256": "sha256:6c2c503d65372cf843cfe1a3975226e02a48a0ced40b025e8ce5a8ef67c37336",
+      "bytes": 6558118,
+      "retrieved_utc": "2026-09-15T13:44:22Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202510_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202510_2019.nc.gz",
+      "sha256": "sha256:106992588cd194e6ec2179de9ca3bc4e1ed4cbfd3a41f30f5a7d7931f21cbb3c",
+      "bytes": 6576418,
+      "retrieved_utc": "2026-09-15T13:44:32Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202511_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202511_2019.nc.gz",
+      "sha256": "sha256:30cff82eeaa6655da076f729efa0d3b3e14acd3c1f858a4c122661602d1cc2ce",
+      "bytes": 6577626,
+      "retrieved_utc": "2026-09-15T13:44:34Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202512_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202512_2019.nc.gz",
+      "sha256": "sha256:bf5fa595c872d12aea52b2b5b65a6cafa29afbf646c036468f9ccaa9ddc1379c",
+      "bytes": 6571962,
+      "retrieved_utc": "2026-09-15T13:44:37Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202601_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202601_2019.nc.gz",
+      "sha256": "sha256:fd24f862b7bc2b24c7ec1ce9e05b99927859a7b5960441e3f04f31e29b10e762",
+      "bytes": 6596407,
+      "retrieved_utc": "2026-09-15T13:44:41Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202602_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202602_2019.nc.gz",
+      "sha256": "sha256:0e97dd0b0c06d962d5d06d9122d40e0cf437a8f8874f306ce70d74de917e39c9",
+      "bytes": 6578938,
+      "retrieved_utc": "2026-09-15T13:44:44Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202603_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202603_2019.nc.gz",
+      "sha256": "sha256:c55c99e79ebf52fa37559354e9d9dc410afadb7736819b38e009c36aacc219c4",
+      "bytes": 6636958,
+      "retrieved_utc": "2026-09-15T13:44:47Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202604_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202604_2019.nc.gz",
+      "sha256": "sha256:a9245f09cfc1517f6af5c0692a231b6a70bba065a1e6923b1d6cfa9ee402c6aa",
+      "bytes": 6628937,
+      "retrieved_utc": "2026-09-15T13:44:50Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202605_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202605_2019.nc.gz",
+      "sha256": "sha256:87f5471cdc811a489cebce8e9a4fe05159971c6ef39e83bece31efb961427aa1",
+      "bytes": 6610519,
+      "retrieved_utc": "2026-09-15T13:44:52Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202606_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202606_2019.nc.gz",
+      "sha256": "sha256:9caf91d6ecdc408bb8763b18ef105e3a3ad7ac77d2fe6d3a5b72df59e5a19a5e",
+      "bytes": 6591857,
+      "retrieved_utc": "2026-09-15T13:44:56Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202607_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202607_2019.nc.gz",
+      "sha256": "sha256:5a19dc77aaccecfd7e6aec34e80e42e1cbd83642c3f08a94d98c7018f631bb5c",
+      "bytes": 6645702,
+      "retrieved_utc": "2026-09-15T13:45:00Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    },
+    {
+      "file": "RG_ArgoClim_202608_2019.nc.gz",
+      "url": "https://sio-argo.ucsd.edu/RG/RG_ArgoClim_202608_2019.nc.gz",
+      "sha256": "sha256:9d4d1331417e856078458d276dc87154edfbc248aef710308649aa35849094c2",
+      "bytes": 6673591,
+      "retrieved_utc": "2026-09-15T13:45:13Z",
+      "status": 200,
+      "read_utc": "2026-09-15T14:21:43Z"
+    }
+  ]
+}
