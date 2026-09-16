@@ -13,14 +13,15 @@ DOIs); this skill is the behavior that assembles the block, and it
 never composes citation text freehand.
 
 The tool and the pinned DOI mapping ship beside this skill
-(`ecco_cite.py`, `ecco_v4r4_dois.yaml`), byte-identical copies of
+(`scripts/ecco_cite.py`, `scripts/ecco_v4r4_dois.yaml`), copies of
 nasa-daac-knowledge `tools/ecco_cite.py` and `tools/ecco_v4r4_dois.yaml`
-at the release this plugin's dependency floor names
-(`nasa-daac-knowledge--v2026.9.2`, git blob ids 1449a6ad877f and
-0044edf3e125). They refresh at plugin releases when the canonical files
-change. The tool's `--selftest` cross-checks the mapping
-against the canonical fields concepts and runs in the canonical
-repository; here only `cite` is used.
+pinned to one commit of that repository: the tool's header carries a
+`pinned_from:` line naming the source path and the commit it copies
+(the copy differs from the source only by that header and by the
+usage paths in its docstring). They refresh at plugin releases when
+the canonical files change. The tool's `--selftest` cross-checks the
+mapping against the canonical fields concepts and runs in the
+canonical repository; here only `cite` is used.
 
 ## Behavior
 
@@ -32,8 +33,8 @@ repository; here only `cite` is used.
 3. Run the tool, from the plugin root:
 
    ```bash
-   uv run skills/cite-ecco/ecco_cite.py cite \
-     --dois skills/cite-ecco/ecco_v4r4_dois.yaml \
+   uv run skills/cite-ecco/scripts/ecco_cite.py cite \
+     --dois skills/cite-ecco/scripts/ecco_v4r4_dois.yaml \
      SHORTNAME [SHORTNAME ...] --accessed YYYY-MM-DD
    ```
 

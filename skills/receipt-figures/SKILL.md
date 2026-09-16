@@ -14,7 +14,7 @@ to slip in. This skill draws only from receipts that attest, only from
 arrays the receipt hashes, and stamps every figure with what it was
 drawn from.
 
-The renderer ships beside this skill (`receipt_figure.py`, PEP 723,
+The renderer ships beside this skill (`scripts/receipt_figure.py`, PEP 723,
 numpy and matplotlib). It finds the attesters in the installed
 provider bundle through the installer's record (`claude plugin list
 --json`), or in a checkout named by `NASA_DAAC_KNOWLEDGE`.
@@ -38,20 +38,20 @@ provider bundle through the installer's record (`claude plugin list
 3. Draw, from the plugin root:
 
    ```bash
-   uv run skills/receipt-figures/receipt_figure.py map RECEIPT.json \
+   uv run skills/receipt-figures/scripts/receipt_figure.py map RECEIPT.json \
      --attester curl_check --array w_ekman --mask mask_interior \
      --symmetric --scale 1e6 --units "1e-6 m/s (positive up)" \
      --title "Ekman pumping from wind-stress curl" --out w_ekman.png
 
-   uv run skills/receipt-figures/receipt_figure.py map RECEIPT.json \
+   uv run skills/receipt-figures/scripts/receipt_figure.py map RECEIPT.json \
      --attester geos_check --speed u_geostrophic v_geostrophic \
      --mask mask_interior --units "m/s" --out geostrophic_speed.png
 
-   uv run skills/receipt-figures/receipt_figure.py map RECEIPT.json \
+   uv run skills/receipt-figures/scripts/receipt_figure.py map RECEIPT.json \
      --attester thermal_wind_check --array shear_skill_100_1000m \
      --mask mask_domain --vmin 0 --vmax 1 --out shear_skill.png
 
-   uv run skills/receipt-figures/receipt_figure.py series TREND.json \
+   uv run skills/receipt-figures/scripts/receipt_figure.py series TREND.json \
      --out ohc_series.png
    ```
 
