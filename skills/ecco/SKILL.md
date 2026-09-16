@@ -107,6 +107,128 @@ budgets; SSH and OBP hits still carry the release discipline), and a
 Schema row is trusted only from the signed fields concept or a granule
 load, never from get_variables alone.
 
+## Attested runs
+
+The bundle's computations that validate the state estimate's own
+dynamics, its global heat content and the one sanctioned trend method
+belong to no single workflow skill; this skill wraps them, so an agent
+finds them the way it finds every other procedure. The workflow skills
+wrap the rest (ocean-budget the budgets and the flux decomposition,
+transport-analysis the sections and the overturning, compare-obs the
+confrontations, sea-level-analysis the partition and the steric
+height, sea-level-budget the budget closure).
+The provider bundle is installed with the nasa-daac-knowledge
+dependency; its root is the `installPath` of that entry in
+`claude plugin list --json`, or a checkout named by
+`NASA_DAAC_KNOWLEDGE` (the way the receipt-figures renderer resolves
+it). `$PODAAC` below stands for `<that root>/knowledge/podaac`. Never
+edit an executor: its attester hashes it, and a changed hash fails by
+construction. Run the named attester on the receipt before quoting any
+number from it; a FAIL is reported as a FAIL with the failing field
+named, never worked around. These executors take no `--runtime` flag
+(their receipts carry no runtime block); record the runtime name
+(`claude-code` here) in the report beside the receipt's run id.
+
+Every executor here reads the native granules from `--data-root`
+(default `~/ECCO_V4r4`): the 2010 fixture cache (about 2.5 GB, the
+geometry granule plus the monthly and snapshot collections the concept
+names, fetched with earthaccess under an Earthdata Login; the
+repository's goldens tree stages it) or the science record over 1992
+to 2017 (`~/ECCO_V4r4_record`). The tree must carry the RECORD.json
+stamp the provider's verify tool leaves after checking it against its
+manifest (`uv run <root>/tools/science_record_verify.py --manifest
+$PODAAC/references/retrieval/fixtures-2010-manifest.json --data-root
+~/ECCO_V4r4 --checksum all --exact --stamp`, once after the first
+fetch), since every attester refuses a receipt from an unstamped tree.
+
+**Global ocean heat content, `ecco-ocean-heat-content`**
+(`knowledge/podaac/computations/ecco-ocean-heat-content.md`; executor
+`references/computations/ecco_ohc.py`, attester
+`references/attesters/ohc_check.py`). Binds `months` (one or more
+`YYYY-MM`; the change is last minus first):
+
+```bash
+uv run $PODAAC/references/computations/ecco_ohc.py --months 2010-01 2010-12 \
+  --data-root ~/ECCO_V4r4 --receipt /tmp/ohc-receipt.json
+uv run $PODAAC/references/attesters/ohc_check.py /tmp/ohc-receipt.json
+```
+
+The receipt carries `ohc_J_by_month`, `ohc_change_J`, the grid
+anchors and the potential-temperature baseline caveat; the change
+between months is the quantity, and the absolute value is never
+quoted without the caveat. The Argo-based counterpart is this plugin's
+own argo-ohc skill.
+
+**Trend with an honest interval, `ecco-trend-ci`**
+(`knowledge/podaac/computations/ecco-trend-ci.md`; executor
+`references/computations/ecco_trend_ci.py`, attester
+`references/attesters/trend_ci_check.py`). Binds `source` (a
+sanctioned receipt), `field` (a monthly `{YYYY-MM: value}` field in
+it), `value_units`, and optionally `scale` (default 1.0),
+`report_units` and `deseasonalize` (`climatology`, the default, needs
+complete years; otherwise `none`):
+
+```bash
+uv run $PODAAC/references/computations/ecco_trend_ci.py \
+  --source /tmp/ohc-receipt.json --field ohc_J_by_month \
+  --value-units J --scale 1e-21 --report-units ZJ \
+  --deseasonalize climatology --receipt /tmp/ohc-trend-receipt.json
+uv run $PODAAC/references/attesters/trend_ci_check.py /tmp/ohc-trend-receipt.json
+```
+
+The trend inherits the source receipt's run id, code hash and data
+stamp; a series retyped into a bare file attests FAIL by
+construction. The deseasonalized series a plot wants is the receipt's
+`intermediates.series_fit`, drawn through the receipt-figures skill.
+
+**Geostrophic balance and thermal wind, `ecco-geostrophic-balance`**
+(`knowledge/podaac/computations/ecco-geostrophic-balance.md`;
+executor `references/computations/ecco_geostrophy.py`, attester
+`references/attesters/geos_check.py`). Binds `month` (`YYYY-MM`),
+`depth_m` (default 350) and `depth2_m` (default 700); `--fields PATH`
+also writes the per-cell arrays for a map:
+
+```bash
+uv run $PODAAC/references/computations/ecco_geostrophy.py --month 2009-12 \
+  --depth-m 350 --depth2-m 700 --data-root ~/ECCO_V4r4 \
+  --receipt /tmp/geos-receipt.json --fields /tmp/geos-fields.npz
+uv run $PODAAC/references/attesters/geos_check.py /tmp/geos-receipt.json
+```
+
+**Wind-stress curl and Ekman pumping, `ecco-wind-stress-curl`**
+(`knowledge/podaac/computations/ecco-wind-stress-curl.md`; executor
+`references/computations/ecco_curl_ekman.py`, attester
+`references/attesters/curl_check.py`). Binds `month` (`YYYY-MM`); the
+WVEL interface stays at the contract's 70 m; `--fields PATH` for a
+map:
+
+```bash
+uv run $PODAAC/references/computations/ecco_curl_ekman.py --month 2009-12 \
+  --data-root ~/ECCO_V4r4 --receipt /tmp/curl-receipt.json --fields /tmp/curl-fields.npz
+uv run $PODAAC/references/attesters/curl_check.py /tmp/curl-receipt.json
+```
+
+**Thermal-wind reconstruction from a level of no motion,
+`ecco-thermal-wind-reconstruction`**
+(`knowledge/podaac/computations/ecco-thermal-wind-reconstruction.md`;
+executor `references/computations/ecco_thermal_wind_reconstruction.py`,
+attester `references/attesters/thermal_wind_check.py`). Binds `month`
+(`YYYY-MM`), `reference_depth_m` (default 3000) and `map_depth_m`
+(default 350); `--fields PATH` for a map:
+
+```bash
+uv run $PODAAC/references/computations/ecco_thermal_wind_reconstruction.py --month 2009-12 \
+  --reference-depth-m 3000 --map-depth-m 350 --data-root ~/ECCO_V4r4 \
+  --receipt /tmp/thermal-wind-receipt.json --fields /tmp/thermal-wind-fields.npz
+uv run $PODAAC/references/attesters/thermal_wind_check.py /tmp/thermal-wind-receipt.json
+```
+
+For all three dynamics checks the weaker bands (full band, polar, the
+surface layer, below the reference level) are required receipt
+fields and are reported beside the headline figure, never dropped;
+the maps behind the scalars are drawn from the hashed fields file
+through the receipt-figures skill and from nothing else.
+
 ## Must NOT
 
 - Never compute budgets or transports on regridded ECCO fields; refuse
