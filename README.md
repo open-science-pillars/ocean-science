@@ -102,7 +102,12 @@ including downloads, about 1.3 GB cached).
   gated loaders `load-ecco` and `load-swot`; the workflows
   `transport-analysis`, `ocean-budget`, `water-mass-analysis`,
   `mixed-layer-analysis`, `sea-level-analysis`, `compare-obs`,
-  `cite-ecco`, `receipt-figures` and `briefing-generator`. The loaders
+  `cite-ecco`, `receipt-figures`, `briefing-generator`, and the
+  attested runs `argo-ohc` (this plugin's own computation) and
+  `sea-level-budget` (the provider bundle's). Each attested computation
+  in the provider bundle is wrapped by the workflow skill that covers
+  it, which names the executor it runs and the attester to run on the
+  receipt before a number is quoted. The loaders
   show the download size and ask before fetching; `ocean-budget`
   refuses to compute on regridded data (it never closes).
 - **Agents** (`agents/`): `ecco-scout` recommends datasets and cites the

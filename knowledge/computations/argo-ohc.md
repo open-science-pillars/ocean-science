@@ -10,7 +10,8 @@ parameters:
   - { name: depth, type: integer, required: true }
 computation: references/computations/argo_ohc.py
 executor:
-  resource: references/skills/run-argo-ohc.md
+  resource: references/computations/argo_ohc.py
+  skill: ocean-science/argo-ohc
   receipt: [run_id, computation, code_sha256, capability, bundle, runtime, generated_utc, data, bound_parameters, refused, months, series, terms, trend_ZJ_yr, change_ZJ, endpoint_change_ZJ, residual, combined_uncertainty, verdict, anchor, bookkeeping, known_truth, caveats]
 attester:
   resource: references/attesters/argo_ohc_check.py
