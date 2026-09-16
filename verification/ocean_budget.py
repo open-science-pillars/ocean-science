@@ -18,10 +18,10 @@ p99.9 <= 1e-11 degC/s, pointwise on the interior wet cells of one
 tile), and the attester
 knowledge/podaac/references/attesters/budget_residual.py hashes
 the computation file, so editing it breaks attestation by construction.
-This script does what the executor instructions
-(knowledge/podaac/references/skills/run-golden.md) prescribe:
-stage the 2010 fixture cache, run the computation for a receipt, attest
-the receipt, and fail unless the verdict is PASS.
+This script does what the ocean-budget skill's attested run
+(skills/ocean-budget/SKILL.md, the wrapping skill the concept names)
+prescribes: stage the 2010 fixture cache, run the computation for a
+receipt, attest the receipt, and fail unless the verdict is PASS.
 
 The bundle paths above are resolved the way the consult-knowledge
 convention resolves them: the PO.DAAC bundle is installed with the

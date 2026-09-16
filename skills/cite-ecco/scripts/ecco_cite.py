@@ -3,6 +3,7 @@
 # requires-python = ">=3.10"
 # dependencies = ["pyyaml"]
 # ///
+# pinned_from: nasa-daac-knowledge/tools/ecco_cite.py at 0fe6506463c1232992c909a393139b14fe68d941
 """ecco_cite: per-collection DOIs and exact ECCO citations.
 
 Two subcommands. `harvest` queries CMR for each ShortName in the family
@@ -30,9 +31,9 @@ template renders still appear in the dataset concept's Citation
 section, so the two cannot drift either.
 
 Usage:
-  ecco_cite.py harvest tools/ecco_v4r4_families.yaml [--out dois.yaml]
-  ecco_cite.py cite --dois dois.yaml SHORTNAME [SHORTNAME ...] [--accessed YYYY-MM-DD]
-  ecco_cite.py --selftest
+  uv run skills/cite-ecco/scripts/ecco_cite.py harvest tools/ecco_v4r4_families.yaml [--out dois.yaml]
+  uv run skills/cite-ecco/scripts/ecco_cite.py cite --dois skills/cite-ecco/scripts/ecco_v4r4_dois.yaml SHORTNAME [SHORTNAME ...] [--accessed YYYY-MM-DD]
+  uv run skills/cite-ecco/scripts/ecco_cite.py --selftest
 """
 
 import argparse

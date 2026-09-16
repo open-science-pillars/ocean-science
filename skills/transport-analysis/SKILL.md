@@ -49,6 +49,94 @@ its own.
    comparison against observations is the point, hand off to
    compare-obs rather than improvising one here.
 
+## Attested runs
+
+Where the section has an attested computation in the provider bundle,
+step 4 runs its sanctioned executor and step 5 reads the attester's
+verdict; this section is that procedure, with the paths and the
+parameters bound.
+The provider bundle is installed with the nasa-daac-knowledge
+dependency; its root is the `installPath` of that entry in
+`claude plugin list --json`, or a checkout named by
+`NASA_DAAC_KNOWLEDGE` (the way the receipt-figures renderer resolves
+it). `$PODAAC` below stands for `<that root>/knowledge/podaac`. Never
+edit an executor: its attester hashes it, and a changed hash fails by
+construction. Run the named attester on the receipt before quoting any
+number from it; a FAIL is reported as a FAIL with the failing field
+named, never worked around. These executors take no `--runtime` flag
+(their receipts carry no runtime block); record the runtime name
+(`claude-code` here) in the report beside the receipt's run id.
+
+Every executor here reads the native granules from `--data-root`
+(default `~/ECCO_V4r4`): the 2010 fixture cache (about 2.5 GB, the
+geometry granule plus the monthly and snapshot collections the concept
+names, fetched with earthaccess under an Earthdata Login; the
+repository's goldens tree stages it) or the science record over 1992
+to 2017 (`~/ECCO_V4r4_record`). The tree must carry the RECORD.json
+stamp the provider's verify tool leaves after checking it against its
+manifest (`uv run <root>/tools/science_record_verify.py --manifest
+$PODAAC/references/retrieval/fixtures-2010-manifest.json --data-root
+~/ECCO_V4r4 --checksum all --exact --stamp`, once after the first
+fetch), since every attester refuses a receipt from an unstamped tree.
+
+**Section transports, `ecco-section-transport`**
+(`knowledge/podaac/computations/ecco-section-transport.md`; executor
+`references/computations/ecco_section_transport.py`, attester
+`references/attesters/section_transport_check.py`). Binds `section`
+(registered: `global-26.5n`, the closed latitude circle with the
+anchor; `fifteen-s-southeast-atlantic`, an interior segment with no
+anchor by design) and `year` (default 2010):
+
+```bash
+uv run $PODAAC/references/computations/ecco_section_transport.py \
+  --section global-26.5n --year 2010 --data-root ~/ECCO_V4r4 \
+  --receipt /tmp/section-transport-receipt.json
+uv run $PODAAC/references/attesters/section_transport_check.py /tmp/section-transport-receipt.json
+```
+
+The receipt carries `run_id`, `code_sha256`, `data`,
+`bound_parameters`, `resolved_section` (face counts, extent, mask and
+geometry digests), `results`, `mutation_evidence` (the five named
+sabotages) and `caveats`. The anchored section is checked against the
+independent implementation's band and the measured value two-sided;
+an unanchored section's receipt must say it is unanchored, and the
+report says the same.
+
+**Atlantic overturning at 26.5N, `ecco-amoc-26n`**
+(`knowledge/podaac/computations/ecco-amoc-26n.md`; executor
+`references/computations/ecco_amoc_26n.py`; attester
+`references/attesters/rapid_confrontation_check.py`, through the
+confrontation that cites the receipt). Binds `period`
+(`YYYY-MM:YYYY-MM` within 1992-01 to 2017-12) and `scope` (`atlantic`,
+the array's section from Florida to Africa; `atlantic-with-gulf-of-mexico`,
+the registered second scope and a recorded sabotage, never a silent
+inclusion):
+
+```bash
+uv run $PODAAC/references/computations/ecco_amoc_26n.py \
+  --period 1992-01:2017-12 --scope atlantic \
+  --data-root ~/ECCO_V4r4_record --receipt /tmp/amoc-receipt.json
+```
+
+The receipt carries the per-level transports for every month and all
+three streamfunction conventions with the mass-balanced one primary;
+a run covering 2010 must reproduce the ecco_v4_py anchor or it writes
+no receipt. This computation has no attester of its own: its receipt
+is attested through the RAPID confrontation that cites it (the
+compare-obs skill's attested run), whose attester hashes the model
+receipt against the citation, checks the sanctioned code hash,
+recomputes the mass-balanced maximum and the net transport for every
+month from the per-level transports, checks the 2010 anchor, and
+checks that both structural sabotages were caught. A model receipt no
+confrontation cites is a consistent number, not an attested one: say
+so when quoting it, or run the confrontation first.
+
+**Meridional heat transport at 26.5N, `ecco-mht-26n`**: a draft
+contract with no sanctioned executor yet. The heat transport across
+`global-26.5n` in the section transport receipt above is the attested
+route today (its `results` carry the heat transport with the anchor);
+the MHT concept is cited as a draft and voiced as such.
+
 ## Must NOT
 
 - Never hardcode an expected transport or spread; the recipe is the

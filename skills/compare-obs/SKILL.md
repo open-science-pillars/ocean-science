@@ -60,6 +60,90 @@ to altimetry?").
    undocumented convention) enter the ingest loop as concept
    candidates rather than staying buried in a comparison note.
 
+## Attested runs
+
+Where the comparison has an attested confrontation in the provider
+bundle, step 4 is its sanctioned executor and the difference is
+judged from its receipt; this section is that procedure, with the
+paths and the parameters bound.
+The provider bundle is installed with the nasa-daac-knowledge
+dependency; its root is the `installPath` of that entry in
+`claude plugin list --json`, or a checkout named by
+`NASA_DAAC_KNOWLEDGE` (the way the receipt-figures renderer resolves
+it). `$PODAAC` below stands for `<that root>/knowledge/podaac`. Never
+edit an executor: its attester hashes it, and a changed hash fails by
+construction. Run the named attester on the receipt before quoting any
+number from it; a FAIL is reported as a FAIL with the failing field
+named, never worked around. These executors take no `--runtime` flag
+(their receipts carry no runtime block); record the runtime name
+(`claude-code` here) in the report beside the receipt's run id.
+
+Each confrontation consumes a receipt of the model-side computation
+(run under the transport-analysis or sea-level-analysis skill) and a
+stamped tree of the observations: the record's files under a
+RECORD.json written by the provider's verify tool
+(`<root>/tools/science_record_verify.py --stamp`) against the record's
+manifest under `$PODAAC/references/retrieval/`. The attesters import
+the shared trend recompute beside them; invoked by full path they
+find it.
+
+**ECCO overturning against RAPID at 26.5N,
+`ecco-rapid-amoc-confrontation`**
+(`knowledge/podaac/computations/ecco-rapid-amoc-confrontation.md`;
+executor `references/computations/ecco_rapid_amoc_confrontation.py`,
+attester `references/attesters/rapid_confrontation_check.py`). Binds
+`ecco-receipt` (a receipt of `ecco-amoc-26n`, scope atlantic,
+convention mass-balanced, on a stamped tree), `rapid-root` (the
+stamped tree of the RAPID release v2024.1a, manifest
+`rapid-26n-manifest.json`), `min-valid-fraction` (default 0.5, the
+share of a month's twelve-hourly samples that must be valid) and
+`period` (default the whole consecutive overlap):
+
+```bash
+uv run $PODAAC/references/computations/ecco_rapid_amoc_confrontation.py \
+  --ecco-receipt /tmp/amoc-receipt.json --rapid-root ~/RAPID_26N/rapid.ac.uk-2026-09-02 \
+  --receipt /tmp/rapid-confrontation-receipt.json
+uv run $PODAAC/references/attesters/rapid_confrontation_check.py /tmp/rapid-confrontation-receipt.json \
+  --model-receipt /tmp/amoc-receipt.json
+```
+
+The receipt carries both series in full with the RAPID sample counts,
+the bias, RMSD, correlation and anomaly correlation each with its
+interval from the attested chain, the observation's version, DOI,
+hash, licence, citation and published measurement uncertainty. PASS
+pins the observation to v2024.1a and its DOI and recomputes every
+score; a later RAPID release is a different observation and needs a
+re-run. The scores are read against the published uncertainty in the
+receipt, and the sabotage and scope disclosures travel with them.
+
+**ECCO regional sea level against NASA-SSH altimetry,
+`ecco-ssh-vs-altimetry`** (a draft concept, voiced as such;
+`knowledge/podaac/computations/ecco-ssh-vs-altimetry.md`; executor
+`references/computations/ecco_ssh_vs_altimetry.py`, attester
+`references/attesters/altimetry_confrontation_check.py`). Binds
+`partition-receipt` (a receipt of `ecco-regional-sea-level`, SSH
+variant, registered region), `obs-root` (the stamped tree of the
+NASA-SSH V1.1 simple grids, manifest `nasa-ssh-manifest.json`),
+`min-grids` (default 4; 2 admits every month of the record) and
+`period` (default the whole consecutive overlap):
+
+```bash
+uv run $PODAAC/references/computations/ecco_ssh_vs_altimetry.py \
+  --partition-receipt /tmp/sea-level-receipt.json --obs-root ~/NASA_SSH/podaac-2026-09-02 \
+  --period 1993-01:2017-12 --min-grids 2 --receipt /tmp/altimetry-comparison-receipt.json
+uv run $PODAAC/references/attesters/altimetry_confrontation_check.py /tmp/altimetry-comparison-receipt.json \
+  --model-receipt /tmp/sea-level-receipt.json --obs-root ~/NASA_SSH/podaac-2026-09-02
+```
+
+Both series are centred on the overlap mean, so the mean difference
+is zero by construction and not a score; the scores are RMSD,
+correlation, anomaly correlation and the trend of the difference,
+each with its interval. The receipt's independence statement says the
+estimate was fitted to these missions' along-track heights, and the
+report carries that statement with the scores: a PASS says the
+comparison was done as described, not that the estimate is right for
+reasons other than having been fitted.
+
 ## Must NOT (hard refusals: invariant, universal, gate-shaped)
 
 - Never compare across mismatched periods, conventions, or masks

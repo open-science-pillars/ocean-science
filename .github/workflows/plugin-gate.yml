@@ -1,8 +1,9 @@
 name: plugin gate
 # The per-plugin gate: the manifest validates, the local knowledge bundle
-# conforms to OKF v0.2, every script's PEP 723 header covers what it
-# imports (so `uv run <script>` resolves on any machine), and the
-# signature debt is measured. The checkers
+# conforms to OKF v0.2, every file of code sits in the home its plane
+# assigns (the placement rule), every script's PEP 723 header covers
+# what it imports (so `uv run <script>` resolves on any machine), and
+# the signature debt is measured. The checkers
 # are the canonical knowledge repository's tools, checked out beside the
 # plugin the way a developer's workspace holds them; nothing is copied.
 #
@@ -47,6 +48,8 @@ jobs:
         run: uv run ../build-kit/scripts/osp.py render . --check
       - name: The portable package conforms to Agent Plugins 1.0.0
         run: uv run ../build-kit/scripts/osp.py plugin-check .
+      - name: Every file of code has one home by plane (the placement rule)
+        run: uv run ../build-kit/scripts/osp.py placement-check .
       - name: A runtime is advertised only on a qualified record; the README's runtime table is current
         run: uv run ../build-kit/scripts/osp.py advertise . --check --into README.md
       - name: Release lock, reported (content may move between releases)

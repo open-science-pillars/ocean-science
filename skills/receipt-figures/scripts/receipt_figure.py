@@ -37,13 +37,13 @@ installer's record via `claude plugin list --json`, or a checkout named
 by NASA_DAAC_KNOWLEDGE).
 
 Usage:
-  receipt_figure.py map RECEIPT.json --attester curl_check \
+  uv run skills/receipt-figures/scripts/receipt_figure.py map RECEIPT.json --attester curl_check \
       --array w_ekman --mask mask_interior --symmetric --scale 1e6 \
       --units "1e-6 m/s" --title "Ekman pumping" --out w_ekman.png
-  receipt_figure.py map RECEIPT.json --attester geos_check \
+  uv run skills/receipt-figures/scripts/receipt_figure.py map RECEIPT.json --attester geos_check \
       --speed u_geostrophic v_geostrophic --mask mask_interior \
       --units "m/s" --out speed.png
-  receipt_figure.py series TREND_RECEIPT.json --attester trend_ci_check \
+  uv run skills/receipt-figures/scripts/receipt_figure.py series TREND_RECEIPT.json --attester trend_ci_check \
       --out ohc_series.png
 """
 

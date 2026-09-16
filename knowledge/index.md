@@ -91,9 +91,10 @@ coordinator's follow-up.
 The executor, the attester, the loaders and the stamped data root sit
 under knowledge/references (computations/argo_ohc.py,
 attesters/argo_ohc_check.py, loaders/ohc_rg_loader.py and
-loaders/ohc_data_root.py, retrieval/argo-ohc-root), with the run
-skill at references/skills/run-argo-ohc.md; the golden is
-verification/argo_ohc.py. The ECCO-based counterpart is the provider
+loaders/ohc_data_root.py, retrieval/argo-ohc-root); the run
+instructions are the plugin's argo-ohc skill (skills/argo-ohc/SKILL.md,
+a procedure and not a concept, so it carries no signature); the golden
+is verification/argo_ohc.py. The ECCO-based counterpart is the provider
 bundle's `knowledge/podaac/recipes/ecco-ocean-heat-content.md`.
 
 ## recipes (local)

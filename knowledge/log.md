@@ -4,6 +4,28 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-16 · STEWARD RE-SIGNING of knowledge/computations/argo-ohc.md:
+  Re-signed after the placement migration (ADR C): the concept names its
+  executor script in executor.resource and its wrapping skill argo-ohc
+  in executor.skill; no receipt, run id, executor or attester changed.
+  The verified event is written on the steward's word. The new verified
+  event is appended on the steward's word, the earlier events kept as
+  history. (steward)
+
+- 2026-09-16 · MOVED, per ADR C (code placement by plane):
+  knowledge/references/skills/run-argo-ohc.md is retired and its run
+  instructions are now the plugin's skill skills/argo-ohc/SKILL.md (a
+  procedure is a skill, evaluated and never signed, so the retired
+  reference's verified event is not carried anywhere).
+  knowledge/computations/argo-ohc.md: executor.resource now names the
+  executor script itself, references/computations/argo_ohc.py, whose
+  usage text is the contract, and the organization extension
+  executor.skill names the wrapping skill, ocean-science/argo-ohc. No
+  code moved: the executor, the attester, the loaders and the stamped
+  data root stay under references/, so no receipt, run id or digest
+  changes. The concept is stable and this edit to its frontmatter owes
+  a re-sign by the maintainer. (claude-code)
+
 - 2026-09-15 · STEWARD SIGNING of
   knowledge/recipes/regional-sea-level-trend.md,
   knowledge/gotchas/velocity-reference-frame.md,

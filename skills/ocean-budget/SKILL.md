@@ -74,6 +74,112 @@ workflow applies it at its gate.
    with the diagnosis, never presented with the residual absorbed into
    a term.
 
+## Attested runs
+
+Where the budget has an attested computation in the provider bundle,
+step 4 runs its sanctioned executor and step 5 runs its attester; this
+section is that procedure, with the paths and the parameters bound.
+The provider bundle is installed with the nasa-daac-knowledge
+dependency; its root is the `installPath` of that entry in
+`claude plugin list --json`, or a checkout named by
+`NASA_DAAC_KNOWLEDGE` (the way the receipt-figures renderer resolves
+it). `$PODAAC` below stands for `<that root>/knowledge/podaac`. Never
+edit an executor: its attester hashes it, and a changed hash fails by
+construction. Run the named attester on the receipt before quoting any
+number from it; a FAIL is reported as a FAIL with the failing field
+named, never worked around. These executors take no `--runtime` flag
+(their receipts carry no runtime block); record the runtime name
+(`claude-code` here) in the report beside the receipt's run id.
+
+Every executor here reads the native granules from `--data-root`
+(default `~/ECCO_V4r4`): the 2010 fixture cache (about 2.5 GB, the
+geometry granule plus the monthly and snapshot collections the concept
+names, fetched with earthaccess under an Earthdata Login; the
+repository's goldens tree stages it) or the science record over 1992
+to 2017 (`~/ECCO_V4r4_record`). The tree must carry the RECORD.json
+stamp the provider's verify tool leaves after checking it against its
+manifest (`uv run <root>/tools/science_record_verify.py --manifest
+$PODAAC/references/retrieval/fixtures-2010-manifest.json --data-root
+~/ECCO_V4r4 --checksum all --exact --stamp`, once after the first
+fetch), since every attester refuses a receipt from an unstamped tree.
+
+**Heat budget closure, `ecco-heat-budget`**
+(`knowledge/podaac/computations/ecco-heat-budget.md`; executor
+`references/computations/ecco_heat_budget.py`, attester
+`references/attesters/budget_residual.py`). Binds `year` (required)
+and `region` (optional; `tile1-interior` is the default and the one
+registered value):
+
+```bash
+uv run $PODAAC/references/computations/ecco_heat_budget.py \
+  --year 2010 --region tile1-interior --data-root ~/ECCO_V4r4 \
+  --receipt /tmp/heat-budget-receipt.json
+uv run $PODAAC/references/attesters/budget_residual.py /tmp/heat-budget-receipt.json
+```
+
+The receipt carries exactly `run_id`, `code_sha256`, `data` (the tree
+and its stamp), `bound_parameters`, `residual_max`, `residual_p999`
+and `cells_evaluated`. PASS (exit 0) requires the sanctioned code
+hash, a verify-tool stamp in `data.record`, the declared parameter set
+exactly, and the residuals within the bars the concept records
+(`residual_max <= 1e-10`, `residual_p999 <= 1e-11` degC/s); FAIL
+(exit 1) names the field.
+
+**Regional heat, salt and volume budgets, `ecco-regional-heat-budget`,
+`ecco-regional-salt-budget` and `ecco-regional-volume-budget`** (one
+executor, `references/computations/ecco_regional_budget.py`, under
+three contracts; one attester,
+`references/attesters/regional_budget_check.py`). Binds `budget`
+(`heat`, `salt` or `volume`), the control volume as a registered
+`region` (`southeast-atlantic-upper`) or an explicit
+`--box LAT0 LAT1 LON0 LON1` with `--depth-m`, and `year` (default
+2010):
+
+```bash
+uv run $PODAAC/references/computations/ecco_regional_budget.py \
+  --budget heat --region southeast-atlantic-upper --year 2010 \
+  --data-root ~/ECCO_V4r4 --receipt /tmp/regional-heat-receipt.json
+uv run $PODAAC/references/attesters/regional_budget_check.py /tmp/regional-heat-receipt.json
+```
+
+The receipt carries `run_id`, `code_sha256`, `data`,
+`bound_parameters`, `resolved_volume` (the mask and geometry digests,
+the wet and bottom cell counts), `results`, `mutation_evidence` and
+`caveats`. The attester recomputes both bars from the results, checks
+every mutation's caught flag against its own numbers, and on the
+reference configuration (southeast-atlantic-upper, 2010) checks the
+wet-cell count, the volume and the residual per volume two-sided. An
+explicit box is disclosed by mask digest and carries no anchor; the
+report says so.
+
+**Reynolds flux decomposition, `ecco-flux-decomposition`** (executor
+`references/computations/ecco_flux_decomposition.py`, attester
+`references/attesters/fluxdecomp_check.py`). Binds `region`
+(registered, `southeast-atlantic-upper`), `grouping`
+(`full-four-term`, `time-mean-eddy` or `anomaly`) and `year` (default
+2010):
+
+```bash
+uv run $PODAAC/references/computations/ecco_flux_decomposition.py \
+  --region southeast-atlantic-upper --grouping full-four-term --year 2010 \
+  --data-root ~/ECCO_V4r4 --receipt /tmp/flux-decomposition-receipt.json
+uv run $PODAAC/references/attesters/fluxdecomp_check.py /tmp/flux-decomposition-receipt.json
+```
+
+All four terms travel in every receipt whatever the grouping; the
+attester checks the two oracles (the four-term identity and the
+vanishing cross-term means) and that the reported view agrees with
+the stored terms.
+
+**Whole-grid salt and volume closure, `ecco-salt-budget` and
+`ecco-volume-budget`**: draft contracts with no sanctioned executor
+or attester yet (the extraction from the goldens, the way the heat
+budget was extracted, has not landed). Until those concepts carry
+`computation` and `attester` fields, a salt or volume closure on the
+whole grid is a recipe-owned budget under step 5, judged against the
+recipe's tolerance and reported as unattested; the regional variants
+above are the attested route for a salt or volume budget today.
+
 ## Must NOT
 
 - Never compute any budget on regridded fields, under any framing.

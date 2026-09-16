@@ -10,12 +10,15 @@ parameters:
   - { name: depth, type: integer, required: true }
 computation: references/computations/argo_ohc.py
 executor:
-  resource: references/skills/run-argo-ohc.md
+  resource: references/computations/argo_ohc.py
+  skill: ocean-science/argo-ohc
   receipt: [run_id, computation, code_sha256, capability, bundle, runtime, generated_utc, data, bound_parameters, refused, months, series, terms, trend_ZJ_yr, change_ZJ, endpoint_change_ZJ, residual, combined_uncertainty, verdict, anchor, bookkeeping, known_truth, caveats]
 attester:
   resource: references/attesters/argo_ohc_check.py
 generated: { by: knowledge-seeder/claude, at: 2026-09-15T16:00:00Z }
-verified: { by: human:PaulMRamirez, at: 2026-09-15T14:26:35Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/56 }
+verified:
+  - { by: human:PaulMRamirez, at: 2026-09-15T14:26:35Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/56 }
+  - { by: human:PaulMRamirez, at: 2026-09-16T05:49:23Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/63 }
 status: stable
 stale_after: 2027-03-15
 sources:
