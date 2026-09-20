@@ -19,8 +19,8 @@ there, never from here.
   `knowledge/podaac/recipes/ecco-volume-budget.md` (the salt
   and volume residuals, and the oceFWflx double-count measurement).
 - Sanctioned code and its attester:
-  `knowledge/podaac/references/computations/ecco_heat_budget.py`
-  and `knowledge/podaac/references/attesters/budget_residual.py`,
+  `skills/ocean-budget/scripts/ecco_heat_budget.py`
+  and `skills/ocean-budget/scripts/budget_residual.py`,
   reached through the heat computation concept.
 - The gotchas a budget run must honor first:
   `knowledge/podaac/gotchas/ecco-native-vs-regridded.md`

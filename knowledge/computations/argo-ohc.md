@@ -8,34 +8,33 @@ runtime: python
 parameters:
   - { name: window, type: string, required: true }
   - { name: depth, type: integer, required: true }
-computation: references/computations/argo_ohc.py
+computation: skills/argo-ohc/scripts/argo_ohc.py
 executor:
-  resource: references/computations/argo_ohc.py
-  skill: ocean-science/argo-ohc
+  resource: skills/argo-ohc/scripts/argo_ohc.py
   receipt: [run_id, computation, code_sha256, capability, bundle, runtime, generated_utc, data, bound_parameters, refused, months, series, terms, trend_ZJ_yr, change_ZJ, endpoint_change_ZJ, residual, combined_uncertainty, verdict, anchor, bookkeeping, known_truth, caveats]
 attester:
-  resource: references/attesters/argo_ohc_check.py
+  resource: skills/argo-ohc/scripts/argo_ohc_check.py
 generated: { by: knowledge-seeder/claude, at: 2026-09-15T16:00:00Z }
 verified:
   - { by: human:PaulMRamirez, at: 2026-09-15T14:26:35Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/56 }
   - { by: human:PaulMRamirez, at: 2026-09-16T05:49:23Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/63 }
-status: stable
+status: draft
 stale_after: 2027-03-15
 sources:
   - id: dataset
-    resource: ../datasets/roemmich-gilson-argo-climatology.md
+    resource: knowledge/podaac/datasets/roemmich-gilson-argo-climatology.md
     title: "This bundle's Roemmich and Gilson dataset concept: the 2019 release, the grid, the masks, the extension files and the uncertainty statement"
   - id: gotcha-floor
-    resource: ../gotchas/rg-sampled-depth-floor.md
+    resource: knowledge/podaac/gotchas/rg-sampled-depth-floor.md
     title: "This bundle's gotcha: the product stops at 1975 dbar, so a heat content from it is a 0 to 2000 dbar quantity and the deep ocean is a separate term"
   - id: gotcha-coverage
-    resource: ../gotchas/rg-coverage-excludes-high-latitudes-and-marginal-seas.md
+    resource: knowledge/podaac/gotchas/rg-coverage-excludes-high-latitudes-and-marginal-seas.md
     title: "This bundle's gotcha: the grid starts at 64.5S and a mean labelled global from it is a mean over the mapped, masked open ocean"
   - id: gotcha-baseline
-    resource: ../gotchas/rg-anomaly-against-a-fixed-climatology.md
+    resource: knowledge/podaac/gotchas/rg-anomaly-against-a-fixed-climatology.md
     title: "This bundle's gotcha: the anomalies are departures from the fixed 2004 to 2018 climatology, and the extension files keep that reference"
   - id: recipe
-    resource: ../recipes/argo-ohc.md
+    resource: knowledge/podaac/recipes/argo-ohc.md
     title: "This bundle's recipe: the layer, the domain, the baseline and the deep term it does not carry"
   - id: rg-page
     resource: https://sio-argo.ucsd.edu/RG_Climatology.html
@@ -68,11 +67,28 @@ sources:
     resource: ../references/retrieval/argo-ohc-root/RECORD.json
     title: "The stamped data root committed beside this concept: the loader's stamps, the bookkeeping table with the anchor, the manifest of the five files, and SOURCES.json for the downloads"
   - id: loaders
-    resource: ../references/loaders/ohc_data_root.py
-    title: "The loader and the stamp assembler under references/loaders (ohc_rg_loader.py, ohc_data_root.py), each with a selftest"
+    resource: skills/argo-ohc/scripts/ohc_data_root.py
+    title: "The loader and the stamp assembler in the argo-ohc skill's scripts (ohc_rg_loader.py, ohc_data_root.py), each with a selftest"
 ---
 
 # Ocean heat content change from gridded Argo (attested)
+
+**Placement, 2026-09-20 (ADR E, a computation is a skill).** This
+concept came out of `knowledge/references/` in this package, and the
+executor and the attester it names now ship in this package under
+`skills/argo-ohc/scripts/`. The golden `verification/argo_ohc.py` names
+every script it does. The executor `skills/argo-ohc/scripts/argo_ohc.py`
+changed only where it resolves a path, so its sha256 moved from
+889817705d09b691 to f48f5caf58c917d8 and no number in it did. The
+reference runs `argo-ohc-2000` and `argo-ohc-700` of
+verification/reference_runs.yaml were re-run at the new paths on the
+committed root and reproduced every value stated below to the digit,
+each attested PASS. The receipt run digests quoted below were measured
+at an earlier release and fold in the package version and release lock
+as well as the code, so they are left as they were rather than restated
+from a run of this branch. The signature block is the one the maintainer
+left; the concept sits at `status: draft` with no verified event added,
+and the maintainer re-signs it after merge.
 
 The sanctioned computation behind any receipted statement of how much
 heat the upper ocean gained over a window from the Roemmich and Gilson
@@ -382,11 +398,11 @@ verification/argo_ohc.py, which runs the attester's selftest, the
 fixture run and refusal, the loader and data-root selftests, the
 record check and the record runs.
 
-[^dataset]: datasets/roemmich-gilson-argo-climatology.md, the files, the grid, the masks and the uncertainty statement
-[^gotcha-floor]: gotchas/rg-sampled-depth-floor.md
-[^gotcha-coverage]: gotchas/rg-coverage-excludes-high-latitudes-and-marginal-seas.md
-[^gotcha-baseline]: gotchas/rg-anomaly-against-a-fixed-climatology.md
-[^recipe]: recipes/argo-ohc.md, the layer, the domain, the baseline and the deep term
+[^dataset]: knowledge/podaac/datasets/roemmich-gilson-argo-climatology.md, the files, the grid, the masks and the uncertainty statement
+[^gotcha-floor]: knowledge/podaac/gotchas/rg-sampled-depth-floor.md
+[^gotcha-coverage]: knowledge/podaac/gotchas/rg-coverage-excludes-high-latitudes-and-marginal-seas.md
+[^gotcha-baseline]: knowledge/podaac/gotchas/rg-anomaly-against-a-fixed-climatology.md
+[^recipe]: knowledge/podaac/recipes/argo-ohc.md, the layer, the domain, the baseline and the deep term
 [^rg-page]: Scripps RG Argo Climatology product page, read 2026-09-15
 [^rg-files]: the RG climatology and extension files, downloaded and hashed 2026-09-15
 [^teos-10]: TEOS-10 Manual, IOC Manuals and Guides 56, section 3.3 and appendix A.18
@@ -397,4 +413,4 @@ record check and the record runs.
 [^roemmich-gilson-2009]: Roemmich and Gilson (2009), Progress in Oceanography 82, doi:10.1016/j.pocean.2009.03.004
 [^ecco-ohc-recipe]: knowledge/podaac/recipes/ecco-ocean-heat-content.md in nasa-daac-knowledge, the ECCO-based counterpart
 [^data-root]: references/retrieval/argo-ohc-root/RECORD.json, the stamped data root
-[^loaders]: references/loaders, the loader and the stamp assembler
+[^loaders]: skills/argo-ohc/scripts, the loader and the stamp assembler

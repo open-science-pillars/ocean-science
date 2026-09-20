@@ -4,35 +4,42 @@
 # dependencies = []
 # ///
 """Golden and PROVE wrapper for the attested sea level budget closure:
-the sanctioned executor and attester in the PO.DAAC bundle, run on the
-bundle's synthetic fixture, so the chain is proven headless with no
-data download and no NASA host reachable.
+the sanctioned executor and attester of this package, run on their
+synthetic fixture and on the committed data root, so the chain is
+proven headless with no data download and no NASA host reachable.
 
-The computation lives in the provider bundle,
-knowledge/podaac/references/computations/sea_level_budget.py, under
-the contract knowledge/podaac/computations/sea-level-budget.md; the
-attester is knowledge/podaac/references/attesters/sea_level_budget_check.py.
-Nothing scientific is reimplemented here. The bundle root is resolved
-the way ocean_budget.py resolves it: NASA_DAAC_KNOWLEDGE names a
-checkout of the provider repository, else the installer's record
-(`claude plugin list --json`, the entry's installPath) names the
-installed plugin.
+The computation is a skill: the executor is
+skills/sea-level-budget/scripts/sea_level_budget.py, under the contract
+knowledge/computations/sea-level-budget.md, and the attester is
+skills/sea-level-budget/scripts/sea_level_budget_check.py beside it.
+The stamped three-term data root is committed at
+knowledge/references/retrieval/sea-level-budget-root and the stamp is
+checked by skills/sea-level-budget/scripts/slb_data_root.py. Nothing
+scientific is reimplemented here.
+
+This golden carries the two chains the provider repository ran in
+tools/run_checks.sh before ADR E moved the computation here
+(sea_level_budget_chain and sea_level_budget_record) and the two named
+reference runs of verification/reference_runs.yaml, sea-level-budget
+and sea-level-budget-record.
 
 Three modes:
 
-  (no flags)                 the golden: run the fixture computation for
-                             2005-01:2016-12 into a temporary receipt,
-                             attest it (PASS required); then run the
-                             gap-crossing case 2016-01:2019-12 with no
-                             bridge and require exit 3 and an attestation
-                             that passes it as a refusal. Exit 0 only when
-                             both hold.
+  (no flags)                 the golden: the attester's selftest; the
+                             fixture computation for 2005-01:2016-12 into
+                             a temporary receipt, attested (PASS
+                             required); the gap-crossing case
+                             2016-01:2019-12 with no bridge, which must
+                             exit 3 and attest as a refusal; the
+                             committed data root's stamp check; and the
+                             record run over 2005-01:2016-12 on that
+                             root, attested. Exit 0 only when all hold.
   --runtime NAME --out R     the PROVE step: run the fixture computation
                              and write the receipt at R, the capability
-                             block naming this package (ocean-science)
-                             and the bundle block naming the provider
-                             bundle.
-  --attest R --out A         run the bundle attester on receipt R and
+                             block and the bundle block both naming this
+                             package (ocean-science), which is where the
+                             executor now ships.
+  --attest R --out A         run the attester on receipt R and
                              write the attestation at A: a top-level
                              verdict PASS or FAIL, the refusal flag, and
                              the capability, bundle and runtime blocks
@@ -42,8 +49,6 @@ Three modes:
 
 import argparse
 import json
-import os
-import shutil
 import subprocess
 import sys
 import tempfile
@@ -51,54 +56,31 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 PACKAGE_ROOT = HERE.parent
-PROVIDER_PLUGIN = "nasa-daac-knowledge"
 PERIOD = "2005-01:2016-12"
 REFUSAL_PERIOD = "2016-01:2019-12"
 SEED = 7
+SKILL = PACKAGE_ROOT / "skills" / "sea-level-budget" / "scripts"
+COMPUTATION = SKILL / "sea_level_budget.py"
+ATTESTER = SKILL / "sea_level_budget_check.py"
+DATA_ROOT_TOOL = SKILL / "slb_data_root.py"
+DATA_ROOT = PACKAGE_ROOT / "knowledge" / "references" / "retrieval" / "sea-level-budget-root"
 
 
-def provider_root() -> Path:
-    """The installed provider plugin's root, from the installer's record."""
-    override = os.environ.get("NASA_DAAC_KNOWLEDGE")
-    if override:
-        return Path(override).expanduser().resolve()
-    claude = shutil.which("claude")
-    if claude is None:
-        sys.exit("no `claude` on PATH to read the installed-plugin record; "
-                 "set NASA_DAAC_KNOWLEDGE to a checkout of the provider "
-                 "repository instead")
-    rec = subprocess.run([claude, "plugin", "list", "--json"],
-                         capture_output=True, text=True)
-    if rec.returncode != 0:
-        sys.exit(f"`claude plugin list --json` failed: {rec.stderr.strip()}")
-    for entry in json.loads(rec.stdout):
-        if entry.get("id", "").split("@")[0] != PROVIDER_PLUGIN:
-            continue
-        if not entry.get("enabled", True) or entry.get("errors"):
-            sys.exit(f"{entry['id']} is installed but not usable: "
-                     f"{entry.get('errors') or 'disabled'}")
-        return Path(entry["installPath"])
-    sys.exit(f"{PROVIDER_PLUGIN} is not installed; it arrives with this "
-             "plugin's dependencies (`claude plugin install "
-             "ocean-science@open-science-pillars`), or set "
-             "NASA_DAAC_KNOWLEDGE to a checkout of the provider repository")
-
-
-def bundle_paths():
-    refs = provider_root() / "knowledge" / "podaac" / "references"
-    computation = refs / "computations" / "sea_level_budget.py"
-    attester = refs / "attesters" / "sea_level_budget_check.py"
-    for p in (computation, attester):
+def package_paths():
+    for p in (COMPUTATION, ATTESTER, DATA_ROOT_TOOL):
         if not p.is_file():
-            sys.exit(f"the provider bundle carries no {p.name} at {p.parent}; "
-                     "the sea level budget closure needs nasa-daac-knowledge "
-                     "at a release that ships it")
-    return computation, attester
+            sys.exit(f"this package carries no {p.name} at {p.parent}; the "
+                     "sea level budget closure is the sea-level-budget skill")
+    if not (DATA_ROOT / "RECORD.json").is_file():
+        sys.exit(f"no stamped data root at {DATA_ROOT}")
+    return COMPUTATION, ATTESTER
 
 
 def run_computation(computation: Path, period: str, receipt: Path, runtime: str,
-                    runtime_version=None, bridge=None) -> subprocess.CompletedProcess:
-    cmd = ["uv", "run", str(computation), "--fixture", "--seed", str(SEED),
+                    runtime_version=None, bridge=None, data_root=None) -> subprocess.CompletedProcess:
+    source = (["--data-root", str(data_root)] if data_root
+              else ["--fixture", "--seed", str(SEED)])
+    cmd = ["uv", "run", str(computation), *source,
            "--period", period, "--runtime", runtime,
            "--capability-root", str(PACKAGE_ROOT), "--receipt", str(receipt)]
     if runtime_version:
@@ -121,6 +103,13 @@ def last_line(p: subprocess.CompletedProcess) -> str:
 def golden(computation: Path, attester: Path) -> int:
     with tempfile.TemporaryDirectory() as tmp:
         work = Path(tmp)
+        selftest = subprocess.run(["uv", "run", str(attester), "--selftest"],
+                                  capture_output=True, text=True)
+        print(last_line(selftest))
+        if selftest.returncode != 0:
+            print(selftest.stdout.strip())
+            print("sea_level_budget golden: the attester's selftest FAILED")
+            return 1
         receipt, attestation = work / "receipt.json", work / "attestation.json"
         run = run_computation(computation, PERIOD, receipt, "golden")
         print(last_line(run))
@@ -151,10 +140,38 @@ def golden(computation: Path, attester: Path) -> int:
             print(verdict.stdout.strip())
             print("sea_level_budget golden: the refusal did not attest as a refusal")
             return 1
+
+        # The real-data anchor: the stamped three-term root committed under
+        # knowledge/references/retrieval, its stamp checked, run for the
+        # reference period and attested, so the anchor the concept quotes
+        # is recomputed on every change.
+        stamp = subprocess.run(["uv", "run", str(DATA_ROOT_TOOL),
+                                "--root", str(DATA_ROOT), "--check"],
+                               capture_output=True, text=True)
+        print(last_line(stamp))
+        if stamp.returncode != 0:
+            print(stamp.stdout.strip())
+            print("sea_level_budget golden: the committed data root did not check")
+            return 1
+        record, rec_att = work / "record.json", work / "record-attestation.json"
+        run = run_computation(computation, PERIOD, record, "golden", data_root=DATA_ROOT)
+        print(last_line(run))
+        if run.returncode != 0:
+            print(run.stderr.strip())
+            print("sea_level_budget golden: the record run FAILED")
+            return 1
+        verdict = run_attester(attester, record, rec_att)
+        print(last_line(verdict))
+        att = json.loads(rec_att.read_text(encoding="utf-8")) if rec_att.is_file() else {}
+        if verdict.returncode != 0 or att.get("verdict") != "PASS" or att.get("refusal") is not False:
+            print(verdict.stdout.strip())
+            print("sea_level_budget golden: the record attestation FAILED")
+            return 1
     print(f"sea_level_budget golden: the fixture budget {PERIOD} closes within its "
           f"uncertainty and attests PASS; the gap-crossing period {REFUSAL_PERIOD} "
-          "refuses without a bridge and attests as a refusal (executor and attester "
-          "from the installed bundle)")
+          "refuses without a bridge and attests as a refusal; the committed data "
+          f"root checks and its record run over {PERIOD} attests PASS (executor and "
+          "attester from this package)")
     return 0
 
 
@@ -166,7 +183,7 @@ def main() -> int:
     ap.add_argument("--attest", type=Path, default=None, help="a receipt to attest")
     ap.add_argument("--out", type=Path, default=None, help="where the receipt or the attestation goes")
     args = ap.parse_args()
-    computation, attester = bundle_paths()
+    computation, attester = package_paths()
 
     if args.attest:
         if not args.out:

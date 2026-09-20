@@ -1,0 +1,12 @@
+{
+ "verified_utc": "2026-09-03T05:37:50.994118+00:00",
+ "record": "nasa-ssh-ref-simple-grid-v1.1",
+ "manifest_sha256": "578b8f29b8cd7aff69be3eea74fa330f32e0bad4635e38b6e37d0b97f3e3e449",
+ "data_root": "/Users/pramirez/NASA_SSH/podaac-2026-09-02",
+ "declared": 1315,
+ "present": 1315,
+ "checksum_ok": 1315,
+ "failures": [],
+ "tool_sha256": "a13855d9fa0de81ffd1862852156320d2cb32275807eb259428465751541a70c",
+ "ok": true
+}

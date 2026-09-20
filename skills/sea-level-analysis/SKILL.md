@@ -55,11 +55,11 @@ Where the deliverable has an attested computation in the provider
 bundle, step 4 runs its sanctioned executor and step 5 takes the trend
 and its interval from the receipt; this section is that procedure,
 with the paths and the parameters bound.
-The provider bundle is installed with the nasa-daac-knowledge
-dependency; its root is the `installPath` of that entry in
-`claude plugin list --json`, or a checkout named by
-`NASA_DAAC_KNOWLEDGE` (the way the receipt-figures renderer resolves
-it). `$PODAAC` below stands for `<that root>/knowledge/podaac`. Never
+The executor and the attester of every computation below ship in this
+package, in the scripts directory of the skill that runs them, and the
+concept each one answers to is under `knowledge/computations/`.
+`${CLAUDE_PLUGIN_ROOT}` below is this package's root, which the runtime
+sets. Never
 edit an executor: its attester hashes it, and a changed hash fails by
 construction. Run the named attester on the receipt before quoting any
 number from it; a FAIL is reported as a FAIL with the failing field
@@ -79,22 +79,22 @@ record pass `--period 1992-01:2017-12 --data-root ~/ECCO_V4r4_record`;
 months are read one at a time, so a run costs the memory of one month.
 The tree must carry the RECORD.json stamp the provider's verify tool
 leaves (`<root>/tools/science_record_verify.py --stamp` against the
-tree's manifest under `$PODAAC/references/retrieval/`), since the
+tree's manifest under `${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/`), since the
 attesters refuse a receipt from an unstamped tree.
 
 **Regional sea level partition, `ecco-regional-sea-level`**
 (`knowledge/podaac/computations/ecco-regional-sea-level.md`; executor
-`references/computations/ecco_regional_sea_level.py`, attester
-`references/attesters/sea_level_partition.py`). Binds `region` (from
+`skills/sea-level-analysis/scripts/ecco_regional_sea_level.py`, attester
+`skills/sea-level-analysis/scripts/sea_level_partition.py`). Binds `region` (from
 the registry inside the sanctioned file: `gulf-of-mexico`,
 `north-sea`, `us-northeast-coast`) and `period` (`YYYY-MM:YYYY-MM`
 within 1992-01 to 2017-12):
 
 ```bash
-uv run $PODAAC/references/computations/ecco_regional_sea_level.py \
+uv run ${CLAUDE_PLUGIN_ROOT}/skills/sea-level-analysis/scripts/ecco_regional_sea_level.py \
   --region us-northeast-coast --period 2010-01:2010-12 \
   --data-root ~/ECCO_V4r4 --receipt /tmp/sea-level-receipt.json
-uv run $PODAAC/references/attesters/sea_level_partition.py /tmp/sea-level-receipt.json
+uv run ${CLAUDE_PLUGIN_ROOT}/skills/sea-level-analysis/scripts/sea_level_partition.py /tmp/sea-level-receipt.json
 ```
 
 The receipt carries exactly the declared fields: the convention-bound
@@ -117,17 +117,17 @@ briefing-generator skill consumes this receipt.
 
 **Regional steric height, `ecco-steric-height`**
 (`knowledge/podaac/computations/ecco-steric-height.md`; executor
-`references/computations/ecco_steric_height.py`, attester
-`references/attesters/steric_check.py`). Binds `region` (`global`,
+`skills/sea-level-analysis/scripts/ecco_steric_height.py`, attester
+`skills/sea-level-analysis/scripts/steric_check.py`). Binds `region` (`global`,
 `gulf-of-mexico`, `north-sea`, `us-northeast-coast`) and `months` (a
 list of `YYYY-MM`, consecutive):
 
 ```bash
-uv run $PODAAC/references/computations/ecco_steric_height.py \
+uv run ${CLAUDE_PLUGIN_ROOT}/skills/sea-level-analysis/scripts/ecco_steric_height.py \
   --region us-northeast-coast \
   --months 2010-01 2010-02 2010-03 2010-04 2010-05 2010-06 2010-07 2010-08 2010-09 2010-10 2010-11 2010-12 \
   --data-root ~/ECCO_V4r4 --receipt /tmp/steric-receipt.json
-uv run $PODAAC/references/attesters/steric_check.py /tmp/steric-receipt.json
+uv run ${CLAUDE_PLUGIN_ROOT}/skills/sea-level-analysis/scripts/steric_check.py /tmp/steric-receipt.json
 ```
 
 The receipt carries `steric_mean_m_by_month`, `steric_trend_mm_yr`

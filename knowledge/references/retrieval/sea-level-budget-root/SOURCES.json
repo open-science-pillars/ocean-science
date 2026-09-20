@@ -1,0 +1,55 @@
+{
+  "purpose": "provenance of the NASA-sourced inputs of the sea level budget data root: the mass term granule, the provider's own ocean mass series used as a cross-check, and the altimetry grids",
+  "credentials": "Earthdata Login bearer token sent as a request header only; not recorded here",
+  "downloads": [
+    {
+      "term": "mass",
+      "collection_concept_id": "C3195527175-POCLOUD",
+      "collection_short_name": "TELLUS_GRAC-GRFO_MASCON_CRI_GRID_RL06.3_V4",
+      "query": "direct download of the single granule from the archive by its known path; the concept id from https://cmr.earthdata.nasa.gov/search/collections.json?short_name=TELLUS_GRAC-GRFO_MASCON_CRI_GRID_RL06.3_V4&provider=POCLOUD",
+      "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/TELLUS_GRAC-GRFO_MASCON_CRI_GRID_RL06.3_V4/GRCTellus.JPL.200204_202607.GLO.RL06.3M.MSCNv04CRI.nc",
+      "files": 1,
+      "total_bytes": 45989746,
+      "retrieved_utc": "2026-09-13T19:24:09Z",
+      "sha256": "sha256:32b4ee91215a2e1c1bb6196f661ec55972b81e4da4a934b5a5c9ebe17f285a88",
+      "file": "GRCTellus.JPL.200204_202607.GLO.RL06.3M.MSCNv04CRI.nc",
+      "verification": "HTTP 200, HDF5 signature, opened with netCDF4"
+    },
+    {
+      "term": "mass cross-check",
+      "collection_concept_id": "C3206302778-POCLOUD",
+      "collection_short_name": "OCEAN_MASS_TELLUS_MASCON_CRI_TIME_SERIES_RL06.3_V4",
+      "query": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C3206302778-POCLOUD&page_size=5",
+      "url": "https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-protected/OCEAN_MASS_TELLUS_MASCON_CRI_TIME_SERIES_RL06.3_V4/ocean_mass_200204_202607.txt",
+      "files": 1,
+      "total_bytes": 10923,
+      "retrieved_utc": "2026-09-13T19:24:24Z",
+      "sha256": "sha256:60adbf0d7a499e1326014e57fcc571dad4dfe5930416d8b2cd375b4277cb6ed0",
+      "file": "ocean_mass_200204_202607.txt",
+      "copied_into_root": true,
+      "verification": "HTTP 200, size matches the CMR granule_size of 0.010476 MB"
+    },
+    {
+      "term": "altimetry",
+      "collection_concept_id": "C4155232533-POCLOUD",
+      "collection_short_name": "NASA_SSH_REF_SIMPLE_GRID_V11",
+      "query": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C4155232533-POCLOUD&temporal=2004-12-25T00:00:00Z,2026-12-31T00:00:00Z&page_size=2000&sort_key=start_date",
+      "cmr_hits": 1133,
+      "files": 1133,
+      "files_verified": 1133,
+      "total_bytes": 1268440935,
+      "retrieved_utc": [
+        "2026-09-13T19:24:37Z",
+        "2026-09-13T19:33:18Z"
+      ],
+      "first_file": "NASA-SSH_alt_ref_simple_grid_v1_1_20041220.nc",
+      "last_file": "NASA-SSH_alt_ref_simple_grid_v1_1_20260831.nc",
+      "verification": "each file's size against the CMR granule_size within 1 percent; the archive serves no md5 sidecar (HTTP 404)",
+      "per_file_sha256": "in altimetry-stamp.json under sources"
+    }
+  ],
+  "notes": [
+    "mass: the granule's April 2015 pair (one solution spanning 1 to 30 April, the next 12 April to 11 May, both midpoints in April) is handled by the loader's assignment rule, which gives a solution whose midpoint month is already taken to the following month when its span reaches into it and that month is free, as the product's own month list labels it (May 2015); mass-stamp.json records the assignment under month_assignments.",
+    "altimetry: seven grids in the set carry no valid ssha cell (outage weeks) and were skipped as non-samples; months 2006-11 and 2020-02 then hold only two grids and are dropped by the min-grids rule."
+  ]
+}

@@ -7,7 +7,7 @@
 # Golden notebook for the attested Argo ocean heat content change (the
 # golden-notebook requirement: one fixture-backed asserting script per
 # attested computation): the sanctioned executor under
-# knowledge/references/computations/argo_ohc.py and its attester go
+# skills/argo-ohc/scripts/argo_ohc.py and its attester go
 # through the fixture chain (a known change planted and recovered),
 # the refusal (a window that leaves the coverage exits 3 and attests
 # as a refusal), the loader's and the data-root tool's selftests, the
@@ -32,12 +32,12 @@ def _():
     from pathlib import Path
 
     root = Path(__file__).resolve().parent.parent
-    refs = root / "knowledge" / "references"
-    executor = refs / "computations" / "argo_ohc.py"
-    attester = refs / "attesters" / "argo_ohc_check.py"
-    loader = refs / "loaders" / "ohc_rg_loader.py"
-    data_root_tool = refs / "loaders" / "ohc_data_root.py"
-    data_root = refs / "retrieval" / "argo-ohc-root"
+    scripts = root / "skills" / "argo-ohc" / "scripts"
+    executor = scripts / "argo_ohc.py"
+    attester = scripts / "argo_ohc_check.py"
+    loader = scripts / "ohc_rg_loader.py"
+    data_root_tool = scripts / "ohc_data_root.py"
+    data_root = root / "knowledge" / "references" / "retrieval" / "argo-ohc-root"
     tmp = Path(tempfile.mkdtemp(prefix="argo_ohc_"))
 
     def compute(window, depth, name, fixture=True, seed=7):

@@ -33,8 +33,8 @@ canonical repository; here only `cite` is used.
 3. Run the tool, from the plugin root:
 
    ```bash
-   uv run skills/cite-ecco/scripts/ecco_cite.py cite \
-     --dois skills/cite-ecco/scripts/ecco_v4r4_dois.yaml \
+   uv run ${CLAUDE_PLUGIN_ROOT}/skills/cite-ecco/scripts/ecco_cite.py cite \
+     --dois ${CLAUDE_PLUGIN_ROOT}/skills/cite-ecco/scripts/ecco_v4r4_dois.yaml \
      SHORTNAME [SHORTNAME ...] --accessed YYYY-MM-DD
    ```
 

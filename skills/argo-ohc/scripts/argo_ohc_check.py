@@ -79,7 +79,7 @@ import tempfile
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-DEFAULT_COMPUTATION = HERE.parent / "computations" / "argo_ohc.py"
+DEFAULT_COMPUTATION = HERE / "argo_ohc.py"
 FIELDS = ("run_id", "computation", "code_sha256", "capability", "bundle", "runtime",
           "generated_utc", "data", "bound_parameters", "refused", "months", "series",
           "terms", "trend_ZJ_yr", "change_ZJ", "endpoint_change_ZJ", "residual",
@@ -575,7 +575,7 @@ def attestation_doc(verdict, refusal, checks, r, receipt_path, computation):
     return {
         "verdict": verdict,
         "refusal": refusal,
-        "attester": "references/attesters/argo_ohc_check.py",
+        "attester": "skills/argo-ohc/scripts/argo_ohc_check.py",
         "attester_sha256": sha256_file(Path(__file__).resolve()),
         "computation_sha256": sha256_file(computation),
         "receipt": receipt_path.name,

@@ -24,9 +24,9 @@ The executor, the attester, the loaders and the stamped data root all
 sit under this plugin's bundle, reached through the installed plugin
 root:
 
-- executor: `${CLAUDE_PLUGIN_ROOT}/knowledge/references/computations/argo_ohc.py`
-- attester: `${CLAUDE_PLUGIN_ROOT}/knowledge/references/attesters/argo_ohc_check.py`
-- loaders: `${CLAUDE_PLUGIN_ROOT}/knowledge/references/loaders/ohc_rg_loader.py` and `ohc_data_root.py`
+- executor: `${CLAUDE_PLUGIN_ROOT}/skills/argo-ohc/scripts/argo_ohc.py`
+- attester: `${CLAUDE_PLUGIN_ROOT}/skills/argo-ohc/scripts/argo_ohc_check.py`
+- loaders: `${CLAUDE_PLUGIN_ROOT}/skills/argo-ohc/scripts/ohc_rg_loader.py` and `ohc_data_root.py`
 - the committed data root: `${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/argo-ohc-root`
 
 Parameters bound on every run: `--window YYYY-MM:YYYY-MM` (the
@@ -49,7 +49,7 @@ its own name. `--fixture` or `--data-root DIR` selects the input;
    attester selftest reproduces):
 
    ```bash
-   uv run ${CLAUDE_PLUGIN_ROOT}/knowledge/references/computations/argo_ohc.py \
+   uv run ${CLAUDE_PLUGIN_ROOT}/skills/argo-ohc/scripts/argo_ohc.py \
      --fixture --seed 7 --window 2005-01:2016-12 --depth 2000 --runtime claude-code \
      --receipt /tmp/argo-ohc-receipt.json
    ```
@@ -72,7 +72,7 @@ its own name. `--fixture` or `--data-root DIR` selects the input;
    refuses, and a refusal is never a number:
 
    ```bash
-   uv run ${CLAUDE_PLUGIN_ROOT}/knowledge/references/computations/argo_ohc.py \
+   uv run ${CLAUDE_PLUGIN_ROOT}/skills/argo-ohc/scripts/argo_ohc.py \
      --fixture --window 2001-01:2016-12 --depth 700 --runtime claude-code \
      --receipt /tmp/refusal.json
    echo $?   # 3, and the receipt says refused: true with the reason
@@ -135,19 +135,19 @@ its own name. `--fixture` or `--data-root DIR` selects the input;
    record a real run reads):
 
    ```bash
-   uv run ${CLAUDE_PLUGIN_ROOT}/knowledge/references/loaders/ohc_rg_loader.py --rg-dir ~/rg --fetch   # downloads what ~/rg lacks
-   uv run ${CLAUDE_PLUGIN_ROOT}/knowledge/references/loaders/ohc_rg_loader.py --rg-dir ~/rg \
+   uv run ${CLAUDE_PLUGIN_ROOT}/skills/argo-ohc/scripts/ohc_rg_loader.py --rg-dir ~/rg --fetch   # downloads what ~/rg lacks
+   uv run ${CLAUDE_PLUGIN_ROOT}/skills/argo-ohc/scripts/ohc_rg_loader.py --rg-dir ~/rg \
      --out-dir ${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/argo-ohc-root
-   uv run ${CLAUDE_PLUGIN_ROOT}/knowledge/references/loaders/ohc_data_root.py \
+   uv run ${CLAUDE_PLUGIN_ROOT}/skills/argo-ohc/scripts/ohc_data_root.py \
      --root ${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/argo-ohc-root --record argo-ohc-root-YYYY-MM-DD
-   uv run ${CLAUDE_PLUGIN_ROOT}/knowledge/references/loaders/ohc_data_root.py \
+   uv run ${CLAUDE_PLUGIN_ROOT}/skills/argo-ohc/scripts/ohc_data_root.py \
      --root ${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/argo-ohc-root --check
    ```
 
    The real run on the committed root:
 
    ```bash
-   uv run ${CLAUDE_PLUGIN_ROOT}/knowledge/references/computations/argo_ohc.py \
+   uv run ${CLAUDE_PLUGIN_ROOT}/skills/argo-ohc/scripts/argo_ohc.py \
      --data-root ${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/argo-ohc-root \
      --window 2006-01:2020-12 --depth 2000 --runtime claude-code \
      --receipt /tmp/argo-ohc-record.json
@@ -158,9 +158,9 @@ its own name. `--fixture` or `--data-root DIR` selects the input;
    that exact receipt:
 
    ```bash
-   uv run ${CLAUDE_PLUGIN_ROOT}/knowledge/references/attesters/argo_ohc_check.py /tmp/argo-ohc-receipt.json \
+   uv run ${CLAUDE_PLUGIN_ROOT}/skills/argo-ohc/scripts/argo_ohc_check.py /tmp/argo-ohc-receipt.json \
      [--out /tmp/attestation.json]
-   uv run ${CLAUDE_PLUGIN_ROOT}/knowledge/references/attesters/argo_ohc_check.py /tmp/argo-ohc-record.json \
+   uv run ${CLAUDE_PLUGIN_ROOT}/skills/argo-ohc/scripts/argo_ohc_check.py /tmp/argo-ohc-record.json \
      --data-root ${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/argo-ohc-root [--out /tmp/attestation.json]
    ```
 

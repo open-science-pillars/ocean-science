@@ -4,19 +4,20 @@
 # dependencies = []
 # ///
 """Golden for the sweep skill: a fixture sweep over the sea level budget
-executor's declared period, tabled from receipts the bundle's attester
-passed, checked against the expectations committed beside this file.
+executor's declared period, tabled from receipts the computation's own
+attester passed, checked against the expectations committed beside this
+file.
 
-The sweep runs the sanctioned executor in the PO.DAAC bundle
-(knowledge/podaac/references/computations/sea_level_budget.py, under the
-contract knowledge/podaac/computations/sea-level-budget.md) once per
-window, attests every receipt and writes the table. Nothing scientific
-is reimplemented here and nothing is downloaded: the executor's
-synthetic fixture is generated at run time from the seed the
-expectations file names, so this golden is headless and offline with no
-NASA host reachable. The bundle root is resolved by the skill's script
-the way the wrapping skill resolves it: NASA_DAAC_KNOWLEDGE names a
-checkout of the provider repository, else the installer's record.
+The sweep runs the sanctioned executor of this package
+(skills/sea-level-budget/scripts/sea_level_budget.py, under the contract
+knowledge/computations/sea-level-budget.md) once per window, attests
+every receipt with skills/sea-level-budget/scripts/sea_level_budget_check.py
+and writes the table. Nothing scientific is reimplemented here and
+nothing is downloaded: the executor's synthetic fixture is generated at
+run time from the seed the expectations file names, so this golden is
+headless and offline with no NASA host reachable. The sweep script
+resolves the three paths from CLAUDE_PLUGIN_ROOT where the runtime sets
+it, else from the tree it sits in.
 
 Three things are checked, in order:
 

@@ -1,9 +1,9 @@
 {
-  "note": "Expectations for the sweep golden: every window of 96 months stepping 12 through the sea level budget executor's synthetic fixture at seed 7, the bridge unbound on every run. Each cell below is the field of one receipt that the bundle's attester passed, named in the columns block by its path in the receipt, and measured on 2026-09-20 with the executor whose digest is recorded here. Nothing here is a science expectation: the fixture proves the chain, not the ocean, and the concept knowledge/podaac/computations/sea-level-budget.md owns every number a reader may quote. A row the executor refused carries its reason code and no number, which is the measurement, not a gap.",
+  "note": "Expectations for the sweep golden: every window of 96 months stepping 12 through the sea level budget executor's synthetic fixture at seed 7, the bridge unbound on every run. Each cell below is the field of one receipt that the computation's own attester passed, named in the columns block by its path in the receipt, and measured on 2026-09-20 with the executor whose digest is recorded here. Every cell was re-measured unchanged on 2026-09-20 after ADR E moved the executor into skills/sea-level-budget/scripts; only the digest is new, because the file's import of the sanctioned trend method now reaches the ecco skill beside it. Nothing here is a science expectation: the fixture proves the chain, not the ocean, and the concept knowledge/computations/sea-level-budget.md owns every number a reader may quote. A row the executor refused carries its reason code and no number, which is the measurement, not a gap.",
   "measured_utc": "2026-09-20",
   "sweep": {
     "computation": "sea-level-budget",
-    "concept": "knowledge/podaac/computations/sea-level-budget.md",
+    "concept": "knowledge/computations/sea-level-budget.md",
     "parameter": "period",
     "windows": "96:12",
     "span": "2005-01:2022-12",
@@ -16,7 +16,7 @@
       "fixture_offset_mm": 0.0,
       "digest": "sha256:a83e78dba24b1932b2a1a94e74dd1ac4eabd621848a2a5c0bbd8a6a8a69edafe"
     },
-    "code_sha256": "sha256:c1064cfce95c8471442fa5c1fc71debdb9373ff579a93aff9feee59bf57ced49"
+    "code_sha256": "sha256:9b94e156ba0de47147f60652fd81288180e3d44ce3b323d4ecd0c5df4acc6119"
   },
   "columns": [
     {

@@ -1,0 +1,128 @@
+{
+  "run_id": "20260902T043736Z-7cc51e32",
+  "computation": "ecco-regional-salt-budget",
+  "code_sha256": "63c517dd21745346fb25d3e2fa0c3a0f4fa7062b99370f8bc36bf8fbd5bac2a4",
+  "data": {
+    "data_root": "/Users/pramirez/ECCO_V4r4_record",
+    "record": {
+      "record": "ecco-v4r4-science-record",
+      "manifest_sha256": "d67caebf699864ea358c37813d75c503a302832bc0380ee69a89760d69f9f61f",
+      "verified_utc": "2026-09-02T04:27:14.258145+00:00",
+      "report_sha256": "fd7353151c4496e0b10073bfbdadf483d929918291768de24854c24ac91304d4",
+      "granules": 4056
+    }
+  },
+  "generated_utc": "2026-09-02T04:37:36.762591+00:00",
+  "bound_parameters": {
+    "mode": "registered",
+    "region": "southeast-atlantic-upper",
+    "budget": "salt",
+    "year": 2005,
+    "collections": [
+      "ECCO_L4_OCEAN_3D_SALINITY_FLUX_LLC0090GRID_MONTHLY_V4R4",
+      "ECCO_L4_FRESH_FLUX_LLC0090GRID_MONTHLY_V4R4",
+      "ECCO_L4_TEMP_SALINITY_LLC0090GRID_SNAPSHOT_V4R4",
+      "ECCO_L4_SSH_LLC0090GRID_SNAPSHOT_V4R4"
+    ],
+    "geothermal_source": null,
+    "rhoConst_kg_m3": 1029.0,
+    "Cp_J_kg_K": 3994.0,
+    "sw_R": 0.62,
+    "sw_zeta1_m": 0.6,
+    "sw_zeta2_m": 20.0,
+    "abs_bar": 1.5e-10,
+    "abs_bar_units": "g/kg/s",
+    "rel_bar": 1e-06
+  },
+  "resolved_volume": {
+    "tile": 1,
+    "j": [
+      20,
+      60
+    ],
+    "i": [
+      20,
+      60
+    ],
+    "k_cells": 20,
+    "depth_face_m": 323.17999267578125,
+    "lat_extent": [
+      -44.358585357666016,
+      -10.45864200592041
+    ],
+    "lon_extent": [
+      -17.5,
+      21.5
+    ],
+    "wet_cells": 27921,
+    "bottom_cells": 30,
+    "volume_m3": 4135093043986432.0,
+    "mask_sha256": "5f60e3a58544b94407991a7eacbef76d64fb94c2a80c8132a5fdbad8b555a06d",
+    "geometry_sha256": "b9b9a0949fa06b82b43759e1fa3400bfa735c941c6ff2e0e14f9a116f29722f9"
+  },
+  "results": {
+    "months": 12,
+    "residual_per_volume_max": 1.9462954528695486e-14,
+    "residual_relative_max": 3.864455259663832e-07,
+    "largest_term": 208259955.10175464,
+    "monthly_residual_per_volume": [
+      9.308567067831656e-15,
+      5.426680090255711e-15,
+      4.963280579752195e-15,
+      1.9462954528695486e-14,
+      1.3176710260360007e-14,
+      5.355855947911042e-15,
+      8.936775114589695e-15,
+      8.8509021073923e-15,
+      1.3857686632467657e-14,
+      1.5035567764809743e-14,
+      1.0367007152781623e-14,
+      1.1300421702653461e-14
+    ],
+    "units": {
+      "residual_per_volume": "g/kg/s",
+      "largest_term": "g/kg m3/s"
+    }
+  },
+  "mutation_evidence": [
+    {
+      "mutation": "surface-sflux-omitted",
+      "residual_per_volume": 1.946295452886617e-14,
+      "residual_relative": 3.8644552596977225e-07,
+      "caught": false,
+      "applicable": false,
+      "note": "this term is below both bars in this volume (30 bottom cells), so its omission is not demonstrable here; physics, not a broken test"
+    },
+    {
+      "mutation": "salt-plume-omitted",
+      "residual_per_volume": 1.9462954528695486e-14,
+      "residual_relative": 3.864455259663832e-07,
+      "caught": false,
+      "applicable": false,
+      "note": "this term is below both bars in this volume (30 bottom cells), so its omission is not demonstrable here; physics, not a broken test"
+    },
+    {
+      "mutation": "rim-west-face-shifted",
+      "residual_per_volume": 1.674083868104671e-08,
+      "residual_relative": 0.3323967180664777,
+      "caught": true
+    },
+    {
+      "mutation": "vertical-face-sign-flipped",
+      "residual_per_volume": 1.0072807744500843e-07,
+      "residual_relative": 2.0000002985378136,
+      "caught": true
+    },
+    {
+      "mutation": "vertical-faces-omitted",
+      "residual_per_volume": 5.0364046240288095e-08,
+      "residual_relative": 1.0000002985378138,
+      "caught": true
+    }
+  ],
+  "caveats": {
+    "free_surface": "s* scaling from bracketing snapshots, inherited from the signed pointwise budget",
+    "single_tile_v1": "the volume lies within one tile interior; seam-crossing volumes are refused until the seam-calibrated section machinery lands",
+    "mask_disclosure": "no oracle checks that this mask is the water the user meant; the resolved extent above is the disclosure"
+  }
+}

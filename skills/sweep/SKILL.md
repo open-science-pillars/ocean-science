@@ -7,11 +7,11 @@ user-invocable: true
 # sweep
 
 This skill computes nothing. Every number it puts in a table is a field
-of one receipt that the provider bundle's attester passed, copied by
+of one receipt that the computation's own attester passed, copied by
 the receipt field path the script records beside each column, and the
 computation that owns those numbers is the concept the sweep names
 (for the sea level budget closure,
-`knowledge/podaac/computations/sea-level-budget.md`). The script fits
+`knowledge/computations/sea-level-budget.md`). The script fits
 nothing, averages nothing and carries no expected value of its own.
 What the sweep adds is arrangement: a concept states its boundaries in
 prose from a handful of runs someone made by hand, and a sweep turns
@@ -33,21 +33,18 @@ time.
 
 ## Where the executor, the attester and the concept are
 
-The provider bundle is installed with the nasa-daac-knowledge
-dependency; its root is the `installPath` of that entry in
-`claude plugin list --json`, or a checkout named by
-`NASA_DAAC_KNOWLEDGE`. The script resolves it that way, exactly as the
-wrapping skill and the receipt-figures renderer do, and copies nothing
-into this repository. `$PODAAC` below stands for
-`<that root>/knowledge/podaac`:
+A computation is a skill, so the concept, the executor and the attester
+all ship in this package; the script resolves them from
+`${CLAUDE_PLUGIN_ROOT}`, which the runtime sets, and falls back to the
+tree it sits in, exactly as the receipt-figures renderer does:
 
-- concept: `$PODAAC/computations/sea-level-budget.md` (it declares the
-  parameters, and the script reads the declared set from its
-  frontmatter rather than from a list of its own)
-- executor: `$PODAAC/references/computations/sea_level_budget.py`
-- attester: `$PODAAC/references/attesters/sea_level_budget_check.py`
+- concept: `${CLAUDE_PLUGIN_ROOT}/knowledge/computations/sea-level-budget.md` (it
+  declares the parameters, and the script reads the declared set from
+  its frontmatter rather than from a list of its own)
+- executor: `${CLAUDE_PLUGIN_ROOT}/skills/sea-level-budget/scripts/sea_level_budget.py`
+- attester: `${CLAUDE_PLUGIN_ROOT}/skills/sea-level-budget/scripts/sea_level_budget_check.py`
 - the committed data root:
-  `$PODAAC/references/retrieval/sea-level-budget-root`
+  `${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/sea-level-budget-root`
 
 ## The command line
 
@@ -61,7 +58,7 @@ uv run skills/sweep/scripts/sweep.py \
   --computation sea-level-budget --parameter period \
   --windows 60:12 --span 2005-01:2026-07 \
   --fixed bridge=unbound \
-  --input data-root --data-root $PODAAC/references/retrieval/sea-level-budget-root \
+  --input data-root --data-root ${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/sea-level-budget-root \
   --runtime claude-code --capability-root . \
   --out-dir /tmp/sweep-sea-level-budget
 ```
@@ -94,7 +91,7 @@ uv run skills/sweep/scripts/sweep.py \
 ## Behavior, in order
 
 1. **Name the concept first, then show the sweep back.** State the
-   concept by bundle path (`knowledge/podaac/computations/sea-level-budget.md`
+   concept by package path (`knowledge/computations/sea-level-budget.md`
    for the closure), the parameter to be swept as that concept declares
    it, the values, the fixed value of every other declared parameter,
    and the input (the fixture as a rehearsal, or the stamped data root

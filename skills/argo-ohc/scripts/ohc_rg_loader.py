@@ -363,7 +363,7 @@ def run(rg_dir: Path, out_dir: Path, start: str | None, end: str | None, downloa
                                  "error field",
             "deep_omission": "the ocean below 2000 dbar is not sampled by the product and is "
                              "not in this term",
-            "loader": "references/loaders/ohc_rg_loader.py",
+            "loader": "skills/argo-ohc/scripts/ohc_rg_loader.py",
             "loader_sha256": sha256(Path(__file__).resolve()),
             "written_utc": now_utc(),
             "sources": sources,
