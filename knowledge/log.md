@@ -4,6 +4,23 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-20 · ADDED skills/sweep, a receipt skill that computes nothing:
+  it runs the provider bundle's sanctioned sea level budget executor
+  (knowledge/podaac/references/computations/sea_level_budget.py, under the
+  concept knowledge/podaac/computations/sea-level-budget.md) once per value
+  of a parameter that concept declares, runs the bundle's attester on every
+  receipt before reading a field out of it, and writes a CSV, a markdown
+  table and a JSON manifest of the executor's own headline fields, with a
+  run the executor refused as a row carrying its reason code. The script
+  refuses any aggregate across the rows (a number no concept owns, which
+  would be domain expansion under ADR D), a parameter the concept does not
+  declare, a declared parameter the command line leaves neither swept nor
+  fixed, and a table that mixes executor digests or inputs; a receipt the
+  attester did not pass becomes a failed row carrying the attester's own
+  line. The golden verification/sweep.py runs a fixture sweep offline
+  against committed expectations and is named in the goldens workflow. No
+  concept changed, and nothing in a provider bundle changed. (claude-code)
+
 - 2026-09-16 · STEWARD RE-SIGNING of knowledge/computations/argo-ohc.md:
   Re-signed after the placement migration (ADR C): the concept names its
   executor script in executor.resource and its wrapping skill argo-ohc

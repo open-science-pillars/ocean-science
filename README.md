@@ -102,9 +102,12 @@ including downloads, about 1.3 GB cached).
   gated loaders `load-ecco` and `load-swot`; the workflows
   `transport-analysis`, `ocean-budget`, `water-mass-analysis`,
   `mixed-layer-analysis`, `sea-level-analysis`, `compare-obs`,
-  `cite-ecco`, `receipt-figures`, `briefing-generator`, and the
-  attested runs `argo-ohc` (this plugin's own computation) and
-  `sea-level-budget` (the provider bundle's). Each attested computation
+  `cite-ecco`, `receipt-figures`, `briefing-generator`, `sweep`, and
+  the attested runs `argo-ohc` (this plugin's own computation) and
+  `sea-level-budget` (the provider bundle's). `sweep` runs one
+  attested computation once per value of a parameter its concept
+  declares and tables the attested receipts, computing nothing of its
+  own. Each attested computation
   in the provider bundle is wrapped by the workflow skill that covers
   it, which names the executor it runs and the attester to run on the
   receipt before a number is quoted. The loaders
