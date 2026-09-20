@@ -18,7 +18,8 @@ generated: { by: knowledge-seeder/claude, at: 2026-09-15T16:00:00Z }
 verified:
   - { by: human:PaulMRamirez, at: 2026-09-15T14:26:35Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/56 }
   - { by: human:PaulMRamirez, at: 2026-09-16T05:49:23Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/63 }
-status: draft
+  - { by: human:PaulMRamirez, at: 2026-09-20T19:04:34Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/66 }
+status: stable
 stale_after: 2027-03-15
 sources:
   - id: dataset

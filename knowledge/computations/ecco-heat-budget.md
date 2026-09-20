@@ -19,7 +19,8 @@ verified:
   - { by: human:PaulMRamirez, at: 2026-09-04T20:45:44Z }
   - { by: human:PaulMRamirez, at: 2026-09-05T20:22:37Z }
   - { by: human:PaulMRamirez, at: 2026-09-16T05:51:09Z, role: maintainer, source: https://github.com/open-science-pillars/nasa-daac-knowledge/pull/183 }
-status: draft
+  - { by: human:PaulMRamirez, at: 2026-09-20T19:04:34Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/66 }
+status: stable
 sources:
   - id: budget-formulation
     resource: knowledge/podaac/conventions/ecco-budget-formulation.md

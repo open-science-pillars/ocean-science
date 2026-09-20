@@ -20,7 +20,8 @@ generated: { by: claude-code/fable-5, at: 2026-09-02T18:55:00Z }
 verified:
   - { by: human:PaulMRamirez, at: 2026-09-04T02:40:20Z }
   - { by: human:PaulMRamirez, at: 2026-09-16T05:51:09Z, role: maintainer, source: https://github.com/open-science-pillars/nasa-daac-knowledge/pull/183 }
-status: draft
+  - { by: human:PaulMRamirez, at: 2026-09-20T19:04:34Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/66 }
+status: stable
 stale_after: 2027-03-02
 sources:
   - id: overturning
