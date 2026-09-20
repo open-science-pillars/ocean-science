@@ -7,9 +7,14 @@ surfaces:
     - development
     - runtime
     required: true
-    status: supported
-    evidence: Every release is exercised on Claude Code; the qualification record for the release
-      under .osp/qualification/ records the passes
+    status: tested
+    evidence: >-
+      Qualified for 0.8.2 by a headless run of the full matrix on Claude Code, recorded in
+      .osp/qualification/ at that version. Not qualified for 0.9.0: the release environment could not
+      produce a record that would be evidence, two runs of the same candidate disagreeing through a
+      shared plugin cache and a denied shell tool, so the surface is waived for this release. The
+      attested sea level budget was verified by hand from the installed 0.9.0 package and passes at
+      the new script paths.
   claude-cowork:
     role: runtime
     required: true
