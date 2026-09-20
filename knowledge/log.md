@@ -4,6 +4,30 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-20 · STEWARD RE-SIGNING of knowledge/computations/argo-ohc.md,
+  knowledge/computations/ecco-amoc-26n.md,
+  knowledge/computations/ecco-flux-decomposition.md,
+  knowledge/computations/ecco-geostrophic-balance.md,
+  knowledge/computations/ecco-heat-budget.md,
+  knowledge/computations/ecco-ocean-heat-content.md,
+  knowledge/computations/ecco-rapid-amoc-confrontation.md,
+  knowledge/computations/ecco-regional-heat-budget.md,
+  knowledge/computations/ecco-regional-salt-budget.md,
+  knowledge/computations/ecco-regional-sea-level.md,
+  knowledge/computations/ecco-regional-volume-budget.md,
+  knowledge/computations/ecco-section-transport.md,
+  knowledge/computations/ecco-steric-height.md,
+  knowledge/computations/ecco-thermal-wind-reconstruction.md,
+  knowledge/computations/ecco-trend-ci.md,
+  knowledge/computations/ecco-wind-stress-curl.md,
+  knowledge/computations/sea-level-budget.md: Re-signed after the
+  computations moved into the capability that runs them. The coordinator
+  compared every number in all twenty-one concepts against the bundle's
+  copies: none was removed and none changed, and the only additions are
+  inside the placement notes the move added. osp.py validate reports no
+  warning. The new verified event is appended on the steward's word, the
+  earlier events kept as history. (steward)
+
 - 2026-09-20 · MOVED IN, under ADR E (a computation is a skill): the
   twenty PO.DAAC attested computations and the thirty-nine scripts that
   run and attest them, out of the nasa-daac-knowledge bundle at
