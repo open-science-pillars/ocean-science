@@ -631,8 +631,16 @@ def selftest() -> int:
              "--values", "2005-01:2009-12", "--fixed", "bridge=unbound",
              "--out-dir", str(work / "seed8")], capture_output=True, text=True)
         assert eight.returncode == 0, eight.stdout + eight.stderr
-        first = json.loads(next((work / "seed7" / "receipts").glob("000-*.json")).read_text())
-        second = json.loads(next((work / "seed8" / "receipts").glob("000-*.json")).read_text())
+        def only_receipt(out_dir: Path):
+            # by the manifest, never by a glob: the receipts directory
+            # holds each attestation beside its receipt, and the order a
+            # glob returns them in is the filesystem's business
+            manifest = json.loads((out_dir / "sweep.json").read_text())
+            return json.loads(Path(manifest["rows"][0]["receipt"]).read_text())
+
+        first = only_receipt(work / "seed7")
+        second = only_receipt(work / "seed8")
+        assert first["data"]["seed"] == 7 and second["data"]["seed"] == 8
         mixed = one_method([{"value": "seed 7", "receipt_body": first},
                             {"value": "seed 8", "receipt_body": second}])
         assert mixed and mixed[0] == "mixed-input", mixed
