@@ -1,0 +1,76 @@
+name: release tag
+# Creates the annotated release tag ocean-science--v<version> on a named
+# commit of main, on the maintainer's behalf, from the Actions token. It
+# exists because a session that can merge a release candidate cannot
+# always push a tag: credentials that carry a branch push are refused on
+# refs/tags. A tag pushed by the Actions token does not itself start a
+# workflow, so the checks the plugin gate would enforce on a pushed tag
+# run here first, and the tag is created only when they pass: the commit
+# is on main, the version is the one package.yaml states, the tag does not
+# exist yet, the release lock is current, every advertised runtime is
+# qualified or waived for this release, and no concept owes a signature.
+# The catalog and publish steps of the release flow follow by hand
+# (release.py catalog, release.py publish).
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "The version to tag, exactly as .osp/package.yaml states it"
+        required: true
+        type: string
+      sha:
+        description: "The full 40 character commit id on main to tag"
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: plugin
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          path: plugin
+          ref: ${{ inputs.sha }}
+          fetch-depth: 0   # the signing commits, and main for the ancestry check
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          repository: open-science-pillars/nasa-daac-knowledge
+          path: nasa-daac-knowledge
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          repository: open-science-pillars/build-kit
+          path: build-kit
+      - uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5
+      - name: The commit is on main, the version is the package's, and the tag is new
+        env:
+          SHA: ${{ inputs.sha }}
+          VERSION: ${{ inputs.version }}
+        run: |
+          set -eu
+          [ "${#SHA}" -eq 40 ] || { echo "sha must be the full 40 character commit id"; exit 1; }
+          [ "$(git rev-parse HEAD)" = "$SHA" ] || { echo "checked out $(git rev-parse HEAD), not $SHA"; exit 1; }
+          git merge-base --is-ancestor "$SHA" origin/main || { echo "$SHA is not on main"; exit 1; }
+          stated=$(sed -n 's/^  version: *//p' .osp/package.yaml | head -1 | tr -d '"')
+          [ "$stated" = "$VERSION" ] || { echo "package.yaml states version $stated, not $VERSION"; exit 1; }
+          tag="ocean-science--v$VERSION"
+          [ -z "$(git ls-remote --tags origin "$tag")" ] || { echo "$tag already exists on origin"; exit 1; }
+          echo "TAG=$tag" >> "$GITHUB_ENV"
+      - name: Release lock, enforced (a release tag digests to its lock)
+        run: uv run ../build-kit/scripts/osp.py lock . --check
+      - name: A runtime is advertised only on a qualified or waived record
+        run: uv run ../build-kit/scripts/osp.py advertise . --check --release --into README.md
+      - name: Signature debt, enforced (a release tag owes nothing)
+        run: uv run ../nasa-daac-knowledge/tools/signature_check.py knowledge
+      - name: Create and push the annotated tag
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          set -eu
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            tag -a "$TAG" -m "ocean-science $VERSION"
+          git push origin "refs/tags/$TAG"
+          echo "$TAG created at $(git rev-parse HEAD)"
