@@ -1,6 +1,6 @@
 {
   "name": "ocean-science",
-  "version": "0.8.2",
+  "version": "0.9.0",
   "description": "Physical oceanography: ECCO state estimate, SWOT SSH, meridional transport, budget closure, water masses.",
   "dependencies": [
     "core",

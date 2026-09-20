@@ -71,7 +71,7 @@ marketplace repository's
 [docs/runtime-distribution.md](https://github.com/open-science-pillars/marketplace/blob/main/docs/runtime-distribution.md).
 
 <!-- osp-runtimes:start -->
-Runtime support for ocean-science 0.8.2 (release lock `sha256:dba92d2233f7`), rendered by build-kit's `osp.py advertise` from `.osp/surfaces.yaml` and the qualification records; edit those, not this block.
+Runtime support for ocean-science 0.9.0 (release lock `sha256:de135f0aa0f8`), rendered by build-kit's `osp.py advertise` from `.osp/surfaces.yaml` and the qualification records; edit those, not this block.
 
 | Runtime | Role | Declared status | Qualification |
 |---|---|---|---|
