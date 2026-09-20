@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "capability": "ocean-science",
+  "version": "0.9.0",
+  "installed_version": null,
+  "release_lock": "sha256:de135f0aa0f840d4b8615d91983cfaf61ac9da10bedf11a7e0756478d2607f04",
+  "runtime": {
+    "name": "claude-code",
+    "projection": "claude",
+    "version": null
+  },
+  "models": [],
+  "date": "2026-09-20",
+  "source": "waiver",
+  "required": [
+    "install",
+    "skill-discovery",
+    "skill-invocation",
+    "knowledge-resolution",
+    "dependency-resolution",
+    "golden-computation",
+    "prove",
+    "receipt",
+    "release-lock"
+  ],
+  "tests": {},
+  "qualified": false,
+  "blockers": [
+    "install: not run",
+    "skill-discovery: not run",
+    "skill-invocation: not run",
+    "knowledge-resolution: not run",
+    "dependency-resolution: not run",
+    "golden-computation: not run",
+    "prove: not run",
+    "receipt: not run",
+    "release-lock: not run"
+  ],
+  "evidence_dir": null,
+  "waived": {
+    "by": "human:PaulMRamirez",
+    "reason": "Claude Code is not qualified for this release because the release environment could not produce a record that would be evidence. Two runs of the same candidate disagreed with each other: the first was contaminated by a concurrent qualification sharing the same plugin cache, and the second, run alone, had the shell tool denied part way through, so the runtime could not execute the computation it was asked to. Tool denials varied between runs, so neither result is a statement about the capability. What was established, deterministically and by hand from the installed 0.9.0 package rather than from the checkout, is that the attested sea level budget runs and attests at the new script paths: PASS, run sha256:c1031ce03a2eb00c, every check ok. One finding is reproducible across both runs and both invocation forms and is not an environment artifact: the skill does real work but its output never names the capability, which is what the probe's expect list checks for. The surface is not advertised until a run passes on a machine that can run it.",
+    "date": "2026-09-20"
+  }
+}
