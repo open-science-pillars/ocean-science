@@ -15,9 +15,9 @@ arrays the receipt hashes, and stamps every figure with what it was
 drawn from.
 
 The renderer ships beside this skill (`scripts/receipt_figure.py`, PEP 723,
-numpy and matplotlib). It finds the attesters in the installed
-provider bundle through the installer's record (`claude plugin list
---json`), or in a checkout named by `NASA_DAAC_KNOWLEDGE`.
+numpy and matplotlib). It finds an attester beside the executor it
+attests, under `${CLAUDE_PLUGIN_ROOT}/skills/<name>/scripts/`, which the
+runtime sets and which falls back to the tree the renderer sits in.
 
 ## Behavior
 
@@ -28,7 +28,7 @@ provider bundle through the installer's record (`claude plugin list
    (`ecco_geostrophy.py`), the wind-stress curl and Ekman pumping
    (`ecco_curl_ekman.py`) and the thermal-wind reconstruction from a
    level of no motion (`ecco_thermal_wind_reconstruction.py`); each
-   concept under `knowledge/podaac/computations/` lists its arrays. A
+   concept under `knowledge/computations/` lists its arrays. A
    series needs a trend-with-interval receipt (`ecco_trend_ci.py`),
    which carries the deseasonalized series it fitted.
 2. Name the attester from the concept's `attester.resource`

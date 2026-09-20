@@ -1,0 +1,12 @@
+{
+ "verified_utc": "2026-09-02T15:13:27.878296+00:00",
+ "record": "rapid-26n-v2024.1a",
+ "manifest_sha256": "ff1b261502a5359b2e0522bf9466c6750f63850be58e0973ca996d16e7dc55d5",
+ "data_root": "/Users/pramirez/RAPID_26N/rapid.ac.uk-2026-09-02",
+ "declared": 6,
+ "present": 6,
+ "checksum_ok": 6,
+ "failures": [],
+ "tool_sha256": "6282fb65b18e28be43177533299ccb774c2b6889fce615880f6330efe09e5fc7",
+ "ok": true
+}

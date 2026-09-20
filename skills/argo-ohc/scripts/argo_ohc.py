@@ -91,7 +91,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-COMPUTATION = "references/computations/argo_ohc.py"
+COMPUTATION = "skills/argo-ohc/scripts/argo_ohc.py"
 
 DEPTHS = (700, 2000)
 FIXTURE_SPAN = ("2005-01", "2024-12")

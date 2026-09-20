@@ -53,10 +53,10 @@ partial table:
                           offset and digest), so the table would be two
                           roots.
 
-The executor, the attester and the concept are reached at the installed
-provider bundle's path, the way the wrapping skill reaches them: the
-installer's record (`claude plugin list --json`), or a checkout named
-by NASA_DAAC_KNOWLEDGE. Nothing is copied here.
+The executor, the attester and the concept all ship in this package, a
+computation being a skill: they are reached from CLAUDE_PLUGIN_ROOT
+where the runtime sets it, else from the tree this script sits in.
+Nothing is copied here.
 
 Usage:
   sweep.py --computation sea-level-budget --parameter period \
@@ -78,14 +78,11 @@ import datetime as dt
 import json
 import os
 import re
-import shutil
 import subprocess
 import sys
 import tempfile
 from pathlib import Path
 
-PROVIDER_PLUGIN = "nasa-daac-knowledge"
-BUNDLE = "podaac"
 
 # One entry per computation this sweep can drive. The columns are the
 # receipt fields the concept's Reference run section names, each a
@@ -93,9 +90,9 @@ BUNDLE = "podaac"
 # else. Adding a computation here adds no number; it names paths.
 CATALOG = {
     "sea-level-budget": {
-        "concept": "computations/sea-level-budget.md",
-        "executor": "references/computations/sea_level_budget.py",
-        "attester": "references/attesters/sea_level_budget_check.py",
+        "concept": "knowledge/computations/sea-level-budget.md",
+        "executor": "skills/sea-level-budget/scripts/sea_level_budget.py",
+        "attester": "skills/sea-level-budget/scripts/sea_level_budget_check.py",
         "skill": "ocean-science/sea-level-budget",
         "columns": [
             ("period", "bound_parameters.period"),
@@ -130,46 +127,27 @@ def refuse(code: str, message: str) -> int:
     return 4
 
 
-# ---- the installed bundle
+# ---- this package
 
-def provider_root() -> Path:
-    """The installed provider plugin's root, from the installer's record."""
-    override = os.environ.get("NASA_DAAC_KNOWLEDGE")
+def plugin_root() -> Path:
+    """This package's root: the runtime's CLAUDE_PLUGIN_ROOT where it is
+    set, else the tree this script sits in."""
+    override = os.environ.get("CLAUDE_PLUGIN_ROOT")
     if override:
         return Path(override).expanduser().resolve()
-    claude = shutil.which("claude")
-    if claude is None:
-        sys.exit("no `claude` on PATH to read the installed-plugin record; "
-                 "set NASA_DAAC_KNOWLEDGE to a checkout of the provider "
-                 "repository instead")
-    rec = subprocess.run([claude, "plugin", "list", "--json"],
-                         capture_output=True, text=True)
-    if rec.returncode != 0:
-        sys.exit(f"`claude plugin list --json` failed: {rec.stderr.strip()}")
-    for entry in json.loads(rec.stdout):
-        if entry.get("id", "").split("@")[0] != PROVIDER_PLUGIN:
-            continue
-        if not entry.get("enabled", True) or entry.get("errors"):
-            sys.exit(f"{entry['id']} is installed but not usable: "
-                     f"{entry.get('errors') or 'disabled'}")
-        return Path(entry["installPath"])
-    sys.exit(f"{PROVIDER_PLUGIN} is not installed; it arrives with this "
-             "plugin's dependencies (`claude plugin install "
-             "ocean-science@open-science-pillars`), or set "
-             "NASA_DAAC_KNOWLEDGE to a checkout of the provider repository")
+    return Path(__file__).resolve().parent.parent.parent.parent
 
 
-def bundle_paths(computation: str):
-    """The concept, the executor and the attester at the installed
-    bundle's path; nothing is copied into this repository."""
+def package_paths(computation: str):
+    """The concept, the executor and the attester in this package; the
+    computation is a skill, so all three travel with the sweep."""
     spec = CATALOG[computation]
-    base = provider_root() / "knowledge" / BUNDLE
+    base = plugin_root()
     paths = {k: base / spec[k] for k in ("concept", "executor", "attester")}
     for name, p in paths.items():
         if not p.is_file():
-            sys.exit(f"the provider bundle carries no {name} for {computation} "
-                     f"at {p}; the sweep needs {PROVIDER_PLUGIN} at a release "
-                     "that ships it")
+            sys.exit(f"this package carries no {name} for {computation} "
+                     f"at {p}; the sweep needs the computation it names")
     return paths
 
 
@@ -411,7 +389,7 @@ def write_manifest(path: Path, rows, columns, head: dict) -> None:
 
 def sweep(args) -> int:
     spec = CATALOG[args.computation]
-    paths = bundle_paths(args.computation)
+    paths = package_paths(args.computation)
     declared = declared_parameters(paths["concept"])
 
     if args.aggregate:
@@ -421,7 +399,7 @@ def sweep(args) -> int:
             f"what was asked for is one: {args.aggregate}. Each row is a "
             f"receipt the attester passed, and an aggregate over the "
             f"rows is a number no concept owns: "
-            f"knowledge/{BUNDLE}/{spec['concept']} owns the trend of one "
+            f"{spec['concept']} owns the trend of one "
             f"period and states its uncertainty, and nothing in the bundle "
             f"owns a trend of trends. Computing one here would be a number of "
             f"this capability's own, which is domain expansion under ADR D of "
@@ -432,7 +410,7 @@ def sweep(args) -> int:
         return refuse(
             "parameter-not-declared",
             f"{args.parameter} is not a parameter "
-            f"knowledge/{BUNDLE}/{spec['concept']} declares; it declares "
+            f"{spec['concept']} declares; it declares "
             f"{', '.join(declared)}. Sweeping execution plumbing (a seed, an "
             "output path) or an invented knob produces a table of runs no "
             "concept licenses.")
@@ -446,7 +424,7 @@ def sweep(args) -> int:
         if name not in declared:
             return refuse("parameter-not-declared",
                           f"{name} is not a parameter "
-                          f"knowledge/{BUNDLE}/{spec['concept']} declares; it "
+                          f"{spec['concept']} declares; it "
                           f"declares {', '.join(declared)}")
         if name == args.parameter:
             return refuse("parameter-not-stated",
@@ -506,9 +484,9 @@ def sweep(args) -> int:
                  "is computed here",
         "generated_utc": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "computation": args.computation,
-        "concept": f"knowledge/{BUNDLE}/{spec['concept']}",
-        "executor": f"knowledge/{BUNDLE}/{spec['executor']}",
-        "attester": f"knowledge/{BUNDLE}/{spec['attester']}",
+        "concept": spec["concept"],
+        "executor": spec["executor"],
+        "attester": spec["attester"],
         "wrapping_skill": spec["skill"],
         "parameter": args.parameter,
         "values": values,
@@ -558,7 +536,7 @@ def sweep(args) -> int:
 
 def selftest() -> int:
     """Every refusal, on the executor's synthetic fixture."""
-    paths = bundle_paths("sea-level-budget")
+    paths = package_paths("sea-level-budget")
     columns = CATALOG["sea-level-budget"]["columns"]
     base = ["--computation", "sea-level-budget", "--input", "fixture",
             "--seed", "7", "--runtime", "selftest"]

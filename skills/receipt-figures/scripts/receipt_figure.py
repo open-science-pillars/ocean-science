@@ -32,9 +32,9 @@ attester's verdict, so a reader can trace the picture to the receipt
 and the receipt to the sanctioned code and the verified data tree.
 
 The attester is named by --attester: a path, or a bare name resolved
-under the installed provider plugin's references/attesters (the
-installer's record via `claude plugin list --json`, or a checkout named
-by NASA_DAAC_KNOWLEDGE).
+under this package's skills, where a computation's attester sits beside
+its executor (the runtime's CLAUDE_PLUGIN_ROOT, else the tree this
+script sits in).
 
 Usage:
   uv run skills/receipt-figures/scripts/receipt_figure.py map RECEIPT.json --attester curl_check \
@@ -53,7 +53,6 @@ import argparse
 import hashlib
 import json
 import os
-import shutil
 import subprocess
 import sys
 import textwrap
@@ -61,45 +60,25 @@ from pathlib import Path
 
 import numpy as np
 
-PROVIDER_PLUGIN = "nasa-daac-knowledge"
-
-
-def provider_root() -> Path:
-    """The installed provider plugin's root, from the installer's record."""
-    override = os.environ.get("NASA_DAAC_KNOWLEDGE")
+def plugin_root() -> Path:
+    """This package's root: the runtime's CLAUDE_PLUGIN_ROOT where it is
+    set, else the tree this script sits in."""
+    override = os.environ.get("CLAUDE_PLUGIN_ROOT")
     if override:
         return Path(override).expanduser().resolve()
-    claude = shutil.which("claude")
-    if claude is None:
-        sys.exit("no `claude` on PATH to read the installed-plugin record; "
-                 "set NASA_DAAC_KNOWLEDGE to a checkout of the provider "
-                 "repository instead")
-    rec = subprocess.run([claude, "plugin", "list", "--json"],
-                         capture_output=True, text=True)
-    if rec.returncode != 0:
-        sys.exit(f"`claude plugin list --json` failed: {rec.stderr.strip()}")
-    for entry in json.loads(rec.stdout):
-        if entry.get("id", "").split("@")[0] != PROVIDER_PLUGIN:
-            continue
-        if not entry.get("enabled", True) or entry.get("errors"):
-            sys.exit(f"{entry['id']} is installed but not usable: "
-                     f"{entry.get('errors') or 'disabled'}")
-        return Path(entry["installPath"])
-    sys.exit(f"{PROVIDER_PLUGIN} is not installed; it arrives with this "
-             "plugin's dependencies (`claude plugin install "
-             "ocean-science@open-science-pillars`), or set "
-             "NASA_DAAC_KNOWLEDGE to a checkout of the provider repository")
+    return Path(__file__).resolve().parent.parent.parent.parent
 
 
 def resolve_attester(name: str) -> Path:
     p = Path(name).expanduser()
     if p.is_file():
         return p.resolve()
-    candidate = (provider_root() / "knowledge" / "podaac" / "references"
-                 / "attesters" / (name if name.endswith(".py") else name + ".py"))
-    if not candidate.is_file():
-        sys.exit(f"attester {name} not found at {candidate}")
-    return candidate
+    stem = name[:-3] if name.endswith(".py") else name
+    hits = sorted(plugin_root().glob(f"skills/*/scripts/{stem}.py"))
+    if len(hits) != 1:
+        sys.exit(f"attester {name} is not one file under skills/*/scripts/: "
+                 + (", ".join(str(h) for h in hits) or "no match"))
+    return hits[0].resolve()
 
 
 def attest(receipt: Path, attester: Path) -> str:
@@ -352,7 +331,7 @@ def main() -> int:
     m = sub.add_parser("map", help="draw one per-cell array as the grid's cells at XC, YC")
     m.add_argument("receipt")
     m.add_argument("--attester", required=True,
-                   help="attester path, or a bare name under the provider's references/attesters")
+                   help="attester path, or a bare name under skills/<name>/scripts/")
     g = m.add_mutually_exclusive_group(required=True)
     g.add_argument("--array", help="array name in the fields file")
     g.add_argument("--speed", nargs=2, metavar=("U", "V"),

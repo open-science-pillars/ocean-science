@@ -26,20 +26,20 @@ convention before running.
 A runner binds VALUES for `period` and, across the inter-mission gap,
 `bridge`, names the runtime that ran it, and never edits the
 computation; the attester hashes it. Receipts and verdicts are runtime
-artifacts, never committed to the bundle; nothing is committed under a
+artifacts, never committed to this package; nothing is committed under a
 fixtures directory either, since the fixture is generated at run time.
 
-The provider bundle is installed with the nasa-daac-knowledge
-dependency; its root is the `installPath` of that entry in
-`claude plugin list --json`, or a checkout named by
-`NASA_DAAC_KNOWLEDGE` (the way the receipt-figures renderer resolves
-it). `$PODAAC` below stands for `<that root>/knowledge/podaac`:
+The executor and the attester of every computation below ship in this
+package, in the scripts directory of the skill that runs them, and the
+concept each one answers to is under `knowledge/computations/`.
+`${CLAUDE_PLUGIN_ROOT}` below is this package's root, which the runtime
+sets:
 
-- executor: `$PODAAC/references/computations/sea_level_budget.py`
-- attester: `$PODAAC/references/attesters/sea_level_budget_check.py`
-- loaders: `$PODAAC/references/loaders/slb_altimetry_nasa_ssh.py`,
+- executor: `${CLAUDE_PLUGIN_ROOT}/skills/sea-level-budget/scripts/sea_level_budget.py`
+- attester: `${CLAUDE_PLUGIN_ROOT}/skills/sea-level-budget/scripts/sea_level_budget_check.py`
+- loaders: `${CLAUDE_PLUGIN_ROOT}/skills/sea-level-budget/scripts/slb_altimetry_nasa_ssh.py`,
   `slb_steric_rg.py`, `slb_mass_mascons.py` and `slb_data_root.py`
-- the committed data root: `$PODAAC/references/retrieval/sea-level-budget-root`
+- the committed data root: `${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/sea-level-budget-root`
 
 Parameters bound on every run: `--period YYYY-MM:YYYY-MM` (the
 declared `period`) and, for a period that crosses the GRACE to
@@ -63,7 +63,7 @@ names the receipt.
 2. **The fixture run** (the reference, and the rehearsal):
 
    ```bash
-   uv run $PODAAC/references/computations/sea_level_budget.py \
+   uv run ${CLAUDE_PLUGIN_ROOT}/skills/sea-level-budget/scripts/sea_level_budget.py \
      --fixture --seed 7 --period 2005-01:2016-12 --runtime claude-code \
      --receipt /tmp/sea-level-budget-receipt.json
    ```
@@ -76,7 +76,8 @@ names the receipt.
    default, so a bridged run across the gap has something to fail
    on), and `--capability-root DIR` for a capability whose golden
    invokes this executor and whose release the receipt is evidence
-   for (the `bundle` block always names the provider bundle). The
+   for (the `bundle` block names the package the executor ships in,
+   which is this one). The
    headline line prints the residual trend, the closure gap against
    the bar, and the verdict; the receipt carries exactly the declared
    fields, with the three series, their uncertainties and the
@@ -86,7 +87,7 @@ names the receipt.
    without `--bridge TEXT`, and a refusal is never a number:
 
    ```bash
-   uv run $PODAAC/references/computations/sea_level_budget.py \
+   uv run ${CLAUDE_PLUGIN_ROOT}/skills/sea-level-budget/scripts/sea_level_budget.py \
      --fixture --period 2016-01:2019-12 --runtime claude-code \
      --receipt /tmp/refusal.json
    echo $?   # 3, and the receipt says refused: true with the reason
@@ -99,7 +100,7 @@ names the receipt.
    and its reason; a bridge is a citation the user supplies or
    confirms, never a phrase invented to get past the refusal.
 4. **A real run on a data root.** The first real run's tree is
-   committed at `$PODAAC/references/retrieval/sea-level-budget-root`,
+   committed at `${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/sea-level-budget-root`,
    built by the loaders (`slb_altimetry_nasa_ssh.py` for the NASA-SSH
    grids, `slb_steric_rg.py` for the Roemmich and Gilson product,
    `slb_mass_mascons.py` for the mascon grid, each with `--selftest`)
@@ -155,8 +156,8 @@ names the receipt.
    The real run on the committed root:
 
    ```bash
-   uv run $PODAAC/references/computations/sea_level_budget.py \
-     --data-root $PODAAC/references/retrieval/sea-level-budget-root \
+   uv run ${CLAUDE_PLUGIN_ROOT}/skills/sea-level-budget/scripts/sea_level_budget.py \
+     --data-root ${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/sea-level-budget-root \
      --period 2005-01:2016-12 --runtime claude-code \
      --receipt /tmp/sea-level-budget-record.json
    ```
@@ -166,12 +167,12 @@ names the receipt.
    that exact receipt:
 
    ```bash
-   uv run $PODAAC/references/attesters/sea_level_budget_check.py /tmp/sea-level-budget-receipt.json \
+   uv run ${CLAUDE_PLUGIN_ROOT}/skills/sea-level-budget/scripts/sea_level_budget_check.py /tmp/sea-level-budget-receipt.json \
      [--out /tmp/attestation.json]
    ```
 
-   PASS requires every declared field, the sanctioned code hash, the
-   provider bundle's package name, version and release lock digest in
+   PASS requires every declared field, the sanctioned code hash, this
+   package's name, version and release lock digest in
    the `bundle` block and a well-formed `capability` block, a named
    runtime, the fixture regenerated at the receipt's seed hashing to
    the receipt's digest (or the stamp for a data root), the series and

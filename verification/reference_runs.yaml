@@ -1,0 +1,82 @@
+# The reference runs of this capability's attested computations, in the
+# form `osp.py reattest --run NAME` reruns: the arguments each Attested
+# Computation concept under knowledge/computations documents as its
+# reference run, so a deliberate edit to a computation is re-attested
+# with one command rather than a hunt through the concept for the
+# parameters. A run names its computation (a path relative to the
+# package root, under the scripts of the skill that runs it), its
+# arguments, and the data root it reads (a key of data_roots, or none
+# for a computation that reads another run's receipt, named in needs and
+# substituted for "{receipt:NAME}"). The attester is read from the
+# concept whose frontmatter names the computation; a run may name its
+# own.
+#
+# These runs came over from nasa-daac-knowledge tools/reference_runs.yaml
+# with ADR E, a computation is a skill. The arguments are unchanged; only
+# the paths are new.
+data_roots:
+  fixtures: ~/ECCO_V4r4          # the verified fixture cache, record ecco-v4r4-fixtures-2010
+  record: ~/ECCO_V4r4_record     # the verified science record, 1992 to 2017
+  sea-level-budget: knowledge/references/retrieval/sea-level-budget-root   # the three-term data root, stamped in the tree
+  argo-ohc: knowledge/references/retrieval/argo-ohc-root                   # the two-layer Argo root, stamped in the tree
+runs:
+  heat-budget:
+    computation: skills/ocean-budget/scripts/ecco_heat_budget.py
+    args: [--year, "2010", --region, tile1-interior]
+  ohc:
+    computation: skills/ecco/scripts/ecco_ohc.py
+    args: [--months, "2010-01", "2010-12"]
+  geostrophy:
+    computation: skills/ecco/scripts/ecco_geostrophy.py
+    args: [--month, "2009-12"]
+  curl-ekman:
+    computation: skills/ecco/scripts/ecco_curl_ekman.py
+    args: [--month, "2009-12"]
+  thermal-wind:
+    computation: skills/ecco/scripts/ecco_thermal_wind_reconstruction.py
+    args: [--month, "2009-12"]
+  flux-decomposition:
+    computation: skills/ocean-budget/scripts/ecco_flux_decomposition.py
+    args: [--region, southeast-atlantic-upper, --grouping, full-four-term, --year, "2010"]
+  regional-heat:
+    computation: skills/ocean-budget/scripts/ecco_regional_budget.py
+    args: [--budget, heat, --region, southeast-atlantic-upper, --year, "2010"]
+  regional-salt:
+    computation: skills/ocean-budget/scripts/ecco_regional_budget.py
+    args: [--budget, salt, --region, southeast-atlantic-upper, --year, "2010"]
+  regional-volume:
+    computation: skills/ocean-budget/scripts/ecco_regional_budget.py
+    args: [--budget, volume, --region, southeast-atlantic-upper, --year, "2010"]
+  section-transport:
+    computation: skills/transport-analysis/scripts/ecco_section_transport.py
+    args: [--section, global-26.5n, --year, "2010"]
+  steric:
+    computation: skills/sea-level-analysis/scripts/ecco_steric_height.py
+    args: [--region, us-northeast-coast, --months, "2010-01", "2010-02", "2010-03", "2010-04", "2010-05", "2010-06", "2010-07", "2010-08", "2010-09", "2010-10", "2010-11", "2010-12"]
+  sea-level:
+    computation: skills/sea-level-analysis/scripts/ecco_regional_sea_level.py
+    args: [--region, us-northeast-coast, --period, "2010-01:2010-12"]
+  trend-ci:
+    computation: skills/ecco/scripts/ecco_trend_ci.py
+    needs: steric
+    data_root: none
+    args: [--source, "{receipt:steric}", --field, steric_mean_m_by_month, --value-units, m, --scale, "1000", --report-units, mm, --deseasonalize, none]
+  sea-level-budget:
+    computation: skills/sea-level-budget/scripts/sea_level_budget.py
+    data_root: none
+    args: [--fixture, --seed, "7", --period, "2005-01:2016-12", --runtime, reattest]
+  sea-level-budget-record:
+    computation: skills/sea-level-budget/scripts/sea_level_budget.py
+    data_root: sea-level-budget
+    args: [--period, "2005-01:2016-12", --runtime, reattest]
+  # The Argo ocean heat content change, this capability's own computation
+  # from the start, on the committed two-layer root. Both layers are
+  # registered because the concept states both.
+  argo-ohc-2000:
+    computation: skills/argo-ohc/scripts/argo_ohc.py
+    data_root: argo-ohc
+    args: [--window, "2006-01:2020-12", --depth, "2000", --runtime, reattest]
+  argo-ohc-700:
+    computation: skills/argo-ohc/scripts/argo_ohc.py
+    data_root: argo-ohc
+    args: [--window, "2006-01:2020-12", --depth, "700", --runtime, reattest]

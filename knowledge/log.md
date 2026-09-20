@@ -4,6 +4,71 @@ Newest first. One line per change: date, concept path, what changed, who.
 
 _Historical note: older entries use build-era shorthand (a "close lint" is a knowledge-linter pass; red/yellow marks are nonconformant/advisory findings; check numbers refer to the linter checks documented in core/agents/knowledge-linter). The decision chains, not the labels, are what teach the standards._
 
+- 2026-09-20 · MOVED IN, under ADR E (a computation is a skill): the
+  twenty PO.DAAC attested computations and the thirty-nine scripts that
+  run and attest them, out of the nasa-daac-knowledge bundle at
+  knowledge/podaac/ and into this package, together with every podaac
+  record, manifest, exhibit and fixture file, the stamped
+  sea-level-budget-root, the hashed llc90 basin mask and the trend
+  coverage report. This package's own Argo ocean heat content code moved
+  out of knowledge/references/ the same way. Each executor and attester
+  now sits in the scripts directory of the skill whose SKILL.md named it
+  (ecco, ocean-budget, transport-analysis, compare-obs,
+  sea-level-analysis, sea-level-budget, argo-ohc); each concept sits
+  under knowledge/computations/ with its computation, executor.resource
+  and attester.resource naming a file of this package outside knowledge/;
+  every stamped root and record file sits under
+  knowledge/references/retrieval/ as data. The retired executor.skill key
+  is gone from all twenty-one concepts. The named reference runs came
+  over as verification/reference_runs.yaml and the two sea level budget
+  chains of the bundle's run_checks.sh became
+  verification/sea_level_budget.py; verification/trend_ci.py,
+  verification/regional_budget.py, verification/ecco_dynamics.py,
+  verification/section_transport.py, verification/sea_level_analysis.py
+  and verification/compare_obs.py are new goldens, and the goldens
+  workflow runs them. The sweep, receipt-figures and cite-ecco skills
+  reach the plugin root instead of the installed bundle. No number
+  changed anywhere: the executors, the roots and the reference values
+  were re-homed and re-run, not revised.
+
+  Executor digest per concept, old to new (a digest moved only where the
+  file's relative imports had to):
+
+  - argo-ohc.md: argo_ohc.py 889817705d09b691 to f48f5caf58c917d8
+  - ecco-amoc-26n.md: ecco_amoc_26n.py 5e6ea8d5ecb2493b to 17338a1381c4ec20
+  - ecco-flux-decomposition.md: ecco_flux_decomposition.py 44084f528a3c4541 unchanged
+  - ecco-geostrophic-balance.md: ecco_geostrophy.py 95102a200181c6ad unchanged
+  - ecco-heat-budget.md: ecco_heat_budget.py 05de42d3ff95f0c5 to 2e4a6c66cc4467c1
+  - ecco-mht-26n.md: names no executor yet
+  - ecco-ocean-heat-content.md: ecco_ohc.py e28b085edb5e708e unchanged
+  - ecco-rapid-amoc-confrontation.md: ecco_rapid_amoc_confrontation.py 3cb4a9efc034d462 to 2291ce86f37df637
+  - ecco-regional-heat-budget.md: ecco_regional_budget.py 63c517dd21745346 unchanged
+  - ecco-regional-salt-budget.md: ecco_regional_budget.py 63c517dd21745346 unchanged
+  - ecco-regional-sea-level.md: ecco_regional_sea_level.py e8382a304bc7c486 to a65155566bd4d18d
+  - ecco-regional-volume-budget.md: ecco_regional_budget.py 63c517dd21745346 unchanged
+  - ecco-salt-budget.md: names no executor yet
+  - ecco-section-transport.md: ecco_section_transport.py 8e14b704b9610d12 unchanged
+  - ecco-ssh-vs-altimetry.md: ecco_ssh_vs_altimetry.py 9bd868932c0c5779 to b0b9d3d68afb61ca
+  - ecco-steric-height.md: ecco_steric_height.py efde39a167aded57 to e07b8940d4c51695
+  - ecco-thermal-wind-reconstruction.md: ecco_thermal_wind_reconstruction.py 6de42bc425a2cefb unchanged
+  - ecco-trend-ci.md: ecco_trend_ci.py 4a03a106e15f2fc4 unchanged
+  - ecco-volume-budget.md: names no executor yet
+  - ecco-wind-stress-curl.md: ecco_curl_ekman.py 8fbfd0e34099d764 unchanged
+  - sea-level-budget.md: sea_level_budget.py c1064cfce95c8471 to 9b94e156ba0de471
+
+  Five reference runs reproduce at the new paths to the digit and attest
+  PASS: sea-level-budget and sea-level-budget-record, argo-ohc-2000 and
+  argo-ohc-700, and trend-ci. The rest read the ECCO fixture cache, the
+  ECCO science record or a stamped observational tree, none of which this
+  environment holds; their goldens run them where those are present. Six
+  committed exhibit receipts no longer attest, because the executor that
+  wrote them changed digest when its cross-skill import was rewritten;
+  their numbers are untouched and the maintainer regenerates them. Every
+  concept is left at status: draft with its signature block as the
+  maintainer left it and a placement note naming the run that reproduced;
+  the maintainer re-signs after merge. Nothing in the provider bundle
+  changed. (claude-code)
+
 - 2026-09-20 · ADDED skills/sweep, a receipt skill that computes nothing:
   it runs the provider bundle's sanctioned sea level budget executor
   (knowledge/podaac/references/computations/sea_level_budget.py, under the

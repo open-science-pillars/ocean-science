@@ -76,14 +76,14 @@ workflow applies it at its gate.
 
 ## Attested runs
 
-Where the budget has an attested computation in the provider bundle,
+Where the budget has an attested computation in this package,
 step 4 runs its sanctioned executor and step 5 runs its attester; this
 section is that procedure, with the paths and the parameters bound.
-The provider bundle is installed with the nasa-daac-knowledge
-dependency; its root is the `installPath` of that entry in
-`claude plugin list --json`, or a checkout named by
-`NASA_DAAC_KNOWLEDGE` (the way the receipt-figures renderer resolves
-it). `$PODAAC` below stands for `<that root>/knowledge/podaac`. Never
+The executor and the attester of every computation below ship in this
+package, in the scripts directory of the skill that runs them, and the
+concept each one answers to is under `knowledge/computations/`.
+`${CLAUDE_PLUGIN_ROOT}` below is this package's root, which the runtime
+sets. Never
 edit an executor: its attester hashes it, and a changed hash fails by
 construction. Run the named attester on the receipt before quoting any
 number from it; a FAIL is reported as a FAIL with the failing field
@@ -99,22 +99,22 @@ repository's goldens tree stages it) or the science record over 1992
 to 2017 (`~/ECCO_V4r4_record`). The tree must carry the RECORD.json
 stamp the provider's verify tool leaves after checking it against its
 manifest (`uv run <root>/tools/science_record_verify.py --manifest
-$PODAAC/references/retrieval/fixtures-2010-manifest.json --data-root
+${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/fixtures-2010-manifest.json --data-root
 ~/ECCO_V4r4 --checksum all --exact --stamp`, once after the first
 fetch), since every attester refuses a receipt from an unstamped tree.
 
 **Heat budget closure, `ecco-heat-budget`**
 (`knowledge/podaac/computations/ecco-heat-budget.md`; executor
-`references/computations/ecco_heat_budget.py`, attester
-`references/attesters/budget_residual.py`). Binds `year` (required)
+`skills/ocean-budget/scripts/ecco_heat_budget.py`, attester
+`skills/ocean-budget/scripts/budget_residual.py`). Binds `year` (required)
 and `region` (optional; `tile1-interior` is the default and the one
 registered value):
 
 ```bash
-uv run $PODAAC/references/computations/ecco_heat_budget.py \
+uv run ${CLAUDE_PLUGIN_ROOT}/skills/ocean-budget/scripts/ecco_heat_budget.py \
   --year 2010 --region tile1-interior --data-root ~/ECCO_V4r4 \
   --receipt /tmp/heat-budget-receipt.json
-uv run $PODAAC/references/attesters/budget_residual.py /tmp/heat-budget-receipt.json
+uv run ${CLAUDE_PLUGIN_ROOT}/skills/ocean-budget/scripts/budget_residual.py /tmp/heat-budget-receipt.json
 ```
 
 The receipt carries exactly `run_id`, `code_sha256`, `data` (the tree
@@ -127,19 +127,19 @@ exactly, and the residuals within the bars the concept records
 
 **Regional heat, salt and volume budgets, `ecco-regional-heat-budget`,
 `ecco-regional-salt-budget` and `ecco-regional-volume-budget`** (one
-executor, `references/computations/ecco_regional_budget.py`, under
+executor, `skills/ocean-budget/scripts/ecco_regional_budget.py`, under
 three contracts; one attester,
-`references/attesters/regional_budget_check.py`). Binds `budget`
+`skills/ocean-budget/scripts/regional_budget_check.py`). Binds `budget`
 (`heat`, `salt` or `volume`), the control volume as a registered
 `region` (`southeast-atlantic-upper`) or an explicit
 `--box LAT0 LAT1 LON0 LON1` with `--depth-m`, and `year` (default
 2010):
 
 ```bash
-uv run $PODAAC/references/computations/ecco_regional_budget.py \
+uv run ${CLAUDE_PLUGIN_ROOT}/skills/ocean-budget/scripts/ecco_regional_budget.py \
   --budget heat --region southeast-atlantic-upper --year 2010 \
   --data-root ~/ECCO_V4r4 --receipt /tmp/regional-heat-receipt.json
-uv run $PODAAC/references/attesters/regional_budget_check.py /tmp/regional-heat-receipt.json
+uv run ${CLAUDE_PLUGIN_ROOT}/skills/ocean-budget/scripts/regional_budget_check.py /tmp/regional-heat-receipt.json
 ```
 
 The receipt carries `run_id`, `code_sha256`, `data`,
@@ -153,17 +153,17 @@ explicit box is disclosed by mask digest and carries no anchor; the
 report says so.
 
 **Reynolds flux decomposition, `ecco-flux-decomposition`** (executor
-`references/computations/ecco_flux_decomposition.py`, attester
-`references/attesters/fluxdecomp_check.py`). Binds `region`
+`skills/ocean-budget/scripts/ecco_flux_decomposition.py`, attester
+`skills/ocean-budget/scripts/fluxdecomp_check.py`). Binds `region`
 (registered, `southeast-atlantic-upper`), `grouping`
 (`full-four-term`, `time-mean-eddy` or `anomaly`) and `year` (default
 2010):
 
 ```bash
-uv run $PODAAC/references/computations/ecco_flux_decomposition.py \
+uv run ${CLAUDE_PLUGIN_ROOT}/skills/ocean-budget/scripts/ecco_flux_decomposition.py \
   --region southeast-atlantic-upper --grouping full-four-term --year 2010 \
   --data-root ~/ECCO_V4r4 --receipt /tmp/flux-decomposition-receipt.json
-uv run $PODAAC/references/attesters/fluxdecomp_check.py /tmp/flux-decomposition-receipt.json
+uv run ${CLAUDE_PLUGIN_ROOT}/skills/ocean-budget/scripts/fluxdecomp_check.py /tmp/flux-decomposition-receipt.json
 ```
 
 All four terms travel in every receipt whatever the grouping; the

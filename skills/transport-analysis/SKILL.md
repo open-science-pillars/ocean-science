@@ -51,15 +51,15 @@ its own.
 
 ## Attested runs
 
-Where the section has an attested computation in the provider bundle,
+Where the section has an attested computation in this package,
 step 4 runs its sanctioned executor and step 5 reads the attester's
 verdict; this section is that procedure, with the paths and the
 parameters bound.
-The provider bundle is installed with the nasa-daac-knowledge
-dependency; its root is the `installPath` of that entry in
-`claude plugin list --json`, or a checkout named by
-`NASA_DAAC_KNOWLEDGE` (the way the receipt-figures renderer resolves
-it). `$PODAAC` below stands for `<that root>/knowledge/podaac`. Never
+The executor and the attester of every computation below ship in this
+package, in the scripts directory of the skill that runs them, and the
+concept each one answers to is under `knowledge/computations/`.
+`${CLAUDE_PLUGIN_ROOT}` below is this package's root, which the runtime
+sets. Never
 edit an executor: its attester hashes it, and a changed hash fails by
 construction. Run the named attester on the receipt before quoting any
 number from it; a FAIL is reported as a FAIL with the failing field
@@ -75,23 +75,23 @@ repository's goldens tree stages it) or the science record over 1992
 to 2017 (`~/ECCO_V4r4_record`). The tree must carry the RECORD.json
 stamp the provider's verify tool leaves after checking it against its
 manifest (`uv run <root>/tools/science_record_verify.py --manifest
-$PODAAC/references/retrieval/fixtures-2010-manifest.json --data-root
+${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/fixtures-2010-manifest.json --data-root
 ~/ECCO_V4r4 --checksum all --exact --stamp`, once after the first
 fetch), since every attester refuses a receipt from an unstamped tree.
 
 **Section transports, `ecco-section-transport`**
 (`knowledge/podaac/computations/ecco-section-transport.md`; executor
-`references/computations/ecco_section_transport.py`, attester
-`references/attesters/section_transport_check.py`). Binds `section`
+`skills/transport-analysis/scripts/ecco_section_transport.py`, attester
+`skills/transport-analysis/scripts/section_transport_check.py`). Binds `section`
 (registered: `global-26.5n`, the closed latitude circle with the
 anchor; `fifteen-s-southeast-atlantic`, an interior segment with no
 anchor by design) and `year` (default 2010):
 
 ```bash
-uv run $PODAAC/references/computations/ecco_section_transport.py \
+uv run ${CLAUDE_PLUGIN_ROOT}/skills/transport-analysis/scripts/ecco_section_transport.py \
   --section global-26.5n --year 2010 --data-root ~/ECCO_V4r4 \
   --receipt /tmp/section-transport-receipt.json
-uv run $PODAAC/references/attesters/section_transport_check.py /tmp/section-transport-receipt.json
+uv run ${CLAUDE_PLUGIN_ROOT}/skills/transport-analysis/scripts/section_transport_check.py /tmp/section-transport-receipt.json
 ```
 
 The receipt carries `run_id`, `code_sha256`, `data`,
@@ -104,8 +104,8 @@ report says the same.
 
 **Atlantic overturning at 26.5N, `ecco-amoc-26n`**
 (`knowledge/podaac/computations/ecco-amoc-26n.md`; executor
-`references/computations/ecco_amoc_26n.py`; attester
-`references/attesters/rapid_confrontation_check.py`, through the
+`skills/transport-analysis/scripts/ecco_amoc_26n.py`; attester
+`skills/compare-obs/scripts/rapid_confrontation_check.py`, through the
 confrontation that cites the receipt). Binds `period`
 (`YYYY-MM:YYYY-MM` within 1992-01 to 2017-12) and `scope` (`atlantic`,
 the array's section from Florida to Africa; `atlantic-with-gulf-of-mexico`,
@@ -113,7 +113,7 @@ the registered second scope and a recorded sabotage, never a silent
 inclusion):
 
 ```bash
-uv run $PODAAC/references/computations/ecco_amoc_26n.py \
+uv run ${CLAUDE_PLUGIN_ROOT}/skills/transport-analysis/scripts/ecco_amoc_26n.py \
   --period 1992-01:2017-12 --scope atlantic \
   --data-root ~/ECCO_V4r4_record --receipt /tmp/amoc-receipt.json
 ```

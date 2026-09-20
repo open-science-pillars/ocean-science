@@ -1,0 +1,44 @@
+{
+  "term": "mass",
+  "product": "JPL GRACE and GRACE-FO MASCON RL06.3Mv04 CRI",
+  "doi": "10.5067/TEMSC-3JC634",
+  "granule": "GRCTellus.JPL.200204_202607.GLO.RL06.3M.MSCNv04CRI.nc",
+  "granule_sha256": "sha256:32b4ee91215a2e1c1bb6196f661ec55972b81e4da4a934b5a5c9ebe17f285a88",
+  "time_coverage": [
+    "2002-04-04",
+    "2026-07-31"
+  ],
+  "months": [
+    "2002-04",
+    "2026-07"
+  ],
+  "n_solutions": 259,
+  "month_assignments": [
+    {
+      "epoch": 144,
+      "midpoint_month": "2015-04",
+      "assigned": "2015-05",
+      "span": [
+        "2015-04-12",
+        "2015-05-11"
+      ],
+      "reason": "midpoint month already taken by the previous solution; the span reaches into the following month, which the product's month list labels it"
+    }
+  ],
+  "ocean_mascons": [
+    3595
+  ],
+  "ocean_mask": "the granule's land_mask (0 is ocean), every ocean cell, no coastal buffer; the CRI partition of the coastal mascons is the product's",
+  "units": "mm of barystatic sea level: the ocean-area-weighted mean of lwe_thickness (cm, against the product baseline) times 10",
+  "gad": "restored over the ocean by the product (release note); the value carries the full ocean bottom pressure variation",
+  "uncertainty_basis": "formal: the granule's one sigma per mascon, combined in quadrature over the ocean part of each mascon weighted by its ocean area, mascons treated as independent (a floor where mascon errors correlate)",
+  "global_attributes": {
+    "title": "JPL GRACE and GRACE-FO MASCON RL06.3Mv04 CRI",
+    "id": "10.5067/TEMSC-3JC634",
+    "time_coverage_start": "2002-04-16T00:00:00Z",
+    "time_coverage_end": "2026-07-16T23:59:59Z",
+    "date_created": "2026-09-08T08:09:18Z",
+    "processing_level": "2 and 3",
+    "source": "GRACE and GRACE-FO JPL RL06.3Mv04-CRI"
+  }
+}

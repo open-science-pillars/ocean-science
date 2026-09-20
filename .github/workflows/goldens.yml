@@ -1,26 +1,38 @@
 name: goldens
 # The goldens under verification/, each named here with the command that
-# runs it (the placement rule, P5: a golden the workflow does not list is
-# a golden nothing runs).
+# runs it: a golden the workflow does not list is a golden nothing runs,
+# and under ADR E a golden under verification/ is what proves every
+# script a computation names.
 #
-# The offline job runs headless on every pull request and on main. The
-# Argo ocean heat content golden reads only the committed data root
-# under knowledge/references/retrieval/argo-ohc-root and a fixture it
+# The offline job runs headless on every pull request and on main, and
+# since ADR E moved the computations into this package every executor
+# and attester it runs ships here, under skills/<name>/scripts. The Argo
+# ocean heat content golden reads only the committed data root under
+# knowledge/references/retrieval/argo-ohc-root and a fixture it
 # generates; the SWOT loader golden builds its swath fixture in memory;
-# the sweep golden runs the sweep skill's script over the provider
-# bundle's sea level budget executor on that executor's synthetic
-# fixture, which is why the provider repository is checked out beside
-# the plugin and named by NASA_DAAC_KNOWLEDGE, and checks every row
-# against verification/fixtures/sweep-sea-level-budget-fixture.json.
-# None of the three touches a live service, needs a credential or
-# carries a secret.
+# the sea level budget golden runs the fixture chain, its refusal and
+# the record run on the committed three-term root, the two chains the
+# provider repository used to run in tools/run_checks.sh; the sweep
+# golden runs the sweep skill's script over that same executor and
+# checks every row against
+# verification/fixtures/sweep-sea-level-budget-fixture.json; the
+# trend-ci golden reproduces the sanctioned trend method's reference run
+# on a committed exhibit and runs its coverage calibration; the regional
+# budget golden attests the committed heat and salt demonstrations.
+# None of them touches a live service, needs a credential or carries a
+# secret.
 #
 # The cache job runs the goldens that read the ECCO fixture cache, the
 # 2010 subset (about 2.5 GB under ~/ECCO_V4r4) that
 # verification/fixtures/fetch_ecco_2010.py stages through earthaccess
 # and ecco_access under an Earthdata Login, then stamped by the
-# provider repository's verify tool against the bundle's fixture
-# manifest (the attesters refuse a receipt from an unstamped tree).
+# provider repository's verify tool against the fixture manifest this
+# package now carries under knowledge/references/retrieval (the
+# attesters refuse a receipt from an unstamped tree). Each of those
+# goldens also takes --paths, which resolves every executor and attester
+# it names without staging anything; the offline job runs that mode, so
+# a move that breaks a cache golden's wiring fails on every pull request
+# rather than at the next manual run.
 # It runs only on workflow_dispatch: on a maintainer's machine the
 # cache is already present and the fetch step is a no-op; on a hosted
 # runner the fetch step stages it from the EARTHDATA_TOKEN secret,
@@ -28,8 +40,15 @@ name: goldens
 # printed. Without that secret the fetch fails loudly and the job
 # documents that the cache must be present.
 #
+# verification/compare_obs.py is in neither job: its two confrontations
+# need stamped RAPID and NASA-SSH trees, which this package carries
+# manifests for but does not commit. Its --paths mode runs in the
+# offline job with the rest, so its wiring is checked on every pull
+# request.
+#
 # verification/sea_level_budget.py is the release qualification surface
-# (.osp/surfaces.yaml) and runs with the qualification prompts.
+# (.osp/surfaces.yaml) and runs with the qualification prompts as well as
+# in the offline job here.
 on:
   pull_request:
   push:
@@ -47,19 +66,26 @@ jobs:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           path: plugin
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          repository: open-science-pillars/nasa-daac-knowledge
-          path: nasa-daac-knowledge
       - uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5
-      - name: Every golden passes on the committed fixtures
+      - name: The Argo ocean heat content golden passes on the committed root
         run: uv run verification/argo_ohc.py
       - name: The SWOT loader golden passes on its in-memory swath fixture
         run: uv run verification/load_swot.py
+      - name: The sea level budget golden closes the fixture, refuses the gap and attests the committed root
+        run: uv run verification/sea_level_budget.py
       - name: The sweep golden tables a fixture sweep from attested receipts
-        env:
-          NASA_DAAC_KNOWLEDGE: ${{ github.workspace }}/nasa-daac-knowledge
         run: uv run verification/sweep.py
+      - name: The trend golden reproduces the sanctioned method's reference run and its calibration
+        run: uv run verification/trend_ci.py
+      - name: The regional budget golden attests the committed heat and salt demonstrations
+        run: uv run verification/regional_budget.py
+      - name: Every cache golden's executors and attesters resolve in this package
+        run: |
+          uv run verification/ocean_budget.py --paths
+          uv run verification/ecco_dynamics.py --paths
+          uv run verification/section_transport.py --paths
+          uv run verification/sea_level_analysis.py --paths
+          uv run verification/compare_obs.py --paths
   cache-goldens:
     # The goldens that read the ECCO fixture cache staged by
     # verification/fixtures/fetch_ecco_2010.py; manual only.
@@ -84,17 +110,21 @@ jobs:
         env:
           EARTHDATA_TOKEN: ${{ secrets.EARTHDATA_TOKEN }}
         run: uv run verification/fixtures/fetch_ecco_2010.py
-      - name: Stamp the cache against the bundle's fixture manifest
+      - name: Stamp the cache against this package's fixture manifest
         run: >
           uv run ../nasa-daac-knowledge/tools/science_record_verify.py
-          --manifest ../nasa-daac-knowledge/knowledge/podaac/references/retrieval/fixtures-2010-manifest.json
+          --manifest knowledge/references/retrieval/fixtures-2010-manifest.json
           --data-root ~/ECCO_V4r4 --checksum all --exact --stamp
       - name: The ECCO loader golden passes on the cache
         run: uv run verification/load_ecco.py
-      - name: The heat budget golden passes through the sanctioned executor and attester
-        env:
-          NASA_DAAC_KNOWLEDGE: ${{ github.workspace }}/nasa-daac-knowledge
+      - name: The budget goldens pass through the sanctioned executors and attesters
         run: uv run verification/ocean_budget.py
+      - name: The ecco dynamics goldens pass on the cache
+        run: uv run verification/ecco_dynamics.py
+      - name: The section transport golden passes on the cache
+        run: uv run verification/section_transport.py
+      - name: The sea level analysis goldens pass on the cache
+        run: uv run verification/sea_level_analysis.py
       - name: The salt budget golden passes on the cache
         run: uv run verification/salt_budget.py
       - name: The transport analysis golden passes on the cache
