@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "capability": "ocean-science",
+  "version": "0.9.0",
+  "installed_version": null,
+  "release_lock": "sha256:de135f0aa0f840d4b8615d91983cfaf61ac9da10bedf11a7e0756478d2607f04",
+  "runtime": {
+    "name": "claude-cowork",
+    "projection": "claude",
+    "version": null
+  },
+  "models": [],
+  "date": "2026-09-20",
+  "source": "waiver",
+  "required": [
+    "install",
+    "skill-discovery",
+    "skill-invocation",
+    "knowledge-resolution",
+    "dependency-resolution",
+    "golden-computation",
+    "prove",
+    "receipt",
+    "release-lock"
+  ],
+  "tests": {},
+  "qualified": false,
+  "blockers": [
+    "install: not run",
+    "skill-discovery: not run",
+    "skill-invocation: not run",
+    "knowledge-resolution: not run",
+    "dependency-resolution: not run",
+    "golden-computation: not run",
+    "prove: not run",
+    "receipt: not run",
+    "release-lock: not run"
+  ],
+  "evidence_dir": null,
+  "waived": {
+    "by": "human:PaulMRamirez",
+    "reason": "Claude Cowork is not qualified for this release. A Cowork record is a run by a person with Cowork in front of them, installing from the catalog, and no such run has been made for 0.9.0; the runtime cannot be driven headlessly, so the coordinator carrying this release on the maintainer's behalf cannot make one either. This repeats the decision recorded for land-ice 0.1.0 on 2026-09-19 for the same reason. Nothing about the capability is known to fail there: its projection renders and validates in the gate. The surface is not advertised until a run exists.",
+    "date": "2026-09-20"
+  }
+}
