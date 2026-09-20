@@ -1,0 +1,304 @@
+{
+  "note": "Expectations for the sweep golden: every window of 96 months stepping 12 through the sea level budget executor's synthetic fixture at seed 7, the bridge unbound on every run. Each cell below is the field of one receipt that the bundle's attester passed, named in the columns block by its path in the receipt, and measured on 2026-09-20 with the executor whose digest is recorded here. Nothing here is a science expectation: the fixture proves the chain, not the ocean, and the concept knowledge/podaac/computations/sea-level-budget.md owns every number a reader may quote. A row the executor refused carries its reason code and no number, which is the measurement, not a gap.",
+  "measured_utc": "2026-09-20",
+  "sweep": {
+    "computation": "sea-level-budget",
+    "concept": "knowledge/podaac/computations/sea-level-budget.md",
+    "parameter": "period",
+    "windows": "96:12",
+    "span": "2005-01:2022-12",
+    "fixed": {
+      "bridge": "unbound"
+    },
+    "input": {
+      "mode": "fixture",
+      "seed": 7,
+      "fixture_offset_mm": 0.0,
+      "digest": "sha256:a83e78dba24b1932b2a1a94e74dd1ac4eabd621848a2a5c0bbd8a6a8a69edafe"
+    },
+    "code_sha256": "sha256:c1064cfce95c8471442fa5c1fc71debdb9373ff579a93aff9feee59bf57ced49"
+  },
+  "columns": [
+    {
+      "name": "period",
+      "receipt_field": "bound_parameters.period"
+    },
+    {
+      "name": "bridge",
+      "receipt_field": "bound_parameters.bridge"
+    },
+    {
+      "name": "months_used",
+      "receipt_field": "months.n_used"
+    },
+    {
+      "name": "months_calendar",
+      "receipt_field": "months.n_calendar"
+    },
+    {
+      "name": "trend_altimetry_mm_yr",
+      "receipt_field": "trend_altimetry_mm_yr"
+    },
+    {
+      "name": "trend_mass_mm_yr",
+      "receipt_field": "trend_mass_mm_yr"
+    },
+    {
+      "name": "trend_steric_mm_yr",
+      "receipt_field": "trend_steric_mm_yr"
+    },
+    {
+      "name": "trend_residual_mm_yr",
+      "receipt_field": "trend_residual_mm_yr"
+    },
+    {
+      "name": "residual_ci_low_mm_yr",
+      "receipt_field": "trends.residual.ci_low"
+    },
+    {
+      "name": "residual_ci_high_mm_yr",
+      "receipt_field": "trends.residual.ci_high"
+    },
+    {
+      "name": "closure_gap_mm_yr",
+      "receipt_field": "verdict.closure_gap_mm_yr"
+    },
+    {
+      "name": "bar_mm_yr",
+      "receipt_field": "verdict.bar_mm_yr"
+    },
+    {
+      "name": "closed_within_uncertainty",
+      "receipt_field": "verdict.closed_within_uncertainty"
+    }
+  ],
+  "expect": {
+    "rows": 11,
+    "computed": 6,
+    "refused": 5,
+    "not_attested": 0,
+    "aggregate_refusal_code": "aggregate-across-rows"
+  },
+  "rows": [
+    {
+      "period": "2005-01:2012-12",
+      "status": "computed",
+      "reason_code": null,
+      "cells": {
+        "period": "2005-01:2012-12",
+        "bridge": null,
+        "months_used": 92,
+        "months_calendar": 96,
+        "trend_altimetry_mm_yr": 3.4476,
+        "trend_mass_mm_yr": 2.0635,
+        "trend_steric_mm_yr": 1.2128,
+        "trend_residual_mm_yr": 0.1712,
+        "residual_ci_low_mm_yr": -0.055069673331783586,
+        "residual_ci_high_mm_yr": 0.39752942445088524,
+        "closure_gap_mm_yr": 0.07122987555955082,
+        "bar_mm_yr": 0.4796810632433707,
+        "closed_within_uncertainty": true
+      }
+    },
+    {
+      "period": "2006-01:2013-12",
+      "status": "computed",
+      "reason_code": null,
+      "cells": {
+        "period": "2006-01:2013-12",
+        "bridge": null,
+        "months_used": 89,
+        "months_calendar": 96,
+        "trend_altimetry_mm_yr": 3.1656,
+        "trend_mass_mm_yr": 1.8877,
+        "trend_steric_mm_yr": 1.1261,
+        "trend_residual_mm_yr": 0.1518,
+        "residual_ci_low_mm_yr": -0.09289253468919012,
+        "residual_ci_high_mm_yr": 0.39653328065940685,
+        "closure_gap_mm_yr": 0.05182037298510836,
+        "bar_mm_yr": 0.5185834307500166,
+        "closed_within_uncertainty": true
+      }
+    },
+    {
+      "period": "2007-01:2014-12",
+      "status": "computed",
+      "reason_code": null,
+      "cells": {
+        "period": "2007-01:2014-12",
+        "bridge": null,
+        "months_used": 86,
+        "months_calendar": 96,
+        "trend_altimetry_mm_yr": 3.2958,
+        "trend_mass_mm_yr": 1.8779,
+        "trend_steric_mm_yr": 1.1867,
+        "trend_residual_mm_yr": 0.2313,
+        "residual_ci_low_mm_yr": -0.02826896297967263,
+        "residual_ci_high_mm_yr": 0.49081881214918865,
+        "closure_gap_mm_yr": 0.131274924584758,
+        "bar_mm_yr": 0.5953975456653728,
+        "closed_within_uncertainty": true
+      }
+    },
+    {
+      "period": "2008-01:2015-12",
+      "status": "computed",
+      "reason_code": null,
+      "cells": {
+        "period": "2008-01:2015-12",
+        "bridge": null,
+        "months_used": 83,
+        "months_calendar": 96,
+        "trend_altimetry_mm_yr": 3.4891,
+        "trend_mass_mm_yr": 1.9437,
+        "trend_steric_mm_yr": 1.3116,
+        "trend_residual_mm_yr": 0.2338,
+        "residual_ci_low_mm_yr": -0.022509783444193243,
+        "residual_ci_high_mm_yr": 0.4900933467443542,
+        "closure_gap_mm_yr": 0.13379178165008046,
+        "bar_mm_yr": 0.5652909756455907,
+        "closed_within_uncertainty": true
+      }
+    },
+    {
+      "period": "2009-01:2016-12",
+      "status": "computed",
+      "reason_code": null,
+      "cells": {
+        "period": "2009-01:2016-12",
+        "bridge": null,
+        "months_used": 80,
+        "months_calendar": 96,
+        "trend_altimetry_mm_yr": 3.5138,
+        "trend_mass_mm_yr": 1.8837,
+        "trend_steric_mm_yr": 1.5619,
+        "trend_residual_mm_yr": 0.0682,
+        "residual_ci_low_mm_yr": -0.1935241861291337,
+        "residual_ci_high_mm_yr": 0.3300125658732702,
+        "closure_gap_mm_yr": -0.031755810127931744,
+        "bar_mm_yr": 0.5791018211116344,
+        "closed_within_uncertainty": true
+      }
+    },
+    {
+      "period": "2010-01:2017-12",
+      "status": "computed",
+      "reason_code": null,
+      "cells": {
+        "period": "2010-01:2017-12",
+        "bridge": null,
+        "months_used": 73,
+        "months_calendar": 96,
+        "trend_altimetry_mm_yr": 3.6085,
+        "trend_mass_mm_yr": 2.0898,
+        "trend_steric_mm_yr": 1.5824,
+        "trend_residual_mm_yr": -0.0637,
+        "residual_ci_low_mm_yr": -0.3562405393345321,
+        "residual_ci_high_mm_yr": 0.22881285243785326,
+        "closure_gap_mm_yr": -0.16371384344833942,
+        "bar_mm_yr": 0.6442816245832874,
+        "closed_within_uncertainty": true
+      }
+    },
+    {
+      "period": "2011-01:2018-12",
+      "status": "refused",
+      "reason_code": "gap-without-bridge",
+      "cells": {
+        "period": "2011-01:2018-12",
+        "bridge": null,
+        "months_used": null,
+        "months_calendar": null,
+        "trend_altimetry_mm_yr": null,
+        "trend_mass_mm_yr": null,
+        "trend_steric_mm_yr": null,
+        "trend_residual_mm_yr": null,
+        "residual_ci_low_mm_yr": null,
+        "residual_ci_high_mm_yr": null,
+        "closure_gap_mm_yr": null,
+        "bar_mm_yr": null,
+        "closed_within_uncertainty": null
+      }
+    },
+    {
+      "period": "2012-01:2019-12",
+      "status": "refused",
+      "reason_code": "gap-without-bridge",
+      "cells": {
+        "period": "2012-01:2019-12",
+        "bridge": null,
+        "months_used": null,
+        "months_calendar": null,
+        "trend_altimetry_mm_yr": null,
+        "trend_mass_mm_yr": null,
+        "trend_steric_mm_yr": null,
+        "trend_residual_mm_yr": null,
+        "residual_ci_low_mm_yr": null,
+        "residual_ci_high_mm_yr": null,
+        "closure_gap_mm_yr": null,
+        "bar_mm_yr": null,
+        "closed_within_uncertainty": null
+      }
+    },
+    {
+      "period": "2013-01:2020-12",
+      "status": "refused",
+      "reason_code": "gap-without-bridge",
+      "cells": {
+        "period": "2013-01:2020-12",
+        "bridge": null,
+        "months_used": null,
+        "months_calendar": null,
+        "trend_altimetry_mm_yr": null,
+        "trend_mass_mm_yr": null,
+        "trend_steric_mm_yr": null,
+        "trend_residual_mm_yr": null,
+        "residual_ci_low_mm_yr": null,
+        "residual_ci_high_mm_yr": null,
+        "closure_gap_mm_yr": null,
+        "bar_mm_yr": null,
+        "closed_within_uncertainty": null
+      }
+    },
+    {
+      "period": "2014-01:2021-12",
+      "status": "refused",
+      "reason_code": "gap-without-bridge",
+      "cells": {
+        "period": "2014-01:2021-12",
+        "bridge": null,
+        "months_used": null,
+        "months_calendar": null,
+        "trend_altimetry_mm_yr": null,
+        "trend_mass_mm_yr": null,
+        "trend_steric_mm_yr": null,
+        "trend_residual_mm_yr": null,
+        "residual_ci_low_mm_yr": null,
+        "residual_ci_high_mm_yr": null,
+        "closure_gap_mm_yr": null,
+        "bar_mm_yr": null,
+        "closed_within_uncertainty": null
+      }
+    },
+    {
+      "period": "2015-01:2022-12",
+      "status": "refused",
+      "reason_code": "gap-without-bridge",
+      "cells": {
+        "period": "2015-01:2022-12",
+        "bridge": null,
+        "months_used": null,
+        "months_calendar": null,
+        "trend_altimetry_mm_yr": null,
+        "trend_mass_mm_yr": null,
+        "trend_steric_mm_yr": null,
+        "trend_residual_mm_yr": null,
+        "residual_ci_low_mm_yr": null,
+        "residual_ci_high_mm_yr": null,
+        "closure_gap_mm_yr": null,
+        "bar_mm_yr": null,
+        "closed_within_uncertainty": null
+      }
+    }
+  ]
+}

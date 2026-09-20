@@ -6,9 +6,14 @@ name: goldens
 # The offline job runs headless on every pull request and on main. The
 # Argo ocean heat content golden reads only the committed data root
 # under knowledge/references/retrieval/argo-ohc-root and a fixture it
-# generates; the SWOT loader golden builds its swath fixture in memory.
-# Neither touches a live service, needs a credential or carries a
-# secret.
+# generates; the SWOT loader golden builds its swath fixture in memory;
+# the sweep golden runs the sweep skill's script over the provider
+# bundle's sea level budget executor on that executor's synthetic
+# fixture, which is why the provider repository is checked out beside
+# the plugin and named by NASA_DAAC_KNOWLEDGE, and checks every row
+# against verification/fixtures/sweep-sea-level-budget-fixture.json.
+# None of the three touches a live service, needs a credential or
+# carries a secret.
 #
 # The cache job runs the goldens that read the ECCO fixture cache, the
 # 2010 subset (about 2.5 GB under ~/ECCO_V4r4) that
@@ -35,13 +40,26 @@ permissions:
 jobs:
   goldens:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: plugin
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          path: plugin
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          repository: open-science-pillars/nasa-daac-knowledge
+          path: nasa-daac-knowledge
       - uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5
       - name: Every golden passes on the committed fixtures
         run: uv run verification/argo_ohc.py
       - name: The SWOT loader golden passes on its in-memory swath fixture
         run: uv run verification/load_swot.py
+      - name: The sweep golden tables a fixture sweep from attested receipts
+        env:
+          NASA_DAAC_KNOWLEDGE: ${{ github.workspace }}/nasa-daac-knowledge
+        run: uv run verification/sweep.py
   cache-goldens:
     # The goldens that read the ECCO fixture cache staged by
     # verification/fixtures/fetch_ecco_2010.py; manual only.
