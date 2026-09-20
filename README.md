@@ -11,12 +11,13 @@ capability, discipline Ocean Physics (`kind: capability` in
 plugin, sphere, knowledge bundle, runtime) are defined in the
 [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLOSSARY.md).
 
-How it is organized: its knowledge (KNOW) is the PO.DAAC provider bundle,
+How it is organized: its knowledge is the PO.DAAC provider bundle,
 reviewed by its maintainers and confirmed by the provider where a
 contact has confirmed it, consulted in place, plus the local
-conventions and connectors here; its behavior (ACT) is the skills; its
-verification (PROVE) is the golden notebooks here and the attested
-computations in the provider bundle; its connectors (REACH) are declared
+conventions, connectors and attested computations here; its behavior is
+the skills, each computation's executor and attester beside the skill
+that runs them; its verification is the golden notebooks here, which
+prove the scripts those computations name; its connectors are declared
 in `.osp/package.yaml`, from which the Claude package files are rendered.
 
 ## Install
@@ -117,11 +118,12 @@ including downloads, about 1.3 GB cached).
   knowledge it relied on, never downloading on its own; `budget-auditor`
   checks that a computed budget closed and diagnoses it if not.
 - **Knowledge** (`knowledge/`): the plugin's own conventions (the
-  climate indices, the mixed layer criteria) and its three observational
-  connector concepts. The PO.DAAC provider bundle (dataset concepts with
-  uncertainty structure, gotchas with evidence, recipes with expected
-  numbers, attested computations with their receipts) lives at
-  `knowledge/podaac/` in
+  climate indices, the mixed layer criteria), its three observational
+  connector concepts and its attested computations under
+  `knowledge/computations/`, each beside the skill whose scripts run it.
+  The PO.DAAC provider bundle (dataset concepts with uncertainty
+  structure, gotchas with evidence, recipes with expected numbers) lives
+  at `knowledge/podaac/` in
   [nasa-daac-knowledge](https://github.com/open-science-pillars/nasa-daac-knowledge)
   and is installed as the dependency; skills cite it by bundle path and
   nothing is copied here.
@@ -130,10 +132,12 @@ including downloads, about 1.3 GB cached).
   `volume_budget.py`, golden notebooks that re-check each workflow on
   small cached data. The heat-budget closure is additionally attested
   against the sanctioned computation and steward-signed tolerances by
-  the attester in nasa-daac-knowledge. `sea_level_budget.py` runs the
-  bundle's attested sea level budget closure on its synthetic fixture
-  (no download, no NASA host) and proves the gap refusal; it is the
-  golden and the PROVE step of the release qualification.
+  the attester in this package,
+  `skills/ocean-budget/scripts/budget_residual.py`.
+  `sea_level_budget.py` runs this package's attested sea level budget
+  closure on its synthetic fixture (no download, no NASA host) and
+  proves the gap refusal; it is the golden and the prove step of the
+  release qualification.
 - **Evals**: the agent-judgment cases (does an agent with this plugin
   avoid the documented ECCO and SWOT traps?) have one home, the ECCO set
   of [agent-evals](https://github.com/open-science-pillars/agent-evals)

@@ -3,7 +3,7 @@
 # requires-python = ">=3.10"
 # dependencies = []
 # ///
-"""Golden and PROVE wrapper for the attested sea level budget closure:
+"""Golden and qualification wrapper for the attested sea level budget closure:
 the sanctioned executor and attester of this package, run on their
 synthetic fixture and on the committed data root, so the chain is
 proven headless with no data download and no NASA host reachable.
@@ -34,7 +34,7 @@ Three modes:
                              committed data root's stamp check; and the
                              record run over 2005-01:2016-12 on that
                              root, attested. Exit 0 only when all hold.
-  --runtime NAME --out R     the PROVE step: run the fixture computation
+  --runtime NAME --out R     the prove step: run the fixture computation
                              and write the receipt at R, the capability
                              block and the bundle block both naming this
                              package (ocean-science), which is where the
@@ -178,7 +178,7 @@ def golden(computation: Path, attester: Path) -> int:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--runtime", default=None, help="PROVE: the runtime that ran this")
+    ap.add_argument("--runtime", default=None, help="the prove step: the runtime that ran this")
     ap.add_argument("--runtime-version", default=None)
     ap.add_argument("--attest", type=Path, default=None, help="a receipt to attest")
     ap.add_argument("--out", type=Path, default=None, help="where the receipt or the attestation goes")

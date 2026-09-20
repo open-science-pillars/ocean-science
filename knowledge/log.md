@@ -6,6 +6,60 @@ _Historical note: older entries use build-era shorthand (a "close lint" is a kno
 
 - 2026-09-20 · STEWARD RE-SIGNING of knowledge/computations/argo-ohc.md,
   knowledge/computations/ecco-amoc-26n.md,
+  knowledge/computations/ecco-rapid-amoc-confrontation.md,
+  knowledge/recipes/regional-sea-level-trend.md: The citations were
+  repointed after the move: the five concepts this package owns are
+  cited at their paths here, the trend computation is cited in this
+  package, and three run commands name the executor where it ships. The
+  coordinator checked every path against the tree and every number
+  against the copy before this edit: none moved. The new verified event
+  is appended on the steward's word, the earlier events kept as history.
+  (steward)
+
+- 2026-09-20 · REPOINTED, under ADR E (a computation is a skill): every
+  citation in this package that still named a moved file by its old
+  nasa-daac-knowledge path. The attested computations left the bundle
+  when they moved in here and the bundle deleted them when it was
+  cleaned up, so each of those citations reached a file that no longer
+  exists and an agent following one got nothing. Twenty-four places that
+  cited a computation concept by bundle path now name
+  knowledge/computations/ in this package: skills/ocean-budget,
+  skills/sea-level-budget, skills/briefing-generator, skills/compare-obs,
+  skills/transport-analysis, skills/ecco (SKILL.md and
+  references/budget-formulation.md), skills/sea-level-analysis,
+  skills/budget-closure, agents/budget-auditor,
+  verification/fixtures/README.md and the briefing 001 regression
+  fixture. Where the sentence around a path also called the computation
+  the provider bundle's, or said it lived in the bundle, it now says the
+  computation is in this package; the budget auditor's attester citation
+  names skills/ocean-budget/scripts/budget_residual.py where it named a
+  deleted bundle copy; and the ecco skill's list of concepts it resolves
+  to no longer files the computations under knowledge/podaac/. The run
+  command in knowledge/computations/ecco-ssh-vs-altimetry.md,
+  ecco-rapid-amoc-confrontation.md and ecco-amoc-26n.md now names the
+  same executor path each concept's own computation key names, with
+  every flag and value untouched. In knowledge/computations/argo-ohc.md
+  the five citations of this package's Roemmich and Gilson dataset
+  concept, its three rg- gotchas and its argo-ohc recipe return to the
+  relative form the concept used before the move prefixed them with
+  knowledge/podaac/, in the frontmatter and in the footnotes; the two
+  citations of the bundle's ecco-ocean-heat-content recipe in that same
+  file are correct and stand. knowledge/recipes/regional-sea-level-trend.md
+  cites the trend computation at knowledge/computations/ecco-trend-ci.md
+  in this package and keeps the tagged bundle URL only as the place it
+  was before it moved. The retired words go with the paths: skills/sweep
+  names the sea-level-budget skill where it said the wrapping skill, and
+  the four retired plane names leave README.md, .osp/package.yaml and
+  verification/sea_level_budget.py. Every citation of a dataset, gotcha,
+  convention, recipe, field, tutorial or validity domain that still
+  lives in the bundle is unchanged, as decision 3 of ADR E requires, and
+  each was confirmed against a read-only clone of the bundle. No number
+  changed: the offline goldens print what they printed before, to the
+  digit. The dated entries in this log and the placement notes in the
+  computation concepts are history and stand word for word.
+
+- 2026-09-20 · STEWARD RE-SIGNING of knowledge/computations/argo-ohc.md,
+  knowledge/computations/ecco-amoc-26n.md,
   knowledge/computations/ecco-flux-decomposition.md,
   knowledge/computations/ecco-geostrophic-balance.md,
   knowledge/computations/ecco-heat-budget.md,

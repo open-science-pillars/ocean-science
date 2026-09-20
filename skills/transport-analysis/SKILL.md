@@ -80,7 +80,7 @@ ${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/fixtures-2010-manifest.json
 fetch), since every attester refuses a receipt from an unstamped tree.
 
 **Section transports, `ecco-section-transport`**
-(`knowledge/podaac/computations/ecco-section-transport.md`; executor
+(`knowledge/computations/ecco-section-transport.md`; executor
 `skills/transport-analysis/scripts/ecco_section_transport.py`, attester
 `skills/transport-analysis/scripts/section_transport_check.py`). Binds `section`
 (registered: `global-26.5n`, the closed latitude circle with the
@@ -103,7 +103,7 @@ an unanchored section's receipt must say it is unanchored, and the
 report says the same.
 
 **Atlantic overturning at 26.5N, `ecco-amoc-26n`**
-(`knowledge/podaac/computations/ecco-amoc-26n.md`; executor
+(`knowledge/computations/ecco-amoc-26n.md`; executor
 `skills/transport-analysis/scripts/ecco_amoc_26n.py`; attester
 `skills/compare-obs/scripts/rapid_confrontation_check.py`, through the
 confrontation that cites the receipt). Binds `period`

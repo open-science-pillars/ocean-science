@@ -21,6 +21,7 @@ verified:
   - { by: human:PaulMRamirez, at: 2026-09-04T02:40:20Z }
   - { by: human:PaulMRamirez, at: 2026-09-16T05:51:09Z, role: maintainer, source: https://github.com/open-science-pillars/nasa-daac-knowledge/pull/183 }
   - { by: human:PaulMRamirez, at: 2026-09-20T19:04:34Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/66 }
+  - { by: human:PaulMRamirez, at: 2026-09-20T20:23:14Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/69 }
 status: stable
 stale_after: 2027-03-02
 sources:
@@ -148,7 +149,7 @@ bound, a changed series value with its digest left alone, the DOI
 removed, the licence removed, an unstamped observation tree, a
 different release version, and a doctored model receipt.
 
-    uv run knowledge/podaac/skills/compare-obs/scripts/ecco_rapid_amoc_confrontation.py \
+    uv run skills/compare-obs/scripts/ecco_rapid_amoc_confrontation.py \
         --ecco-receipt amoc.json --rapid-root ~/RAPID_26N/rapid.ac.uk-2026-09-02 \
         --receipt confrontation.json
     cd skills/compare-obs/scripts && \

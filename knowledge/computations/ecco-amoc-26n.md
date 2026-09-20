@@ -19,6 +19,7 @@ verified:
   - { by: human:PaulMRamirez, at: 2026-09-04T02:40:20Z }
   - { by: human:PaulMRamirez, at: 2026-09-16T05:51:09Z, role: maintainer, source: https://github.com/open-science-pillars/nasa-daac-knowledge/pull/183 }
   - { by: human:PaulMRamirez, at: 2026-09-20T19:04:34Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/66 }
+  - { by: human:PaulMRamirez, at: 2026-09-20T20:23:14Z, role: maintainer, source: https://github.com/open-science-pillars/ocean-science/pull/69 }
 status: stable
 stale_after: 2027-03-02
 sources:
@@ -141,7 +142,7 @@ months, primary mean 14.4702 Sv, depth of the mean maximum 880 m,
 anchor held on both conventions, both structural sabotages caught,
 run 2026-09-02 on the verified v4r4 record tree.
 
-    uv run knowledge/podaac/skills/transport-analysis/scripts/ecco_amoc_26n.py \
+    uv run skills/transport-analysis/scripts/ecco_amoc_26n.py \
         --period 1992-01:2017-12 --scope atlantic \
         --data-root ~/ECCO_V4r4_record --receipt amoc.json
 

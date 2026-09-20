@@ -1,7 +1,7 @@
-# Package identity, content, dependencies, presentation metadata and REACH
-# (ADR B). The Claude package files and the Agent Plugins package are
-# rendered from this file by build-kit's osp.py render; the gate fails on
-# a hand edit to any of them.
+# Package identity, content, dependencies, presentation metadata and the
+# connectors this package declares (ADR B). The Claude package files and
+# the Agent Plugins package are rendered from this file by build-kit's
+# osp.py render; the gate fails on a hand edit to any of them.
 schema_version: 1
 package:
   name: ocean-science

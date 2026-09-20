@@ -13,7 +13,7 @@ there, never from here.
   against the ECCO v4 Python tutorial notebooks and carried verbatim
   by the sanctioned heat budget code).
 - Pass bars and measured residuals, per budget:
-  `knowledge/podaac/computations/ecco-heat-budget.md` (the
+  `knowledge/computations/ecco-heat-budget.md` (the
   attested heat budget owns the heat tolerance and its baseline),
   `knowledge/podaac/recipes/ecco-salt-budget.md` and
   `knowledge/podaac/recipes/ecco-volume-budget.md` (the salt

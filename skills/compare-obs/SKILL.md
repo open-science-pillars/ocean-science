@@ -21,7 +21,7 @@ to altimetry?").
    concept touching the model quantity AND the observational reference
    (the ecco, swot, and sea-level skills list the concepts this plugin
    resolves to; the confrontation computations under
-   `knowledge/podaac/computations/` and the
+   `knowledge/computations/` in this package and the
    consistency-versus-confrontation convention own the comparison
    discipline where they exist); read the matches, and restate what
    each changes about the comparison before computing, citing it by
@@ -89,7 +89,7 @@ find it.
 
 **ECCO overturning against RAPID at 26.5N,
 `ecco-rapid-amoc-confrontation`**
-(`knowledge/podaac/computations/ecco-rapid-amoc-confrontation.md`;
+(`knowledge/computations/ecco-rapid-amoc-confrontation.md`;
 executor `skills/compare-obs/scripts/ecco_rapid_amoc_confrontation.py`,
 attester `skills/compare-obs/scripts/rapid_confrontation_check.py`). Binds
 `ecco-receipt` (a receipt of `ecco-amoc-26n`, scope atlantic,
@@ -118,7 +118,7 @@ receipt, and the sabotage and scope disclosures travel with them.
 
 **ECCO regional sea level against NASA-SSH altimetry,
 `ecco-ssh-vs-altimetry`** (a draft concept, voiced as such;
-`knowledge/podaac/computations/ecco-ssh-vs-altimetry.md`; executor
+`knowledge/computations/ecco-ssh-vs-altimetry.md`; executor
 `skills/compare-obs/scripts/ecco_ssh_vs_altimetry.py`, attester
 `skills/compare-obs/scripts/altimetry_confrontation_check.py`). Binds
 `partition-receipt` (a receipt of `ecco-regional-sea-level`, SSH

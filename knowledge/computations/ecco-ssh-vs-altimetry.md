@@ -184,7 +184,7 @@ changed observed series value with its digest left alone, the
 independence statement with a field removed, and a confronted model
 value that no longer derives from the partition receipt.
 
-    uv run knowledge/podaac/skills/compare-obs/scripts/ecco_ssh_vs_altimetry.py \
+    uv run skills/compare-obs/scripts/ecco_ssh_vs_altimetry.py \
         --partition-receipt partition.json --obs-root ~/NASA_SSH/podaac-2026-09-02 \
         --period 1993-01:2017-12 --min-grids 2 --receipt comparison.json
     cd skills/compare-obs/scripts && \

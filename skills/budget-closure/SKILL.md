@@ -20,7 +20,7 @@ concepts first, as the core `consult-knowledge` skill sets out, by
 property, product, and depth range; the ecco skill lists the concepts
 this plugin resolves to. Take the expected residual, its pass bar, and
 its provenance from the property's attested computation
-(`knowledge/podaac/computations/`) or, until that computation
+(`knowledge/computations/` in this package) or, until that computation
 reaches stable, from its recipe (`knowledge/podaac/recipes/`),
 restating and citing by path; read the gotchas that constrain the
 property (for heat, the geothermal term; for any budget, the
