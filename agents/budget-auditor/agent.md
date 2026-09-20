@@ -24,9 +24,9 @@ terms: budget, the property name, residual, geothermal, snapshot,
 hfac, a ShortName). Read the matches and restate what each says before
 you judge closure, citing it by path. The ecco skill lists the
 concepts this plugin resolves to; the ones an audit reaches first are
-the property's attested computation under
-`knowledge/podaac/computations/` or, where no computation has
-reached stable, its recipe under `knowledge/podaac/recipes/`,
+the property's attested computation under `knowledge/computations/`
+in this package or, where no computation has reached stable, its
+recipe under `knowledge/podaac/recipes/` in the provider bundle,
 and the convention concept
 `knowledge/podaac/conventions/ecco-budget-formulation.md`,
 the formulation authority with its residual-signature traps table. A
@@ -42,16 +42,17 @@ produced it.
 ## Checks, in order
 
 1. **Tolerance, from the owning concept:** for heat, the attested
-   computation `knowledge/podaac/computations/ecco-heat-budget.md`
-   owns the pass bar, and a receipt from its sanctioned code is judged
-   by its attester (`references/attesters/budget_residual.py` under the
-   copy), whose verdict the audit reports as read; for salt and volume,
-   the recipe under `knowledge/podaac/recipes/` owns the bar
+   computation `knowledge/computations/ecco-heat-budget.md` in this
+   package owns the pass bar, and a receipt from its sanctioned code
+   is judged by its attester
+   (`skills/ocean-budget/scripts/budget_residual.py`, beside it in
+   this package), whose verdict the audit reports as read; for salt
+   and volume, the recipe under `knowledge/podaac/recipes/` owns the bar
    until its computation reaches stable, and the audit says which. Use
    the bar as written: it is an absolute, measured tolerance, never a
    hardcoded relative-to-term ratio, and the concept records why. If
-   the property has neither in the bundle, its tolerance is unvalidated
-   and the audit says so.
+   the property has neither, its tolerance is unvalidated and the
+   audit says so.
 2. **On a heat-budget failure, geothermal FIRST:** consult
    `knowledge/podaac/gotchas/ecco-geothermal-flux.md` and apply what it records,
    the term's mechanism (from the ancillary file, at the bottom wet cell)

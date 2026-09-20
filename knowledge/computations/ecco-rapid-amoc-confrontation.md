@@ -148,7 +148,7 @@ bound, a changed series value with its digest left alone, the DOI
 removed, the licence removed, an unstamped observation tree, a
 different release version, and a doctored model receipt.
 
-    uv run knowledge/podaac/skills/compare-obs/scripts/ecco_rapid_amoc_confrontation.py \
+    uv run skills/compare-obs/scripts/ecco_rapid_amoc_confrontation.py \
         --ecco-receipt amoc.json --rapid-root ~/RAPID_26N/rapid.ac.uk-2026-09-02 \
         --receipt confrontation.json
     cd skills/compare-obs/scripts && \

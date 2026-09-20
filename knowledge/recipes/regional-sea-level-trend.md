@@ -13,7 +13,7 @@ inputs:
   - gauge: ../connectors/psmsl-gauges.md
   - land_motion: ../connectors/gnss-vertical-velocity.md
   - gia: "the PSMSL Peltier set, ICE-5G v1.3 with the VM2 Earth model and a 90 km lithosphere, supplied 2012: the relative sea level rate at the PSMSL station (the tide gauge quantity) and the crustal uplift rate (the GNSS quantity), the variant centred on now"
-  - method: "the method the provider bundle's attested trend computation fixes (the ecco-trend-ci computation, cited below), re-implemented on the altimetry month series and on the gauge month series over one window: the monthly climatology fitted jointly with the slope, an ordinary least squares slope against time in months, the lag-1 autocorrelation r1 of the residuals, an effective sample size n (1 - r1) / (1 + r1) capped at n, and a two-sided 95 percent interval from Student's t on n_eff minus 2 degrees of freedom; the attested executor accepts only series that arrive inside a sanctioned receipt whose data record is a verified-tree stamp, psmsl_monthly produces no receipt and the only sanctioned producer of a NASA-SSH box series needs an ECCO partition receipt as its other side, so each trend here is a trend by the sanctioned method and not an attested trend, until a computation that reads a gauge series and a NASA-SSH box series into a receipt exists"
+  - method: "the method this package's attested trend computation fixes (the ecco-trend-ci computation, cited below), re-implemented on the altimetry month series and on the gauge month series over one window: the monthly climatology fitted jointly with the slope, an ordinary least squares slope against time in months, the lag-1 autocorrelation r1 of the residuals, an effective sample size n (1 - r1) / (1 + r1) capped at n, and a two-sided 95 percent interval from Student's t on n_eff minus 2 degrees of freedom; the attested executor accepts only series that arrive inside a sanctioned receipt whose data record is a verified-tree stamp, psmsl_monthly produces no receipt and the only sanctioned producer of a NASA-SSH box series needs an ECCO partition receipt as its other side, so each trend here is a trend by the sanctioned method and not an attested trend, until a computation that reads a gauge series and a NASA-SSH box series into a receipt exists"
 expected:
   - quantity: "the identity"
     statement: "the geocentric sea level trend at the gauge is the relative trend plus the up velocity of the land, positive up meaning the land rises; the altimetry trend in the box less that sum is the residual of the reconciliation, and it is read against the combined uncertainty and against the two known differences of place, the offshore information in a coastal altimetry cell and the distance from the receiver to the gauge, before it is read as an altimeter bias"
@@ -41,8 +41,8 @@ sources:
     resource: https://archive.podaac.earthdata.nasa.gov/podaac-ops-cumulus-docs/web-misc/nasa-ssh/NASA-SSH_V1_1_UserGuide.pdf
     title: "NASA-SSH V1.1 User Guide, Willis, Fournier, Killett and Marlis, JPL (read 2026-09-15 through the PO.DAAC dataset page's link): the simple grids as Gaussian averages of width 100 km over at most 500 points within 600 km respecting basin connections, every 7 days from 10 days of passes so that adjacent grids share data, anomalies relative to the DTU21 mean sea surface computed from altimetry over 1993 to 2012, and a consistent reference frame for the orbits among the homogenisation steps"
   - id: trend-method
-    resource: https://github.com/open-science-pillars/nasa-daac-knowledge/blob/nasa-daac-knowledge--v2026.9.2/knowledge/podaac/computations/ecco-trend-ci.md
-    title: "The provider bundle's attested trend computation (knowledge/podaac/computations/ecco-trend-ci.md at the nasa-daac-knowledge--v2026.9.2 release tag): the one sanctioned linear trend with an interval from a monthly series' own autocorrelation, whose executor accepts only series that arrive inside a sanctioned receipt with a verified-tree stamp, so that a trend over a series of unknown origin is not attested whatever its arithmetic"
+    resource: ../computations/ecco-trend-ci.md
+    title: "This package's attested trend computation (knowledge/computations/ecco-trend-ci.md): the one sanctioned linear trend with an interval from a monthly series' own autocorrelation, whose executor accepts only series that arrive inside a sanctioned receipt with a verified-tree stamp, so that a trend over a series of unknown origin is not attested whatever its arithmetic. It was in the provider bundle before it moved here, at https://github.com/open-science-pillars/nasa-daac-knowledge/blob/nasa-daac-knowledge--v2026.9.2/knowledge/podaac/computations/ecco-trend-ci.md on the nasa-daac-knowledge--v2026.9.2 release tag"
   - id: psmsl-ellipsoid
     resource: https://psmsl.org/data/obtaining/ellipsoid.php
     title: "PSMSL, ellipsoidal links for RLR data (read 2026-09-15): RLR records as relative mean sea level against the local land, the land movement removed for a reconstruction and the datum height above the ellipsoid needed for a comparison with altimetry, the link through levelling to a nearby GNSS receiver, the solution, height, rate, epoch, span and distance published per link, positive rates meaning the land rises, and ITRF2014 with GRS80 for every solution"
@@ -121,7 +121,7 @@ average of width 100 km over the passes within 600 km during ten
 days, every seven days, so that adjacent grids share
 data.[^nasa-ssh-user-guide][^podaac-nasa-ssh] The reader names a box
 against the coast, averages the grids of each calendar month, and
-fits a trend over a stated window by the method the provider's
+fits a trend over a stated window by the method this package's
 attested computation fixes, re-implemented here: the climatology
 fitted jointly with the slope, ordinary least squares, the lag-1
 autocorrelation of the residuals, an effective sample size capped at
@@ -261,7 +261,7 @@ that carry them, and no reconciled trend is quoted for any site.
 [^nasa-ssh-concept]: the provider bundle's NASA-SSH dataset concept at the v2026.9.2 release tag
 [^podaac-nasa-ssh]: PO.DAAC dataset page for NASA_SSH_REF_SIMPLE_GRID_V11, read 2026-09-15
 [^nasa-ssh-user-guide]: NASA-SSH V1.1 User Guide, sections 3 and 5, read 2026-09-15
-[^trend-method]: the provider bundle's attested trend computation at the v2026.9.2 release tag
+[^trend-method]: computations/ecco-trend-ci.md, this package's attested trend computation
 [^psmsl-ellipsoid]: PSMSL, ellipsoidal links for RLR data, read 2026-09-15
 [^psmsl-rlr-diagram-brest]: PSMSL RLR diagram page for Brest (station 1), read 2026-09-15
 [^psmsl-gia]: PSMSL, glacial isostatic adjustment page, read 2026-09-15

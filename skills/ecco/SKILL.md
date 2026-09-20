@@ -41,10 +41,13 @@ file. The concepts this plugin resolves to today, all under
   traps, and the rest the glob surfaces;
 - the conventions `conventions/ecco-budget-formulation.md` and
   `conventions/consistency-versus-confrontation.md`;
-- the recipes, attested computations, validity domains, and findings
-  under `recipes/`, `computations/`, `validity-domains/`, and
-  `findings/` by the `ecco-` prefix; an attested computation owns its
-  pass bar and its sanctioned code, reached through the concept.
+- the recipes, validity domains, and findings under `recipes/`,
+  `validity-domains/`, and `findings/` by the `ecco-` prefix.
+
+The attested computations are not in that bundle. They live in this
+package under `knowledge/computations/`, beside the scripts that run
+them; an attested computation owns its pass bar and its sanctioned
+code, reached through the concept.
 
 The one rule that fires WITHOUT consulting anything is the hard refusal
 below: a budget or transport on regridded fields is refused outright.
@@ -142,7 +145,7 @@ ${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/fixtures-2010-manifest.json
 fetch), since every attester refuses a receipt from an unstamped tree.
 
 **Global ocean heat content, `ecco-ocean-heat-content`**
-(`knowledge/podaac/computations/ecco-ocean-heat-content.md`; executor
+(`knowledge/computations/ecco-ocean-heat-content.md`; executor
 `skills/ecco/scripts/ecco_ohc.py`, attester
 `skills/ecco/scripts/ohc_check.py`). Binds `months` (one or more
 `YYYY-MM`; the change is last minus first):
@@ -160,7 +163,7 @@ quoted without the caveat. The Argo-based counterpart is this plugin's
 own argo-ohc skill.
 
 **Trend with an honest interval, `ecco-trend-ci`**
-(`knowledge/podaac/computations/ecco-trend-ci.md`; executor
+(`knowledge/computations/ecco-trend-ci.md`; executor
 `skills/ecco/scripts/ecco_trend_ci.py`, attester
 `skills/ecco/scripts/trend_ci_check.py`). Binds `source` (a
 sanctioned receipt), `field` (a monthly `{YYYY-MM: value}` field in
@@ -182,7 +185,7 @@ construction. The deseasonalized series a plot wants is the receipt's
 `intermediates.series_fit`, drawn through the receipt-figures skill.
 
 **Geostrophic balance and thermal wind, `ecco-geostrophic-balance`**
-(`knowledge/podaac/computations/ecco-geostrophic-balance.md`;
+(`knowledge/computations/ecco-geostrophic-balance.md`;
 executor `skills/ecco/scripts/ecco_geostrophy.py`, attester
 `skills/ecco/scripts/geos_check.py`). Binds `month` (`YYYY-MM`),
 `depth_m` (default 350) and `depth2_m` (default 700); `--fields PATH`
@@ -196,7 +199,7 @@ uv run ${CLAUDE_PLUGIN_ROOT}/skills/ecco/scripts/geos_check.py /tmp/geos-receipt
 ```
 
 **Wind-stress curl and Ekman pumping, `ecco-wind-stress-curl`**
-(`knowledge/podaac/computations/ecco-wind-stress-curl.md`; executor
+(`knowledge/computations/ecco-wind-stress-curl.md`; executor
 `skills/ecco/scripts/ecco_curl_ekman.py`, attester
 `skills/ecco/scripts/curl_check.py`). Binds `month` (`YYYY-MM`); the
 WVEL interface stays at the contract's 70 m; `--fields PATH` for a
@@ -210,7 +213,7 @@ uv run ${CLAUDE_PLUGIN_ROOT}/skills/ecco/scripts/curl_check.py /tmp/curl-receipt
 
 **Thermal-wind reconstruction from a level of no motion,
 `ecco-thermal-wind-reconstruction`**
-(`knowledge/podaac/computations/ecco-thermal-wind-reconstruction.md`;
+(`knowledge/computations/ecco-thermal-wind-reconstruction.md`;
 executor `skills/ecco/scripts/ecco_thermal_wind_reconstruction.py`,
 attester `skills/ecco/scripts/thermal_wind_check.py`). Binds `month`
 (`YYYY-MM`), `reference_depth_m` (default 3000) and `map_depth_m`

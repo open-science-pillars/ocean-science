@@ -83,7 +83,7 @@ tree's manifest under `${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/`), 
 attesters refuse a receipt from an unstamped tree.
 
 **Regional sea level partition, `ecco-regional-sea-level`**
-(`knowledge/podaac/computations/ecco-regional-sea-level.md`; executor
+(`knowledge/computations/ecco-regional-sea-level.md`; executor
 `skills/sea-level-analysis/scripts/ecco_regional_sea_level.py`, attester
 `skills/sea-level-analysis/scripts/sea_level_partition.py`). Binds `region` (from
 the registry inside the sanctioned file: `gulf-of-mexico`,
@@ -116,7 +116,7 @@ receipt's interval block, never a separately fitted one. The
 briefing-generator skill consumes this receipt.
 
 **Regional steric height, `ecco-steric-height`**
-(`knowledge/podaac/computations/ecco-steric-height.md`; executor
+(`knowledge/computations/ecco-steric-height.md`; executor
 `skills/sea-level-analysis/scripts/ecco_steric_height.py`, attester
 `skills/sea-level-analysis/scripts/steric_check.py`). Binds `region` (`global`,
 `gulf-of-mexico`, `north-sea`, `us-northeast-coast`) and `months` (a

@@ -10,8 +10,8 @@ Compute closed property budgets, or refuse. Works by slash command or conversati
 `knowledge/podaac/conventions/ecco-budget-formulation.md`
 (the procedure for applying it is `skills/ecco/references/budget-formulation.md`);
 the tolerance authority is the property's attested computation
-(`knowledge/podaac/computations/ecco-heat-budget.md` for heat,
-which also names the sanctioned code and its attester) or, until a
+(`knowledge/computations/ecco-heat-budget.md` in this package for
+heat, which also names the sanctioned code and its attester) or, until a
 property's computation reaches stable, its recipe under
 `knowledge/podaac/recipes/`; the diagnosis discipline is
 budget-closure's.
@@ -29,19 +29,20 @@ workflow applies it at its gate.
 
 1. **Parse and show back:** property (heat, salt, volume), domain,
    period, depth range.
-2. **Consult the bundle for THIS budget first.** Consult installed
+2. **Consult the knowledge for THIS budget first.** Consult installed
    knowledge concepts first, as the core `consult-knowledge` skill
    sets out, by property, product, and depth range; the ecco skill
    lists the concepts this plugin resolves to. Read the property's
-   attested computation under `knowledge/podaac/computations/`
+   attested computation under `knowledge/computations/` in this
+   package
    (its declared parameters, inputs, pass bar, sanctioned code, and
    attester) or, until that computation reaches stable, its recipe
    under `knowledge/podaac/recipes/` (its inputs and measured
    tolerance), and the gotchas that constrain it (for a heat budget,
    the geothermal term; for any budget, the native-grid rule and the
    hFac double count). Restate what applies and cite each by path. If
-   the property has neither in the bundle, its tolerance is
-   unvalidated and the budget says so.
+   the property has neither, its tolerance is unvalidated and the
+   budget says so.
 3. **Inputs check:** the owning concept's exact collections present
    (via load-ecco, gate and all), the snapshot bookends it requires,
    and every ancillary the applicable gotchas name. Missing inputs stop
@@ -104,7 +105,7 @@ ${CLAUDE_PLUGIN_ROOT}/knowledge/references/retrieval/fixtures-2010-manifest.json
 fetch), since every attester refuses a receipt from an unstamped tree.
 
 **Heat budget closure, `ecco-heat-budget`**
-(`knowledge/podaac/computations/ecco-heat-budget.md`; executor
+(`knowledge/computations/ecco-heat-budget.md`; executor
 `skills/ocean-budget/scripts/ecco_heat_budget.py`, attester
 `skills/ocean-budget/scripts/budget_residual.py`). Binds `year` (required)
 and `region` (optional; `tile1-interior` is the default and the one

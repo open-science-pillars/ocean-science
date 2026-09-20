@@ -21,15 +21,16 @@ once per value of one parameter the concept declares.
 Use it when the question is how an answer moves with a parameter the
 concept declares: every window of a stated length stepping through the
 record, the same period with and without a bridge citation, the same
-question asked of a family of values rather than one. Use the wrapping
-skill (`sea-level-budget` for the closure) when the question is about
-one run, which is also the only thing a reader may quote as a number.
+question asked of a family of values rather than one. Use the skill
+that runs the computation (`sea-level-budget` for the closure) when
+the question is about one run, which is also the only thing a reader
+may quote as a number.
 
-The runs it drives are the wrapping skill's runs, so read that skill
-first: it states the parameters, the refusal codes, the receipt fields
-and the caveats that travel with every number. The sweep changes none
-of that. It runs the same executor with the same flags, one value at a
-time.
+The runs it drives are the `sea-level-budget` skill's runs, so read
+that skill first: it states the parameters, the refusal codes, the
+receipt fields and the caveats that travel with every number. The
+sweep changes none of that. It runs the same executor with the same
+flags, one value at a time.
 
 ## Where the executor, the attester and the concept are
 
@@ -95,8 +96,8 @@ uv run skills/sweep/scripts/sweep.py \
    for the closure), the parameter to be swept as that concept declares
    it, the values, the fixed value of every other declared parameter,
    and the input (the fixture as a rehearsal, or the stamped data root
-   for a real run). Consult the wrapping skill and the concepts it
-   names before running.
+   for a real run). Consult the `sea-level-budget` skill and the
+   concepts it names before running.
 2. **Run the sweep.** One executor run per value, each writing its own
    receipt. A run the executor refuses (exit 3) is a row carrying its
    reason code, never a skipped row and never retried with a different

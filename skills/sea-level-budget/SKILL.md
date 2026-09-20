@@ -7,8 +7,7 @@ user-invocable: true
 # sea-level-budget
 
 Run instructions for the attested computation
-`knowledge/podaac/computations/sea-level-budget.md` in the provider
-bundle: over one stated period, the three monthly global-mean series
+`knowledge/computations/sea-level-budget.md` in this package: over one stated period, the three monthly global-mean series
 in millimeters (altimetric sea level from NASA-SSH, steric sea level
 from Argo-era hydrography with its sampled depth floor stated, ocean
 mass from the GRACE-FO mascons), the residual, the trend of every

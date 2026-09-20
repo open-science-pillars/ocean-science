@@ -23,19 +23,19 @@ status: stable
 stale_after: 2027-03-15
 sources:
   - id: dataset
-    resource: knowledge/podaac/datasets/roemmich-gilson-argo-climatology.md
+    resource: ../datasets/roemmich-gilson-argo-climatology.md
     title: "This bundle's Roemmich and Gilson dataset concept: the 2019 release, the grid, the masks, the extension files and the uncertainty statement"
   - id: gotcha-floor
-    resource: knowledge/podaac/gotchas/rg-sampled-depth-floor.md
+    resource: ../gotchas/rg-sampled-depth-floor.md
     title: "This bundle's gotcha: the product stops at 1975 dbar, so a heat content from it is a 0 to 2000 dbar quantity and the deep ocean is a separate term"
   - id: gotcha-coverage
-    resource: knowledge/podaac/gotchas/rg-coverage-excludes-high-latitudes-and-marginal-seas.md
+    resource: ../gotchas/rg-coverage-excludes-high-latitudes-and-marginal-seas.md
     title: "This bundle's gotcha: the grid starts at 64.5S and a mean labelled global from it is a mean over the mapped, masked open ocean"
   - id: gotcha-baseline
-    resource: knowledge/podaac/gotchas/rg-anomaly-against-a-fixed-climatology.md
+    resource: ../gotchas/rg-anomaly-against-a-fixed-climatology.md
     title: "This bundle's gotcha: the anomalies are departures from the fixed 2004 to 2018 climatology, and the extension files keep that reference"
   - id: recipe
-    resource: knowledge/podaac/recipes/argo-ohc.md
+    resource: ../recipes/argo-ohc.md
     title: "This bundle's recipe: the layer, the domain, the baseline and the deep term it does not carry"
   - id: rg-page
     resource: https://sio-argo.ucsd.edu/RG_Climatology.html
@@ -399,11 +399,11 @@ verification/argo_ohc.py, which runs the attester's selftest, the
 fixture run and refusal, the loader and data-root selftests, the
 record check and the record runs.
 
-[^dataset]: knowledge/podaac/datasets/roemmich-gilson-argo-climatology.md, the files, the grid, the masks and the uncertainty statement
-[^gotcha-floor]: knowledge/podaac/gotchas/rg-sampled-depth-floor.md
-[^gotcha-coverage]: knowledge/podaac/gotchas/rg-coverage-excludes-high-latitudes-and-marginal-seas.md
-[^gotcha-baseline]: knowledge/podaac/gotchas/rg-anomaly-against-a-fixed-climatology.md
-[^recipe]: knowledge/podaac/recipes/argo-ohc.md, the layer, the domain, the baseline and the deep term
+[^dataset]: datasets/roemmich-gilson-argo-climatology.md, the files, the grid, the masks and the uncertainty statement
+[^gotcha-floor]: gotchas/rg-sampled-depth-floor.md
+[^gotcha-coverage]: gotchas/rg-coverage-excludes-high-latitudes-and-marginal-seas.md
+[^gotcha-baseline]: gotchas/rg-anomaly-against-a-fixed-climatology.md
+[^recipe]: recipes/argo-ohc.md, the layer, the domain, the baseline and the deep term
 [^rg-page]: Scripps RG Argo Climatology product page, read 2026-09-15
 [^rg-files]: the RG climatology and extension files, downloaded and hashed 2026-09-15
 [^teos-10]: TEOS-10 Manual, IOC Manuals and Guides 56, section 3.3 and appendix A.18
