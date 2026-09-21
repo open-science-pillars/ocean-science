@@ -45,10 +45,29 @@ qualification:
   - release-lock
 probes:
   skill-invocation:
-    skill: sea-level-analysis
-    prompt: Run a sea level analysis for the US northeast coast over 2010 and show me the plan before any data is loaded.
+    skill: briefing-generator
+    prompt: Write the regional sea level briefing for the US northeast coast over 2010, with the headline
+      trend and what it means for the coast.
+    # A briefing is judged on where its numbers come from, so the
+    # expectation is the one computation this package lets a briefing quote
+    # and the attester whose verdict has to clear before a number is
+    # written. The skill names both where the gate opens and where it
+    # refuses, and it names them whether or not a region and a period were
+    # given, which is what makes the pair honest in the slash form the
+    # harness sends with no arguments as well as in the conversational
+    # form. The computation is matched by name rather than by its concept
+    # path, and across the separators the skill uses, because a run names
+    # it by concept path, by concept name, in prose and by the executor's
+    # filename about as readily. The name keeps ECCO in it because a
+    # briefing written from memory says regional sea level too, and that
+    # briefing is the failure worth catching. The region the prompt binds
+    # is not on the list: the slash form carries no arguments today, so no
+    # bound value can be asked of it.
     expect:
-    - ocean-science
+    - ecco[ _-]regional[ _-]sea[ _-]level
+    - attester
+    criteria: The briefing is traced to the sanctioned regional partition computation and to the attester's
+      verdict on its receipt, and no number is drafted without a PASS.
   prove:
     prompt: 'Run the capability''s attested sea level budget closure on its synthetic fixture and report
       the verdict and the residual trend it prints. The command is: uv run ${PLUGIN_ROOT}/verification/sea_level_budget.py
