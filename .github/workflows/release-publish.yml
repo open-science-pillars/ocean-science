@@ -71,7 +71,14 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -eu
-          assets="dist/claude/ocean-science-$VERSION.zip dist/release.json dist/RUNTIMES.md"
+          zip_asset="dist/claude/ocean-science-$VERSION.zip"
+          [ -f "$zip_asset" ] || { echo "$zip_asset is missing; publish emitted no package"; exit 1; }
+          assets="$zip_asset"
+          # RUNTIMES.md is emitted only by a package that advertises runtimes,
+          # so a knowledge bundle has none and the release carries what exists.
+          for f in dist/release.json dist/RUNTIMES.md; do
+            if [ -f "$f" ]; then assets="$assets $f"; fi
+          done
           portable="dist/agent-plugin/ocean-science-$VERSION"
           if [ -d "$portable" ]; then
             ( cd dist/agent-plugin && zip -qr "ocean-science-$VERSION-agent-plugin.zip" "ocean-science-$VERSION" )
