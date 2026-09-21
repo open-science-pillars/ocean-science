@@ -1,0 +1,83 @@
+name: release publish
+# Creates the GitHub release for the existing tag ocean-science--v<version>, on
+# the maintainer's behalf, from the Actions token. It exists for the reason
+# the release tag workflow does: a session that can merge a release
+# candidate cannot always create a release. It also builds the projections
+# a release attaches from the tagged tree rather than from whatever a
+# working copy happens to hold, which is the provenance a reader of the
+# release is entitled to. The release is created only when the checkout is
+# the tag's own commit, the version is the one package.yaml states there,
+# no release exists for that tag yet, and the release lock is current. The
+# projections come from osp.py publish and the notes from the release
+# commit's own message, with the commit trailers removed.
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "The released version, exactly as .osp/package.yaml states it at the tag"
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: plugin
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          path: plugin
+          ref: refs/tags/ocean-science--v${{ inputs.version }}
+          fetch-depth: 0   # the release commit, which carries the notes
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          repository: open-science-pillars/build-kit
+          path: build-kit
+      - uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5
+      - name: The checkout is the tag's commit, and no release exists for it yet
+        env:
+          VERSION: ${{ inputs.version }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -eu
+          tag="ocean-science--v$VERSION"
+          [ "$(git rev-parse HEAD)" = "$(git rev-parse "refs/tags/$tag^{commit}")" ] || { echo "checked out $(git rev-parse HEAD), which is not $tag"; exit 1; }
+          stated=$(sed -n 's/^  version: *//p' .osp/package.yaml | head -1 | tr -d '"')
+          [ "$stated" = "$VERSION" ] || { echo "package.yaml at $tag states version $stated, not $VERSION"; exit 1; }
+          if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "a release already exists for $tag"; exit 1
+          fi
+          echo "TAG=$tag" >> "$GITHUB_ENV"
+      - name: Release lock, enforced (a release ships what its lock digests)
+        run: uv run ../build-kit/scripts/osp.py lock . --check
+      - name: Build the projections from the tagged tree
+        run: uv run ../build-kit/scripts/osp.py publish .
+      - name: The notes are the release commit's own message
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          set -eu
+          commit=$(git log --format='%H%x09%s' "$TAG" | awk -F'\t' -v v="Release $VERSION:" 'index($2,v)==1 {print $1; exit}')
+          [ -n "$commit" ] || { echo "no \"Release $VERSION:\" commit is reachable from $TAG"; exit 1; }
+          git log -1 --format='%b' "$commit" \
+            | sed -E '/^(Co-Authored-By|Co-authored-by|Claude-Session|Signed-off-by):/d' > ../notes.md
+          [ -s ../notes.md ] || { echo "the release commit $commit has an empty message body"; exit 1; }
+          echo "notes from $commit"
+      - name: Create the release
+        env:
+          VERSION: ${{ inputs.version }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -eu
+          assets="dist/claude/ocean-science-$VERSION.zip dist/release.json dist/RUNTIMES.md"
+          portable="dist/agent-plugin/ocean-science-$VERSION"
+          if [ -d "$portable" ]; then
+            ( cd dist/agent-plugin && zip -qr "ocean-science-$VERSION-agent-plugin.zip" "ocean-science-$VERSION" )
+            assets="$assets dist/agent-plugin/ocean-science-$VERSION-agent-plugin.zip"
+          fi
+          # shellcheck disable=SC2086
+          gh release create "$TAG" $assets --repo "$GITHUB_REPOSITORY" \
+            --title "ocean-science $VERSION" --notes-file ../notes.md
+          echo "published $TAG at $(git rev-parse HEAD)"
